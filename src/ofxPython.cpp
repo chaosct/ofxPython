@@ -5,6 +5,14 @@ extern "C"{
 void init_openframeworks();
 }
 
+
+ofxPythonObject make_object_noaddref(PyObject * obj)
+{
+	ofxPythonObject o;
+	o.insert_noaddref(obj);
+	return o;
+}
+
 ofxPython::ofxPython()
 {
 }
@@ -34,6 +42,25 @@ public:
 void ofxPython::init()
 {
 	static ofxPythonDestructor d;
+	reset();
+}
+
+void ofxPython::reset()
+{
+	// globals = make_object_noaddref(PyDict_New());
+	locals = make_object_noaddref(PyDict_New());
+	//insert builtins
+	PyDict_SetItemString(locals->obj, "__builtins__", PyEval_GetBuiltins());
+}
+
+ofxPythonObject ofxPython::executeScript(const string& path)
+{
+	return executeString(ofBufferFromFile(path).getText());
+}
+
+ofxPythonObject ofxPython::executeString(const string& script)
+{
+	return make_object_noaddref(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
 }
 
 ofxPythonObject ofxPython::getObject(const string& name, const string& module)
@@ -54,6 +81,11 @@ ofxPythonObject ofxPython::getObject(const string& name, const string& module)
 	}
 	Py_XDECREF(pModule);
 	return o;
+}
+
+ofxPythonObject ofxPython::getObject(const string& name)
+{
+	return locals[name];
 }
 
 void ofxPythonObject::insert_noaddref(PyObject * obj)
@@ -79,16 +111,17 @@ ofxPythonObject ofxPythonObject::method(const string &method_name)
 {
 	//So it seems that PyObject_CallMethod needs a non-const char * ¬¬
 	std::vector<char> chars(method_name.c_str(), method_name.c_str() + method_name.size() + 1u);
-	PyObject* r = PyObject_CallMethod(get()->obj,&chars[0],NULL);
-	ofxPythonObject o;
-	o.insert_noaddref(r);
-	return o;
+	return make_object_noaddref(PyObject_CallMethod(get()->obj,&chars[0],NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()()
 {
-	PyObject* r = PyObject_CallObject(get()->obj,NULL);
-	ofxPythonObject o;
-	o.insert_noaddref(r);
-	return o;
+	return make_object_noaddref(PyObject_CallObject(get()->obj,NULL));
+}
+
+ofxPythonObject ofxPythonObject::operator [](const string& key)
+{
+	//So it seems that also PyMapping_GetItemString needs a non-const char * ¬¬
+	std::vector<char> chars(key.c_str(), key.c_str() + key.size() + 1u);
+	return make_object_noaddref(PyMapping_GetItemString(get()->obj, &chars[0]));
 }

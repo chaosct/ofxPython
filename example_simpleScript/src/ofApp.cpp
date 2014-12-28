@@ -3,7 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	python.init();
-	ofxPythonObject klass = python.getObject("myApp","mytest");
+	python.executeScript("mytest.py");
+	ofxPythonObject klass = python.getObject("myApp");
 	if(klass)
 		python_program = klass();
 }
@@ -22,7 +23,7 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+	python.executeString("myApp.color = [random.randint(0,255) for _ in range(3)]");
 }
 
 //--------------------------------------------------------------
