@@ -7,6 +7,8 @@ void ofApp::setup(){
 	ofxPythonObject klass = python.getObject("myApp");
 	if(klass)
 		python_program = klass();
+	if(python_program)
+		drawmethod = python_program.attr("draw");
 }
 
 //--------------------------------------------------------------
@@ -17,13 +19,20 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	if(python_program)
-		python_program.method("draw");
+	if(drawmethod)
+		drawmethod();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 	python.executeString("myApp.color = [random.randint(0,255) for _ in range(3)]");
+	if(python_program)
+	{
+		ofxPythonObject x = python.evalString("random.randint(100,200)");
+		ofLog() << x.repr();
+		python_program.attr("x") = x;
+		python_program.attr("y") = python_program.attr("x");
+	}
 }
 
 //--------------------------------------------------------------

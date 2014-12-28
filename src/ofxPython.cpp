@@ -73,14 +73,19 @@ void ofxPython::reset()
 	locals["__builtins__"]=make_object_addref(PyEval_GetBuiltins());
 }
 
-ofxPythonObject ofxPython::executeScript(const string& path)
+void ofxPython::executeScript(const string& path)
 {
-	return executeString(ofBufferFromFile(path).getText());
+	executeString(ofBufferFromFile(path).getText());
 }
 
-ofxPythonObject ofxPython::executeString(const string& script)
+void ofxPython::executeString(const string& script)
 {
-	return make_object_noaddref(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
+	make_object_noaddref(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
+}
+
+ofxPythonObject ofxPython::evalString(const string& expression)
+{
+	return make_object_noaddref(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
 }
 
 ofxPythonObject ofxPython::getObject(const string& name, const string& module)
@@ -143,7 +148,20 @@ ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
 	return ofxPythonMappingValue(*this,key);
 }
 
-ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k):object(o), key(k){}
+ofxPythonAttrValue ofxPythonObject::attr(const string& attribute)
+{
+	return ofxPythonAttrValue(*this, attribute);
+}
+
+const string ofxPythonObject::repr()
+{
+	ofxPythonObject objectsRepresentation = make_object_noaddref(
+		PyObject_Repr(get()->obj));
+	return string(PyString_AsString(objectsRepresentation->obj));
+}
+
+ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
+:object(o), key(k){}
 
 ofxPythonMappingValue::operator ofxPythonObject()
 {
@@ -155,4 +173,29 @@ ofxPythonMappingValue& ofxPythonMappingValue::operator =(ofxPythonObject o)
 {
 	PyMapping_SetItemString(object->obj, noconststring(key) , o->obj);
 	return *this;
+}
+
+ofxPythonAttrValue::ofxPythonAttrValue(ofxPythonObject o, const string& attr)
+:object(o),attribute(attr){}
+
+ofxPythonAttrValue::operator ofxPythonObject()
+{
+	return make_object_noaddref(
+		PyObject_GetAttrString(object->obj,attribute.c_str()));
+}
+
+ofxPythonAttrValue & ofxPythonAttrValue::operator =(ofxPythonObject o)
+{
+	PyObject_SetAttrString(object->obj, attribute.c_str(), o->obj);
+	return *this;
+}
+
+ofxPythonMappingValue & ofxPythonMappingValue::operator =(ofxPythonMappingValue & o)
+{
+	return *this = (ofxPythonObject) o;
+}
+
+ofxPythonAttrValue & ofxPythonAttrValue::operator =(ofxPythonAttrValue & o)
+{
+	return *this = (ofxPythonObject) o;
 }

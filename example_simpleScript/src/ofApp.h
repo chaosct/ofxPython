@@ -21,4 +21,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		ofxPython python;
 		ofxPythonObject python_program;
+		ofxPythonObject drawmethod;
 };
