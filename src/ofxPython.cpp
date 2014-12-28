@@ -13,6 +13,26 @@ ofxPythonObject make_object_noaddref(PyObject * obj)
 	return o;
 }
 
+ofxPythonObject make_object_addref(PyObject * obj)
+{
+	ofxPythonObject o;
+	o.insert(obj);
+	return o;
+}
+
+//helper to transform a (const) std:string into a char *
+class noconststring: vector<char>
+{
+public:
+	noconststring(const string& source)
+	:vector<char>(source.c_str(), source.c_str() + source.size() + 1u)
+	{}
+	operator char *()
+	{
+		return &(*this)[0];
+	}
+};
+
 ofxPython::ofxPython()
 {
 }
@@ -50,7 +70,7 @@ void ofxPython::reset()
 	// globals = make_object_noaddref(PyDict_New());
 	locals = make_object_noaddref(PyDict_New());
 	//insert builtins
-	PyDict_SetItemString(locals->obj, "__builtins__", PyEval_GetBuiltins());
+	locals["__builtins__"]=make_object_addref(PyEval_GetBuiltins());
 }
 
 ofxPythonObject ofxPython::executeScript(const string& path)
@@ -109,9 +129,8 @@ ofxPythonObjectManaged::~ofxPythonObjectManaged()
 
 ofxPythonObject ofxPythonObject::method(const string &method_name)
 {
-	//So it seems that PyObject_CallMethod needs a non-const char * ¬¬
-	std::vector<char> chars(method_name.c_str(), method_name.c_str() + method_name.size() + 1u);
-	return make_object_noaddref(PyObject_CallMethod(get()->obj,&chars[0],NULL));
+	return make_object_noaddref(
+		PyObject_CallMethod(get()->obj,noconststring(method_name),NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()()
@@ -119,9 +138,21 @@ ofxPythonObject ofxPythonObject::operator ()()
 	return make_object_noaddref(PyObject_CallObject(get()->obj,NULL));
 }
 
-ofxPythonObject ofxPythonObject::operator [](const string& key)
+ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
 {
-	//So it seems that also PyMapping_GetItemString needs a non-const char * ¬¬
-	std::vector<char> chars(key.c_str(), key.c_str() + key.size() + 1u);
-	return make_object_noaddref(PyMapping_GetItemString(get()->obj, &chars[0]));
+	return ofxPythonMappingValue(*this,key);
+}
+
+ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k):object(o), key(k){}
+
+ofxPythonMappingValue::operator ofxPythonObject()
+{
+	return make_object_noaddref(
+		PyMapping_GetItemString(object->obj, noconststring(key)));
+}
+
+ofxPythonMappingValue& ofxPythonMappingValue::operator =(ofxPythonObject o)
+{
+	PyMapping_SetItemString(object->obj, noconststring(key) , o->obj);
+	return *this;
 }
