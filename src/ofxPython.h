@@ -16,6 +16,8 @@ public:
 	ofxPythonObject operator ()(); //call objects without arguments
 	ofxPythonAttrValue attr(const string& attribute);
 	ofxPythonMappingValue operator [](const string& key);
+	ofxPythonMappingValue operator [](const char * key);
+	operator bool() const;
 	const string repr();
 protected:
 	void insert(PyObject *);

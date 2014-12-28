@@ -148,6 +148,11 @@ ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
 	return ofxPythonMappingValue(*this,key);
 }
 
+ofxPythonMappingValue ofxPythonObject::operator [](const char * key)
+{
+	return ofxPythonMappingValue(*this,string(key));
+}
+
 ofxPythonAttrValue ofxPythonObject::attr(const string& attribute)
 {
 	return ofxPythonAttrValue(*this, attribute);
@@ -158,6 +163,11 @@ const string ofxPythonObject::repr()
 	ofxPythonObject objectsRepresentation = make_object_noaddref(
 		PyObject_Repr(get()->obj));
 	return string(PyString_AsString(objectsRepresentation->obj));
+}
+
+ofxPythonObject::operator bool() const
+{
+	return get() && (get()->obj != Py_None);
 }
 
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
