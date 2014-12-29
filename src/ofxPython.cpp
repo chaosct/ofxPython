@@ -29,7 +29,7 @@ public:
 	{}
 	operator char *()
 	{
-		return &(*this)[0];
+		return &(*this).at(0);
 	}
 };
 
@@ -50,8 +50,14 @@ public:
 		init_openframeworks();
 		//this seems to be the easiest way to add '.' to python path
 		PyRun_SimpleString( "import sys\n"
+#ifndef TARGET_OSX
 							"sys.path.append('.')\n"
-							"sys.path.append('data')\n");
+							"sys.path.append('data')\n"
+#else
+						    "sys.path.append('../../..')\n"
+						    "sys.path.append('../../../data')\n"
+#endif
+						   );
 	}
 	~ofxPythonDestructor()
 	{
