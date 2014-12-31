@@ -149,6 +149,21 @@ ofxPythonObject ofxPythonObject::operator ()()
 	return make_object_noaddref(PyObject_CallObject(get()->obj,NULL));
 }
 
+ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1)
+{
+	return make_object_noaddref(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,NULL));
+}
+
+ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2)
+{
+	return make_object_noaddref(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,NULL));
+}
+
+ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2, ofxPythonObject o3)
+{
+	return make_object_noaddref(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,o3->obj,NULL));
+}
+
 ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
 {
 	return ofxPythonMappingValue(*this,key);

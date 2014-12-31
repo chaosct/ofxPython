@@ -14,6 +14,9 @@ class ofxPythonObject: public ofPtr<ofxPythonObjectManaged>
 public:
 	ofxPythonObject method(const string &method_name); //call method without arguments
 	ofxPythonObject operator ()(); //call objects without arguments
+	ofxPythonObject operator ()(ofxPythonObject); //call objects 1 argument
+	ofxPythonObject operator ()(ofxPythonObject, ofxPythonObject); //call objects 2 arguments
+	ofxPythonObject operator ()(ofxPythonObject, ofxPythonObject, ofxPythonObject); //call objects 3 arguments
 	ofxPythonAttrValue attr(const string& attribute);
 	ofxPythonMappingValue operator [](const string& key);
 	ofxPythonMappingValue operator [](const char * key);
