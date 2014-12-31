@@ -1,7 +1,7 @@
 ofxPython
 =========
 
-(c) 2014 Carles F. Julià
+(c) 2014 Carles F. Julià <carles@protopixel.net>
 
 Introduction
 ------------
@@ -25,7 +25,7 @@ Compatibility
 ------------
 This has been designed for OF v0.8.4. I don't have a way of creating per-version bindings, but you can try to generate them using swig (see next section).
 
-I've generated the bindings and tested on Linux64 and windows.
+I've generated the bindings and tested them on Linux64, OSX and Windows.
 
 Re-generating the bindings
 --------------------------
@@ -39,6 +39,7 @@ Known issues
 ------------
 - It crashes on exit.
 - It is awfully incomplete.
+- No error checking
 
 Contributing
 ------------
