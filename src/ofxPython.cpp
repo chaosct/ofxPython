@@ -97,21 +97,12 @@ ofxPythonObject ofxPython::evalString(const string& expression)
 ofxPythonObject ofxPython::getObject(const string& name, const string& module)
 {
 
-	ofxPythonObject o;
-	PyObject *pName = PyString_FromString(module.c_str());
-	PyObject *pModule = PyImport_Import(pName);
-	Py_DECREF(pName);
-	if(pModule)
-	{
-		PyObject * f = PyObject_GetAttrString(pModule, name.c_str());
-		o.insert_noaddref(f);
-	}
-	else
-	{
-		ofLog() << "Python module not found:(";
-	}
-	Py_XDECREF(pModule);
-	return o;
+	ofxPythonObject pmodule = make_object_noaddref(
+		PyImport_Import(ofxPythonObject::fromString(module)->obj));
+	if(pmodule)
+		return pmodule.attr(name);
+	ofLog() << "Python module not found:(";
+	return ofxPythonObject();
 }
 
 ofxPythonObject ofxPython::getObject(const string& name)
@@ -211,6 +202,10 @@ bool ofxPythonObject::isFloat() const
 	return get() && PyFloat_Check(get()->obj);
 }
 
+bool ofxPythonObject::isString() const
+{
+	return get() && PyString_Check(get()->obj);
+}
 
 long int ofxPythonObject::asInt() const
 {
@@ -231,6 +226,13 @@ double ofxPythonObject::asFloat() const
 	if (isFloat())
 		return PyFloat_AsDouble(get()->obj);
 	return 0.0;
+}
+
+string ofxPythonObject::asString() const
+{
+	if(isString())
+		return string(PyString_AsString(get()->obj));
+	return string();
 }
 
 
@@ -254,6 +256,11 @@ ofxPythonObject ofxPythonObject::_None()
 ofxPythonObject fromFloat(double d)
 {
 	return make_object_noaddref(PyFloat_FromDouble(d));
+}
+
+ofxPythonObject ofxPythonObject::fromString(const string& s)
+{
+	return make_object_noaddref(PyString_FromString(s.c_str()));
 }
 
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)

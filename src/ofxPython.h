@@ -24,13 +24,16 @@ public:
 	bool isBool() const;
 	bool isInt() const;
 	bool isFloat() const;
+	bool isString() const;
+	bool asBool( ) const;
 	long int asInt() const;
 	double asFloat() const;
-	bool asBool( ) const;
+	string asString() const;
+	static ofxPythonObject _None();
+	static ofxPythonObject fromBool(bool);
 	static ofxPythonObject fromInt(long int);
 	static ofxPythonObject fromFloat(double);
-	static ofxPythonObject fromBool(bool);
-	static ofxPythonObject _None();
+	static ofxPythonObject fromString(const string&);
 	operator bool() const;
 	const string repr();
 protected:
