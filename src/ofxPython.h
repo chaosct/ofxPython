@@ -17,6 +17,17 @@ public:
 	ofxPythonAttrValue attr(const string& attribute);
 	ofxPythonMappingValue operator [](const string& key);
 	ofxPythonMappingValue operator [](const char * key);
+	bool isNone() const;
+	bool isBool() const;
+	bool isInt() const;
+	bool isFloat() const;
+	long int asInt() const;
+	double asFloat() const;
+	bool asBool( ) const;
+	static ofxPythonObject fromInt(long int);
+	static ofxPythonObject fromFloat(double);
+	static ofxPythonObject fromBool(bool);
+	static ofxPythonObject _None();
 	operator bool() const;
 	const string repr();
 protected:

@@ -173,7 +173,72 @@ const string ofxPythonObject::repr()
 
 ofxPythonObject::operator bool() const
 {
-	return get() && (get()->obj != Py_None);
+	return get() && get()->obj && !isNone();
+}
+
+bool ofxPythonObject::isNone() const
+{
+	return get() && get()->obj == Py_None;
+}
+
+bool ofxPythonObject::isBool() const
+{
+	return get() && PyBool_Check(get()->obj);
+}
+
+bool ofxPythonObject::isInt() const
+{
+	return get() && PyInt_Check(get()->obj);
+}
+
+bool ofxPythonObject::isFloat() const
+{
+	return get() && PyFloat_Check(get()->obj);
+}
+
+
+long int ofxPythonObject::asInt() const
+{
+	if (isInt())
+		return PyInt_AsLong(get()->obj);
+	return 0;
+}
+
+bool ofxPythonObject::asBool() const
+{
+	if (isBool())
+		return get()->obj == Py_True;
+	return false;
+}
+
+double ofxPythonObject::asFloat() const
+{
+	if (isFloat())
+		return PyFloat_AsDouble(get()->obj);
+	return 0.0;
+}
+
+
+ofxPythonObject ofxPythonObject::fromInt(long int i)
+{
+	return make_object_noaddref(PyInt_FromLong(i));
+}
+
+ofxPythonObject ofxPythonObject::fromBool(bool b)
+{
+	if(b)
+		return make_object_addref(Py_True);
+	return make_object_addref(Py_False);
+}
+
+ofxPythonObject ofxPythonObject::_None()
+{
+	return make_object_addref(Py_None);
+}
+
+ofxPythonObject fromFloat(double d)
+{
+	return make_object_noaddref(PyFloat_FromDouble(d));
 }
 
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)

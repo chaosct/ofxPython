@@ -8,6 +8,7 @@ class myApp(object):
 	def __init__(self):
 		self.x = 100.0
 		self.y = 100.0
+		self.d = 10
 	
 	def update(self):
 		self.x += random.random()-.5
@@ -15,4 +16,4 @@ class myApp(object):
 
 	def draw(self):
 		ofSetColor(*self.color)
-		ofCircle(self.x,self.y,10)
+		ofCircle(self.x,self.y,self.d)

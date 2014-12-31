@@ -32,6 +32,7 @@ void ofApp::keyPressed(int key){
 		ofLog() << x.repr();
 		python_program.attr("x") = x;
 		python_program.attr("y") = python_program.attr("x");
+		python_program.attr("d") = ofxPythonObject::fromInt(x.asInt()/4);
 	}
 }
 
