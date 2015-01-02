@@ -39,7 +39,7 @@ Known issues
 ------------
 - It crashes on exit.
 - It is awfully incomplete.
-- No error checking
+- No clear error reporting
 
 Contributing
 ------------

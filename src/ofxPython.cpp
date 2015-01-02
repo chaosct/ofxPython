@@ -5,9 +5,18 @@ extern "C"{
 void init_openframeworks();
 }
 
+void PythonErrorCheck()
+{
+	if(PyErr_Occurred())
+	{
+		PyErr_Print();
+		PyErr_Clear();
+	}
+}
 
 ofxPythonObject make_object_noaddref(PyObject * obj)
 {
+	PythonErrorCheck();
 	ofxPythonObject o;
 	o.insert_noaddref(obj);
 	return o;
@@ -15,6 +24,7 @@ ofxPythonObject make_object_noaddref(PyObject * obj)
 
 ofxPythonObject make_object_addref(PyObject * obj)
 {
+	PythonErrorCheck();
 	ofxPythonObject o;
 	o.insert(obj);
 	return o;
@@ -32,6 +42,7 @@ public:
 		return &(*this).at(0);
 	}
 };
+
 
 ofxPython::ofxPython()
 {
@@ -54,10 +65,11 @@ public:
 							"sys.path.append('.')\n"
 							"sys.path.append('data')\n"
 #else
-						    "sys.path.append('../../..')\n"
-						    "sys.path.append('../../../data')\n"
+							"sys.path.append('../../..')\n"
+							"sys.path.append('../../../data')\n"
 #endif
 						   );
+		PythonErrorCheck();
 	}
 	~ofxPythonDestructor()
 	{
@@ -82,16 +94,18 @@ void ofxPython::reset()
 void ofxPython::executeScript(const string& path)
 {
 	executeString(ofBufferFromFile(path).getText());
+	PythonErrorCheck();
 }
 
 void ofxPython::executeString(const string& script)
 {
 	make_object_noaddref(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
+	PythonErrorCheck();
 }
 
 ofxPythonObject ofxPython::evalString(const string& expression)
 {
-	return make_object_noaddref(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
+	return  make_object_noaddref(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
 }
 
 ofxPythonObject ofxPython::getObject(const string& name, const string& module)
@@ -101,7 +115,6 @@ ofxPythonObject ofxPython::getObject(const string& name, const string& module)
 		PyImport_Import(ofxPythonObject::fromString(module)->obj));
 	if(pmodule)
 		return pmodule.attr(name);
-	ofLog() << "Python module not found:(";
 	return ofxPythonObject();
 }
 
@@ -174,7 +187,9 @@ const string ofxPythonObject::repr()
 {
 	ofxPythonObject objectsRepresentation = make_object_noaddref(
 		PyObject_Repr(get()->obj));
-	return string(PyString_AsString(objectsRepresentation->obj));
+	string s = string(PyString_AsString(objectsRepresentation->obj));
+	PythonErrorCheck();
+	return s;
 }
 
 ofxPythonObject::operator bool() const
@@ -275,6 +290,7 @@ ofxPythonMappingValue::operator ofxPythonObject()
 ofxPythonMappingValue& ofxPythonMappingValue::operator =(ofxPythonObject o)
 {
 	PyMapping_SetItemString(object->obj, noconststring(key) , o->obj);
+	PythonErrorCheck();
 	return *this;
 }
 
@@ -290,6 +306,7 @@ ofxPythonAttrValue::operator ofxPythonObject()
 ofxPythonAttrValue & ofxPythonAttrValue::operator =(ofxPythonObject o)
 {
 	PyObject_SetAttrString(object->obj, attribute.c_str(), o->obj);
+	PythonErrorCheck();
 	return *this;
 }
 

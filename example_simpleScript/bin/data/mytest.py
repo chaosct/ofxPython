@@ -1,4 +1,5 @@
 #test
+print "LOL"
 
 import random
 from openframeworks import *
