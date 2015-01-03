@@ -59,6 +59,8 @@ public:
 protected:
 	// ofxPythonObject globals;
 	ofxPythonObject locals;
+	static unsigned int instances;
+	bool initialized;
 };
 
 

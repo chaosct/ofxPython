@@ -37,7 +37,6 @@ $ swig3.0 -c++ -python -outdir lib/python_openframeworks/linux/ src/bindings/lin
 
 Known issues
 ------------
-- It crashes on exit.
 - It is awfully incomplete.
 - No clear error reporting
 

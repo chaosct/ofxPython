@@ -5,6 +5,8 @@ extern "C"{
 void init_openframeworks();
 }
 
+unsigned int ofxPython::instances = 0;
+
 void PythonErrorCheck()
 {
 	if(PyErr_Occurred())
@@ -44,42 +46,46 @@ public:
 };
 
 
-ofxPython::ofxPython()
+ofxPython::ofxPython():initialized(false)
 {
 }
 
 ofxPython::~ofxPython()
 {
+    if(initialized)
+    {
+        instances--;
+        if(instances == 0)
+        {
+            Py_Finalize();
+        }
+    }
 }
-
-class ofxPythonDestructor
-{
-public:
-	ofxPythonDestructor()
-	{
-		Py_Initialize();
-		init_openframeworks();
-		//this seems to be the easiest way to add '.' to python path
-		PyRun_SimpleString( "import sys\n"
-#ifndef TARGET_OSX
-							"sys.path.append('.')\n"
-							"sys.path.append('data')\n"
-#else
-							"sys.path.append('../../..')\n"
-							"sys.path.append('../../../data')\n"
-#endif
-						   );
-		PythonErrorCheck();
-	}
-	~ofxPythonDestructor()
-	{
-		Py_Finalize();
-	}
-};
 
 void ofxPython::init()
 {
-	static ofxPythonDestructor d;
+	if (!initialized)
+    {
+        initialized = true;
+        if(instances == 0)
+        {
+            Py_Initialize();
+            init_openframeworks();
+            //this seems to be the easiest way to add '.' to python path
+            PyRun_SimpleString(
+                "import sys\n"
+#ifndef TARGET_OSX
+                "sys.path.append('.')\n"
+                "sys.path.append('data')\n"
+#else
+                "sys.path.append('../../..')\n"
+                "sys.path.append('../../../data')\n"
+#endif
+                               );
+            PythonErrorCheck();
+        }
+        instances++;
+    }
 	reset();
 }
 
