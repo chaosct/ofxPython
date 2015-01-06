@@ -7,7 +7,7 @@ void init_openframeworks();
 
 unsigned int ofxPython::instances = 0;
 
-ofxPythonObject make_object_noaddref(PyObject * obj, bool errcheck= true);
+ofxPythonObject make_object_noaddref(PyObject * obj, bool errcheck);
 
 
 void PythonErrorCheck()
@@ -98,7 +98,24 @@ void ofxPython::init()
 				"sys.path.append('../../..')\n"
 				"sys.path.append('../../../data')\n"
 #endif
-							   );
+				);
+			PyRun_SimpleString(
+				"import sys\n"
+				"class StdoutCatcher:\n"
+				"	#this class redirect stdout to ofLog()\n"
+				"	def __init__(self):\n"
+				"		self.message = []\n"
+				"	def write(self,s):\n"
+				"		from openframeworks import TO_OF_LOG\n"
+				"		if s.endswith('\\n'):\n"
+				"			self.message.append(s[:-1])\n"
+				"			TO_OF_LOG(''.join(self.message))\n"
+				"			self.message = []\n"
+				"		else:\n"
+				"			self.message.append(s)\n"
+				"catcher = StdoutCatcher()\n"
+				"sys.stdout = catcher\n"
+				);
 			PythonErrorCheck();
 		}
 		instances++;
@@ -383,53 +400,53 @@ ofxPythonMappingValue ofxPythonObjectLike::operator [](const char * key)
 	ofxPythonObject PO = *this;
 	return PO[key];
 }
-bool ofxPythonObjectLike::isNone() const
+bool ofxPythonObjectLike::isNone()
 {
 	ofxPythonObject PO = *this;
 	return PO.isNone();
 }
-bool ofxPythonObjectLike::isBool() const
+bool ofxPythonObjectLike::isBool()
 {
 	ofxPythonObject PO = *this;
 	return PO.isBool();
 }
-bool ofxPythonObjectLike::isInt() const
+bool ofxPythonObjectLike::isInt()
 {
 	ofxPythonObject PO = *this;
 	return PO.isInt();
 }
-bool ofxPythonObjectLike::isFloat() const
+bool ofxPythonObjectLike::isFloat()
 {
 	ofxPythonObject PO = *this;
 	return PO.isFloat();
 }
-bool ofxPythonObjectLike::isString() const
+bool ofxPythonObjectLike::isString()
 {
 	ofxPythonObject PO = *this;
 	return PO.isString();
 }
-bool ofxPythonObjectLike::asBool() const
+bool ofxPythonObjectLike::asBool()
 {
 	ofxPythonObject PO = *this;
 	return PO.asBool();
 }
-long int ofxPythonObjectLike::asInt() const
+long int ofxPythonObjectLike::asInt()
 {
 	ofxPythonObject PO = *this;
 	return PO.asInt();
 }
-double ofxPythonObjectLike::asFloat() const
+double ofxPythonObjectLike::asFloat()
 {
 	ofxPythonObject PO = *this;
 	return PO.asFloat();
 }
-string ofxPythonObjectLike::asString() const
+string ofxPythonObjectLike::asString()
 {
 	ofxPythonObject PO = *this;
 	return PO.asString();
 }
 
-ofxPythonObjectLike::operator bool() const
+ofxPythonObjectLike::operator bool()
 {
 	ofxPythonObject PO = *this;
 	return (bool)PO;

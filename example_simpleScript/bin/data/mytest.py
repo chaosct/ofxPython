@@ -1,8 +1,8 @@
 #test
-print "LOL"
-
 import random
 from openframeworks import *
+
+print "LOL"
 
 class myApp(object):
 	color = (255,255,255)

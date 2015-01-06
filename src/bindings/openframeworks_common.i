@@ -22,7 +22,13 @@ void of3dPrimitive::removeTexture(int){}
 void of3dPrimitive::removeMesh(int){}
 vector<int> & ofMesh::getFace(int){static vector<int> v; return v;}
 void ofRectRounded(float, float, float, float, float, float){}
+
+void TO_OF_LOG(const char * s)
+{
+	ofLog() << s;
+}
 %}
+void TO_OF_LOG(const char * s);
 
 %ignore OF_DEPRECATED_MSG;
 %include "../../../../libs/openFrameworks/ofMain.h"
