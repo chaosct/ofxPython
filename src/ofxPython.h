@@ -73,7 +73,32 @@ public:
 	PyObject * obj;
 };
 
-class ofxPythonMappingValue
+class ofxPythonObjectLike
+{
+public:
+	ofxPythonObject method(const string &method_name); //call method without arguments
+	ofxPythonObject operator ()(); //call objects without arguments
+	ofxPythonObject operator ()(ofxPythonObject); //call objects 1 argument
+	ofxPythonObject operator ()(ofxPythonObject, ofxPythonObject); //call objects 2 arguments
+	ofxPythonObject operator ()(ofxPythonObject, ofxPythonObject, ofxPythonObject); //call objects 3 arguments
+	ofxPythonAttrValue attr(const string& attribute);
+	ofxPythonMappingValue operator [](const string& key);
+	ofxPythonMappingValue operator [](const char * key);
+	bool isNone() const;
+	bool isBool() const;
+	bool isInt() const;
+	bool isFloat() const;
+	bool isString() const;
+	bool asBool( ) const;
+	long int asInt() const;
+	double asFloat() const;
+	string asString() const;
+	operator bool() const;
+	const string repr();
+	virtual operator ofxPythonObject()=0;
+};
+
+class ofxPythonMappingValue: public ofxPythonObjectLike
 {
 	ofxPythonObject object;
 	string key;
@@ -84,7 +109,7 @@ public:
 	ofxPythonMappingValue & operator =(ofxPythonMappingValue & o);
 };
 
-class ofxPythonAttrValue
+class ofxPythonAttrValue: public ofxPythonObjectLike
 {
 	ofxPythonObject object;
 	string attribute;

@@ -325,3 +325,100 @@ ofxPythonAttrValue & ofxPythonAttrValue::operator =(ofxPythonAttrValue & o)
 {
 	return *this = (ofxPythonObject) o;
 }
+
+ofxPythonObject ofxPythonObjectLike::method(const string &method_name)
+{
+	ofxPythonObject PO = *this;
+	return PO.method(method_name);
+}
+ofxPythonObject ofxPythonObjectLike::operator ()()
+{
+	ofxPythonObject PO = *this;
+	return PO();
+}
+ofxPythonObject ofxPythonObjectLike::operator ()(ofxPythonObject o)
+{
+	ofxPythonObject PO = *this;
+	return PO(o);
+}
+ofxPythonObject ofxPythonObjectLike::operator ()(ofxPythonObject o1, ofxPythonObject o2)
+{
+	ofxPythonObject PO = *this;
+	return PO(o1,o2);
+}
+ofxPythonObject ofxPythonObjectLike::operator ()(ofxPythonObject o1, ofxPythonObject o2, ofxPythonObject o3)
+{
+	ofxPythonObject PO = *this;
+	return PO(o1,o2,o3);
+}
+ofxPythonAttrValue ofxPythonObjectLike::attr(const string& attribute)
+{
+	ofxPythonObject PO = *this;
+	return PO.attr(attribute);
+}
+ofxPythonMappingValue ofxPythonObjectLike::operator [](const string& key)
+{
+	ofxPythonObject PO = *this;
+	return PO[key];
+}
+ofxPythonMappingValue ofxPythonObjectLike::operator [](const char * key)
+{
+	ofxPythonObject PO = *this;
+	return PO[key];
+}
+bool ofxPythonObjectLike::isNone() const
+{
+	ofxPythonObject PO = *this;
+	return PO.isNone();
+}
+bool ofxPythonObjectLike::isBool() const
+{
+	ofxPythonObject PO = *this;
+	return PO.isBool();
+}
+bool ofxPythonObjectLike::isInt() const
+{
+	ofxPythonObject PO = *this;
+	return PO.isInt();
+}
+bool ofxPythonObjectLike::isFloat() const
+{
+	ofxPythonObject PO = *this;
+	return PO.isFloat();
+}
+bool ofxPythonObjectLike::isString() const
+{
+	ofxPythonObject PO = *this;
+	return PO.isString();
+}
+bool ofxPythonObjectLike::asBool() const
+{
+	ofxPythonObject PO = *this;
+	return PO.asBool();
+}
+long int ofxPythonObjectLike::asInt() const
+{
+	ofxPythonObject PO = *this;
+	return PO.asInt();
+}
+double ofxPythonObjectLike::asFloat() const
+{
+	ofxPythonObject PO = *this;
+	return PO.asFloat();
+}
+string ofxPythonObjectLike::asString() const
+{
+	ofxPythonObject PO = *this;
+	return PO.asString();
+}
+
+ofxPythonObjectLike::operator bool() const
+{
+	ofxPythonObject PO = *this;
+	return (bool)PO;
+}
+const string ofxPythonObjectLike::repr()
+{
+	ofxPythonObject PO = *this;
+	return PO.repr();
+}
