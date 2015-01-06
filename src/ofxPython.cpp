@@ -7,7 +7,7 @@ void init_openframeworks();
 
 unsigned int ofxPython::instances = 0;
 
-ofxPythonObject make_object_noaddref(PyObject * obj, bool errcheck);
+ofxPythonObject make_object_owned(PyObject * obj, bool errcheck);
 
 
 void PythonErrorCheck()
@@ -17,9 +17,9 @@ void PythonErrorCheck()
 	if(ptype)
 	{
 		PyErr_NormalizeException(&ptype, &pvalue, &ptraceback);
-		ofxPythonObject optype = make_object_noaddref(ptype, false);
-		ofxPythonObject opvalue = make_object_noaddref(pvalue, false);
-		ofxPythonObject optraceback = make_object_noaddref(ptraceback, false);
+		ofxPythonObject optype = make_object_owned(ptype, false);
+		ofxPythonObject opvalue = make_object_owned(pvalue, false);
+		ofxPythonObject optraceback = make_object_owned(ptraceback, false);
 		ofLog() << "Python Error: ";
 		//string filename = extract<string>(traceback.attr("tb_frame").attr("f_code").attr("co_filename"));
 		if(optraceback)
@@ -31,21 +31,21 @@ void PythonErrorCheck()
 	}
 }
 
-ofxPythonObject make_object_noaddref(PyObject * obj, bool errcheck= true)
+ofxPythonObject make_object_owned(PyObject * obj, bool errcheck= true)
 {
 	if(errcheck)
 		PythonErrorCheck();
 	ofxPythonObject o;
-	o.insert_noaddref(obj);
+	o.insert_owned(obj);
 	return o;
 }
 
-ofxPythonObject make_object_addref(PyObject * obj, bool errcheck= true)
+ofxPythonObject make_object_borrowed(PyObject * obj, bool errcheck= true)
 {
 	if(errcheck)
 		PythonErrorCheck();
 	ofxPythonObject o;
-	o.insert(obj);
+	o.insert_borrowed(obj);
 	return o;
 }
 
@@ -125,10 +125,10 @@ void ofxPython::init()
 
 void ofxPython::reset()
 {
-	// globals = make_object_noaddref(PyDict_New());
-	locals = make_object_noaddref(PyDict_New());
+	// globals = make_object_owned(PyDict_New());
+	locals = make_object_owned(PyDict_New());
 	//insert builtins
-	locals["__builtins__"]=make_object_addref(PyEval_GetBuiltins());
+	locals["__builtins__"]=make_object_borrowed(PyEval_GetBuiltins());
 }
 
 void ofxPython::executeScript(const string& path)
@@ -139,19 +139,19 @@ void ofxPython::executeScript(const string& path)
 
 void ofxPython::executeString(const string& script)
 {
-	make_object_noaddref(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
+	make_object_owned(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
 	PythonErrorCheck();
 }
 
 ofxPythonObject ofxPython::evalString(const string& expression)
 {
-	return  make_object_noaddref(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
+	return  make_object_owned(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
 }
 
 ofxPythonObject ofxPython::getObject(const string& name, const string& module)
 {
 
-	ofxPythonObject pmodule = make_object_noaddref(
+	ofxPythonObject pmodule = make_object_owned(
 		PyImport_Import(ofxPythonObject::fromString(module)->obj));
 	if(pmodule)
 		return pmodule.attr(name);
@@ -163,12 +163,12 @@ ofxPythonObject ofxPython::getObject(const string& name)
 	return locals[name];
 }
 
-void ofxPythonObject::insert_noaddref(PyObject * obj)
+void ofxPythonObject::insert_owned(PyObject * obj)
 {
 	reset(new ofxPythonObjectManaged(obj));
 }
 
-void ofxPythonObject::insert(PyObject * obj)
+void ofxPythonObject::insert_borrowed(PyObject * obj)
 {
 	Py_XINCREF(obj);
 	reset(new ofxPythonObjectManaged(obj));
@@ -184,28 +184,28 @@ ofxPythonObjectManaged::~ofxPythonObjectManaged()
 
 ofxPythonObject ofxPythonObject::method(const string &method_name)
 {
-	return make_object_noaddref(
+	return make_object_owned(
 		PyObject_CallMethod(get()->obj,noconststring(method_name),NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()()
 {
-	return make_object_noaddref(PyObject_CallObject(get()->obj,NULL));
+	return make_object_owned(PyObject_CallObject(get()->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1)
 {
-	return make_object_noaddref(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,NULL));
+	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2)
 {
-	return make_object_noaddref(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,NULL));
+	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2, ofxPythonObject o3)
 {
-	return make_object_noaddref(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,o3->obj,NULL));
+	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,o3->obj,NULL));
 }
 
 ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
@@ -225,7 +225,7 @@ ofxPythonAttrValue ofxPythonObject::attr(const string& attribute)
 
 const string ofxPythonObject::repr()
 {
-	ofxPythonObject objectsRepresentation = make_object_noaddref(
+	ofxPythonObject objectsRepresentation = make_object_owned(
 		PyObject_Repr(get()->obj));
 	string s = string(PyString_AsString(objectsRepresentation->obj));
 	PythonErrorCheck();
@@ -293,29 +293,29 @@ string ofxPythonObject::asString() const
 
 ofxPythonObject ofxPythonObject::fromInt(long int i)
 {
-	return make_object_noaddref(PyInt_FromLong(i));
+	return make_object_owned(PyInt_FromLong(i));
 }
 
 ofxPythonObject ofxPythonObject::fromBool(bool b)
 {
 	if(b)
-		return make_object_addref(Py_True);
-	return make_object_addref(Py_False);
+		return make_object_borrowed(Py_True);
+	return make_object_borrowed(Py_False);
 }
 
 ofxPythonObject ofxPythonObject::_None()
 {
-	return make_object_addref(Py_None);
+	return make_object_borrowed(Py_None);
 }
 
 ofxPythonObject fromFloat(double d)
 {
-	return make_object_noaddref(PyFloat_FromDouble(d));
+	return make_object_owned(PyFloat_FromDouble(d));
 }
 
 ofxPythonObject ofxPythonObject::fromString(const string& s)
 {
-	return make_object_noaddref(PyString_FromString(s.c_str()));
+	return make_object_owned(PyString_FromString(s.c_str()));
 }
 
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
@@ -323,7 +323,7 @@ ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
 
 ofxPythonMappingValue::operator ofxPythonObject()
 {
-	return make_object_noaddref(
+	return make_object_owned(
 		PyMapping_GetItemString(object->obj, noconststring(key)));
 }
 
@@ -339,7 +339,7 @@ ofxPythonAttrValue::ofxPythonAttrValue(ofxPythonObject o, const string& attr)
 
 ofxPythonAttrValue::operator ofxPythonObject()
 {
-	return make_object_noaddref(
+	return make_object_owned(
 		PyObject_GetAttrString(object->obj,attribute.c_str()));
 }
 

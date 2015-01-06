@@ -37,10 +37,10 @@ public:
 	operator bool() const;
 	const string repr();
 protected:
-	void insert(PyObject *);
-	void insert_noaddref(PyObject *);
-	friend ofxPythonObject make_object_noaddref(PyObject * obj, bool);
-	friend ofxPythonObject make_object_addref(PyObject * obj, bool);
+	void insert_borrowed(PyObject *);
+	void insert_owned(PyObject *);
+	friend ofxPythonObject make_object_owned(PyObject * obj, bool);
+	friend ofxPythonObject make_object_borrowed(PyObject * obj, bool);
 	friend class ofxPython;
 };
 
