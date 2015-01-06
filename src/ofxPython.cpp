@@ -7,26 +7,43 @@ void init_openframeworks();
 
 unsigned int ofxPython::instances = 0;
 
+ofxPythonObject make_object_noaddref(PyObject * obj, bool errcheck= true);
+
+
 void PythonErrorCheck()
 {
-	if(PyErr_Occurred())
+	PyObject * ptype, * pvalue, * ptraceback;
+	PyErr_Fetch(&ptype, &pvalue, &ptraceback);
+	if(ptype)
 	{
-		PyErr_Print();
-		PyErr_Clear();
+		PyErr_NormalizeException(&ptype, &pvalue, &ptraceback);
+		ofxPythonObject optype = make_object_noaddref(ptype, false);
+		ofxPythonObject opvalue = make_object_noaddref(pvalue, false);
+		ofxPythonObject optraceback = make_object_noaddref(ptraceback, false);
+		ofLog() << "Python Error: ";
+		//string filename = extract<string>(traceback.attr("tb_frame").attr("f_code").attr("co_filename"));
+		if(optraceback)
+		{
+			ofLog() << "\t" << "In function \"" << optraceback.attr("tb_frame").attr("f_code").attr("co_name").asString() << "\"";
+			ofLog() << "\t" << "line " << optraceback.attr("tb_lineno").repr();
+		}
+		ofLog() << "\t" << "Error: " << opvalue.repr();
 	}
 }
 
-ofxPythonObject make_object_noaddref(PyObject * obj)
+ofxPythonObject make_object_noaddref(PyObject * obj, bool errcheck= true)
 {
-	PythonErrorCheck();
+	if(errcheck)
+		PythonErrorCheck();
 	ofxPythonObject o;
 	o.insert_noaddref(obj);
 	return o;
 }
 
-ofxPythonObject make_object_addref(PyObject * obj)
+ofxPythonObject make_object_addref(PyObject * obj, bool errcheck= true)
 {
-	PythonErrorCheck();
+	if(errcheck)
+		PythonErrorCheck();
 	ofxPythonObject o;
 	o.insert(obj);
 	return o;
@@ -52,40 +69,40 @@ ofxPython::ofxPython():initialized(false)
 
 ofxPython::~ofxPython()
 {
-    if(initialized)
-    {
-        instances--;
-        if(instances == 0)
-        {
-            Py_Finalize();
-        }
-    }
+	if(initialized)
+	{
+		instances--;
+		if(instances == 0)
+		{
+			Py_Finalize();
+		}
+	}
 }
 
 void ofxPython::init()
 {
 	if (!initialized)
-    {
-        initialized = true;
-        if(instances == 0)
-        {
-            Py_Initialize();
-            init_openframeworks();
-            //this seems to be the easiest way to add '.' to python path
-            PyRun_SimpleString(
-                "import sys\n"
+	{
+		initialized = true;
+		if(instances == 0)
+		{
+			Py_Initialize();
+			init_openframeworks();
+			//this seems to be the easiest way to add '.' to python path
+			PyRun_SimpleString(
+				"import sys\n"
 #ifndef TARGET_OSX
-                "sys.path.append('.')\n"
-                "sys.path.append('data')\n"
+				"sys.path.append('.')\n"
+				"sys.path.append('data')\n"
 #else
-                "sys.path.append('../../..')\n"
-                "sys.path.append('../../../data')\n"
+				"sys.path.append('../../..')\n"
+				"sys.path.append('../../../data')\n"
 #endif
-                               );
-            PythonErrorCheck();
-        }
-        instances++;
-    }
+							   );
+			PythonErrorCheck();
+		}
+		instances++;
+	}
 	reset();
 }
 

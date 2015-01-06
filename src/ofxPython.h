@@ -39,8 +39,8 @@ public:
 protected:
 	void insert(PyObject *);
 	void insert_noaddref(PyObject *);
-	friend ofxPythonObject make_object_noaddref(PyObject * obj);
-	friend ofxPythonObject make_object_addref(PyObject * obj);
+	friend ofxPythonObject make_object_noaddref(PyObject * obj, bool);
+	friend ofxPythonObject make_object_addref(PyObject * obj, bool);
 	friend class ofxPython;
 };
 
