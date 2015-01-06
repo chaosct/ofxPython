@@ -69,6 +69,10 @@ except AttributeError:
     _newclass = 0
 
 
+
+def TO_OF_LOG(*args):
+  return _openframeworks.TO_OF_LOG(*args)
+TO_OF_LOG = _openframeworks.TO_OF_LOG
 class ofXml(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ofXml, name, value)
