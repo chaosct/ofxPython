@@ -61,20 +61,20 @@ common:
 	# ADDON_LIBS_EXCLUDE =
 	
 linux64:
-	ADDON_SOURCES += src/bindings/linux/openframeworks_wrap.cxx
-	ADDON_DATA = lib/python_openframeworks/linux/openframeworks.py
+	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
+	ADDON_DATA = lib/openframeworks.py
 	
 linux:
-	ADDON_SOURCES += src/bindings/linux 
-	ADDON_DATA = lib/python_openframeworks/linux/openframeworks.py
+	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
+	ADDON_DATA = lib/openframeworks.py
 
 linuxarmv6l:
 	
 linuxarmv7l:
 	
 win_cb:
-	ADDON_SOURCES += src/bindings/win 
-	ADDON_DATA = lib/python_openframeworks/win/openframeworks.py
+	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
+	ADDON_DATA = lib/openframeworks.py
 	ADDON_CFLAGS += -IC:/Python27/include
 	ADDON_LDFLAGS += -LC:/Python27/libs -lpython
 

@@ -17,27 +17,26 @@ See license.md. Spoiler alert: it's MIT
 
 Installation
 ------------
-Drop the folder into the `OF/addons/` folder. If your project generator is clever enough it will copy the `OF/addons/ofxPython/lib/python_openframeworks/_YOUR_OS_/openframeworks.py` file into the `data/` folder, copy it manually otherwise.
+Drop the folder into the `OF/addons/` folder. If your project generator is clever enough it will copy the `OF/addons/ofxPython/lib/openframeworks.py` file into the `data/` folder, copy it manually otherwise.
 
 You will need Python (2.7 tested) installed in order to compile your program.
 
 Compatibility
 ------------
-This has been designed for OF v0.8.4. I don't have a way of creating per-version bindings, but you can try to generate them using swig (see next section).
-
-I've generated the bindings and tested them on Linux64, OSX and Windows.
+This branch is using experimental common openFrameworks SWIG interface file, and I am still figuring things up. So probably not compatible with many things. YMMV. And I just tested it in Linux, only.
 
 Re-generating the bindings
 --------------------------
-In case that you are using another version of OF or another OS, you can generate the bindings with [SWIG](http://www.swig.org/). You may have to modify the interface files (*.i), and then:
+In case that you want to regenerate the bindings, do so with [SWIG](http://www.swig.org/):
 
 ```
-$ swig3.0 -c++ -python -outdir lib/python_openframeworks/linux/ src/bindings/linux/openframeworks.i
+$ cd swig
+$ make desktop LANG=python DEST_DIR=../src/bindings SWIG=swig3.0 DEST_LANG_DIR=../lib
 ```
 
 Known issues
 ------------
-- It is awfully incomplete.
+- Not fully tested
 
 Contributing
 ------------
