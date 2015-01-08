@@ -23,7 +23,7 @@ You will need Python (2.7 tested) installed in order to compile your program.
 
 Compatibility
 ------------
-This branch is using experimental common openFrameworks SWIG interface file, and I am still figuring things up. So probably not compatible with many things. YMMV. And I just tested it in Linux, only.
+It is now compiling both in Linux64 and Windows (Code::Blocks)
 
 Re-generating the bindings
 --------------------------

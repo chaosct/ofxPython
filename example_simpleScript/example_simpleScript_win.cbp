@@ -120,10 +120,10 @@
 		<ExtraCommands>
 			<Add after='xcopy /e /i /y &quot;$(PROJECT_DIR)..\..\..\export\win_cb\*.dll&quot;  &quot;$(PROJECT_DIR)bin&quot;' />
 			<Add after='cmd /c if not exist &quot;$(PROJECT_DIR)bin/data&quot; mkdir &quot;$(PROJECT_DIR)bin/data&quot;' />
-			<Add after='xcopy /y  &quot;$(PROJECT_DIR)..\..\..\addons\ofxPython\lib\python_openframeworks\win\openframeworks.py&quot;   &quot;$(PROJECT_DIR)bin\data&quot;' />
+			<Add after='xcopy /y  &quot;$(PROJECT_DIR)..\..\..\addons\ofxPython\lib\openframeworks.py&quot;   &quot;$(PROJECT_DIR)bin\data&quot;' />
 			<Mode after="always" />
 		</ExtraCommands>
-		<Unit filename="../src/bindings/win/openframeworks_wrap.cxx">
+		<Unit filename="../src/bindings/desktop/openFrameworks_wrap.cpp">
 			<Option virtualFolder="addons/ofxPython/src/bindings/" />
 		</Unit>
 		<Unit filename="../src/ofxPython.cpp">
