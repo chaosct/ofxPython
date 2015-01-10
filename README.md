@@ -23,7 +23,7 @@ You will need Python (2.7 tested) installed in order to compile your program.
 
 Compatibility
 ------------
-It is now compiling both in Linux64 and Windows (Code::Blocks)
+It is now compiling both in Linux64, Windows (Code::Blocks) and OSX. Generated for OF 0.8.4
 
 Re-generating the bindings
 --------------------------
@@ -31,7 +31,7 @@ In case that you want to regenerate the bindings, do so with [SWIG](http://www.s
 
 ```
 $ cd swig
-$ make desktop LANG=python DEST_DIR=../src/bindings SWIG=swig3.0 DEST_LANG_DIR=../lib
+$ make desktop LANG=python SWIG=swig3.0 DEST_LANG_DIR=../lib
 ```
 
 Known issues
