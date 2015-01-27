@@ -16,5 +16,6 @@ class myApp(object):
 		self.y += random.random()-.5
 
 	def draw(self):
-		ofSetColor(*self.color)
+		color = ofColor(*self.color)
+		ofSetColor(color)
 		ofCircle(self.x,self.y,self.d)
