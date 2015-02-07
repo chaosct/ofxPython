@@ -9,7 +9,7 @@ May be you are like me and love Python and openFrameworks, or maybe you just nee
 
 This addon allows you to embed a Python interpreter into an openFrameworks application, and offers Python bindings to many OF functions, so you can draw from Python code.
 
-This addon borrows ideas from [pyof](https://github.com/johnglover/pyof), which I was unable to replicate in Linux.
+This addon uses the [common swig bindings for OF](https://github.com/danomatika/swig-openframeworks).
 
 License
 -------
