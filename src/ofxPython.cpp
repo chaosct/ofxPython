@@ -79,7 +79,7 @@ ofxPython::~ofxPython()
 	}
 }
 
-void ofxPython::init()
+int ofxPython::init()
 {
 	if (!initialized)
 	{
@@ -121,6 +121,7 @@ void ofxPython::init()
 		instances++;
 	}
 	reset();
+	return instances;
 }
 
 void ofxPython::reset()

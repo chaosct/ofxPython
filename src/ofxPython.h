@@ -49,7 +49,8 @@ class ofxPython
 public:
 	ofxPython();
 	virtual ~ofxPython();
-	void init();
+	int init(); //returns the number of ofxPython instances,
+				//if it's 1 you should initialize your custom bindings if any
 	void reset();
 	void executeScript(const string& path);
 	void executeString(const string& script);
