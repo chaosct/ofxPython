@@ -42,3 +42,6 @@ class myApp(object):
 
 	def keyReleased(self, key):
 		pass
+
+	def windowResized(self, width, height):
+		pass
