@@ -164,6 +164,11 @@ ofxPythonObject ofxPython::getObject(const string& name)
 	return locals[name];
 }
 
+void ofxPython::setObject(const string& name, ofxPythonObject o)
+{
+	locals[name]=o;
+}
+
 void ofxPythonObject::insert_owned(PyObject * obj)
 {
 	reset(new ofxPythonObjectManaged(obj));
@@ -235,7 +240,7 @@ const string ofxPythonObject::repr()
 
 ofxPythonObject::operator bool() const
 {
-	return get() && get()->obj && !isNone();
+	return get() && get()->obj && !isNone(); //TODO: check if evaluates to false (0,(,),[])
 }
 
 bool ofxPythonObject::isNone() const
