@@ -971,6 +971,18 @@ class ofColor(_object):
     def setB(self, *args): return _openframeworks.ofColor_setB(self, *args)
     def setA(self, *args): return _openframeworks.ofColor_setA(self, *args)
     def __str__(self): return _openframeworks.ofColor___str__(self)
+    __swig_setmethods__["r"] = _openframeworks.ofColor_r_set
+    __swig_getmethods__["r"] = _openframeworks.ofColor_r_get
+    if _newclass:r = _swig_property(_openframeworks.ofColor_r_get, _openframeworks.ofColor_r_set)
+    __swig_setmethods__["g"] = _openframeworks.ofColor_g_set
+    __swig_getmethods__["g"] = _openframeworks.ofColor_g_get
+    if _newclass:g = _swig_property(_openframeworks.ofColor_g_get, _openframeworks.ofColor_g_set)
+    __swig_setmethods__["b"] = _openframeworks.ofColor_b_set
+    __swig_getmethods__["b"] = _openframeworks.ofColor_b_get
+    if _newclass:b = _swig_property(_openframeworks.ofColor_b_get, _openframeworks.ofColor_b_set)
+    __swig_setmethods__["a"] = _openframeworks.ofColor_a_set
+    __swig_getmethods__["a"] = _openframeworks.ofColor_a_get
+    if _newclass:a = _swig_property(_openframeworks.ofColor_a_get, _openframeworks.ofColor_a_set)
 ofColor_swigregister = _openframeworks.ofColor_swigregister
 ofColor_swigregister(ofColor)
 
@@ -1195,6 +1207,18 @@ class ofFloatColor(_object):
     def setB(self, *args): return _openframeworks.ofFloatColor_setB(self, *args)
     def setA(self, *args): return _openframeworks.ofFloatColor_setA(self, *args)
     def __str__(self): return _openframeworks.ofFloatColor___str__(self)
+    __swig_setmethods__["r"] = _openframeworks.ofFloatColor_r_set
+    __swig_getmethods__["r"] = _openframeworks.ofFloatColor_r_get
+    if _newclass:r = _swig_property(_openframeworks.ofFloatColor_r_get, _openframeworks.ofFloatColor_r_set)
+    __swig_setmethods__["g"] = _openframeworks.ofFloatColor_g_set
+    __swig_getmethods__["g"] = _openframeworks.ofFloatColor_g_get
+    if _newclass:g = _swig_property(_openframeworks.ofFloatColor_g_get, _openframeworks.ofFloatColor_g_set)
+    __swig_setmethods__["b"] = _openframeworks.ofFloatColor_b_set
+    __swig_getmethods__["b"] = _openframeworks.ofFloatColor_b_get
+    if _newclass:b = _swig_property(_openframeworks.ofFloatColor_b_get, _openframeworks.ofFloatColor_b_set)
+    __swig_setmethods__["a"] = _openframeworks.ofFloatColor_a_set
+    __swig_getmethods__["a"] = _openframeworks.ofFloatColor_a_get
+    if _newclass:a = _swig_property(_openframeworks.ofFloatColor_a_get, _openframeworks.ofFloatColor_a_set)
 ofFloatColor_swigregister = _openframeworks.ofFloatColor_swigregister
 ofFloatColor_swigregister(ofFloatColor)
 
@@ -1418,6 +1442,18 @@ class ofShortColor(_object):
     def setB(self, *args): return _openframeworks.ofShortColor_setB(self, *args)
     def setA(self, *args): return _openframeworks.ofShortColor_setA(self, *args)
     def __str__(self): return _openframeworks.ofShortColor___str__(self)
+    __swig_setmethods__["r"] = _openframeworks.ofShortColor_r_set
+    __swig_getmethods__["r"] = _openframeworks.ofShortColor_r_get
+    if _newclass:r = _swig_property(_openframeworks.ofShortColor_r_get, _openframeworks.ofShortColor_r_set)
+    __swig_setmethods__["g"] = _openframeworks.ofShortColor_g_set
+    __swig_getmethods__["g"] = _openframeworks.ofShortColor_g_get
+    if _newclass:g = _swig_property(_openframeworks.ofShortColor_g_get, _openframeworks.ofShortColor_g_set)
+    __swig_setmethods__["b"] = _openframeworks.ofShortColor_b_set
+    __swig_getmethods__["b"] = _openframeworks.ofShortColor_b_get
+    if _newclass:b = _swig_property(_openframeworks.ofShortColor_b_get, _openframeworks.ofShortColor_b_set)
+    __swig_setmethods__["a"] = _openframeworks.ofShortColor_a_set
+    __swig_getmethods__["a"] = _openframeworks.ofShortColor_a_get
+    if _newclass:a = _swig_property(_openframeworks.ofShortColor_a_get, _openframeworks.ofShortColor_a_set)
 ofShortColor_swigregister = _openframeworks.ofShortColor_swigregister
 ofShortColor_swigregister(ofShortColor)
 
@@ -2365,6 +2401,8 @@ class ofRectangle(_object):
         try: self.this.append(this)
         except: self.this = this
     def set(self, *args): return _openframeworks.ofRectangle_set(self, *args)
+    def setX(self, *args): return _openframeworks.ofRectangle_setX(self, *args)
+    def setY(self, *args): return _openframeworks.ofRectangle_setY(self, *args)
     def setWidth(self, *args): return _openframeworks.ofRectangle_setWidth(self, *args)
     def setHeight(self, *args): return _openframeworks.ofRectangle_setHeight(self, *args)
     def setPosition(self, *args): return _openframeworks.ofRectangle_setPosition(self, *args)
@@ -2413,6 +2451,8 @@ class ofRectangle(_object):
     def getPosition(self): return _openframeworks.ofRectangle_getPosition(self)
     def getPositionRef(self): return _openframeworks.ofRectangle_getPositionRef(self)
     def getCenter(self): return _openframeworks.ofRectangle_getCenter(self)
+    def getX(self): return _openframeworks.ofRectangle_getX(self)
+    def getY(self): return _openframeworks.ofRectangle_getY(self)
     def getWidth(self): return _openframeworks.ofRectangle_getWidth(self)
     def getHeight(self): return _openframeworks.ofRectangle_getHeight(self)
     def __add__(self, *args): return _openframeworks.ofRectangle___add__(self, *args)
@@ -2433,6 +2473,7 @@ class ofRectangle(_object):
     __swig_setmethods__["y"] = _openframeworks.ofRectangle_y_set
     __swig_getmethods__["y"] = _openframeworks.ofRectangle_y_get
     if _newclass:y = _swig_property(_openframeworks.ofRectangle_y_get, _openframeworks.ofRectangle_y_set)
+    def __str__(self): return _openframeworks.ofRectangle___str__(self)
 ofRectangle_swigregister = _openframeworks.ofRectangle_swigregister
 ofRectangle_swigregister(ofRectangle)
 
@@ -4361,6 +4402,7 @@ class ofMatrix3x3(_object):
     def __mul__(self, *args): return _openframeworks.ofMatrix3x3___mul__(self, *args)
     def __div__(self, *args): return _openframeworks.ofMatrix3x3___div__(self, *args)
     def __idiv__(self, *args): return _openframeworks.ofMatrix3x3___idiv__(self, *args)
+    def __str__(self): return _openframeworks.ofMatrix3x3___str__(self)
     __swig_destroy__ = _openframeworks.delete_ofMatrix3x3
     __del__ = lambda self : None;
 ofMatrix3x3_swigregister = _openframeworks.ofMatrix3x3_swigregister
@@ -4457,6 +4499,7 @@ class ofMatrix4x4(_object):
     def preMultScale(self, *args): return _openframeworks.ofMatrix4x4_preMultScale(self, *args)
     def preMultTranslate(self, *args): return _openframeworks.ofMatrix4x4_preMultTranslate(self, *args)
     def preMultRotate(self, *args): return _openframeworks.ofMatrix4x4_preMultRotate(self, *args)
+    def __str__(self): return _openframeworks.ofMatrix4x4___str__(self)
 ofMatrix4x4_swigregister = _openframeworks.ofMatrix4x4_swigregister
 ofMatrix4x4_swigregister(ofMatrix4x4)
 
@@ -4558,6 +4601,7 @@ class ofQuaternion(_object):
     def getEuler(self): return _openframeworks.ofQuaternion_getEuler(self)
     def slerp(self, *args): return _openframeworks.ofQuaternion_slerp(self, *args)
     def normalize(self): return _openframeworks.ofQuaternion_normalize(self)
+    def __str__(self): return _openframeworks.ofQuaternion___str__(self)
     __swig_destroy__ = _openframeworks.delete_ofQuaternion
     __del__ = lambda self : None;
 ofQuaternion_swigregister = _openframeworks.ofQuaternion_swigregister
@@ -4639,6 +4683,7 @@ class ofVec2f(_object):
     if _newclass:zero = staticmethod(_openframeworks.ofVec2f_zero)
     __swig_getmethods__["one"] = lambda x: _openframeworks.ofVec2f_one
     if _newclass:one = staticmethod(_openframeworks.ofVec2f_one)
+    def __str__(self): return _openframeworks.ofVec2f___str__(self)
     __swig_destroy__ = _openframeworks.delete_ofVec2f
     __del__ = lambda self : None;
 ofVec2f_swigregister = _openframeworks.ofVec2f_swigregister
@@ -4734,6 +4779,7 @@ class ofVec3f(_object):
     if _newclass:zero = staticmethod(_openframeworks.ofVec3f_zero)
     __swig_getmethods__["one"] = lambda x: _openframeworks.ofVec3f_one
     if _newclass:one = staticmethod(_openframeworks.ofVec3f_one)
+    def __str__(self): return _openframeworks.ofVec3f___str__(self)
     __swig_destroy__ = _openframeworks.delete_ofVec3f
     __del__ = lambda self : None;
 ofVec3f_swigregister = _openframeworks.ofVec3f_swigregister
@@ -4812,6 +4858,7 @@ class ofVec4f(_object):
     if _newclass:zero = staticmethod(_openframeworks.ofVec4f_zero)
     __swig_getmethods__["one"] = lambda x: _openframeworks.ofVec4f_one
     if _newclass:one = staticmethod(_openframeworks.ofVec4f_one)
+    def __str__(self): return _openframeworks.ofVec4f___str__(self)
     __swig_destroy__ = _openframeworks.delete_ofVec4f
     __del__ = lambda self : None;
 ofVec4f_swigregister = _openframeworks.ofVec4f_swigregister
@@ -5276,9 +5323,13 @@ ofTouchEventArgs_swigregister(ofTouchEventArgs)
 def ofSendMessage(*args):
   return _openframeworks.ofSendMessage(*args)
 ofSendMessage = _openframeworks.ofSendMessage
-# Renaming log -> ofLog
+# handle typedefs which swig doesnt wrap
+ofPoint = ofVec3f
+
+# renaming log -> ofLog
 ofLog = log
 del log
+
 
 # This file is compatible with both classic and new-style classes.
 
