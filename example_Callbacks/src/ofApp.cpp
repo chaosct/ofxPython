@@ -23,7 +23,19 @@ public:
 	void (*cb)();
 	void call(ofxPythonObject args, ofxPythonObject kwargs)
 	{
-		cb();}
+		cb();
+	}
+};
+
+class CallBack1ArgEvent : public ofxPythonCallBack{
+public:
+	typedef ofEvent<ofxPythonObject> EventType;
+	EventType & event;
+	CallBack1ArgEvent( EventType & e):event(e){}
+	void call(ofxPythonObject args, ofxPythonObject kwargs)
+	{
+		ofNotifyEvent(event,args.asVector()[0]);
+	}
 };
 
 void _setCallBackPointer(CallBack * );
@@ -41,24 +53,51 @@ void p()
 	ofLog() << "LALALLALAL";
 }
 
+class NotSoSimpleCallBack: public ofxPythonCallBack
+{
+public:
+	void call(ofxPythonObject args, ofxPythonObject kwargs)
+	{
+		ofLog() << args.asVector()[0].asInt();
+	}
+};
+
 //--------------------------------------------------------------
 void ofApp::setup(){
+	counter = 0;
 	python.init();
-	CallBackS * c = new CallBackS();
-	c->cb = &p;
 
-	python.setObject("cb",CallBack2Python(c));
-	python.executeString("cb.call()");
+	NotSoSimpleCallBack * cb0 = new NotSoSimpleCallBack();
+	python.setObject("cb0",CallBack2Python(cb0));
+	python.executeString("cb0.call(0)");
+
+	CallBack1ArgEvent * cb1 = new CallBack1ArgEvent(myevent);
+	python.setObject("cb1",CallBack2Python(cb1));
+	ofAddListener(myevent,this,&ofApp::printsomething);
+	python.executeString("cb1.call(10)");
+
+	CallBackS * cb2 = new CallBackS();
+	cb2->cb = &p;
+	python.setObject("cb2",CallBack2Python(cb2));
+	python.executeString("cb2.call()");
+
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	counter++;
+	python.getObject("cb0").attr("call")(ofxPythonObject::fromInt(counter));
+	python.getObject("cb1").attr("call")(ofxPythonObject::fromInt(counter));
+	python.getObject("cb2").attr("call")();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
+}
+
+void ofApp::printsomething(ofxPythonObject & o){
+	ofLog() << "LOLOLOLOLO " << o.asInt();
 }
 
 //--------------------------------------------------------------

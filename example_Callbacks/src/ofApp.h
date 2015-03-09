@@ -21,4 +21,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		ofxPython python;
+		long int counter;
+		ofEvent<ofxPythonObject> myevent;
+		void printsomething(ofxPythonObject&);
 };
