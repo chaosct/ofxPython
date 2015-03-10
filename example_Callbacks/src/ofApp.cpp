@@ -1,22 +1,6 @@
 #include "ofApp.h"
+#include "ofxPythonCallBack.h"
 
-class CallBack{
-public:
-	virtual void _call(){}
-};
-
-class ofxPythonCallBack: public CallBack
-{
-public:
-	void _call()
-	{
-		ofxPython _python;
-		_python.init();
-		call(_python.getObject("CallBack","openframeworks").attr("_args"),
-			 _python.getObject("CallBack","openframeworks").attr("_kwargs"));
-	}
-	virtual void call(ofxPythonObject args, ofxPythonObject kwargs)=0;
-};
 
 class CallBackS : public ofxPythonCallBack{
 public:
