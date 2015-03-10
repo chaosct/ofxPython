@@ -25,10 +25,13 @@ public:
 	bool isInt() const;
 	bool isFloat() const;
 	bool isString() const;
+	bool isList() const;
+	bool isTuple() const;
 	bool asBool( ) const;
 	long int asInt() const;
 	double asFloat() const;
 	string asString() const;
+	vector<ofxPythonObject> asVector() const;
 	static ofxPythonObject _None();
 	static ofxPythonObject fromBool(bool);
 	static ofxPythonObject fromInt(long int);
@@ -91,10 +94,13 @@ public:
 	bool isInt();
 	bool isFloat();
 	bool isString();
+	bool isList();
+	bool isTuple();
 	bool asBool();
 	long int asInt();
 	double asFloat();
 	string asString();
+	vector<ofxPythonObject> asVector();
 	operator bool();
 	const string repr();
 	virtual operator ofxPythonObject()=0;
