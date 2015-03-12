@@ -2,47 +2,18 @@
 #include "ofxPythonCallBack.h"
 
 
-class CallBackS : public ofxPythonCallBack{
-public:
-	void (*cb)();
-	void call(ofxPythonObject args, ofxPythonObject kwargs)
-	{
-		cb();
-	}
-};
-
-class CallBack1ArgEvent : public ofxPythonCallBack{
-public:
-	typedef ofEvent<ofxPythonObject> EventType;
-	EventType & event;
-	CallBack1ArgEvent( EventType & e):event(e){}
-	void call(ofxPythonObject args, ofxPythonObject kwargs)
-	{
-		ofNotifyEvent(event,args.asVector()[0]);
-	}
-};
-
-void _setCallBackPointer(CallBack * );
-
-ofxPythonObject CallBack2Python(CallBack * c)
-{
-	ofxPython _python;
-	_python.init();
-	_setCallBackPointer(c);
-	return _python.getObject("_getCallBackPointer","openframeworks")();
-}
-
 void p()
 {
-	ofLog() << "LALALLALAL";
+	ofDrawBitmapString("ofxPythonCallBackSimple",10,20);
 }
 
-class NotSoSimpleCallBack: public ofxPythonCallBack
+//This is a custom callback
+class CustomCallBack: public ofxPythonCallBack
 {
 public:
 	void call(ofxPythonObject args, ofxPythonObject kwargs)
 	{
-		ofLog() << args.asVector()[0].asInt();
+		ofDrawBitmapString("CustomCallBack "+ofToString(args.asVector()[0].asInt()),10,60);
 	}
 };
 
@@ -51,37 +22,36 @@ void ofApp::setup(){
 	counter = 0;
 	python.init();
 
-	NotSoSimpleCallBack * cb0 = new NotSoSimpleCallBack();
+	ofxPythonCallBackSimple * cb0 = new ofxPythonCallBackSimple();
+	cb0->cb = &p;
 	python.setObject("cb0",CallBack2Python(cb0));
-	python.executeString("cb0.call(0)");
+	python.executeString("cb0.call()");
 
-	CallBack1ArgEvent * cb1 = new CallBack1ArgEvent(myevent);
+	ofxPythonCallBackEvent1Arg * cb1 = new ofxPythonCallBackEvent1Arg(myevent);
 	python.setObject("cb1",CallBack2Python(cb1));
 	ofAddListener(myevent,this,&ofApp::printsomething);
 	python.executeString("cb1.call(10)");
 
-	CallBackS * cb2 = new CallBackS();
-	cb2->cb = &p;
+	CustomCallBack * cb2 = new CustomCallBack();
 	python.setObject("cb2",CallBack2Python(cb2));
-	python.executeString("cb2.call()");
+	python.executeString("cb2.call(0)");
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 	counter++;
-	python.getObject("cb0").attr("call")(ofxPythonObject::fromInt(counter));
-	python.getObject("cb1").attr("call")(ofxPythonObject::fromInt(counter));
-	python.getObject("cb2").attr("call")();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+	python.getObject("cb0").attr("call")();
+	python.getObject("cb1").attr("call")(ofxPythonObject::fromInt(counter));
+	python.getObject("cb2").attr("call")(ofxPythonObject::fromInt(counter));
 }
 
 void ofApp::printsomething(ofxPythonObject & o){
-	ofLog() << "LOLOLOLOLO " << o.asInt();
+	ofDrawBitmapString("ofxPythonCallBackEvent1Arg "+ofToString(o.asInt()),10,40);
 }
 
 //--------------------------------------------------------------
