@@ -314,7 +314,7 @@ ofxPythonObject ofxPythonObject::_None()
 	return make_object_borrowed(Py_None);
 }
 
-ofxPythonObject fromFloat(double d)
+ofxPythonObject ofxPythonObject::fromFloat(double d)
 {
 	return make_object_owned(PyFloat_FromDouble(d));
 }
