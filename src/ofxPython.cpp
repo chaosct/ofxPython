@@ -3,6 +3,7 @@
 
 extern "C"{
 void init_openframeworks();
+void init_openframeworks_extra();
 }
 
 unsigned int ofxPython::instances = 0;
@@ -88,6 +89,7 @@ int ofxPython::init()
 		{
 			Py_Initialize();
 			init_openframeworks();
+			init_openframeworks_extra();
 			//this seems to be the easiest way to add '.' to python path
 			PyRun_SimpleString(
 				"import sys\n"
@@ -268,6 +270,15 @@ bool ofxPythonObject::isString() const
 	return get() && PyString_Check(get()->obj);
 }
 
+bool ofxPythonObject::isList() const
+{
+	return get() && PyList_Check(get()->obj);
+}
+bool ofxPythonObject::isTuple() const
+{
+	return get() && PyTuple_Check(get()->obj);
+}
+
 long int ofxPythonObject::asInt() const
 {
 	if (isInt())
@@ -294,6 +305,28 @@ string ofxPythonObject::asString() const
 	if(isString())
 		return string(PyString_AsString(get()->obj));
 	return string();
+}
+
+vector<ofxPythonObject> ofxPythonObject::asVector() const
+{
+	std::vector<ofxPythonObject> v;
+	if(isList())
+	{
+		int len = PyList_Size(get()->obj);
+		for (int i = 0; i<len; ++i)
+		{
+			v.push_back(make_object_borrowed(PyList_GetItem(get()->obj,i)));
+		}
+	}
+	else if(isTuple())
+	{
+		int len = PyTuple_Size(get()->obj);
+		for (int i = 0; i<len; ++i)
+		{
+			v.push_back(make_object_borrowed(PyTuple_GetItem(get()->obj,i)));
+		}
+	}
+	return v;
 }
 
 
@@ -431,6 +464,16 @@ bool ofxPythonObjectLike::isString()
 	ofxPythonObject PO = *this;
 	return PO.isString();
 }
+bool ofxPythonObjectLike::isList()
+{
+	ofxPythonObject PO = *this;
+	return PO.isList();
+}
+bool ofxPythonObjectLike::isTuple()
+{
+	ofxPythonObject PO = *this;
+	return PO.isTuple();
+}
 bool ofxPythonObjectLike::asBool()
 {
 	ofxPythonObject PO = *this;
@@ -450,6 +493,11 @@ string ofxPythonObjectLike::asString()
 {
 	ofxPythonObject PO = *this;
 	return PO.asString();
+}
+vector<ofxPythonObject> ofxPythonObjectLike::asVector()
+{
+	ofxPythonObject PO = *this;
+	return PO.asVector();
 }
 
 ofxPythonObjectLike::operator bool()
