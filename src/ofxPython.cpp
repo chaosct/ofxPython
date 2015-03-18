@@ -3,6 +3,7 @@
 
 extern "C"{
 void init_openframeworks();
+void init_openframeworks_extra();
 }
 
 unsigned int ofxPython::instances = 0;
@@ -88,6 +89,7 @@ int ofxPython::init()
 		{
 			Py_Initialize();
 			init_openframeworks();
+			init_openframeworks_extra();
 			//this seems to be the easiest way to add '.' to python path
 			PyRun_SimpleString(
 				"import sys\n"

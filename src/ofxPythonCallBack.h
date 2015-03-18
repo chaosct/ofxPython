@@ -1,14 +1,8 @@
 #pragma once
 #include "ofMain.h"
+#include "ofxPythonCallBackBase.h"
 
 class ofxPythonObject;
-
-// This is a generic callback structure
-class CallBack{
-public:
-	virtual void _call(){}
-	virtual ~CallBack(){}
-};
 
 //we can convert a CallBack* to a ofxPythonObject with this method
 ofxPythonObject CallBack2Python(CallBack * c);

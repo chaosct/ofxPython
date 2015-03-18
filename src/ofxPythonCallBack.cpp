@@ -9,7 +9,7 @@ ofxPythonObject CallBack2Python(CallBack * c)
 	ofxPython _python;
 	_python.init();
 	_setCallBackPointer(c);
-	return _python.getObject("_getCallBackPointer","openframeworks")();
+	return _python.getObject("_getCallBackPointer","openframeworks_extra")();
 }
 
 
@@ -17,8 +17,8 @@ void ofxPythonCallBack::_call()
 {
 	ofxPython _python;
 	_python.init();
-	call(_python.getObject("CallBack","openframeworks").attr("_args"),
-		 _python.getObject("CallBack","openframeworks").attr("_kwargs"));
+	call(_python.getObject("CallBack","openframeworks_extra").attr("_args"),
+		 _python.getObject("CallBack","openframeworks_extra").attr("_kwargs"));
 }
 
 void ofxPythonCallBackSimple::call(ofxPythonObject args, ofxPythonObject kwargs)

@@ -62,11 +62,15 @@ common:
 	
 linux64:
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
+	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
+	ADDON_DATA += lib/openframeworks_extra.py
 	
 linux:
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
+	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
+	ADDON_DATA += lib/openframeworks_extra.py
 
 linuxarmv6l:
 	
@@ -74,7 +78,9 @@ linuxarmv7l:
 	
 win_cb:
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
+	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
+	ADDON_DATA += lib/openframeworks_extra.py
 	ADDON_CFLAGS += -IC:/Python27/include
 	ADDON_LDFLAGS += -LC:/Python27/libs -lpython
 
