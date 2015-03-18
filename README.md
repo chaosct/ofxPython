@@ -1,7 +1,7 @@
 ofxPython
 =========
 
-(c) 2014 Carles F. Julià <carles@protopixel.net>
+(c) 2015 Carles F. Julià <carles@protopixel.net>
 
 Introduction
 ------------
@@ -17,7 +17,7 @@ See license.md. Spoiler alert: it's MIT
 
 Installation
 ------------
-Drop the folder into the `OF/addons/` folder. If your project generator is clever enough it will copy the `OF/addons/ofxPython/lib/openframeworks.py` file into the `data/` folder, copy it manually otherwise.
+Drop the folder into the `OF/addons/` folder. If your project generator is clever enough it will copy the `OF/addons/ofxPython/lib/*.py` files into the `data/` folder, copy it manually otherwise.
 
 You will need Python (2.7 tested) installed in order to compile your program.
 
@@ -27,16 +27,16 @@ It is now compiling both in Linux64, Windows (Code::Blocks) and OSX. Generated f
 
 Re-generating the bindings
 --------------------------
-In case that you want to regenerate the bindings, do so with [SWIG](http://www.swig.org/):
+Install [SWIG](http://www.swig.org/) and run:
 
 ```
-$ cd swig
-$ make desktop LANG=python SWIG=swig3.0 DEST_LANG_DIR=../lib
+$ ./generatebindings.sh
 ```
 
 Known issues
 ------------
 - Not fully tested
+- It sometimes receives a segfault 
 
 Contributing
 ------------
