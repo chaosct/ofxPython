@@ -8,6 +8,7 @@ extern "C"{
 class ofxPythonObjectManaged;
 class ofxPythonMappingValue;
 class ofxPythonAttrValue;
+class ofxPythonTupleMaker;
 
 class ofxPythonObject: public ofPtr<ofxPythonObjectManaged>
 {
@@ -37,6 +38,9 @@ public:
 	static ofxPythonObject fromInt(long int);
 	static ofxPythonObject fromFloat(double);
 	static ofxPythonObject fromString(const string&);
+	// use makeTuple like this:
+	// ofxPythonObject tuple = ofxPythonObject::makeTuple() << obj1 << obj2 << obj3;
+	static ofxPythonTupleMaker makeTuple();
 	operator bool() const;
 	const string repr();
 protected:
@@ -126,4 +130,12 @@ public:
 	operator ofxPythonObject();
 	ofxPythonAttrValue & operator =(ofxPythonObject);
 	ofxPythonAttrValue & operator =(ofxPythonAttrValue & o);
+};
+
+class ofxPythonTupleMaker: public ofxPythonObjectLike
+{
+	vector<ofxPythonObject> contents;
+public:
+	ofxPythonTupleMaker& operator<<(ofxPythonObject);
+	operator ofxPythonObject();
 };

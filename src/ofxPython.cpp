@@ -357,6 +357,12 @@ ofxPythonObject ofxPythonObject::fromString(const string& s)
 	return make_object_owned(PyString_FromString(s.c_str()));
 }
 
+ofxPythonTupleMaker ofxPythonObject::makeTuple()
+{
+	ofxPythonTupleMaker t;
+	return t;
+}
+
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
 :object(o), key(k){}
 
@@ -509,4 +515,21 @@ const string ofxPythonObjectLike::repr()
 {
 	ofxPythonObject PO = *this;
 	return PO.repr();
+}
+
+ofxPythonTupleMaker& ofxPythonTupleMaker::operator<<(ofxPythonObject o)
+{
+	contents.push_back(o);
+	return *this;
+}
+
+ofxPythonTupleMaker::operator ofxPythonObject()
+{
+	ofxPythonObject tuple = make_object_owned(
+		PyTuple_New(contents.size()));
+	for (unsigned int i = 0; i < contents.size(); ++i)
+	{
+		PyTuple_SET_ITEM(tuple->obj,i,contents[i]->obj);
+	}
+	return tuple;
 }
