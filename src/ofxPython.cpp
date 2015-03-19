@@ -530,7 +530,9 @@ ofxPythonTupleMaker::operator ofxPythonObject()
 		PyTuple_New(contents.size()));
 	for (unsigned int i = 0; i < contents.size(); ++i)
 	{
-		PyTuple_SET_ITEM(tuple->obj,i,contents[i]->obj);
+		PyTuple_SetItem(tuple->obj,i,contents[i]->obj);
+		Py_XINCREF(contents[i]->obj); //finding this one was tricky!
 	}
+	PythonErrorCheck();
 	return tuple;
 }
