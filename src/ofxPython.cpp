@@ -34,6 +34,8 @@ void PythonErrorCheck()
 
 ofxPythonObject make_object_owned(PyObject * obj, bool errcheck= true)
 {
+	if (obj==NULL)
+		ofLog()<< "WARNING! make_object_owned: creating ofxPythonObject with NULL"; 
 	if(errcheck)
 		PythonErrorCheck();
 	ofxPythonObject o;
@@ -43,6 +45,8 @@ ofxPythonObject make_object_owned(PyObject * obj, bool errcheck= true)
 
 ofxPythonObject make_object_borrowed(PyObject * obj, bool errcheck= true)
 {
+	if (obj==NULL)
+		ofLog()<< "WARNING! make_object_borrowed: creating ofxPythonObject with NULL"; 
 	if(errcheck)
 		PythonErrorCheck();
 	ofxPythonObject o;
@@ -204,16 +208,22 @@ ofxPythonObject ofxPythonObject::operator ()()
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1)
 {
+	if(o1->obj == NULL) o1=ofxPythonObject::_None();
 	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2)
 {
+	if(o1->obj == NULL) o1=ofxPythonObject::_None();
+	if(o2->obj == NULL) o2=ofxPythonObject::_None();
 	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2, ofxPythonObject o3)
 {
+	if(o1->obj == NULL) o1=ofxPythonObject::_None();
+	if(o2->obj == NULL) o2=ofxPythonObject::_None();
+	if(o3->obj == NULL) o3=ofxPythonObject::_None();
 	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,o3->obj,NULL));
 }
 
