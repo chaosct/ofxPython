@@ -187,7 +187,8 @@ ofxPythonObjectManaged::ofxPythonObjectManaged(PyObject * o):obj(o)
 }
 ofxPythonObjectManaged::~ofxPythonObjectManaged()
 {
-	Py_XDECREF(obj);
+	if(ofxPython::instances > 0)
+		Py_XDECREF(obj);
 }
 
 ofxPythonObject ofxPythonObject::method(const string &method_name)

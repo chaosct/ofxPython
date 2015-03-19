@@ -70,6 +70,7 @@ protected:
 	ofxPythonObject locals;
 	static unsigned int instances;
 	bool initialized;
+	friend class ofxPythonObjectManaged;
 };
 
 
