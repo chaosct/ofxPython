@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F89109986058DB93D8ABF82 /* ofxPython.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 142D2592CF197A9B6FBA8720 /* ofxPython.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
-		BD0971AA1A5F28800008B532 /* openFrameworks_wrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD0971A91A5F28800008B532 /* openFrameworks_wrap.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -28,6 +26,10 @@
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
+		EF4C082C1ABC5257003AA6C7 /* openFrameworks_wrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF4C08231ABC5257003AA6C7 /* openFrameworks_wrap.cpp */; };
+		EF4C082D1ABC5257003AA6C7 /* openFrameworks_extra_wrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF4C08241ABC5257003AA6C7 /* openFrameworks_extra_wrap.cpp */; };
+		EF4C082E1ABC5257003AA6C7 /* ofxPython.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF4C08271ABC5257003AA6C7 /* ofxPython.cpp */; };
+		EF4C082F1ABC5257003AA6C7 /* ofxPythonCallBack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF4C08291ABC5257003AA6C7 /* ofxPythonCallBack.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		142D2592CF197A9B6FBA8720 /* ofxPython.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPython.cpp; path = ../../../addons/ofxPython/src/ofxPython.cpp; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
-		BD0971A91A5F28800008B532 /* openFrameworks_wrap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = openFrameworks_wrap.cpp; path = ../src/bindings/desktop/openFrameworks_wrap.cpp; sourceTree = SOURCE_ROOT; };
-		BD538C8C1A51E294006A5B62 /* ofxPython.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxPython.h; path = ../src/ofxPython.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -87,6 +86,15 @@
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
+		EF4C08231ABC5257003AA6C7 /* openFrameworks_wrap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = openFrameworks_wrap.cpp; sourceTree = "<group>"; };
+		EF4C08241ABC5257003AA6C7 /* openFrameworks_extra_wrap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = openFrameworks_extra_wrap.cpp; sourceTree = "<group>"; };
+		EF4C08251ABC5257003AA6C7 /* openFrameworks_extra_wrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openFrameworks_extra_wrap.h; sourceTree = "<group>"; };
+		EF4C08261ABC5257003AA6C7 /* openFrameworks_wrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openFrameworks_wrap.h; sourceTree = "<group>"; };
+		EF4C08271ABC5257003AA6C7 /* ofxPython.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxPython.cpp; path = ../src/ofxPython.cpp; sourceTree = "<group>"; };
+		EF4C08281ABC5257003AA6C7 /* ofxPython.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxPython.h; path = ../src/ofxPython.h; sourceTree = "<group>"; };
+		EF4C08291ABC5257003AA6C7 /* ofxPythonCallBack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxPythonCallBack.cpp; path = ../src/ofxPythonCallBack.cpp; sourceTree = "<group>"; };
+		EF4C082A1ABC5257003AA6C7 /* ofxPythonCallBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxPythonCallBack.h; path = ../src/ofxPythonCallBack.h; sourceTree = "<group>"; };
+		EF4C082B1ABC5257003AA6C7 /* ofxPythonCallBackBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxPythonCallBackBase.h; path = ../src/ofxPythonCallBackBase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,12 @@
 		31AA9B36154605316B795F10 /* ofxPython */ = {
 			isa = PBXGroup;
 			children = (
+				EF4C08211ABC5257003AA6C7 /* bindings */,
+				EF4C08271ABC5257003AA6C7 /* ofxPython.cpp */,
+				EF4C08281ABC5257003AA6C7 /* ofxPython.h */,
+				EF4C08291ABC5257003AA6C7 /* ofxPythonCallBack.cpp */,
+				EF4C082A1ABC5257003AA6C7 /* ofxPythonCallBack.h */,
+				EF4C082B1ABC5257003AA6C7 /* ofxPythonCallBackBase.h */,
 				FA2C3669CF0E6EF70240EBFF /* src */,
 			);
 			name = ofxPython;
@@ -210,12 +224,29 @@
 			name = openFrameworks;
 			sourceTree = "<group>";
 		};
+		EF4C08211ABC5257003AA6C7 /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				EF4C08221ABC5257003AA6C7 /* desktop */,
+				EF4C08241ABC5257003AA6C7 /* openFrameworks_extra_wrap.cpp */,
+				EF4C08251ABC5257003AA6C7 /* openFrameworks_extra_wrap.h */,
+				EF4C08261ABC5257003AA6C7 /* openFrameworks_wrap.h */,
+			);
+			name = bindings;
+			path = ../src/bindings;
+			sourceTree = "<group>";
+		};
+		EF4C08221ABC5257003AA6C7 /* desktop */ = {
+			isa = PBXGroup;
+			children = (
+				EF4C08231ABC5257003AA6C7 /* openFrameworks_wrap.cpp */,
+			);
+			path = desktop;
+			sourceTree = "<group>";
+		};
 		FA2C3669CF0E6EF70240EBFF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				BD0971A91A5F28800008B532 /* openFrameworks_wrap.cpp */,
-				BD538C8C1A51E294006A5B62 /* ofxPython.h */,
-				142D2592CF197A9B6FBA8720 /* ofxPython.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -307,10 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4C082F1ABC5257003AA6C7 /* ofxPythonCallBack.cpp in Sources */,
+				EF4C082E1ABC5257003AA6C7 /* ofxPython.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				EF4C082D1ABC5257003AA6C7 /* openFrameworks_extra_wrap.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				3F89109986058DB93D8ABF82 /* ofxPython.cpp in Sources */,
-				BD0971AA1A5F28800008B532 /* openFrameworks_wrap.cpp in Sources */,
+				EF4C082C1ABC5257003AA6C7 /* openFrameworks_wrap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
