@@ -36,7 +36,6 @@ $ ./generatebindings.sh
 Known issues
 ------------
 - Not fully tested
-- It sometimes receives a segfault 
 
 Contributing
 ------------
