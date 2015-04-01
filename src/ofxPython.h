@@ -62,7 +62,7 @@ public:
 	void executeScript(const string& path);
 	void executeString(const string& script);
 	ofxPythonObject evalString(const string& expression);
-	ofxPythonObject getObject(const string& name, const string& module);
+	static ofxPythonObject getObject(const string& name, const string& module);
 	ofxPythonObject getObject(const string& name);
 	void setObject(const string& name, ofxPythonObject o);
 protected:

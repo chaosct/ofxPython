@@ -22,11 +22,17 @@ void PythonErrorCheck()
 		ofxPythonObject opvalue = make_object_owned(pvalue, false);
 		ofxPythonObject optraceback = make_object_owned(ptraceback, false);
 		ofLog() << "Python Error: ";
-		//string filename = extract<string>(traceback.attr("tb_frame").attr("f_code").attr("co_filename"));
 		if(optraceback)
 		{
-			ofLog() << "\t" << "In function \"" << optraceback.attr("tb_frame").attr("f_code").attr("co_name").asString() << "\"";
-			ofLog() << "\t" << "line " << optraceback.attr("tb_lineno").repr();
+			vector<ofxPythonObject> tb = ofxPython::getObject("format_tb","traceback")(optraceback).asVector();
+			for(unsigned int i = 0; i < tb.size(); ++i)
+			{
+				vector<ofxPythonObject> lines = tb[i].attr("splitlines")().asVector();
+				for (unsigned int j=0; j < lines.size(); ++j)
+				{
+					ofLog() << lines[j].asString();
+				}
+			}
 		}
 		ofLog() << "\t" << "Error: " << opvalue.repr();
 	}
