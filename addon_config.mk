@@ -50,7 +50,7 @@ common:
 	# in the src folders in libs and the root of the addon. if your addon needs
 	# to include files in different places or a different set of files per platform
 	# they can be specified here
-	ADDON_SOURCES = src/ofxPython.cpp src/ofxPythonCallBack.cpp
+	# ADDON_SOURCES = 
 	
 	# some addons need resources to be copied to the bin/data folder of the project
 	# specify here any files that need to be copied, you can use wildcards like * and ?
@@ -61,12 +61,14 @@ common:
 	# ADDON_LIBS_EXCLUDE =
 	
 linux64:
+	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
 	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
 	ADDON_DATA += lib/openframeworks_extra.py
 	
 linux:
+	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
 	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
@@ -77,6 +79,7 @@ linuxarmv6l:
 linuxarmv7l:
 	
 win_cb:
+	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
 	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
