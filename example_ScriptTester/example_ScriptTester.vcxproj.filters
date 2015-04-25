@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxPython\src\ofxPython.cpp">
+      <Filter>addons\ofxPython\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxPython\src\ofxPythonCallBack.cpp">
+      <Filter>addons\ofxPython\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxPython\src\bindings\openFrameworks_extra_wrap.cpp">
+      <Filter>addons\ofxPython\src\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxPython\src\bindings\desktop\openFrameworks_wrap.cpp">
+      <Filter>addons\ofxPython\src\bindings\desktop</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{c1cc6476-2a1c-4ccc-acd7-8928d68993e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxPython">
+      <UniqueIdentifier>{2343c444-17b9-4380-a657-69bcd1226868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxPython\src">
+      <UniqueIdentifier>{fd4cbe4a-f014-482c-bcf5-529d8632a0e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxPython\src\bindings">
+      <UniqueIdentifier>{da85c3ae-86fd-402f-8d1c-2c30112e8a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxPython\src\bindings\desktop">
+      <UniqueIdentifier>{8c662bbb-1f33-43ac-bab5-6ef96546c750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="python">
+      <UniqueIdentifier>{11a52582-41a2-484f-9437-5e73b6d8216f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxPython\src\ofxPython.h">
+      <Filter>addons\ofxPython\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxPython\src\ofxPythonCallBack.h">
+      <Filter>addons\ofxPython\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxPython\src\ofxPythonCallBackBase.h">
+      <Filter>addons\ofxPython\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxPython\src\bindings\openFrameworks_extra_wrap.h">
+      <Filter>addons\ofxPython\src\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxPython\src\bindings\openFrameworks_wrap.h">
+      <Filter>addons\ofxPython\src\bindings</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\data\mytest.py">
+      <Filter>python</Filter>
+    </None>
+  </ItemGroup>
+</Project>
