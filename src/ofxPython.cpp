@@ -101,16 +101,19 @@ int ofxPython::init()
 			init_openframeworks();
 			init_openframeworks_extra();
 			//this seems to be the easiest way to add '.' to python path
+#ifndef TARGET_OSX
 			PyRun_SimpleString(
 				"import sys\n"
-#ifndef TARGET_OSX
 				"sys.path.append('.')\n"
 				"sys.path.append('data')\n"
+				);
 #else
+			PyRun_SimpleString(
+				"import sys\n"
 				"sys.path.append('../../..')\n"
 				"sys.path.append('../../../data')\n"
-#endif
 				);
+#endif
 			PyRun_SimpleString(
 				"import sys\n"
 				"class StdoutCatcher:\n"

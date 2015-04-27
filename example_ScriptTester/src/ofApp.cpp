@@ -47,7 +47,7 @@ void ofApp::keyReleased(int key){
 		if (at)
 			at(ofxPythonObject::fromInt(key));
 	}
-	if (key == 'R' or key == 'r')
+	if (key == 'R' || key == 'r')
 	{
 		python.reset();
 		python.executeScript("mytest.py");
