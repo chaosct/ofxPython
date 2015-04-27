@@ -27,7 +27,10 @@ It is now compiling both in Linux64, Windows (Code::Blocks and Visual Studio) an
 
 ###Linux:###
 Make sure the python-dev package is installed:
-`apt-get install python-dev`
+
+```
+$ apt-get install python-dev
+```
 
 ###Windows/Visual Studio###
 The Visual Studio projects assume Python 2.7 is installed in `C:\Python27`. If you have installed python in a different location, you can set an environment variable named `PYTHON` with the correct path.
