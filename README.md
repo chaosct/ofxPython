@@ -23,7 +23,14 @@ You will need Python (2.7 tested) installed in order to compile your program.
 
 Compatibility
 ------------
-It is now compiling both in Linux64, Windows (Code::Blocks) and OSX. Generated for OF 0.8.4
+It is now compiling both in Linux64, Windows (Code::Blocks and Visual Studio) and OSX. Generated for OF 0.8.4
+
+###Linux:###
+Make sure the python-dev package is installed:
+`apt-get install python-dev`
+
+###Windows/Visual Studio###
+The Visual Studio projects assume Python 2.7 is installed in `C:\Python27`. If you have installed python in a different location, you can set an environment variable named `PYTHON` with the correct path.
 
 Re-generating the bindings
 --------------------------
