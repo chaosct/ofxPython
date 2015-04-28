@@ -54,7 +54,8 @@ common:
 	
 	# some addons need resources to be copied to the bin/data folder of the project
 	# specify here any files that need to be copied, you can use wildcards like * and ?
-	# ADDON_DATA = 
+	ADDON_DATA = lib/openframeworks.py
+	ADDON_DATA += lib/openframeworks_extra.py
 	
 	# when parsing the file system looking for libraries exclude this for all or
 	# a specific platform
@@ -90,3 +91,7 @@ win_cb:
 android/armeabi:	
 	
 android/armeabi-v7a:	
+
+osx:
+	ADDON_CFLAGS += -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7
+	ADDON_LDFLAGS += -lpython2.7 -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config
