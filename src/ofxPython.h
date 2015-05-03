@@ -5,6 +5,8 @@ extern "C"{
 #include <Python.h>
 }
 
+#include <map>
+
 class ofxPythonObjectManaged;
 class ofxPythonMappingValue;
 class ofxPythonAttrValue;
@@ -28,11 +30,13 @@ public:
 	bool isString() const;
 	bool isList() const;
 	bool isTuple() const;
+	bool isDict() const;
 	bool asBool( ) const;
 	long int asInt() const;
 	double asFloat() const;
 	string asString() const;
 	vector<ofxPythonObject> asVector() const;
+	std::map<ofxPythonObject,ofxPythonObject> asMap() const;
 	static ofxPythonObject _None();
 	static ofxPythonObject fromBool(bool);
 	static ofxPythonObject fromInt(long int);
@@ -101,11 +105,13 @@ public:
 	bool isString();
 	bool isList();
 	bool isTuple();
+	bool isDict();
 	bool asBool();
 	long int asInt();
 	double asFloat();
 	string asString();
 	vector<ofxPythonObject> asVector();
+	std::map<ofxPythonObject,ofxPythonObject> asMap();
 	operator bool();
 	const string repr();
 	virtual operator ofxPythonObject()=0;

@@ -294,9 +294,15 @@ bool ofxPythonObject::isList() const
 {
 	return get() && PyList_Check(get()->obj);
 }
+
 bool ofxPythonObject::isTuple() const
 {
 	return get() && PyTuple_Check(get()->obj);
+}
+
+bool ofxPythonObject::isDict() const
+{
+	return get() && PyDict_Check(get()->obj);
 }
 
 long int ofxPythonObject::asInt() const
@@ -347,6 +353,21 @@ vector<ofxPythonObject> ofxPythonObject::asVector() const
 		}
 	}
 	return v;
+}
+
+std::map<ofxPythonObject,ofxPythonObject> ofxPythonObject::asMap() const
+{
+	std::map<ofxPythonObject,ofxPythonObject> m;
+	if(isDict())
+	{
+		PyObject *key, *value;
+		Py_ssize_t pos = 0;
+
+		while (PyDict_Next(get()->obj, &pos, &key, &value)) {
+		    m[make_object_borrowed(key)] = make_object_borrowed(value);
+		}
+	}
+	return m;
 }
 
 
@@ -495,6 +516,11 @@ bool ofxPythonObjectLike::isList()
 	ofxPythonObject PO = *this;
 	return PO.isList();
 }
+bool ofxPythonObjectLike::isDict()
+{
+	ofxPythonObject PO = *this;
+	return PO.isDict();
+}
 bool ofxPythonObjectLike::isTuple()
 {
 	ofxPythonObject PO = *this;
@@ -524,6 +550,12 @@ vector<ofxPythonObject> ofxPythonObjectLike::asVector()
 {
 	ofxPythonObject PO = *this;
 	return PO.asVector();
+}
+
+std::map<ofxPythonObject,ofxPythonObject> ofxPythonObjectLike::asMap()
+{
+	ofxPythonObject PO = *this;
+	return PO.asMap();
 }
 
 ofxPythonObjectLike::operator bool()
