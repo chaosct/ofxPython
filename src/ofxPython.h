@@ -47,6 +47,7 @@ public:
 	static ofxPythonTupleMaker makeTuple();
 	operator bool() const;
 	const string repr();
+	const string str();
 protected:
 	void insert_borrowed(PyObject *);
 	void insert_owned(PyObject *);
@@ -114,6 +115,7 @@ public:
 	std::map<ofxPythonObject,ofxPythonObject> asMap();
 	operator bool();
 	const string repr();
+	const string str();
 	virtual operator ofxPythonObject()=0;
 };
 

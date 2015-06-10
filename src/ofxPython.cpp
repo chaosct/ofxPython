@@ -260,6 +260,15 @@ const string ofxPythonObject::repr()
 	return s;
 }
 
+const string ofxPythonObject::str()
+{
+	ofxPythonObject objectsRepresentation = make_object_owned(
+		PyObject_Str(get()->obj));
+	string s = string(PyString_AsString(objectsRepresentation->obj));
+	PythonErrorCheck();
+	return s;
+}
+
 ofxPythonObject::operator bool() const
 {
 	return get() && get()->obj && !isNone(); //TODO: check if evaluates to false (0,(,),[])
@@ -567,6 +576,12 @@ const string ofxPythonObjectLike::repr()
 {
 	ofxPythonObject PO = *this;
 	return PO.repr();
+}
+
+const string ofxPythonObjectLike::str()
+{
+	ofxPythonObject PO = *this;
+	return PO.str();
 }
 
 ofxPythonTupleMaker& ofxPythonTupleMaker::operator<<(ofxPythonObject o)
