@@ -179,6 +179,11 @@ ofxPythonObject ofxPython::getObject(const string& name)
 	return locals[name];
 }
 
+ofxPythonObject ofxPython::getObjectOrNone(const string& name)
+{
+	return locals.attr("get")(ofxPythonObject::fromString(name));
+}
+
 void ofxPython::setObject(const string& name, ofxPythonObject o)
 {
 	locals[name]=o;

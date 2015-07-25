@@ -69,6 +69,7 @@ public:
 	ofxPythonObject evalString(const string& expression);
 	static ofxPythonObject getObject(const string& name, const string& module);
 	ofxPythonObject getObject(const string& name);
+	ofxPythonObject getObjectOrNone(const string& name);
 	void setObject(const string& name, ofxPythonObject o);
 protected:
 	// ofxPythonObject globals;
