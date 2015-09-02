@@ -72,9 +72,10 @@ public:
 	ofxPythonObject getObject(const string& name);
 	ofxPythonObject getObjectOrNone(const string& name);
 	void setObject(const string& name, ofxPythonObject o);
+    ofxPythonObject getLocals();
 protected:
+    ofxPythonObject locals;
 	// ofxPythonObject globals;
-	ofxPythonObject locals;
 	static unsigned int instances;
 	bool initialized;
 	friend class ofxPythonObjectManaged;

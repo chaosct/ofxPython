@@ -196,6 +196,10 @@ void ofxPython::setObject(const string& name, ofxPythonObject o)
 	locals[name]=o;
 }
 
+ofxPythonObject ofxPython::getLocals(){
+    return locals;
+}
+
 void ofxPythonObject::insert_owned(PyObject * obj)
 {
 	reset(new ofxPythonObjectManaged(obj));
