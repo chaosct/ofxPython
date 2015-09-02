@@ -66,6 +66,7 @@ public:
 	void reset();
 	void executeScript(const string& path);
 	void executeString(const string& script);
+    ofxPythonObject executeStatement(const string& script);
 	ofxPythonObject evalString(const string& expression);
 	static ofxPythonObject getObject(const string& name, const string& module);
 	ofxPythonObject getObject(const string& name);

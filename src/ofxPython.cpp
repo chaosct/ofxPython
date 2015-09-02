@@ -159,6 +159,11 @@ void ofxPython::executeString(const string& script)
 	PythonErrorCheck();
 }
 
+ofxPythonObject ofxPython::executeStatement(const string& script)
+{
+    return make_object_owned(PyRun_String(script.c_str(),Py_single_input,locals->obj,locals->obj));
+}
+
 ofxPythonObject ofxPython::evalString(const string& expression)
 {
 	return  make_object_owned(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
