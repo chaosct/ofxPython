@@ -143,6 +143,8 @@ void ofxPython::reset()
 {
 	// globals = make_object_owned(PyDict_New());
 	locals = make_object_owned(PyDict_New());
+    //deal with cyclic references
+    ofxPython::getObject("collect", "gc")();
 	//insert builtins
 	locals["__builtins__"]=make_object_borrowed(PyEval_GetBuiltins());
 }
