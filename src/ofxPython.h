@@ -81,7 +81,14 @@ protected:
 	friend class ofxPythonObjectManaged;
 };
 
-
+class ofxPythonOperation
+{
+public:
+    static PyThreadState * pstate;
+    static unsigned int instances;
+    ofxPythonOperation();
+    ~ofxPythonOperation();
+};
 
 class ofxPythonObjectManaged
 {

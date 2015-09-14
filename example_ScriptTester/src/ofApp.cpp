@@ -3,10 +3,10 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	python.init();
-	python.executeScript("mytest.py");
-	ofxPythonObject klass = python.getObject("myApp");
-	if(klass)
-		script = klass();
+    python.executeScript("mytest.py");
+    ofxPythonObject klass = python.getObject("myApp");
+    if(klass)
+        script = klass();
 }
 
 //--------------------------------------------------------------

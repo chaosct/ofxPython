@@ -4,6 +4,9 @@ from openframeworks import *
 
 print "-"*30
 
+from threading import Thread
+from time import sleep
+
 class myApp(object):
 	def __init__(self):
 		self.x = 50.0
@@ -45,3 +48,16 @@ class myApp(object):
 
 	def windowResized(self, width, height):
 		pass
+
+
+#Testing threading capabilities
+
+def athread():
+	n = 0
+	while True:
+		print n
+		n += 1
+		sleep(1)
+
+t = Thread(target=athread)
+t.start()
