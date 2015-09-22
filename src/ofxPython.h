@@ -75,6 +75,8 @@ public:
 	ofxPythonObject getObjectOrNone(const string& name);
 	void setObject(const string& name, ofxPythonObject o);
     ofxPythonObject getLocals();
+    void setVirtualEnv(const string & path);
+    void addPath(const string & path);
 protected:
     ofxPythonObject locals;
 	// ofxPythonObject globals;

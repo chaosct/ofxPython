@@ -121,6 +121,7 @@ int ofxPython::init()
 			init_openframeworks();
 			init_openframeworks_extra();
 			//this seems to be the easiest way to add '.' to python path
+            
 #ifndef TARGET_OSX
 			PyRun_SimpleString(
 				"import sys\n"
@@ -230,6 +231,27 @@ ofxPythonObject ofxPython::getLocals(){
     return locals;
 }
 
+void ofxPython::setVirtualEnv(const string & path){
+    ofxPythonOperation op;
+    ofxPythonObject venv_file = ofxPythonObject::fromString(path);
+    locals["__venv_file"] = venv_file;
+    executeString(
+                  "import os.path\n"
+                  "__venv_file = os.path.join(__venv_file,'bin/activate_this.py')\n"
+                  "execfile(__venv_file, dict(__file__=__venv_file))\n"
+                  );
+}
+
+void ofxPython::addPath(const string & path){
+    ofxPythonOperation op;
+    locals["__add_path"] = ofxPythonObject::fromString(path);
+    executeString(
+                  "import sys, os.path\n"
+                  "if __add_path not in sys.path:\n"
+                  "    sys.path.append(__add_path)\n"
+                  );
+}
+
 void ofxPythonObject::insert_owned(PyObject * obj)
 {
 	reset(new ofxPythonObjectManaged(obj));
@@ -244,7 +266,7 @@ void ofxPythonObject::insert_borrowed(PyObject * obj)
 
 ofxPythonObjectManaged::ofxPythonObjectManaged(PyObject * o):obj(o)
 {
-	ofxPythonOperation op;
+
 }
 ofxPythonObjectManaged::~ofxPythonObjectManaged()
 {
