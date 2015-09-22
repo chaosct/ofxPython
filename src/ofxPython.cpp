@@ -490,6 +490,12 @@ ofxPythonTupleMaker ofxPythonObject::makeTuple()
 	return t;
 }
 
+ofxPythonListMaker ofxPythonObject::makeList()
+{
+    ofxPythonListMaker t;
+    return t;
+}
+
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
 :object(o), key(k){}
 
@@ -708,6 +714,26 @@ ofxPythonTupleMaker::operator ofxPythonObject()
 	}
 	PythonErrorCheck();
 	return tuple;
+}
+
+ofxPythonListMaker& ofxPythonListMaker::operator<<(ofxPythonObject o)
+{
+    contents.push_back(o);
+    return *this;
+}
+
+ofxPythonListMaker::operator ofxPythonObject()
+{
+    ofxPythonOperation op;
+    ofxPythonObject list = make_object_owned(
+        PyList_New(contents.size()));
+    for (unsigned int i = 0; i < contents.size(); ++i)
+    {
+        PyList_SetItem(list->obj,i,contents[i]->obj);
+        Py_XINCREF(contents[i]->obj); //finding this one was tricky!
+    }
+    PythonErrorCheck();
+    return list;
 }
 
 PyThreadState * ofxPythonOperation::pstate = NULL;

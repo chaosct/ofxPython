@@ -11,6 +11,7 @@ class ofxPythonObjectManaged;
 class ofxPythonMappingValue;
 class ofxPythonAttrValue;
 class ofxPythonTupleMaker;
+class ofxPythonListMaker;
 
 class ofxPythonObject: public ofPtr<ofxPythonObjectManaged>
 {
@@ -45,6 +46,7 @@ public:
 	// use makeTuple like this:
 	// ofxPythonObject tuple = ofxPythonObject::makeTuple() << obj1 << obj2 << obj3;
 	static ofxPythonTupleMaker makeTuple();
+    static ofxPythonListMaker makeList();
 	operator bool() const;
 	const string repr();
 	const string str();
@@ -157,4 +159,12 @@ class ofxPythonTupleMaker: public ofxPythonObjectLike
 public:
 	ofxPythonTupleMaker& operator<<(ofxPythonObject);
 	operator ofxPythonObject();
+};
+
+class ofxPythonListMaker: public ofxPythonObjectLike
+{
+    vector<ofxPythonObject> contents;
+public:
+    ofxPythonListMaker& operator<<(ofxPythonObject);
+    operator ofxPythonObject();
 };
