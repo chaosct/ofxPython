@@ -26,6 +26,7 @@ class myApp(object):
 		ofSetColor(color)
 		ofCircle(self.x,self.y,self.d)
 		self.fbo.end()
+		ofSetColor(255,255,255)
 		self.fbo.draw(200,200)
 
 	def mouseMoved(self, x, y):
