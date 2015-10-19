@@ -47,6 +47,7 @@ public:
 	// ofxPythonObject tuple = ofxPythonObject::makeTuple() << obj1 << obj2 << obj3;
 	static ofxPythonTupleMaker makeTuple();
     static ofxPythonListMaker makeList();
+    static ofxPythonObject makeDict();
 	operator bool() const;
 	const string repr();
 	const string str();

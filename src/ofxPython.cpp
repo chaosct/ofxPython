@@ -507,6 +507,11 @@ ofxPythonListMaker ofxPythonObject::makeList()
     return t;
 }
 
+ofxPythonObject ofxPythonObject::makeDict(){
+    ofxPythonOperation op;
+    return make_object_owned(PyDict_New());
+}
+
 ofxPythonMappingValue::ofxPythonMappingValue(ofxPythonObject o, const string& k)
 :object(o), key(k){}
 
