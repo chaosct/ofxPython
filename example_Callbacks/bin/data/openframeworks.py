@@ -518,8 +518,8 @@ OF_LOOP_NORMAL = _openframeworks.OF_LOOP_NORMAL
 _openframeworks.OF_TARGET_OSX_swigconstant(_openframeworks)
 OF_TARGET_OSX = _openframeworks.OF_TARGET_OSX
 
-_openframeworks.OF_TARGET_WINGCC_swigconstant(_openframeworks)
-OF_TARGET_WINGCC = _openframeworks.OF_TARGET_WINGCC
+_openframeworks.OF_TARGET_MINGW_swigconstant(_openframeworks)
+OF_TARGET_MINGW = _openframeworks.OF_TARGET_MINGW
 
 _openframeworks.OF_TARGET_WINVS_swigconstant(_openframeworks)
 OF_TARGET_WINVS = _openframeworks.OF_TARGET_WINVS
@@ -1282,6 +1282,10 @@ class ofTextureData(_object):
     __swig_getmethods__["wrapModeVertical"] = _openframeworks.ofTextureData_wrapModeVertical_get
     if _newclass:
         wrapModeVertical = _swig_property(_openframeworks.ofTextureData_wrapModeVertical_get, _openframeworks.ofTextureData_wrapModeVertical_set)
+    __swig_setmethods__["bufferId"] = _openframeworks.ofTextureData_bufferId_set
+    __swig_getmethods__["bufferId"] = _openframeworks.ofTextureData_bufferId_get
+    if _newclass:
+        bufferId = _swig_property(_openframeworks.ofTextureData_bufferId_get, _openframeworks.ofTextureData_bufferId_set)
     __swig_destroy__ = _openframeworks.delete_ofTextureData
     __del__ = lambda self: None
 ofTextureData_swigregister = _openframeworks.ofTextureData_swigregister
@@ -1345,11 +1349,11 @@ class ofTexture(_object):
     def drawSubsection(self, *args):
         return _openframeworks.ofTexture_drawSubsection(self, *args)
 
-    def getMeshForSubsection(self, x, y, z, w, h, sx, sy, sw, sh, vflipped, rectMode):
-        return _openframeworks.ofTexture_getMeshForSubsection(self, x, y, z, w, h, sx, sy, sw, sh, vflipped, rectMode)
-
     def getQuad(self, p1, p2, p3, p4):
         return _openframeworks.ofTexture_getQuad(self, p1, p2, p3, p4)
+
+    def getMeshForSubsection(self, x, y, z, w, h, sx, sy, sw, sh, vflipped, rectMode):
+        return _openframeworks.ofTexture_getMeshForSubsection(self, x, y, z, w, h, sx, sy, sw, sh, vflipped, rectMode)
 
     def bind(self, textureLocation=0):
         return _openframeworks.ofTexture_bind(self, textureLocation)
@@ -4431,8 +4435,6 @@ class ofMesh(_object):
 
     def setFromTriangles(self, tris, bUseFaceNormal=False):
         return _openframeworks.ofMesh_setFromTriangles(self, tris, bUseFaceNormal)
-    __swig_destroy__ = _openframeworks.delete_ofMesh
-    __del__ = lambda self: None
 
     def setMode(self, mode):
         return _openframeworks.ofMesh_setMode(self, mode)
@@ -4718,6 +4720,8 @@ class ofMesh(_object):
 
     def save(self, path, useBinary=False):
         return _openframeworks.ofMesh_save(self, path, useBinary)
+    __swig_destroy__ = _openframeworks.delete_ofMesh
+    __del__ = lambda self: None
 ofMesh_swigregister = _openframeworks.ofMesh_swigregister
 ofMesh_swigregister(ofMesh)
 
