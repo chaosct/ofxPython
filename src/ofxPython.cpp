@@ -358,7 +358,7 @@ bool ofxPythonObject::isBool() const
 bool ofxPythonObject::isInt() const
 {
 	ofxPythonOperation op;
-	return get() && PyInt_Check(get()->obj);
+	return get() && (PyInt_Check(get()->obj) || PyLong_Check(get()->obj));
 }
 
 bool ofxPythonObject::isFloat() const
@@ -394,8 +394,10 @@ bool ofxPythonObject::isDict() const
 long int ofxPythonObject::asInt() const
 {
 	ofxPythonOperation op;
-	if (isInt())
+	if (PyInt_Check(get()->obj))
 		return PyInt_AsLong(get()->obj);
+    else if(PyLong_Check(get()->obj))
+        return PyLong_AsLong(get()->obj);
 	return 0;
 }
 
