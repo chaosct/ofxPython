@@ -62,18 +62,16 @@ common:
 	# ADDON_LIBS_EXCLUDE =
 	
 linux64:
-	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
-	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
-	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
 	ADDON_DATA += lib/openframeworks_extra.py
+	ADDON_CFLAGS += -I/usr/include/python2.7
+	ADDON_LDFLAGS += -lpython2.7
 	
 linux:
-	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
-	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp
-	ADDON_SOURCES += src/bindings/openFrameworks_extra_wrap.cpp
 	ADDON_DATA = lib/openframeworks.py
 	ADDON_DATA += lib/openframeworks_extra.py
+	ADDON_CFLAGS += -I/usr/include/python2.7
+	ADDON_LDFLAGS += -lpython2.7
 
 linuxarmv6l:
 	
