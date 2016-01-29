@@ -95,7 +95,7 @@ ofxPython::~ofxPython()
                     long t_id = t.attr("ident").asInt();
                     if( t_id != main_thread_id){
                         ofxPythonObject exc = locals["__builtins__"]["SystemExit"];
-                        int r = PyThreadState_SetAsyncExc(t_id,exc->obj);
+                        int r = PyThreadState_SetAsyncExc(t_id,exc.data->obj);
                         if (r != 1){
                             ofLog() << "Failed attewmpt to shut down thread " << t_id;
                         }
@@ -171,20 +171,20 @@ void ofxPython::executeScript(const string& path)
 void ofxPython::executeString(const string& script)
 {
 	ofxPythonOperation op;
-	make_object_owned(PyRun_String(script.c_str(),Py_file_input,locals->obj,locals->obj));
+	make_object_owned(PyRun_String(script.c_str(),Py_file_input,locals.data->obj,locals.data->obj));
 	PythonErrorCheck();
 }
 
 ofxPythonObject ofxPython::executeStatement(const string& script)
 {
 	ofxPythonOperation op;
-    return make_object_owned(PyRun_String(script.c_str(),Py_single_input,locals->obj,locals->obj));
+    return make_object_owned(PyRun_String(script.c_str(),Py_single_input,locals.data->obj,locals.data->obj));
 }
 
 ofxPythonObject ofxPython::evalString(const string& expression)
 {
 	ofxPythonOperation op;
-	return  make_object_owned(PyRun_String(expression.c_str(),Py_eval_input,locals->obj,locals->obj));
+	return  make_object_owned(PyRun_String(expression.c_str(),Py_eval_input,locals.data->obj,locals.data->obj));
 }
 
 ofxPythonObject ofxPython::getObject(const string& name, const string& module)
@@ -192,7 +192,7 @@ ofxPythonObject ofxPython::getObject(const string& name, const string& module)
 	ofxPythonOperation op;
 
 	ofxPythonObject pmodule = make_object_owned(
-		PyImport_Import(ofxPythonObject::fromString(module)->obj));
+		PyImport_Import(ofxPythonObject::fromString(module).data->obj));
 	if(pmodule)
 		return pmodule.attr(name);
 	return ofxPythonObject();
@@ -243,21 +243,21 @@ void ofxPython::addPath(const string & path){
 
 void ofxPythonObject::insert_owned(PyObject * obj)
 {
-	reset(new ofxPythonObjectManaged(obj));
+	data.reset(new ofxPythonObjectManaged(obj));
 }
 
 void ofxPythonObject::insert_borrowed(PyObject * obj)
 {
 	ofxPythonOperation op;
 	Py_XINCREF(obj);
-	reset(new ofxPythonObjectManaged(obj));
+	data.reset(new ofxPythonObjectManaged(obj));
 }
 
-ofxPythonObjectManaged::ofxPythonObjectManaged(PyObject * o):obj(o)
+ofxPythonObject::ofxPythonObjectManaged::ofxPythonObjectManaged(PyObject * o):obj(o)
 {
 
 }
-ofxPythonObjectManaged::~ofxPythonObjectManaged()
+ofxPythonObject::ofxPythonObjectManaged::~ofxPythonObjectManaged()
 {
     if(ofxPython::instances > 0){
         ofxPythonOperation op;
@@ -269,37 +269,37 @@ ofxPythonObject ofxPythonObject::method(const string &method_name)
 {
 	ofxPythonOperation op;
 	return make_object_owned(
-		PyObject_CallMethod(get()->obj,noconststring(method_name),NULL));
+		PyObject_CallMethod(data->obj,noconststring(method_name),NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()()
 {
 	ofxPythonOperation op;
-	return make_object_owned(PyObject_CallObject(get()->obj,NULL));
+	return make_object_owned(PyObject_CallObject(data->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1)
 {
 	ofxPythonOperation op;
-	if(o1->obj == NULL) o1=ofxPythonObject::_None();
-	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,NULL));
+	if(o1.data->obj == NULL) o1=ofxPythonObject::_None();
+	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2)
 {
 	ofxPythonOperation op;
-	if(o1->obj == NULL) o1=ofxPythonObject::_None();
-	if(o2->obj == NULL) o2=ofxPythonObject::_None();
-	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,NULL));
+	if(o1.data->obj == NULL) o1=ofxPythonObject::_None();
+	if(o2.data->obj == NULL) o2=ofxPythonObject::_None();
+	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,o2.data->obj,NULL));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2, ofxPythonObject o3)
 {
 	ofxPythonOperation op;
-	if(o1->obj == NULL) o1=ofxPythonObject::_None();
-	if(o2->obj == NULL) o2=ofxPythonObject::_None();
-	if(o3->obj == NULL) o3=ofxPythonObject::_None();
-	return make_object_owned(PyObject_CallFunctionObjArgs(get()->obj,o1->obj,o2->obj,o3->obj,NULL));
+	if(o1.data->obj == NULL) o1=ofxPythonObject::_None();
+	if(o2.data->obj == NULL) o2=ofxPythonObject::_None();
+	if(o3.data->obj == NULL) o3=ofxPythonObject::_None();
+	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,o2.data->obj,o3.data->obj,NULL));
 }
 
 ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
@@ -321,8 +321,8 @@ const string ofxPythonObject::repr()
 {
 	ofxPythonOperation op;
 	ofxPythonObject objectsRepresentation = make_object_owned(
-		PyObject_Repr(get()->obj));
-	string s = string(PyString_AsString(objectsRepresentation->obj));
+		PyObject_Repr(data->obj));
+	string s = string(PyString_AsString(objectsRepresentation.data->obj));
 	PythonErrorCheck();
 	return s;
 }
@@ -331,8 +331,8 @@ const string ofxPythonObject::str()
 {
 	ofxPythonOperation op;
 	ofxPythonObject objectsRepresentation = make_object_owned(
-		PyObject_Str(get()->obj));
-	string s = string(PyString_AsString(objectsRepresentation->obj));
+		PyObject_Str(data->obj));
+	string s = string(PyString_AsString(objectsRepresentation.data->obj));
 	PythonErrorCheck();
 	return s;
 }
@@ -340,64 +340,64 @@ const string ofxPythonObject::str()
 ofxPythonObject::operator bool() const
 {
 	ofxPythonOperation op;
-	return get() && get()->obj && !isNone(); //TODO: check if evaluates to false (0,(,),[])
+	return data && data->obj && !isNone(); //TODO: check if evaluates to false (0,(,),[])
 }
 
 bool ofxPythonObject::isNone() const
 {
 	ofxPythonOperation op;
-	return get() && get()->obj == Py_None;
+	return data && data->obj == Py_None;
 }
 
 bool ofxPythonObject::isBool() const
 {
 	ofxPythonOperation op;
-	return get() && PyBool_Check(get()->obj);
+	return data && PyBool_Check(data->obj);
 }
 
 bool ofxPythonObject::isInt() const
 {
 	ofxPythonOperation op;
-	return get() && (PyInt_Check(get()->obj) || PyLong_Check(get()->obj));
+	return data && (PyInt_Check(data->obj) || PyLong_Check(data->obj));
 }
 
 bool ofxPythonObject::isFloat() const
 {
 	ofxPythonOperation op;
-	return get() && PyFloat_Check(get()->obj);
+	return data && PyFloat_Check(data->obj);
 }
 
 bool ofxPythonObject::isString() const
 {
 	ofxPythonOperation op;
-	return get() && PyString_Check(get()->obj);
+	return data && PyString_Check(data->obj);
 }
 
 bool ofxPythonObject::isList() const
 {
 	ofxPythonOperation op;
-	return get() && PyList_Check(get()->obj);
+	return data && PyList_Check(data->obj);
 }
 
 bool ofxPythonObject::isTuple() const
 {
 	ofxPythonOperation op;
-	return get() && PyTuple_Check(get()->obj);
+	return data && PyTuple_Check(data->obj);
 }
 
 bool ofxPythonObject::isDict() const
 {
 	ofxPythonOperation op;
-	return get() && PyDict_Check(get()->obj);
+	return data && PyDict_Check(data->obj);
 }
 
 long int ofxPythonObject::asInt() const
 {
 	ofxPythonOperation op;
-	if (PyInt_Check(get()->obj))
-		return PyInt_AsLong(get()->obj);
-    else if(PyLong_Check(get()->obj))
-        return PyLong_AsLong(get()->obj);
+	if (PyInt_Check(data->obj))
+		return PyInt_AsLong(data->obj);
+    else if(PyLong_Check(data->obj))
+        return PyLong_AsLong(data->obj);
 	return 0;
 }
 
@@ -405,7 +405,7 @@ bool ofxPythonObject::asBool() const
 {
 	ofxPythonOperation op;
 	if (isBool())
-		return get()->obj == Py_True;
+		return data->obj == Py_True;
 	return false;
 }
 
@@ -413,7 +413,7 @@ double ofxPythonObject::asFloat() const
 {
 	ofxPythonOperation op;
 	if (isFloat())
-		return PyFloat_AsDouble(get()->obj);
+		return PyFloat_AsDouble(data->obj);
 	return 0.0;
 }
 
@@ -421,7 +421,7 @@ string ofxPythonObject::asString() const
 {
 	ofxPythonOperation op;
 	if(isString())
-		return string(PyString_AsString(get()->obj));
+		return string(PyString_AsString(data->obj));
 	return string();
 }
 
@@ -431,18 +431,18 @@ vector<ofxPythonObject> ofxPythonObject::asVector() const
 	std::vector<ofxPythonObject> v;
 	if(isList())
 	{
-		int len = PyList_Size(get()->obj);
+		int len = PyList_Size(data->obj);
 		for (int i = 0; i<len; ++i)
 		{
-			v.push_back(make_object_borrowed(PyList_GetItem(get()->obj,i)));
+			v.push_back(make_object_borrowed(PyList_GetItem(data->obj,i)));
 		}
 	}
 	else if(isTuple())
 	{
-		int len = PyTuple_Size(get()->obj);
+		int len = PyTuple_Size(data->obj);
 		for (int i = 0; i<len; ++i)
 		{
-			v.push_back(make_object_borrowed(PyTuple_GetItem(get()->obj,i)));
+			v.push_back(make_object_borrowed(PyTuple_GetItem(data->obj,i)));
 		}
 	}
 	return v;
@@ -457,7 +457,7 @@ std::map<ofxPythonObject,ofxPythonObject> ofxPythonObject::asMap() const
 		PyObject *key, *value;
 		Py_ssize_t pos = 0;
 
-		while (PyDict_Next(get()->obj, &pos, &key, &value)) {
+		while (PyDict_Next(data->obj, &pos, &key, &value)) {
 		    m[make_object_borrowed(key)] = make_object_borrowed(value);
 		}
 	}
@@ -521,13 +521,13 @@ ofxPythonMappingValue::operator ofxPythonObject()
 {
 	ofxPythonOperation op;
 	return make_object_owned(
-		PyMapping_GetItemString(object->obj, noconststring(key)));
+		PyMapping_GetItemString(object.data->obj, noconststring(key)));
 }
 
 ofxPythonMappingValue& ofxPythonMappingValue::operator =(ofxPythonObject o)
 {
 	ofxPythonOperation op;
-	PyMapping_SetItemString(object->obj, noconststring(key) , o->obj);
+	PyMapping_SetItemString(object.data->obj, noconststring(key) , o.data->obj);
 	PythonErrorCheck();
 	return *this;
 }
@@ -539,13 +539,13 @@ ofxPythonAttrValue::operator ofxPythonObject()
 {
 	ofxPythonOperation op;
 	return make_object_owned(
-		PyObject_GetAttrString(object->obj,attribute.c_str()));
+		PyObject_GetAttrString(object.data->obj,attribute.c_str()));
 }
 
 ofxPythonAttrValue & ofxPythonAttrValue::operator =(ofxPythonObject o)
 {
 	ofxPythonOperation op;
-	PyObject_SetAttrString(object->obj, attribute.c_str(), o->obj);
+	PyObject_SetAttrString(object.data->obj, attribute.c_str(), o.data->obj);
 	PythonErrorCheck();
 	return *this;
 }
@@ -727,8 +727,8 @@ ofxPythonTupleMaker::operator ofxPythonObject()
 		PyTuple_New(contents.size()));
 	for (unsigned int i = 0; i < contents.size(); ++i)
 	{
-		PyTuple_SetItem(tuple->obj,i,contents[i]->obj);
-		Py_XINCREF(contents[i]->obj); //finding this one was tricky!
+		PyTuple_SetItem(tuple.data->obj,i,contents[i].data->obj);
+		Py_XINCREF(contents[i].data->obj); //finding this one was tricky!
 	}
 	PythonErrorCheck();
 	return tuple;
@@ -747,8 +747,8 @@ ofxPythonListMaker::operator ofxPythonObject()
         PyList_New(contents.size()));
     for (unsigned int i = 0; i < contents.size(); ++i)
     {
-        PyList_SetItem(list->obj,i,contents[i]->obj);
-        Py_XINCREF(contents[i]->obj); //finding this one was tricky!
+        PyList_SetItem(list.data->obj,i,contents[i].data->obj);
+        Py_XINCREF(contents[i].data->obj); //finding this one was tricky!
     }
     PythonErrorCheck();
     return list;
