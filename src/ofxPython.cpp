@@ -42,8 +42,8 @@ void PythonErrorCheck()
 ofxPythonObject make_object_owned(PyObject * obj, bool errcheck= true)
 {
 	ofxPythonOperation op;
-	if (obj==NULL)
-		ofLog()<< "WARNING! make_object_owned: creating ofxPythonObject with NULL"; 
+	if (obj==nullptr)
+		ofLog()<< "WARNING! make_object_owned: creating ofxPythonObject with nullptr"; 
 	if(errcheck)
 		PythonErrorCheck();
 	ofxPythonObject o;
@@ -54,8 +54,8 @@ ofxPythonObject make_object_owned(PyObject * obj, bool errcheck= true)
 ofxPythonObject make_object_borrowed(PyObject * obj, bool errcheck= true)
 {
 	ofxPythonOperation op;
-	if (obj==NULL)
-		ofLog()<< "WARNING! make_object_borrowed: creating ofxPythonObject with NULL"; 
+	if (obj==nullptr)
+		ofLog()<< "WARNING! make_object_borrowed: creating ofxPythonObject with nullptr"; 
 	if(errcheck)
 		PythonErrorCheck();
 	ofxPythonObject o;
@@ -269,37 +269,37 @@ ofxPythonObject ofxPythonObject::method(const string &method_name)
 {
 	ofxPythonOperation op;
 	return make_object_owned(
-		PyObject_CallMethod(data->obj,noconststring(method_name),NULL));
+		PyObject_CallMethod(data->obj,noconststring(method_name),nullptr));
 }
 
 ofxPythonObject ofxPythonObject::operator ()()
 {
 	ofxPythonOperation op;
-	return make_object_owned(PyObject_CallObject(data->obj,NULL));
+	return make_object_owned(PyObject_CallObject(data->obj,nullptr));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1)
 {
 	ofxPythonOperation op;
-	if(o1.data->obj == NULL) o1=ofxPythonObject::_None();
-	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,NULL));
+	if(o1.data->obj == nullptr) o1=ofxPythonObject::_None();
+	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,nullptr));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2)
 {
 	ofxPythonOperation op;
-	if(o1.data->obj == NULL) o1=ofxPythonObject::_None();
-	if(o2.data->obj == NULL) o2=ofxPythonObject::_None();
-	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,o2.data->obj,NULL));
+	if(o1.data->obj == nullptr) o1=ofxPythonObject::_None();
+	if(o2.data->obj == nullptr) o2=ofxPythonObject::_None();
+	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,o2.data->obj,nullptr));
 }
 
 ofxPythonObject ofxPythonObject::operator ()(ofxPythonObject o1, ofxPythonObject o2, ofxPythonObject o3)
 {
 	ofxPythonOperation op;
-	if(o1.data->obj == NULL) o1=ofxPythonObject::_None();
-	if(o2.data->obj == NULL) o2=ofxPythonObject::_None();
-	if(o3.data->obj == NULL) o3=ofxPythonObject::_None();
-	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,o2.data->obj,o3.data->obj,NULL));
+	if(o1.data->obj == nullptr) o1=ofxPythonObject::_None();
+	if(o2.data->obj == nullptr) o2=ofxPythonObject::_None();
+	if(o3.data->obj == nullptr) o3=ofxPythonObject::_None();
+	return make_object_owned(PyObject_CallFunctionObjArgs(data->obj,o1.data->obj,o2.data->obj,o3.data->obj,nullptr));
 }
 
 ofxPythonMappingValue ofxPythonObject::operator [](const string& key)
@@ -754,7 +754,7 @@ ofxPythonListMaker::operator ofxPythonObject()
     return list;
 }
 
-PyThreadState * ofxPythonOperation::pstate = NULL;
+PyThreadState * ofxPythonOperation::pstate = nullptr;
 unsigned int ofxPythonOperation::instances = 0;
 
 ofxPythonOperation::ofxPythonOperation(){
