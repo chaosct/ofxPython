@@ -138,6 +138,7 @@ int ofxPython::init()
 				"			self.message.append(s)\n"
 				"catcher = StdoutCatcher()\n"
 				"sys.stdout = catcher\n"
+                "sys.stderr = catcher\n"
 				);
             ofxPythonOperation::pstate = PyEval_SaveThread();
             PythonErrorCheck();
