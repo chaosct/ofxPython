@@ -23,3 +23,5 @@ then run the script provided with the addon   ./generatebindings.sh
 It looks like generatebindings.sh also makes changes in each of the example folders.
 I had to change ofCircle to ofDrawCircle in bin/data/myTest.sh.
 I have tested this on OF v0.9.8 on OSX 10.11.6
+
+I also was able to take this version of addon for 0.9.8 and just drop it in to 0.9.3. Works.
