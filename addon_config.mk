@@ -74,9 +74,19 @@ linux:
 	ADDON_LDFLAGS += -lpython2.7
 
 linuxarmv6l:
-	
+    ADDON_CFLAGS += -DLUA_USE_LINUX
+    ADDON_PKG_CONFIG_LIBRARIES = luajit
+    ADDON_SOURCES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
+    ADDON_INCLUDES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
+    ADDON_LIBS_EXCLUDE += libs
+
 linuxarmv7l:
-	
+    ADDON_CFLAGS += -DLUA_USE_LINUX
+    ADDON_PKG_CONFIG_LIBRARIES = luajit
+    ADDON_SOURCES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
+    ADDON_INCLUDES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
+    ADDON_LIBS_EXCLUDE += libs
+
 win_cb:
 	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
 	ADDON_SOURCES += src/bindings/desktop/openFrameworks_wrap.cpp

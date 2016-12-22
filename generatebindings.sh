@@ -2,6 +2,7 @@
 
 cd swig-of
 make desktop LANG=python DEST_LANG_DIR=../lib
+make linuxarm LANG=python DEST_LANG_DIR=../lib
 cd ..
 cd swig-additional
 make

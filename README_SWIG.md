@@ -3,6 +3,8 @@ ofxPython
 
 It took me a bit to work out how to make this addon work with newer OF versions.
 
+OSX
+---
 1. install homebrew
 Go here [http://brew.sh](http://brew.sh) and copy the script which looks like this:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -25,3 +27,12 @@ I had to change ofCircle to ofDrawCircle in bin/data/myTest.sh.
 I have tested this on OF v0.9.8 on OSX 10.11.6
 
 I also was able to take this version of addon for 0.9.8 and just drop it in to 0.9.3. Works.
+
+
+LINUX - Raspberry PI 3 armv6
+----------------------------
+
+1. install swig
+sudo apt-get install swig
+
+But the examples do not yet compile.
