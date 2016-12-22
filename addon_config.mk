@@ -74,18 +74,16 @@ linux:
 	ADDON_LDFLAGS += -lpython2.7
 
 linuxarmv6l:
-    ADDON_CFLAGS += -DLUA_USE_LINUX
-    ADDON_PKG_CONFIG_LIBRARIES = luajit
-    ADDON_SOURCES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
-    ADDON_INCLUDES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
-    ADDON_LIBS_EXCLUDE += libs
+    ADDON_DATA = lib/openframeworks.py
+    ADDON_DATA += lib/openframeworks_extra.py
+    ADDON_CFLAGS += -I/usr/include/python2.7
+    ADDON_LDFLAGS += -lpython2.7
 
 linuxarmv7l:
-    ADDON_CFLAGS += -DLUA_USE_LINUX
-    ADDON_PKG_CONFIG_LIBRARIES = luajit
-    ADDON_SOURCES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
-    ADDON_INCLUDES_EXCLUDE += src/bindings/desktop/% src/bindings/ios/%
-    ADDON_LIBS_EXCLUDE += libs
+    ADDON_DATA = lib/openframeworks.py
+    ADDON_DATA += lib/openframeworks_extra.py
+    ADDON_CFLAGS += -I/usr/include/python2.7
+    ADDON_LDFLAGS += -lpython2.7
 
 win_cb:
 	ADDON_SOURCES += src/ofxPython.cpp src/ofxPythonCallBack.cpp
