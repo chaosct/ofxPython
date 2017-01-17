@@ -1,7 +1,7 @@
 ofxPython
 =========
 
-(c) 2015 Carles F. Julià <carles@protopixel.net>
+(c) 2017 Carles F. Julià <carles@protopixel.net>
 
 Introduction
 ------------
