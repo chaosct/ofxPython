@@ -44,7 +44,7 @@ bindings:
 	@echo NAME = $(NAME)
 	@echo DEST_DIR = $(DEST_DIR)
 	
-	$(SWIG) -c++ -python -fcompact -fvirtual $(CXXFLAGS) -outdir $(DEST_LANG_DIR) openframeworks_extra.i
+	$(SWIG) -c++ -python -modern -fcompact -fvirtual $(CXXFLAGS) -outdir $(DEST_LANG_DIR) openframeworks_extra.i
 	mv openframeworks_extra_wrap.cxx $(NAME).cpp
 
 	$(SWIG) -c++ -python -external-runtime $(NAME).h

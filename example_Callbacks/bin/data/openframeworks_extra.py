@@ -47,10 +47,7 @@ def _swig_setattr_nondynamic(self, class_type, name, value, static=1):
     if method:
         return method(self, value)
     if (not static):
-        if _newclass:
-            object.__setattr__(self, name, value)
-        else:
-            self.__dict__[name] = value
+        object.__setattr__(self, name, value)
     else:
         raise AttributeError("You cannot add attributes to %s" % self)
 
@@ -90,11 +87,20 @@ except AttributeError:
     _newclass = 0
 
 
-class CallBack(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, CallBack, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, CallBack, name)
+
+def _swig_setattr_nondynamic_method(set):
+    def set_attr(self, name, value):
+        if (name == "thisown"):
+            return self.this.own(value)
+        if hasattr(self, name) or (name == "this"):
+            set(self, name, value)
+        else:
+            raise AttributeError("You cannot add attributes to %s" % self)
+    return set_attr
+
+
+class CallBack(object):
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
 
     def _call(self):
@@ -123,6 +129,5 @@ CallBack_swigregister(CallBack)
 def _getCallBackPointer():
     return _openframeworks_extra._getCallBackPointer()
 _getCallBackPointer = _openframeworks_extra._getCallBackPointer
-# This file is compatible with both classic and new-style classes.
 
 

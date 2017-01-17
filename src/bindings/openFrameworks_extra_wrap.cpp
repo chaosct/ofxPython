@@ -3025,6 +3025,12 @@ static swig_module_info swig_module = {swig_types, 2, 0, 0, 0, 0};
 #  error "This python version requires swig to be run with the '-classic' option"
 # endif
 #endif
+#if (PY_VERSION_HEX <= 0x02020000)
+# error "This python version requires swig to be run with the '-nomodern' option"
+#endif
+#if (PY_VERSION_HEX <= 0x02020000)
+# error "This python version requires swig to be run with the '-nomodernargs' option"
+#endif
 
 /*-----------------------------------------------
               @(target):= _openframeworks_extra.so
@@ -3145,30 +3151,30 @@ extern "C" {
 #endif
 SWIGINTERN PyObject *_wrap_CallBack__call(PyObject *SWIGUNUSEDPARM(self), PyObject *args) { PyObject *resultobj = 0;
   CallBack *arg1 = (CallBack *) 0 ; void *argp1 = 0 ; int res1 = 0 ; PyObject * obj0 = 0 ;
-  if (!PyArg_ParseTuple(args,(char *)"O:CallBack__call",&obj0)) SWIG_fail;
+  if(!PyArg_UnpackTuple(args,(char *)"CallBack__call",1,1,&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CallBack, 0 |  0 ); if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CallBack__call" "', argument " "1"" of type '" "CallBack *""'");  } 
   arg1 = reinterpret_cast< CallBack * >(argp1); (arg1)->_call(); resultobj = SWIG_Py_Void(); return resultobj; fail:
   return NULL; }
 SWIGINTERN PyObject *_wrap_delete_CallBack(PyObject *SWIGUNUSEDPARM(self), PyObject *args) { PyObject *resultobj = 0;
   CallBack *arg1 = (CallBack *) 0 ; void *argp1 = 0 ; int res1 = 0 ; PyObject * obj0 = 0 ;
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_CallBack",&obj0)) SWIG_fail;
+  if(!PyArg_UnpackTuple(args,(char *)"delete_CallBack",1,1,&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CallBack, SWIG_POINTER_DISOWN |  0 ); if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_CallBack" "', argument " "1"" of type '" "CallBack *""'");  }
    arg1 = reinterpret_cast< CallBack * >(argp1); delete arg1; resultobj = SWIG_Py_Void(); return resultobj; fail: return NULL; }
 SWIGINTERN PyObject *_wrap_new_CallBack(PyObject *SWIGUNUSEDPARM(self), PyObject *args) { PyObject *resultobj = 0;
-  CallBack *result = 0 ; if (!PyArg_ParseTuple(args,(char *)":new_CallBack")) SWIG_fail; result = (CallBack *)new CallBack();
+  CallBack *result = 0 ; if(!PyArg_UnpackTuple(args,(char *)"new_CallBack",0,0)) SWIG_fail; result = (CallBack *)new CallBack();
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_CallBack, SWIG_POINTER_NEW |  0 ); return resultobj; fail:
   return NULL; }
 SWIGINTERN PyObject *CallBack_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_CallBack, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
 SWIGINTERN PyObject *_wrap__getCallBackPointer(PyObject *SWIGUNUSEDPARM(self), PyObject *args) { PyObject *resultobj = 0;
-  CallBack *result = 0 ; if (!PyArg_ParseTuple(args,(char *)":_getCallBackPointer")) SWIG_fail;
+  CallBack *result = 0 ; if(!PyArg_UnpackTuple(args,(char *)"_getCallBackPointer",0,0)) SWIG_fail;
   result = (CallBack *)_getCallBackPointer();
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_CallBack, 0 |  0 ); return resultobj; fail: return NULL; }
 static PyMethodDef SwigMethods[] = {
