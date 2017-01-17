@@ -1034,9 +1034,6 @@ class ofFbo(_object):
     def isAllocated(self):
         return _openframeworks.ofFbo_isAllocated(self)
 
-    def destroy(self):
-        return _openframeworks.ofFbo_destroy(self)
-
     def clear(self):
         return _openframeworks.ofFbo_clear(self)
 
@@ -1058,20 +1055,11 @@ class ofFbo(_object):
     def getDefaultTextureIndex(self):
         return _openframeworks.ofFbo_getDefaultTextureIndex(self)
 
-    def getTextureReference(self, *args):
-        return _openframeworks.ofFbo_getTextureReference(self, *args)
-
     def getTexture(self, *args):
         return _openframeworks.ofFbo_getTexture(self, *args)
 
     def getDepthTexture(self, *args):
         return _openframeworks.ofFbo_getDepthTexture(self, *args)
-
-    def setUseTexture(self, arg2):
-        return _openframeworks.ofFbo_setUseTexture(self, arg2)
-
-    def isUsingTexture(self):
-        return _openframeworks.ofFbo_isUsingTexture(self)
 
     def begin(self, setupScreen=True):
         return _openframeworks.ofFbo_begin(self, setupScreen)
@@ -1121,14 +1109,8 @@ class ofFbo(_object):
     def setActiveDrawBuffer(self, i):
         return _openframeworks.ofFbo_setActiveDrawBuffer(self, i)
 
-    def setActiveDrawBuffers(self, i):
-        return _openframeworks.ofFbo_setActiveDrawBuffers(self, i)
-
     def activateAllDrawBuffers(self):
         return _openframeworks.ofFbo_activateAllDrawBuffers(self)
-
-    def getFbo(self):
-        return _openframeworks.ofFbo_getFbo(self)
 
     def getId(self):
         return _openframeworks.ofFbo_getId(self)
@@ -1325,9 +1307,6 @@ class ofTexture(_object):
 
     def isAllocated(self):
         return _openframeworks.ofTexture_isAllocated(self)
-
-    def bAllocated(self):
-        return _openframeworks.ofTexture_bAllocated(self)
     __swig_destroy__ = _openframeworks.delete_ofTexture
     __del__ = lambda self: None
 
@@ -1438,10 +1417,6 @@ class ofTexture(_object):
 
     def hasMipmap(self):
         return _openframeworks.ofTexture_hasMipmap(self)
-    __swig_setmethods__["texData"] = _openframeworks.ofTexture_texData_set
-    __swig_getmethods__["texData"] = _openframeworks.ofTexture_texData_get
-    if _newclass:
-        texData = _swig_property(_openframeworks.ofTexture_texData_get, _openframeworks.ofTexture_texData_set)
 ofTexture_swigregister = _openframeworks.ofTexture_swigregister
 ofTexture_swigregister(ofTexture)
 
@@ -1588,17 +1563,11 @@ class ofImage(_object):
     def isAllocated(self):
         return _openframeworks.ofImage_isAllocated(self)
 
-    def bAllocated(self):
-        return _openframeworks.ofImage_bAllocated(self)
-
     def clear(self):
         return _openframeworks.ofImage_clear(self)
 
     def load(self, *args):
         return _openframeworks.ofImage_load(self, *args)
-
-    def loadImage(self, *args):
-        return _openframeworks.ofImage_loadImage(self, *args)
     __swig_destroy__ = _openframeworks.delete_ofImage
     __del__ = lambda self: None
 
@@ -1620,9 +1589,6 @@ class ofImage(_object):
     def getTexture(self, *args):
         return _openframeworks.ofImage_getTexture(self, *args)
 
-    def getTextureReference(self, *args):
-        return _openframeworks.ofImage_getTextureReference(self, *args)
-
     def bind(self, textureLocation=0):
         return _openframeworks.ofImage_bind(self, textureLocation)
 
@@ -1631,12 +1597,6 @@ class ofImage(_object):
 
     def setCompression(self, compression):
         return _openframeworks.ofImage_setCompression(self, compression)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofImage_getPixels(self, *args)
-
-    def getPixelsRef(self, *args):
-        return _openframeworks.ofImage_getPixelsRef(self, *args)
 
     def getColor(self, *args):
         return _openframeworks.ofImage_getColor(self, *args)
@@ -1688,9 +1648,6 @@ class ofImage(_object):
 
     def save(self, *args):
         return _openframeworks.ofImage_save(self, *args)
-
-    def saveImage(self, *args):
-        return _openframeworks.ofImage_saveImage(self, *args)
 ofImage_swigregister = _openframeworks.ofImage_swigregister
 ofImage_swigregister(ofImage)
 
@@ -1714,17 +1671,11 @@ class ofFloatImage(_object):
     def isAllocated(self):
         return _openframeworks.ofFloatImage_isAllocated(self)
 
-    def bAllocated(self):
-        return _openframeworks.ofFloatImage_bAllocated(self)
-
     def clear(self):
         return _openframeworks.ofFloatImage_clear(self)
 
     def load(self, *args):
         return _openframeworks.ofFloatImage_load(self, *args)
-
-    def loadImage(self, *args):
-        return _openframeworks.ofFloatImage_loadImage(self, *args)
     __swig_destroy__ = _openframeworks.delete_ofFloatImage
     __del__ = lambda self: None
 
@@ -1746,9 +1697,6 @@ class ofFloatImage(_object):
     def getTexture(self, *args):
         return _openframeworks.ofFloatImage_getTexture(self, *args)
 
-    def getTextureReference(self, *args):
-        return _openframeworks.ofFloatImage_getTextureReference(self, *args)
-
     def bind(self, textureLocation=0):
         return _openframeworks.ofFloatImage_bind(self, textureLocation)
 
@@ -1757,12 +1705,6 @@ class ofFloatImage(_object):
 
     def setCompression(self, compression):
         return _openframeworks.ofFloatImage_setCompression(self, compression)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofFloatImage_getPixels(self, *args)
-
-    def getPixelsRef(self, *args):
-        return _openframeworks.ofFloatImage_getPixelsRef(self, *args)
 
     def getColor(self, *args):
         return _openframeworks.ofFloatImage_getColor(self, *args)
@@ -1814,9 +1756,6 @@ class ofFloatImage(_object):
 
     def save(self, *args):
         return _openframeworks.ofFloatImage_save(self, *args)
-
-    def saveImage(self, *args):
-        return _openframeworks.ofFloatImage_saveImage(self, *args)
 ofFloatImage_swigregister = _openframeworks.ofFloatImage_swigregister
 ofFloatImage_swigregister(ofFloatImage)
 
@@ -1840,17 +1779,11 @@ class ofShortImage(_object):
     def isAllocated(self):
         return _openframeworks.ofShortImage_isAllocated(self)
 
-    def bAllocated(self):
-        return _openframeworks.ofShortImage_bAllocated(self)
-
     def clear(self):
         return _openframeworks.ofShortImage_clear(self)
 
     def load(self, *args):
         return _openframeworks.ofShortImage_load(self, *args)
-
-    def loadImage(self, *args):
-        return _openframeworks.ofShortImage_loadImage(self, *args)
     __swig_destroy__ = _openframeworks.delete_ofShortImage
     __del__ = lambda self: None
 
@@ -1872,9 +1805,6 @@ class ofShortImage(_object):
     def getTexture(self, *args):
         return _openframeworks.ofShortImage_getTexture(self, *args)
 
-    def getTextureReference(self, *args):
-        return _openframeworks.ofShortImage_getTextureReference(self, *args)
-
     def bind(self, textureLocation=0):
         return _openframeworks.ofShortImage_bind(self, textureLocation)
 
@@ -1883,12 +1813,6 @@ class ofShortImage(_object):
 
     def setCompression(self, compression):
         return _openframeworks.ofShortImage_setCompression(self, compression)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofShortImage_getPixels(self, *args)
-
-    def getPixelsRef(self, *args):
-        return _openframeworks.ofShortImage_getPixelsRef(self, *args)
 
     def getColor(self, *args):
         return _openframeworks.ofShortImage_getColor(self, *args)
@@ -1940,2685 +1864,40 @@ class ofShortImage(_object):
 
     def save(self, *args):
         return _openframeworks.ofShortImage_save(self, *args)
-
-    def saveImage(self, *args):
-        return _openframeworks.ofShortImage_saveImage(self, *args)
 ofShortImage_swigregister = _openframeworks.ofShortImage_swigregister
 ofShortImage_swigregister(ofShortImage)
 
 
-def ofSoundStreamSetup(*args):
-    return _openframeworks.ofSoundStreamSetup(*args)
-ofSoundStreamSetup = _openframeworks.ofSoundStreamSetup
+_openframeworks.OF_TEXTURE_LUMINANCE_swigconstant(_openframeworks)
+OF_TEXTURE_LUMINANCE = _openframeworks.OF_TEXTURE_LUMINANCE
 
-def ofSoundStreamStop():
-    return _openframeworks.ofSoundStreamStop()
-ofSoundStreamStop = _openframeworks.ofSoundStreamStop
+_openframeworks.OF_TEXTURE_RGB_swigconstant(_openframeworks)
+OF_TEXTURE_RGB = _openframeworks.OF_TEXTURE_RGB
 
-def ofSoundStreamStart():
-    return _openframeworks.ofSoundStreamStart()
-ofSoundStreamStart = _openframeworks.ofSoundStreamStart
+_openframeworks.OF_TEXTURE_RGBA_swigconstant(_openframeworks)
+OF_TEXTURE_RGBA = _openframeworks.OF_TEXTURE_RGBA
 
-def ofSoundStreamClose():
-    return _openframeworks.ofSoundStreamClose()
-ofSoundStreamClose = _openframeworks.ofSoundStreamClose
+_openframeworks.OF_FRAGMENT_SHADER_swigconstant(_openframeworks)
+OF_FRAGMENT_SHADER = _openframeworks.OF_FRAGMENT_SHADER
 
-def ofSoundStreamListDevices():
-    return _openframeworks.ofSoundStreamListDevices()
-ofSoundStreamListDevices = _openframeworks.ofSoundStreamListDevices
-class ofSoundStream(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofSoundStream, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofSoundStream, name)
-    __repr__ = _swig_repr
+_openframeworks.OF_VERTEX_SHADER_swigconstant(_openframeworks)
+OF_VERTEX_SHADER = _openframeworks.OF_VERTEX_SHADER
 
-    def __init__(self):
-        this = _openframeworks.new_ofSoundStream()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
+_openframeworks.OF_CLAMP_TO_EDGE_swigconstant(_openframeworks)
+OF_CLAMP_TO_EDGE = _openframeworks.OF_CLAMP_TO_EDGE
 
-    def setSoundStream(self, soundStreamPtr):
-        return _openframeworks.ofSoundStream_setSoundStream(self, soundStreamPtr)
+_openframeworks.OF_CLAMP_TO_BORDER_swigconstant(_openframeworks)
+OF_CLAMP_TO_BORDER = _openframeworks.OF_CLAMP_TO_BORDER
 
-    def getSoundStream(self):
-        return _openframeworks.ofSoundStream_getSoundStream(self)
+_openframeworks.OF_REPEAT_swigconstant(_openframeworks)
+OF_REPEAT = _openframeworks.OF_REPEAT
 
-    def printDeviceList(self):
-        return _openframeworks.ofSoundStream_printDeviceList(self)
-
-    def getDeviceList(self):
-        return _openframeworks.ofSoundStream_getDeviceList(self)
-
-    def getMatchingDevices(self, *args):
-        return _openframeworks.ofSoundStream_getMatchingDevices(self, *args)
-
-    def setDeviceID(self, deviceID):
-        return _openframeworks.ofSoundStream_setDeviceID(self, deviceID)
-
-    def setDevice(self, device):
-        return _openframeworks.ofSoundStream_setDevice(self, device)
-
-    def setup(self, *args):
-        return _openframeworks.ofSoundStream_setup(self, *args)
-
-    def setInput(self, *args):
-        return _openframeworks.ofSoundStream_setInput(self, *args)
-
-    def setOutput(self, *args):
-        return _openframeworks.ofSoundStream_setOutput(self, *args)
-
-    def start(self):
-        return _openframeworks.ofSoundStream_start(self)
-
-    def stop(self):
-        return _openframeworks.ofSoundStream_stop(self)
-
-    def close(self):
-        return _openframeworks.ofSoundStream_close(self)
-
-    def getTickCount(self):
-        return _openframeworks.ofSoundStream_getTickCount(self)
-
-    def getNumInputChannels(self):
-        return _openframeworks.ofSoundStream_getNumInputChannels(self)
-
-    def getNumOutputChannels(self):
-        return _openframeworks.ofSoundStream_getNumOutputChannels(self)
-
-    def getSampleRate(self):
-        return _openframeworks.ofSoundStream_getSampleRate(self)
-
-    def getBufferSize(self):
-        return _openframeworks.ofSoundStream_getBufferSize(self)
-
-    def listDevices(self):
-        return _openframeworks.ofSoundStream_listDevices(self)
-    __swig_destroy__ = _openframeworks.delete_ofSoundStream
-    __del__ = lambda self: None
-ofSoundStream_swigregister = _openframeworks.ofSoundStream_swigregister
-ofSoundStream_swigregister(ofSoundStream)
-
-class ofSoundPlayer(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofSoundPlayer, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofSoundPlayer, name)
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        this = _openframeworks.new_ofSoundPlayer()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def setPlayer(self, newPlayer):
-        return _openframeworks.ofSoundPlayer_setPlayer(self, newPlayer)
-
-    def getPlayer(self):
-        return _openframeworks.ofSoundPlayer_getPlayer(self)
-
-    def load(self, fileName, stream=False):
-        return _openframeworks.ofSoundPlayer_load(self, fileName, stream)
-
-    def loadSound(self, fileName, stream=False):
-        return _openframeworks.ofSoundPlayer_loadSound(self, fileName, stream)
-
-    def unload(self):
-        return _openframeworks.ofSoundPlayer_unload(self)
-
-    def unloadSound(self):
-        return _openframeworks.ofSoundPlayer_unloadSound(self)
-
-    def play(self):
-        return _openframeworks.ofSoundPlayer_play(self)
-
-    def stop(self):
-        return _openframeworks.ofSoundPlayer_stop(self)
-
-    def setVolume(self, vol):
-        return _openframeworks.ofSoundPlayer_setVolume(self, vol)
-
-    def setPan(self, pan):
-        return _openframeworks.ofSoundPlayer_setPan(self, pan)
-
-    def setSpeed(self, speed):
-        return _openframeworks.ofSoundPlayer_setSpeed(self, speed)
-
-    def setPaused(self, paused):
-        return _openframeworks.ofSoundPlayer_setPaused(self, paused)
-
-    def setLoop(self, loop):
-        return _openframeworks.ofSoundPlayer_setLoop(self, loop)
-
-    def setMultiPlay(self, multiplay):
-        return _openframeworks.ofSoundPlayer_setMultiPlay(self, multiplay)
-
-    def setPosition(self, percent):
-        return _openframeworks.ofSoundPlayer_setPosition(self, percent)
-
-    def setPositionMS(self, ms):
-        return _openframeworks.ofSoundPlayer_setPositionMS(self, ms)
-
-    def getPositionMS(self):
-        return _openframeworks.ofSoundPlayer_getPositionMS(self)
-
-    def getPosition(self):
-        return _openframeworks.ofSoundPlayer_getPosition(self)
-
-    def isPlaying(self):
-        return _openframeworks.ofSoundPlayer_isPlaying(self)
-
-    def getIsPlaying(self):
-        return _openframeworks.ofSoundPlayer_getIsPlaying(self)
-
-    def getSpeed(self):
-        return _openframeworks.ofSoundPlayer_getSpeed(self)
-
-    def getPan(self):
-        return _openframeworks.ofSoundPlayer_getPan(self)
-
-    def getVolume(self):
-        return _openframeworks.ofSoundPlayer_getVolume(self)
-
-    def isLoaded(self):
-        return _openframeworks.ofSoundPlayer_isLoaded(self)
-    __swig_destroy__ = _openframeworks.delete_ofSoundPlayer
-    __del__ = lambda self: None
-ofSoundPlayer_swigregister = _openframeworks.ofSoundPlayer_swigregister
-ofSoundPlayer_swigregister(ofSoundPlayer)
-
-class ofColor(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofColor, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofColor, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofColor(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_getmethods__["fromHsb"] = lambda x: _openframeworks.ofColor_fromHsb
-    if _newclass:
-        fromHsb = staticmethod(_openframeworks.ofColor_fromHsb)
-    __swig_getmethods__["fromHex"] = lambda x: _openframeworks.ofColor_fromHex
-    if _newclass:
-        fromHex = staticmethod(_openframeworks.ofColor_fromHex)
-
-    def set(self, *args):
-        return _openframeworks.ofColor_set(self, *args)
-
-    def setHex(self, *args):
-        return _openframeworks.ofColor_setHex(self, *args)
-
-    def setHue(self, hue):
-        return _openframeworks.ofColor_setHue(self, hue)
-
-    def setHueAngle(self, angle):
-        return _openframeworks.ofColor_setHueAngle(self, angle)
-
-    def setSaturation(self, saturation):
-        return _openframeworks.ofColor_setSaturation(self, saturation)
-
-    def setBrightness(self, brightness):
-        return _openframeworks.ofColor_setBrightness(self, brightness)
-
-    def setHsb(self, *args):
-        return _openframeworks.ofColor_setHsb(self, *args)
-
-    def clamp(self):
-        return _openframeworks.ofColor_clamp(self)
-
-    def invert(self):
-        return _openframeworks.ofColor_invert(self)
-
-    def normalize(self):
-        return _openframeworks.ofColor_normalize(self)
-
-    def lerp(self, target, amount):
-        return _openframeworks.ofColor_lerp(self, target, amount)
-
-    def getClamped(self):
-        return _openframeworks.ofColor_getClamped(self)
-
-    def getInverted(self):
-        return _openframeworks.ofColor_getInverted(self)
-
-    def getNormalized(self):
-        return _openframeworks.ofColor_getNormalized(self)
-
-    def getLerped(self, target, amount):
-        return _openframeworks.ofColor_getLerped(self, target, amount)
-
-    def getHex(self):
-        return _openframeworks.ofColor_getHex(self)
-
-    def getHue(self):
-        return _openframeworks.ofColor_getHue(self)
-
-    def getHueAngle(self):
-        return _openframeworks.ofColor_getHueAngle(self)
-
-    def getSaturation(self):
-        return _openframeworks.ofColor_getSaturation(self)
-
-    def getBrightness(self):
-        return _openframeworks.ofColor_getBrightness(self)
-
-    def getLightness(self):
-        return _openframeworks.ofColor_getLightness(self)
-
-    def getHsb(self, hue, saturation, brightness):
-        return _openframeworks.ofColor_getHsb(self, hue, saturation, brightness)
-    __swig_getmethods__["limit"] = lambda x: _openframeworks.ofColor_limit
-    if _newclass:
-        limit = staticmethod(_openframeworks.ofColor_limit)
-
-    def __eq__(self, color):
-        return _openframeworks.ofColor___eq__(self, color)
-
-    def __ne__(self, color):
-        return _openframeworks.ofColor___ne__(self, color)
-
-    def __add__(self, *args):
-        return _openframeworks.ofColor___add__(self, *args)
-
-    def __iadd__(self, *args):
-        return _openframeworks.ofColor___iadd__(self, *args)
-
-    def __sub__(self, *args):
-        return _openframeworks.ofColor___sub__(self, *args)
-
-    def __isub__(self, *args):
-        return _openframeworks.ofColor___isub__(self, *args)
-
-    def __mul__(self, *args):
-        return _openframeworks.ofColor___mul__(self, *args)
-
-    def __imul__(self, *args):
-        return _openframeworks.ofColor___imul__(self, *args)
-
-    def __div__(self, *args):
-        return _openframeworks.ofColor___div__(self, *args)
-
-    def __idiv__(self, *args):
-        return _openframeworks.ofColor___idiv__(self, *args)
-
-    def __getitem__(self, *args):
-        return _openframeworks.ofColor___getitem__(self, *args)
-
-    def getR(self):
-        return _openframeworks.ofColor_getR(self)
-
-    def getG(self):
-        return _openframeworks.ofColor_getG(self)
-
-    def getB(self):
-        return _openframeworks.ofColor_getB(self)
-
-    def getA(self):
-        return _openframeworks.ofColor_getA(self)
-
-    def setR(self, r):
-        return _openframeworks.ofColor_setR(self, r)
-
-    def setG(self, g):
-        return _openframeworks.ofColor_setG(self, g)
-
-    def setB(self, b):
-        return _openframeworks.ofColor_setB(self, b)
-
-    def setA(self, a):
-        return _openframeworks.ofColor_setA(self, a)
-
-    def __str__(self):
-        return _openframeworks.ofColor___str__(self)
-    __swig_setmethods__["r"] = _openframeworks.ofColor_r_set
-    __swig_getmethods__["r"] = _openframeworks.ofColor_r_get
-    if _newclass:
-        r = _swig_property(_openframeworks.ofColor_r_get, _openframeworks.ofColor_r_set)
-    __swig_setmethods__["g"] = _openframeworks.ofColor_g_set
-    __swig_getmethods__["g"] = _openframeworks.ofColor_g_get
-    if _newclass:
-        g = _swig_property(_openframeworks.ofColor_g_get, _openframeworks.ofColor_g_set)
-    __swig_setmethods__["b"] = _openframeworks.ofColor_b_set
-    __swig_getmethods__["b"] = _openframeworks.ofColor_b_get
-    if _newclass:
-        b = _swig_property(_openframeworks.ofColor_b_get, _openframeworks.ofColor_b_set)
-    __swig_setmethods__["a"] = _openframeworks.ofColor_a_set
-    __swig_getmethods__["a"] = _openframeworks.ofColor_a_get
-    if _newclass:
-        a = _swig_property(_openframeworks.ofColor_a_get, _openframeworks.ofColor_a_set)
-    __swig_destroy__ = _openframeworks.delete_ofColor
-    __del__ = lambda self: None
-ofColor_swigregister = _openframeworks.ofColor_swigregister
-ofColor_swigregister(ofColor)
-
-def ofColor_fromHsb(*args):
-    return _openframeworks.ofColor_fromHsb(*args)
-ofColor_fromHsb = _openframeworks.ofColor_fromHsb
-
-def ofColor_fromHex(*args):
-    return _openframeworks.ofColor_fromHex(*args)
-ofColor_fromHex = _openframeworks.ofColor_fromHex
-
-def ofColor_limit():
-    return _openframeworks.ofColor_limit()
-ofColor_limit = _openframeworks.ofColor_limit
-cvar = _openframeworks.cvar
-ofColor.white = _openframeworks.cvar.ofColor_white
-ofColor.gray = _openframeworks.cvar.ofColor_gray
-ofColor.black = _openframeworks.cvar.ofColor_black
-ofColor.red = _openframeworks.cvar.ofColor_red
-ofColor.green = _openframeworks.cvar.ofColor_green
-ofColor.blue = _openframeworks.cvar.ofColor_blue
-ofColor.cyan = _openframeworks.cvar.ofColor_cyan
-ofColor.magenta = _openframeworks.cvar.ofColor_magenta
-ofColor.yellow = _openframeworks.cvar.ofColor_yellow
-ofColor.aliceBlue = _openframeworks.cvar.ofColor_aliceBlue
-ofColor.antiqueWhite = _openframeworks.cvar.ofColor_antiqueWhite
-ofColor.aqua = _openframeworks.cvar.ofColor_aqua
-ofColor.aquamarine = _openframeworks.cvar.ofColor_aquamarine
-ofColor.azure = _openframeworks.cvar.ofColor_azure
-ofColor.beige = _openframeworks.cvar.ofColor_beige
-ofColor.bisque = _openframeworks.cvar.ofColor_bisque
-ofColor.blanchedAlmond = _openframeworks.cvar.ofColor_blanchedAlmond
-ofColor.blueViolet = _openframeworks.cvar.ofColor_blueViolet
-ofColor.brown = _openframeworks.cvar.ofColor_brown
-ofColor.burlyWood = _openframeworks.cvar.ofColor_burlyWood
-ofColor.cadetBlue = _openframeworks.cvar.ofColor_cadetBlue
-ofColor.chartreuse = _openframeworks.cvar.ofColor_chartreuse
-ofColor.chocolate = _openframeworks.cvar.ofColor_chocolate
-ofColor.coral = _openframeworks.cvar.ofColor_coral
-ofColor.cornflowerBlue = _openframeworks.cvar.ofColor_cornflowerBlue
-ofColor.cornsilk = _openframeworks.cvar.ofColor_cornsilk
-ofColor.crimson = _openframeworks.cvar.ofColor_crimson
-ofColor.darkBlue = _openframeworks.cvar.ofColor_darkBlue
-ofColor.darkCyan = _openframeworks.cvar.ofColor_darkCyan
-ofColor.darkGoldenRod = _openframeworks.cvar.ofColor_darkGoldenRod
-ofColor.darkGray = _openframeworks.cvar.ofColor_darkGray
-ofColor.darkGrey = _openframeworks.cvar.ofColor_darkGrey
-ofColor.darkGreen = _openframeworks.cvar.ofColor_darkGreen
-ofColor.darkKhaki = _openframeworks.cvar.ofColor_darkKhaki
-ofColor.darkMagenta = _openframeworks.cvar.ofColor_darkMagenta
-ofColor.darkOliveGreen = _openframeworks.cvar.ofColor_darkOliveGreen
-ofColor.darkorange = _openframeworks.cvar.ofColor_darkorange
-ofColor.darkOrchid = _openframeworks.cvar.ofColor_darkOrchid
-ofColor.darkRed = _openframeworks.cvar.ofColor_darkRed
-ofColor.darkSalmon = _openframeworks.cvar.ofColor_darkSalmon
-ofColor.darkSeaGreen = _openframeworks.cvar.ofColor_darkSeaGreen
-ofColor.darkSlateBlue = _openframeworks.cvar.ofColor_darkSlateBlue
-ofColor.darkSlateGray = _openframeworks.cvar.ofColor_darkSlateGray
-ofColor.darkSlateGrey = _openframeworks.cvar.ofColor_darkSlateGrey
-ofColor.darkTurquoise = _openframeworks.cvar.ofColor_darkTurquoise
-ofColor.darkViolet = _openframeworks.cvar.ofColor_darkViolet
-ofColor.deepPink = _openframeworks.cvar.ofColor_deepPink
-ofColor.deepSkyBlue = _openframeworks.cvar.ofColor_deepSkyBlue
-ofColor.dimGray = _openframeworks.cvar.ofColor_dimGray
-ofColor.dimGrey = _openframeworks.cvar.ofColor_dimGrey
-ofColor.dodgerBlue = _openframeworks.cvar.ofColor_dodgerBlue
-ofColor.fireBrick = _openframeworks.cvar.ofColor_fireBrick
-ofColor.floralWhite = _openframeworks.cvar.ofColor_floralWhite
-ofColor.forestGreen = _openframeworks.cvar.ofColor_forestGreen
-ofColor.fuchsia = _openframeworks.cvar.ofColor_fuchsia
-ofColor.gainsboro = _openframeworks.cvar.ofColor_gainsboro
-ofColor.ghostWhite = _openframeworks.cvar.ofColor_ghostWhite
-ofColor.gold = _openframeworks.cvar.ofColor_gold
-ofColor.goldenRod = _openframeworks.cvar.ofColor_goldenRod
-ofColor.grey = _openframeworks.cvar.ofColor_grey
-ofColor.greenYellow = _openframeworks.cvar.ofColor_greenYellow
-ofColor.honeyDew = _openframeworks.cvar.ofColor_honeyDew
-ofColor.hotPink = _openframeworks.cvar.ofColor_hotPink
-ofColor.indianRed = _openframeworks.cvar.ofColor_indianRed
-ofColor.indigo = _openframeworks.cvar.ofColor_indigo
-ofColor.ivory = _openframeworks.cvar.ofColor_ivory
-ofColor.khaki = _openframeworks.cvar.ofColor_khaki
-ofColor.lavender = _openframeworks.cvar.ofColor_lavender
-ofColor.lavenderBlush = _openframeworks.cvar.ofColor_lavenderBlush
-ofColor.lawnGreen = _openframeworks.cvar.ofColor_lawnGreen
-ofColor.lemonChiffon = _openframeworks.cvar.ofColor_lemonChiffon
-ofColor.lightBlue = _openframeworks.cvar.ofColor_lightBlue
-ofColor.lightCoral = _openframeworks.cvar.ofColor_lightCoral
-ofColor.lightCyan = _openframeworks.cvar.ofColor_lightCyan
-ofColor.lightGoldenRodYellow = _openframeworks.cvar.ofColor_lightGoldenRodYellow
-ofColor.lightGray = _openframeworks.cvar.ofColor_lightGray
-ofColor.lightGrey = _openframeworks.cvar.ofColor_lightGrey
-ofColor.lightGreen = _openframeworks.cvar.ofColor_lightGreen
-ofColor.lightPink = _openframeworks.cvar.ofColor_lightPink
-ofColor.lightSalmon = _openframeworks.cvar.ofColor_lightSalmon
-ofColor.lightSeaGreen = _openframeworks.cvar.ofColor_lightSeaGreen
-ofColor.lightSkyBlue = _openframeworks.cvar.ofColor_lightSkyBlue
-ofColor.lightSlateGray = _openframeworks.cvar.ofColor_lightSlateGray
-ofColor.lightSlateGrey = _openframeworks.cvar.ofColor_lightSlateGrey
-ofColor.lightSteelBlue = _openframeworks.cvar.ofColor_lightSteelBlue
-ofColor.lightYellow = _openframeworks.cvar.ofColor_lightYellow
-ofColor.lime = _openframeworks.cvar.ofColor_lime
-ofColor.limeGreen = _openframeworks.cvar.ofColor_limeGreen
-ofColor.linen = _openframeworks.cvar.ofColor_linen
-ofColor.maroon = _openframeworks.cvar.ofColor_maroon
-ofColor.mediumAquaMarine = _openframeworks.cvar.ofColor_mediumAquaMarine
-ofColor.mediumBlue = _openframeworks.cvar.ofColor_mediumBlue
-ofColor.mediumOrchid = _openframeworks.cvar.ofColor_mediumOrchid
-ofColor.mediumPurple = _openframeworks.cvar.ofColor_mediumPurple
-ofColor.mediumSeaGreen = _openframeworks.cvar.ofColor_mediumSeaGreen
-ofColor.mediumSlateBlue = _openframeworks.cvar.ofColor_mediumSlateBlue
-ofColor.mediumSpringGreen = _openframeworks.cvar.ofColor_mediumSpringGreen
-ofColor.mediumTurquoise = _openframeworks.cvar.ofColor_mediumTurquoise
-ofColor.mediumVioletRed = _openframeworks.cvar.ofColor_mediumVioletRed
-ofColor.midnightBlue = _openframeworks.cvar.ofColor_midnightBlue
-ofColor.mintCream = _openframeworks.cvar.ofColor_mintCream
-ofColor.mistyRose = _openframeworks.cvar.ofColor_mistyRose
-ofColor.moccasin = _openframeworks.cvar.ofColor_moccasin
-ofColor.navajoWhite = _openframeworks.cvar.ofColor_navajoWhite
-ofColor.navy = _openframeworks.cvar.ofColor_navy
-ofColor.oldLace = _openframeworks.cvar.ofColor_oldLace
-ofColor.olive = _openframeworks.cvar.ofColor_olive
-ofColor.oliveDrab = _openframeworks.cvar.ofColor_oliveDrab
-ofColor.orange = _openframeworks.cvar.ofColor_orange
-ofColor.orangeRed = _openframeworks.cvar.ofColor_orangeRed
-ofColor.orchid = _openframeworks.cvar.ofColor_orchid
-ofColor.paleGoldenRod = _openframeworks.cvar.ofColor_paleGoldenRod
-ofColor.paleGreen = _openframeworks.cvar.ofColor_paleGreen
-ofColor.paleTurquoise = _openframeworks.cvar.ofColor_paleTurquoise
-ofColor.paleVioletRed = _openframeworks.cvar.ofColor_paleVioletRed
-ofColor.papayaWhip = _openframeworks.cvar.ofColor_papayaWhip
-ofColor.peachPuff = _openframeworks.cvar.ofColor_peachPuff
-ofColor.peru = _openframeworks.cvar.ofColor_peru
-ofColor.pink = _openframeworks.cvar.ofColor_pink
-ofColor.plum = _openframeworks.cvar.ofColor_plum
-ofColor.powderBlue = _openframeworks.cvar.ofColor_powderBlue
-ofColor.purple = _openframeworks.cvar.ofColor_purple
-ofColor.rosyBrown = _openframeworks.cvar.ofColor_rosyBrown
-ofColor.royalBlue = _openframeworks.cvar.ofColor_royalBlue
-ofColor.saddleBrown = _openframeworks.cvar.ofColor_saddleBrown
-ofColor.salmon = _openframeworks.cvar.ofColor_salmon
-ofColor.sandyBrown = _openframeworks.cvar.ofColor_sandyBrown
-ofColor.seaGreen = _openframeworks.cvar.ofColor_seaGreen
-ofColor.seaShell = _openframeworks.cvar.ofColor_seaShell
-ofColor.sienna = _openframeworks.cvar.ofColor_sienna
-ofColor.silver = _openframeworks.cvar.ofColor_silver
-ofColor.skyBlue = _openframeworks.cvar.ofColor_skyBlue
-ofColor.slateBlue = _openframeworks.cvar.ofColor_slateBlue
-ofColor.slateGray = _openframeworks.cvar.ofColor_slateGray
-ofColor.slateGrey = _openframeworks.cvar.ofColor_slateGrey
-ofColor.snow = _openframeworks.cvar.ofColor_snow
-ofColor.springGreen = _openframeworks.cvar.ofColor_springGreen
-ofColor.steelBlue = _openframeworks.cvar.ofColor_steelBlue
-ofColor.blueSteel = _openframeworks.cvar.ofColor_blueSteel
-ofColor.tan = _openframeworks.cvar.ofColor_tan
-ofColor.teal = _openframeworks.cvar.ofColor_teal
-ofColor.thistle = _openframeworks.cvar.ofColor_thistle
-ofColor.tomato = _openframeworks.cvar.ofColor_tomato
-ofColor.turquoise = _openframeworks.cvar.ofColor_turquoise
-ofColor.violet = _openframeworks.cvar.ofColor_violet
-ofColor.wheat = _openframeworks.cvar.ofColor_wheat
-ofColor.whiteSmoke = _openframeworks.cvar.ofColor_whiteSmoke
-ofColor.yellowGreen = _openframeworks.cvar.ofColor_yellowGreen
-
-class ofFloatColor(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFloatColor, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofFloatColor, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofFloatColor(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_getmethods__["fromHsb"] = lambda x: _openframeworks.ofFloatColor_fromHsb
-    if _newclass:
-        fromHsb = staticmethod(_openframeworks.ofFloatColor_fromHsb)
-    __swig_getmethods__["fromHex"] = lambda x: _openframeworks.ofFloatColor_fromHex
-    if _newclass:
-        fromHex = staticmethod(_openframeworks.ofFloatColor_fromHex)
-
-    def set(self, *args):
-        return _openframeworks.ofFloatColor_set(self, *args)
-
-    def setHex(self, *args):
-        return _openframeworks.ofFloatColor_setHex(self, *args)
-
-    def setHue(self, hue):
-        return _openframeworks.ofFloatColor_setHue(self, hue)
-
-    def setHueAngle(self, angle):
-        return _openframeworks.ofFloatColor_setHueAngle(self, angle)
-
-    def setSaturation(self, saturation):
-        return _openframeworks.ofFloatColor_setSaturation(self, saturation)
-
-    def setBrightness(self, brightness):
-        return _openframeworks.ofFloatColor_setBrightness(self, brightness)
-
-    def setHsb(self, *args):
-        return _openframeworks.ofFloatColor_setHsb(self, *args)
-
-    def clamp(self):
-        return _openframeworks.ofFloatColor_clamp(self)
-
-    def invert(self):
-        return _openframeworks.ofFloatColor_invert(self)
-
-    def normalize(self):
-        return _openframeworks.ofFloatColor_normalize(self)
-
-    def lerp(self, target, amount):
-        return _openframeworks.ofFloatColor_lerp(self, target, amount)
-
-    def getClamped(self):
-        return _openframeworks.ofFloatColor_getClamped(self)
-
-    def getInverted(self):
-        return _openframeworks.ofFloatColor_getInverted(self)
-
-    def getNormalized(self):
-        return _openframeworks.ofFloatColor_getNormalized(self)
-
-    def getLerped(self, target, amount):
-        return _openframeworks.ofFloatColor_getLerped(self, target, amount)
-
-    def getHex(self):
-        return _openframeworks.ofFloatColor_getHex(self)
-
-    def getHue(self):
-        return _openframeworks.ofFloatColor_getHue(self)
-
-    def getHueAngle(self):
-        return _openframeworks.ofFloatColor_getHueAngle(self)
-
-    def getSaturation(self):
-        return _openframeworks.ofFloatColor_getSaturation(self)
-
-    def getBrightness(self):
-        return _openframeworks.ofFloatColor_getBrightness(self)
-
-    def getLightness(self):
-        return _openframeworks.ofFloatColor_getLightness(self)
-
-    def getHsb(self, hue, saturation, brightness):
-        return _openframeworks.ofFloatColor_getHsb(self, hue, saturation, brightness)
-    __swig_getmethods__["limit"] = lambda x: _openframeworks.ofFloatColor_limit
-    if _newclass:
-        limit = staticmethod(_openframeworks.ofFloatColor_limit)
-
-    def __eq__(self, color):
-        return _openframeworks.ofFloatColor___eq__(self, color)
-
-    def __ne__(self, color):
-        return _openframeworks.ofFloatColor___ne__(self, color)
-
-    def __add__(self, *args):
-        return _openframeworks.ofFloatColor___add__(self, *args)
-
-    def __iadd__(self, *args):
-        return _openframeworks.ofFloatColor___iadd__(self, *args)
-
-    def __sub__(self, *args):
-        return _openframeworks.ofFloatColor___sub__(self, *args)
-
-    def __isub__(self, *args):
-        return _openframeworks.ofFloatColor___isub__(self, *args)
-
-    def __mul__(self, *args):
-        return _openframeworks.ofFloatColor___mul__(self, *args)
-
-    def __imul__(self, *args):
-        return _openframeworks.ofFloatColor___imul__(self, *args)
-
-    def __div__(self, *args):
-        return _openframeworks.ofFloatColor___div__(self, *args)
-
-    def __idiv__(self, *args):
-        return _openframeworks.ofFloatColor___idiv__(self, *args)
-
-    def __getitem__(self, *args):
-        return _openframeworks.ofFloatColor___getitem__(self, *args)
-
-    def getR(self):
-        return _openframeworks.ofFloatColor_getR(self)
-
-    def getG(self):
-        return _openframeworks.ofFloatColor_getG(self)
-
-    def getB(self):
-        return _openframeworks.ofFloatColor_getB(self)
-
-    def getA(self):
-        return _openframeworks.ofFloatColor_getA(self)
-
-    def setR(self, r):
-        return _openframeworks.ofFloatColor_setR(self, r)
-
-    def setG(self, g):
-        return _openframeworks.ofFloatColor_setG(self, g)
-
-    def setB(self, b):
-        return _openframeworks.ofFloatColor_setB(self, b)
-
-    def setA(self, a):
-        return _openframeworks.ofFloatColor_setA(self, a)
-
-    def __str__(self):
-        return _openframeworks.ofFloatColor___str__(self)
-    __swig_setmethods__["r"] = _openframeworks.ofFloatColor_r_set
-    __swig_getmethods__["r"] = _openframeworks.ofFloatColor_r_get
-    if _newclass:
-        r = _swig_property(_openframeworks.ofFloatColor_r_get, _openframeworks.ofFloatColor_r_set)
-    __swig_setmethods__["g"] = _openframeworks.ofFloatColor_g_set
-    __swig_getmethods__["g"] = _openframeworks.ofFloatColor_g_get
-    if _newclass:
-        g = _swig_property(_openframeworks.ofFloatColor_g_get, _openframeworks.ofFloatColor_g_set)
-    __swig_setmethods__["b"] = _openframeworks.ofFloatColor_b_set
-    __swig_getmethods__["b"] = _openframeworks.ofFloatColor_b_get
-    if _newclass:
-        b = _swig_property(_openframeworks.ofFloatColor_b_get, _openframeworks.ofFloatColor_b_set)
-    __swig_setmethods__["a"] = _openframeworks.ofFloatColor_a_set
-    __swig_getmethods__["a"] = _openframeworks.ofFloatColor_a_get
-    if _newclass:
-        a = _swig_property(_openframeworks.ofFloatColor_a_get, _openframeworks.ofFloatColor_a_set)
-    __swig_destroy__ = _openframeworks.delete_ofFloatColor
-    __del__ = lambda self: None
-ofFloatColor_swigregister = _openframeworks.ofFloatColor_swigregister
-ofFloatColor_swigregister(ofFloatColor)
-
-def ofFloatColor_fromHsb(*args):
-    return _openframeworks.ofFloatColor_fromHsb(*args)
-ofFloatColor_fromHsb = _openframeworks.ofFloatColor_fromHsb
-
-def ofFloatColor_fromHex(*args):
-    return _openframeworks.ofFloatColor_fromHex(*args)
-ofFloatColor_fromHex = _openframeworks.ofFloatColor_fromHex
-
-def ofFloatColor_limit():
-    return _openframeworks.ofFloatColor_limit()
-ofFloatColor_limit = _openframeworks.ofFloatColor_limit
-ofFloatColor.white = _openframeworks.cvar.ofFloatColor_white
-ofFloatColor.gray = _openframeworks.cvar.ofFloatColor_gray
-ofFloatColor.black = _openframeworks.cvar.ofFloatColor_black
-ofFloatColor.red = _openframeworks.cvar.ofFloatColor_red
-ofFloatColor.green = _openframeworks.cvar.ofFloatColor_green
-ofFloatColor.blue = _openframeworks.cvar.ofFloatColor_blue
-ofFloatColor.cyan = _openframeworks.cvar.ofFloatColor_cyan
-ofFloatColor.magenta = _openframeworks.cvar.ofFloatColor_magenta
-ofFloatColor.yellow = _openframeworks.cvar.ofFloatColor_yellow
-ofFloatColor.aliceBlue = _openframeworks.cvar.ofFloatColor_aliceBlue
-ofFloatColor.antiqueWhite = _openframeworks.cvar.ofFloatColor_antiqueWhite
-ofFloatColor.aqua = _openframeworks.cvar.ofFloatColor_aqua
-ofFloatColor.aquamarine = _openframeworks.cvar.ofFloatColor_aquamarine
-ofFloatColor.azure = _openframeworks.cvar.ofFloatColor_azure
-ofFloatColor.beige = _openframeworks.cvar.ofFloatColor_beige
-ofFloatColor.bisque = _openframeworks.cvar.ofFloatColor_bisque
-ofFloatColor.blanchedAlmond = _openframeworks.cvar.ofFloatColor_blanchedAlmond
-ofFloatColor.blueViolet = _openframeworks.cvar.ofFloatColor_blueViolet
-ofFloatColor.brown = _openframeworks.cvar.ofFloatColor_brown
-ofFloatColor.burlyWood = _openframeworks.cvar.ofFloatColor_burlyWood
-ofFloatColor.cadetBlue = _openframeworks.cvar.ofFloatColor_cadetBlue
-ofFloatColor.chartreuse = _openframeworks.cvar.ofFloatColor_chartreuse
-ofFloatColor.chocolate = _openframeworks.cvar.ofFloatColor_chocolate
-ofFloatColor.coral = _openframeworks.cvar.ofFloatColor_coral
-ofFloatColor.cornflowerBlue = _openframeworks.cvar.ofFloatColor_cornflowerBlue
-ofFloatColor.cornsilk = _openframeworks.cvar.ofFloatColor_cornsilk
-ofFloatColor.crimson = _openframeworks.cvar.ofFloatColor_crimson
-ofFloatColor.darkBlue = _openframeworks.cvar.ofFloatColor_darkBlue
-ofFloatColor.darkCyan = _openframeworks.cvar.ofFloatColor_darkCyan
-ofFloatColor.darkGoldenRod = _openframeworks.cvar.ofFloatColor_darkGoldenRod
-ofFloatColor.darkGray = _openframeworks.cvar.ofFloatColor_darkGray
-ofFloatColor.darkGrey = _openframeworks.cvar.ofFloatColor_darkGrey
-ofFloatColor.darkGreen = _openframeworks.cvar.ofFloatColor_darkGreen
-ofFloatColor.darkKhaki = _openframeworks.cvar.ofFloatColor_darkKhaki
-ofFloatColor.darkMagenta = _openframeworks.cvar.ofFloatColor_darkMagenta
-ofFloatColor.darkOliveGreen = _openframeworks.cvar.ofFloatColor_darkOliveGreen
-ofFloatColor.darkorange = _openframeworks.cvar.ofFloatColor_darkorange
-ofFloatColor.darkOrchid = _openframeworks.cvar.ofFloatColor_darkOrchid
-ofFloatColor.darkRed = _openframeworks.cvar.ofFloatColor_darkRed
-ofFloatColor.darkSalmon = _openframeworks.cvar.ofFloatColor_darkSalmon
-ofFloatColor.darkSeaGreen = _openframeworks.cvar.ofFloatColor_darkSeaGreen
-ofFloatColor.darkSlateBlue = _openframeworks.cvar.ofFloatColor_darkSlateBlue
-ofFloatColor.darkSlateGray = _openframeworks.cvar.ofFloatColor_darkSlateGray
-ofFloatColor.darkSlateGrey = _openframeworks.cvar.ofFloatColor_darkSlateGrey
-ofFloatColor.darkTurquoise = _openframeworks.cvar.ofFloatColor_darkTurquoise
-ofFloatColor.darkViolet = _openframeworks.cvar.ofFloatColor_darkViolet
-ofFloatColor.deepPink = _openframeworks.cvar.ofFloatColor_deepPink
-ofFloatColor.deepSkyBlue = _openframeworks.cvar.ofFloatColor_deepSkyBlue
-ofFloatColor.dimGray = _openframeworks.cvar.ofFloatColor_dimGray
-ofFloatColor.dimGrey = _openframeworks.cvar.ofFloatColor_dimGrey
-ofFloatColor.dodgerBlue = _openframeworks.cvar.ofFloatColor_dodgerBlue
-ofFloatColor.fireBrick = _openframeworks.cvar.ofFloatColor_fireBrick
-ofFloatColor.floralWhite = _openframeworks.cvar.ofFloatColor_floralWhite
-ofFloatColor.forestGreen = _openframeworks.cvar.ofFloatColor_forestGreen
-ofFloatColor.fuchsia = _openframeworks.cvar.ofFloatColor_fuchsia
-ofFloatColor.gainsboro = _openframeworks.cvar.ofFloatColor_gainsboro
-ofFloatColor.ghostWhite = _openframeworks.cvar.ofFloatColor_ghostWhite
-ofFloatColor.gold = _openframeworks.cvar.ofFloatColor_gold
-ofFloatColor.goldenRod = _openframeworks.cvar.ofFloatColor_goldenRod
-ofFloatColor.grey = _openframeworks.cvar.ofFloatColor_grey
-ofFloatColor.greenYellow = _openframeworks.cvar.ofFloatColor_greenYellow
-ofFloatColor.honeyDew = _openframeworks.cvar.ofFloatColor_honeyDew
-ofFloatColor.hotPink = _openframeworks.cvar.ofFloatColor_hotPink
-ofFloatColor.indianRed = _openframeworks.cvar.ofFloatColor_indianRed
-ofFloatColor.indigo = _openframeworks.cvar.ofFloatColor_indigo
-ofFloatColor.ivory = _openframeworks.cvar.ofFloatColor_ivory
-ofFloatColor.khaki = _openframeworks.cvar.ofFloatColor_khaki
-ofFloatColor.lavender = _openframeworks.cvar.ofFloatColor_lavender
-ofFloatColor.lavenderBlush = _openframeworks.cvar.ofFloatColor_lavenderBlush
-ofFloatColor.lawnGreen = _openframeworks.cvar.ofFloatColor_lawnGreen
-ofFloatColor.lemonChiffon = _openframeworks.cvar.ofFloatColor_lemonChiffon
-ofFloatColor.lightBlue = _openframeworks.cvar.ofFloatColor_lightBlue
-ofFloatColor.lightCoral = _openframeworks.cvar.ofFloatColor_lightCoral
-ofFloatColor.lightCyan = _openframeworks.cvar.ofFloatColor_lightCyan
-ofFloatColor.lightGoldenRodYellow = _openframeworks.cvar.ofFloatColor_lightGoldenRodYellow
-ofFloatColor.lightGray = _openframeworks.cvar.ofFloatColor_lightGray
-ofFloatColor.lightGrey = _openframeworks.cvar.ofFloatColor_lightGrey
-ofFloatColor.lightGreen = _openframeworks.cvar.ofFloatColor_lightGreen
-ofFloatColor.lightPink = _openframeworks.cvar.ofFloatColor_lightPink
-ofFloatColor.lightSalmon = _openframeworks.cvar.ofFloatColor_lightSalmon
-ofFloatColor.lightSeaGreen = _openframeworks.cvar.ofFloatColor_lightSeaGreen
-ofFloatColor.lightSkyBlue = _openframeworks.cvar.ofFloatColor_lightSkyBlue
-ofFloatColor.lightSlateGray = _openframeworks.cvar.ofFloatColor_lightSlateGray
-ofFloatColor.lightSlateGrey = _openframeworks.cvar.ofFloatColor_lightSlateGrey
-ofFloatColor.lightSteelBlue = _openframeworks.cvar.ofFloatColor_lightSteelBlue
-ofFloatColor.lightYellow = _openframeworks.cvar.ofFloatColor_lightYellow
-ofFloatColor.lime = _openframeworks.cvar.ofFloatColor_lime
-ofFloatColor.limeGreen = _openframeworks.cvar.ofFloatColor_limeGreen
-ofFloatColor.linen = _openframeworks.cvar.ofFloatColor_linen
-ofFloatColor.maroon = _openframeworks.cvar.ofFloatColor_maroon
-ofFloatColor.mediumAquaMarine = _openframeworks.cvar.ofFloatColor_mediumAquaMarine
-ofFloatColor.mediumBlue = _openframeworks.cvar.ofFloatColor_mediumBlue
-ofFloatColor.mediumOrchid = _openframeworks.cvar.ofFloatColor_mediumOrchid
-ofFloatColor.mediumPurple = _openframeworks.cvar.ofFloatColor_mediumPurple
-ofFloatColor.mediumSeaGreen = _openframeworks.cvar.ofFloatColor_mediumSeaGreen
-ofFloatColor.mediumSlateBlue = _openframeworks.cvar.ofFloatColor_mediumSlateBlue
-ofFloatColor.mediumSpringGreen = _openframeworks.cvar.ofFloatColor_mediumSpringGreen
-ofFloatColor.mediumTurquoise = _openframeworks.cvar.ofFloatColor_mediumTurquoise
-ofFloatColor.mediumVioletRed = _openframeworks.cvar.ofFloatColor_mediumVioletRed
-ofFloatColor.midnightBlue = _openframeworks.cvar.ofFloatColor_midnightBlue
-ofFloatColor.mintCream = _openframeworks.cvar.ofFloatColor_mintCream
-ofFloatColor.mistyRose = _openframeworks.cvar.ofFloatColor_mistyRose
-ofFloatColor.moccasin = _openframeworks.cvar.ofFloatColor_moccasin
-ofFloatColor.navajoWhite = _openframeworks.cvar.ofFloatColor_navajoWhite
-ofFloatColor.navy = _openframeworks.cvar.ofFloatColor_navy
-ofFloatColor.oldLace = _openframeworks.cvar.ofFloatColor_oldLace
-ofFloatColor.olive = _openframeworks.cvar.ofFloatColor_olive
-ofFloatColor.oliveDrab = _openframeworks.cvar.ofFloatColor_oliveDrab
-ofFloatColor.orange = _openframeworks.cvar.ofFloatColor_orange
-ofFloatColor.orangeRed = _openframeworks.cvar.ofFloatColor_orangeRed
-ofFloatColor.orchid = _openframeworks.cvar.ofFloatColor_orchid
-ofFloatColor.paleGoldenRod = _openframeworks.cvar.ofFloatColor_paleGoldenRod
-ofFloatColor.paleGreen = _openframeworks.cvar.ofFloatColor_paleGreen
-ofFloatColor.paleTurquoise = _openframeworks.cvar.ofFloatColor_paleTurquoise
-ofFloatColor.paleVioletRed = _openframeworks.cvar.ofFloatColor_paleVioletRed
-ofFloatColor.papayaWhip = _openframeworks.cvar.ofFloatColor_papayaWhip
-ofFloatColor.peachPuff = _openframeworks.cvar.ofFloatColor_peachPuff
-ofFloatColor.peru = _openframeworks.cvar.ofFloatColor_peru
-ofFloatColor.pink = _openframeworks.cvar.ofFloatColor_pink
-ofFloatColor.plum = _openframeworks.cvar.ofFloatColor_plum
-ofFloatColor.powderBlue = _openframeworks.cvar.ofFloatColor_powderBlue
-ofFloatColor.purple = _openframeworks.cvar.ofFloatColor_purple
-ofFloatColor.rosyBrown = _openframeworks.cvar.ofFloatColor_rosyBrown
-ofFloatColor.royalBlue = _openframeworks.cvar.ofFloatColor_royalBlue
-ofFloatColor.saddleBrown = _openframeworks.cvar.ofFloatColor_saddleBrown
-ofFloatColor.salmon = _openframeworks.cvar.ofFloatColor_salmon
-ofFloatColor.sandyBrown = _openframeworks.cvar.ofFloatColor_sandyBrown
-ofFloatColor.seaGreen = _openframeworks.cvar.ofFloatColor_seaGreen
-ofFloatColor.seaShell = _openframeworks.cvar.ofFloatColor_seaShell
-ofFloatColor.sienna = _openframeworks.cvar.ofFloatColor_sienna
-ofFloatColor.silver = _openframeworks.cvar.ofFloatColor_silver
-ofFloatColor.skyBlue = _openframeworks.cvar.ofFloatColor_skyBlue
-ofFloatColor.slateBlue = _openframeworks.cvar.ofFloatColor_slateBlue
-ofFloatColor.slateGray = _openframeworks.cvar.ofFloatColor_slateGray
-ofFloatColor.slateGrey = _openframeworks.cvar.ofFloatColor_slateGrey
-ofFloatColor.snow = _openframeworks.cvar.ofFloatColor_snow
-ofFloatColor.springGreen = _openframeworks.cvar.ofFloatColor_springGreen
-ofFloatColor.steelBlue = _openframeworks.cvar.ofFloatColor_steelBlue
-ofFloatColor.blueSteel = _openframeworks.cvar.ofFloatColor_blueSteel
-ofFloatColor.tan = _openframeworks.cvar.ofFloatColor_tan
-ofFloatColor.teal = _openframeworks.cvar.ofFloatColor_teal
-ofFloatColor.thistle = _openframeworks.cvar.ofFloatColor_thistle
-ofFloatColor.tomato = _openframeworks.cvar.ofFloatColor_tomato
-ofFloatColor.turquoise = _openframeworks.cvar.ofFloatColor_turquoise
-ofFloatColor.violet = _openframeworks.cvar.ofFloatColor_violet
-ofFloatColor.wheat = _openframeworks.cvar.ofFloatColor_wheat
-ofFloatColor.whiteSmoke = _openframeworks.cvar.ofFloatColor_whiteSmoke
-ofFloatColor.yellowGreen = _openframeworks.cvar.ofFloatColor_yellowGreen
-
-class ofShortColor(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofShortColor, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofShortColor, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofShortColor(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_getmethods__["fromHsb"] = lambda x: _openframeworks.ofShortColor_fromHsb
-    if _newclass:
-        fromHsb = staticmethod(_openframeworks.ofShortColor_fromHsb)
-    __swig_getmethods__["fromHex"] = lambda x: _openframeworks.ofShortColor_fromHex
-    if _newclass:
-        fromHex = staticmethod(_openframeworks.ofShortColor_fromHex)
-
-    def set(self, *args):
-        return _openframeworks.ofShortColor_set(self, *args)
-
-    def setHex(self, *args):
-        return _openframeworks.ofShortColor_setHex(self, *args)
-
-    def setHue(self, hue):
-        return _openframeworks.ofShortColor_setHue(self, hue)
-
-    def setHueAngle(self, angle):
-        return _openframeworks.ofShortColor_setHueAngle(self, angle)
-
-    def setSaturation(self, saturation):
-        return _openframeworks.ofShortColor_setSaturation(self, saturation)
-
-    def setBrightness(self, brightness):
-        return _openframeworks.ofShortColor_setBrightness(self, brightness)
-
-    def setHsb(self, *args):
-        return _openframeworks.ofShortColor_setHsb(self, *args)
-
-    def clamp(self):
-        return _openframeworks.ofShortColor_clamp(self)
-
-    def invert(self):
-        return _openframeworks.ofShortColor_invert(self)
-
-    def normalize(self):
-        return _openframeworks.ofShortColor_normalize(self)
-
-    def lerp(self, target, amount):
-        return _openframeworks.ofShortColor_lerp(self, target, amount)
-
-    def getClamped(self):
-        return _openframeworks.ofShortColor_getClamped(self)
-
-    def getInverted(self):
-        return _openframeworks.ofShortColor_getInverted(self)
-
-    def getNormalized(self):
-        return _openframeworks.ofShortColor_getNormalized(self)
-
-    def getLerped(self, target, amount):
-        return _openframeworks.ofShortColor_getLerped(self, target, amount)
-
-    def getHex(self):
-        return _openframeworks.ofShortColor_getHex(self)
-
-    def getHue(self):
-        return _openframeworks.ofShortColor_getHue(self)
-
-    def getHueAngle(self):
-        return _openframeworks.ofShortColor_getHueAngle(self)
-
-    def getSaturation(self):
-        return _openframeworks.ofShortColor_getSaturation(self)
-
-    def getBrightness(self):
-        return _openframeworks.ofShortColor_getBrightness(self)
-
-    def getLightness(self):
-        return _openframeworks.ofShortColor_getLightness(self)
-
-    def getHsb(self, hue, saturation, brightness):
-        return _openframeworks.ofShortColor_getHsb(self, hue, saturation, brightness)
-    __swig_getmethods__["limit"] = lambda x: _openframeworks.ofShortColor_limit
-    if _newclass:
-        limit = staticmethod(_openframeworks.ofShortColor_limit)
-
-    def __eq__(self, color):
-        return _openframeworks.ofShortColor___eq__(self, color)
-
-    def __ne__(self, color):
-        return _openframeworks.ofShortColor___ne__(self, color)
-
-    def __add__(self, *args):
-        return _openframeworks.ofShortColor___add__(self, *args)
-
-    def __iadd__(self, *args):
-        return _openframeworks.ofShortColor___iadd__(self, *args)
-
-    def __sub__(self, *args):
-        return _openframeworks.ofShortColor___sub__(self, *args)
-
-    def __isub__(self, *args):
-        return _openframeworks.ofShortColor___isub__(self, *args)
-
-    def __mul__(self, *args):
-        return _openframeworks.ofShortColor___mul__(self, *args)
-
-    def __imul__(self, *args):
-        return _openframeworks.ofShortColor___imul__(self, *args)
-
-    def __div__(self, *args):
-        return _openframeworks.ofShortColor___div__(self, *args)
-
-    def __idiv__(self, *args):
-        return _openframeworks.ofShortColor___idiv__(self, *args)
-
-    def __getitem__(self, *args):
-        return _openframeworks.ofShortColor___getitem__(self, *args)
-
-    def getR(self):
-        return _openframeworks.ofShortColor_getR(self)
-
-    def getG(self):
-        return _openframeworks.ofShortColor_getG(self)
-
-    def getB(self):
-        return _openframeworks.ofShortColor_getB(self)
-
-    def getA(self):
-        return _openframeworks.ofShortColor_getA(self)
-
-    def setR(self, r):
-        return _openframeworks.ofShortColor_setR(self, r)
-
-    def setG(self, g):
-        return _openframeworks.ofShortColor_setG(self, g)
-
-    def setB(self, b):
-        return _openframeworks.ofShortColor_setB(self, b)
-
-    def setA(self, a):
-        return _openframeworks.ofShortColor_setA(self, a)
-
-    def __str__(self):
-        return _openframeworks.ofShortColor___str__(self)
-    __swig_setmethods__["r"] = _openframeworks.ofShortColor_r_set
-    __swig_getmethods__["r"] = _openframeworks.ofShortColor_r_get
-    if _newclass:
-        r = _swig_property(_openframeworks.ofShortColor_r_get, _openframeworks.ofShortColor_r_set)
-    __swig_setmethods__["g"] = _openframeworks.ofShortColor_g_set
-    __swig_getmethods__["g"] = _openframeworks.ofShortColor_g_get
-    if _newclass:
-        g = _swig_property(_openframeworks.ofShortColor_g_get, _openframeworks.ofShortColor_g_set)
-    __swig_setmethods__["b"] = _openframeworks.ofShortColor_b_set
-    __swig_getmethods__["b"] = _openframeworks.ofShortColor_b_get
-    if _newclass:
-        b = _swig_property(_openframeworks.ofShortColor_b_get, _openframeworks.ofShortColor_b_set)
-    __swig_setmethods__["a"] = _openframeworks.ofShortColor_a_set
-    __swig_getmethods__["a"] = _openframeworks.ofShortColor_a_get
-    if _newclass:
-        a = _swig_property(_openframeworks.ofShortColor_a_get, _openframeworks.ofShortColor_a_set)
-    __swig_destroy__ = _openframeworks.delete_ofShortColor
-    __del__ = lambda self: None
-ofShortColor_swigregister = _openframeworks.ofShortColor_swigregister
-ofShortColor_swigregister(ofShortColor)
-
-def ofShortColor_fromHsb(*args):
-    return _openframeworks.ofShortColor_fromHsb(*args)
-ofShortColor_fromHsb = _openframeworks.ofShortColor_fromHsb
-
-def ofShortColor_fromHex(*args):
-    return _openframeworks.ofShortColor_fromHex(*args)
-ofShortColor_fromHex = _openframeworks.ofShortColor_fromHex
-
-def ofShortColor_limit():
-    return _openframeworks.ofShortColor_limit()
-ofShortColor_limit = _openframeworks.ofShortColor_limit
-ofShortColor.white = _openframeworks.cvar.ofShortColor_white
-ofShortColor.gray = _openframeworks.cvar.ofShortColor_gray
-ofShortColor.black = _openframeworks.cvar.ofShortColor_black
-ofShortColor.red = _openframeworks.cvar.ofShortColor_red
-ofShortColor.green = _openframeworks.cvar.ofShortColor_green
-ofShortColor.blue = _openframeworks.cvar.ofShortColor_blue
-ofShortColor.cyan = _openframeworks.cvar.ofShortColor_cyan
-ofShortColor.magenta = _openframeworks.cvar.ofShortColor_magenta
-ofShortColor.yellow = _openframeworks.cvar.ofShortColor_yellow
-ofShortColor.aliceBlue = _openframeworks.cvar.ofShortColor_aliceBlue
-ofShortColor.antiqueWhite = _openframeworks.cvar.ofShortColor_antiqueWhite
-ofShortColor.aqua = _openframeworks.cvar.ofShortColor_aqua
-ofShortColor.aquamarine = _openframeworks.cvar.ofShortColor_aquamarine
-ofShortColor.azure = _openframeworks.cvar.ofShortColor_azure
-ofShortColor.beige = _openframeworks.cvar.ofShortColor_beige
-ofShortColor.bisque = _openframeworks.cvar.ofShortColor_bisque
-ofShortColor.blanchedAlmond = _openframeworks.cvar.ofShortColor_blanchedAlmond
-ofShortColor.blueViolet = _openframeworks.cvar.ofShortColor_blueViolet
-ofShortColor.brown = _openframeworks.cvar.ofShortColor_brown
-ofShortColor.burlyWood = _openframeworks.cvar.ofShortColor_burlyWood
-ofShortColor.cadetBlue = _openframeworks.cvar.ofShortColor_cadetBlue
-ofShortColor.chartreuse = _openframeworks.cvar.ofShortColor_chartreuse
-ofShortColor.chocolate = _openframeworks.cvar.ofShortColor_chocolate
-ofShortColor.coral = _openframeworks.cvar.ofShortColor_coral
-ofShortColor.cornflowerBlue = _openframeworks.cvar.ofShortColor_cornflowerBlue
-ofShortColor.cornsilk = _openframeworks.cvar.ofShortColor_cornsilk
-ofShortColor.crimson = _openframeworks.cvar.ofShortColor_crimson
-ofShortColor.darkBlue = _openframeworks.cvar.ofShortColor_darkBlue
-ofShortColor.darkCyan = _openframeworks.cvar.ofShortColor_darkCyan
-ofShortColor.darkGoldenRod = _openframeworks.cvar.ofShortColor_darkGoldenRod
-ofShortColor.darkGray = _openframeworks.cvar.ofShortColor_darkGray
-ofShortColor.darkGrey = _openframeworks.cvar.ofShortColor_darkGrey
-ofShortColor.darkGreen = _openframeworks.cvar.ofShortColor_darkGreen
-ofShortColor.darkKhaki = _openframeworks.cvar.ofShortColor_darkKhaki
-ofShortColor.darkMagenta = _openframeworks.cvar.ofShortColor_darkMagenta
-ofShortColor.darkOliveGreen = _openframeworks.cvar.ofShortColor_darkOliveGreen
-ofShortColor.darkorange = _openframeworks.cvar.ofShortColor_darkorange
-ofShortColor.darkOrchid = _openframeworks.cvar.ofShortColor_darkOrchid
-ofShortColor.darkRed = _openframeworks.cvar.ofShortColor_darkRed
-ofShortColor.darkSalmon = _openframeworks.cvar.ofShortColor_darkSalmon
-ofShortColor.darkSeaGreen = _openframeworks.cvar.ofShortColor_darkSeaGreen
-ofShortColor.darkSlateBlue = _openframeworks.cvar.ofShortColor_darkSlateBlue
-ofShortColor.darkSlateGray = _openframeworks.cvar.ofShortColor_darkSlateGray
-ofShortColor.darkSlateGrey = _openframeworks.cvar.ofShortColor_darkSlateGrey
-ofShortColor.darkTurquoise = _openframeworks.cvar.ofShortColor_darkTurquoise
-ofShortColor.darkViolet = _openframeworks.cvar.ofShortColor_darkViolet
-ofShortColor.deepPink = _openframeworks.cvar.ofShortColor_deepPink
-ofShortColor.deepSkyBlue = _openframeworks.cvar.ofShortColor_deepSkyBlue
-ofShortColor.dimGray = _openframeworks.cvar.ofShortColor_dimGray
-ofShortColor.dimGrey = _openframeworks.cvar.ofShortColor_dimGrey
-ofShortColor.dodgerBlue = _openframeworks.cvar.ofShortColor_dodgerBlue
-ofShortColor.fireBrick = _openframeworks.cvar.ofShortColor_fireBrick
-ofShortColor.floralWhite = _openframeworks.cvar.ofShortColor_floralWhite
-ofShortColor.forestGreen = _openframeworks.cvar.ofShortColor_forestGreen
-ofShortColor.fuchsia = _openframeworks.cvar.ofShortColor_fuchsia
-ofShortColor.gainsboro = _openframeworks.cvar.ofShortColor_gainsboro
-ofShortColor.ghostWhite = _openframeworks.cvar.ofShortColor_ghostWhite
-ofShortColor.gold = _openframeworks.cvar.ofShortColor_gold
-ofShortColor.goldenRod = _openframeworks.cvar.ofShortColor_goldenRod
-ofShortColor.grey = _openframeworks.cvar.ofShortColor_grey
-ofShortColor.greenYellow = _openframeworks.cvar.ofShortColor_greenYellow
-ofShortColor.honeyDew = _openframeworks.cvar.ofShortColor_honeyDew
-ofShortColor.hotPink = _openframeworks.cvar.ofShortColor_hotPink
-ofShortColor.indianRed = _openframeworks.cvar.ofShortColor_indianRed
-ofShortColor.indigo = _openframeworks.cvar.ofShortColor_indigo
-ofShortColor.ivory = _openframeworks.cvar.ofShortColor_ivory
-ofShortColor.khaki = _openframeworks.cvar.ofShortColor_khaki
-ofShortColor.lavender = _openframeworks.cvar.ofShortColor_lavender
-ofShortColor.lavenderBlush = _openframeworks.cvar.ofShortColor_lavenderBlush
-ofShortColor.lawnGreen = _openframeworks.cvar.ofShortColor_lawnGreen
-ofShortColor.lemonChiffon = _openframeworks.cvar.ofShortColor_lemonChiffon
-ofShortColor.lightBlue = _openframeworks.cvar.ofShortColor_lightBlue
-ofShortColor.lightCoral = _openframeworks.cvar.ofShortColor_lightCoral
-ofShortColor.lightCyan = _openframeworks.cvar.ofShortColor_lightCyan
-ofShortColor.lightGoldenRodYellow = _openframeworks.cvar.ofShortColor_lightGoldenRodYellow
-ofShortColor.lightGray = _openframeworks.cvar.ofShortColor_lightGray
-ofShortColor.lightGrey = _openframeworks.cvar.ofShortColor_lightGrey
-ofShortColor.lightGreen = _openframeworks.cvar.ofShortColor_lightGreen
-ofShortColor.lightPink = _openframeworks.cvar.ofShortColor_lightPink
-ofShortColor.lightSalmon = _openframeworks.cvar.ofShortColor_lightSalmon
-ofShortColor.lightSeaGreen = _openframeworks.cvar.ofShortColor_lightSeaGreen
-ofShortColor.lightSkyBlue = _openframeworks.cvar.ofShortColor_lightSkyBlue
-ofShortColor.lightSlateGray = _openframeworks.cvar.ofShortColor_lightSlateGray
-ofShortColor.lightSlateGrey = _openframeworks.cvar.ofShortColor_lightSlateGrey
-ofShortColor.lightSteelBlue = _openframeworks.cvar.ofShortColor_lightSteelBlue
-ofShortColor.lightYellow = _openframeworks.cvar.ofShortColor_lightYellow
-ofShortColor.lime = _openframeworks.cvar.ofShortColor_lime
-ofShortColor.limeGreen = _openframeworks.cvar.ofShortColor_limeGreen
-ofShortColor.linen = _openframeworks.cvar.ofShortColor_linen
-ofShortColor.maroon = _openframeworks.cvar.ofShortColor_maroon
-ofShortColor.mediumAquaMarine = _openframeworks.cvar.ofShortColor_mediumAquaMarine
-ofShortColor.mediumBlue = _openframeworks.cvar.ofShortColor_mediumBlue
-ofShortColor.mediumOrchid = _openframeworks.cvar.ofShortColor_mediumOrchid
-ofShortColor.mediumPurple = _openframeworks.cvar.ofShortColor_mediumPurple
-ofShortColor.mediumSeaGreen = _openframeworks.cvar.ofShortColor_mediumSeaGreen
-ofShortColor.mediumSlateBlue = _openframeworks.cvar.ofShortColor_mediumSlateBlue
-ofShortColor.mediumSpringGreen = _openframeworks.cvar.ofShortColor_mediumSpringGreen
-ofShortColor.mediumTurquoise = _openframeworks.cvar.ofShortColor_mediumTurquoise
-ofShortColor.mediumVioletRed = _openframeworks.cvar.ofShortColor_mediumVioletRed
-ofShortColor.midnightBlue = _openframeworks.cvar.ofShortColor_midnightBlue
-ofShortColor.mintCream = _openframeworks.cvar.ofShortColor_mintCream
-ofShortColor.mistyRose = _openframeworks.cvar.ofShortColor_mistyRose
-ofShortColor.moccasin = _openframeworks.cvar.ofShortColor_moccasin
-ofShortColor.navajoWhite = _openframeworks.cvar.ofShortColor_navajoWhite
-ofShortColor.navy = _openframeworks.cvar.ofShortColor_navy
-ofShortColor.oldLace = _openframeworks.cvar.ofShortColor_oldLace
-ofShortColor.olive = _openframeworks.cvar.ofShortColor_olive
-ofShortColor.oliveDrab = _openframeworks.cvar.ofShortColor_oliveDrab
-ofShortColor.orange = _openframeworks.cvar.ofShortColor_orange
-ofShortColor.orangeRed = _openframeworks.cvar.ofShortColor_orangeRed
-ofShortColor.orchid = _openframeworks.cvar.ofShortColor_orchid
-ofShortColor.paleGoldenRod = _openframeworks.cvar.ofShortColor_paleGoldenRod
-ofShortColor.paleGreen = _openframeworks.cvar.ofShortColor_paleGreen
-ofShortColor.paleTurquoise = _openframeworks.cvar.ofShortColor_paleTurquoise
-ofShortColor.paleVioletRed = _openframeworks.cvar.ofShortColor_paleVioletRed
-ofShortColor.papayaWhip = _openframeworks.cvar.ofShortColor_papayaWhip
-ofShortColor.peachPuff = _openframeworks.cvar.ofShortColor_peachPuff
-ofShortColor.peru = _openframeworks.cvar.ofShortColor_peru
-ofShortColor.pink = _openframeworks.cvar.ofShortColor_pink
-ofShortColor.plum = _openframeworks.cvar.ofShortColor_plum
-ofShortColor.powderBlue = _openframeworks.cvar.ofShortColor_powderBlue
-ofShortColor.purple = _openframeworks.cvar.ofShortColor_purple
-ofShortColor.rosyBrown = _openframeworks.cvar.ofShortColor_rosyBrown
-ofShortColor.royalBlue = _openframeworks.cvar.ofShortColor_royalBlue
-ofShortColor.saddleBrown = _openframeworks.cvar.ofShortColor_saddleBrown
-ofShortColor.salmon = _openframeworks.cvar.ofShortColor_salmon
-ofShortColor.sandyBrown = _openframeworks.cvar.ofShortColor_sandyBrown
-ofShortColor.seaGreen = _openframeworks.cvar.ofShortColor_seaGreen
-ofShortColor.seaShell = _openframeworks.cvar.ofShortColor_seaShell
-ofShortColor.sienna = _openframeworks.cvar.ofShortColor_sienna
-ofShortColor.silver = _openframeworks.cvar.ofShortColor_silver
-ofShortColor.skyBlue = _openframeworks.cvar.ofShortColor_skyBlue
-ofShortColor.slateBlue = _openframeworks.cvar.ofShortColor_slateBlue
-ofShortColor.slateGray = _openframeworks.cvar.ofShortColor_slateGray
-ofShortColor.slateGrey = _openframeworks.cvar.ofShortColor_slateGrey
-ofShortColor.snow = _openframeworks.cvar.ofShortColor_snow
-ofShortColor.springGreen = _openframeworks.cvar.ofShortColor_springGreen
-ofShortColor.steelBlue = _openframeworks.cvar.ofShortColor_steelBlue
-ofShortColor.blueSteel = _openframeworks.cvar.ofShortColor_blueSteel
-ofShortColor.tan = _openframeworks.cvar.ofShortColor_tan
-ofShortColor.teal = _openframeworks.cvar.ofShortColor_teal
-ofShortColor.thistle = _openframeworks.cvar.ofShortColor_thistle
-ofShortColor.tomato = _openframeworks.cvar.ofShortColor_tomato
-ofShortColor.turquoise = _openframeworks.cvar.ofShortColor_turquoise
-ofShortColor.violet = _openframeworks.cvar.ofShortColor_violet
-ofShortColor.wheat = _openframeworks.cvar.ofShortColor_wheat
-ofShortColor.whiteSmoke = _openframeworks.cvar.ofShortColor_whiteSmoke
-ofShortColor.yellowGreen = _openframeworks.cvar.ofShortColor_yellowGreen
-
+_openframeworks.OF_MIRRORED_REPEAT_swigconstant(_openframeworks)
+OF_MIRRORED_REPEAT = _openframeworks.OF_MIRRORED_REPEAT
 
 def ofIsVFlipped():
     return _openframeworks.ofIsVFlipped()
 ofIsVFlipped = _openframeworks.ofIsVFlipped
-class ofBaseHasTexturePlanes(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofBaseHasTexturePlanes, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofBaseHasTexturePlanes, name)
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined - class is abstract")
-    __repr__ = _swig_repr
-    __swig_destroy__ = _openframeworks.delete_ofBaseHasTexturePlanes
-    __del__ = lambda self: None
-
-    def getTexturePlanes(self, *args):
-        return _openframeworks.ofBaseHasTexturePlanes_getTexturePlanes(self, *args)
-ofBaseHasTexturePlanes_swigregister = _openframeworks.ofBaseHasTexturePlanes_swigregister
-ofBaseHasTexturePlanes_swigregister(ofBaseHasTexturePlanes)
-
-class ofBaseURLFileLoader(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofBaseURLFileLoader, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofBaseURLFileLoader, name)
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined - class is abstract")
-    __repr__ = _swig_repr
-    __swig_destroy__ = _openframeworks.delete_ofBaseURLFileLoader
-    __del__ = lambda self: None
-
-    def get(self, url):
-        return _openframeworks.ofBaseURLFileLoader_get(self, url)
-
-    def getAsync(self, *args):
-        return _openframeworks.ofBaseURLFileLoader_getAsync(self, *args)
-
-    def saveTo(self, url, path):
-        return _openframeworks.ofBaseURLFileLoader_saveTo(self, url, path)
-
-    def saveAsync(self, url, path):
-        return _openframeworks.ofBaseURLFileLoader_saveAsync(self, url, path)
-
-    def remove(self, id):
-        return _openframeworks.ofBaseURLFileLoader_remove(self, id)
-
-    def clear(self):
-        return _openframeworks.ofBaseURLFileLoader_clear(self)
-
-    def stop(self):
-        return _openframeworks.ofBaseURLFileLoader_stop(self)
-
-    def handleRequest(self, request):
-        return _openframeworks.ofBaseURLFileLoader_handleRequest(self, request)
-ofBaseURLFileLoader_swigregister = _openframeworks.ofBaseURLFileLoader_swigregister
-ofBaseURLFileLoader_swigregister(ofBaseURLFileLoader)
-
-class ofBaseMaterial(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofBaseMaterial, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofBaseMaterial, name)
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined - class is abstract")
-    __repr__ = _swig_repr
-    __swig_destroy__ = _openframeworks.delete_ofBaseMaterial
-    __del__ = lambda self: None
-
-    def getDiffuseColor(self):
-        return _openframeworks.ofBaseMaterial_getDiffuseColor(self)
-
-    def getAmbientColor(self):
-        return _openframeworks.ofBaseMaterial_getAmbientColor(self)
-
-    def getSpecularColor(self):
-        return _openframeworks.ofBaseMaterial_getSpecularColor(self)
-
-    def getEmissiveColor(self):
-        return _openframeworks.ofBaseMaterial_getEmissiveColor(self)
-
-    def getShininess(self):
-        return _openframeworks.ofBaseMaterial_getShininess(self)
-
-    def begin(self):
-        return _openframeworks.ofBaseMaterial_begin(self)
-
-    def end(self):
-        return _openframeworks.ofBaseMaterial_end(self)
-
-    def getShader(self, textureTarget, renderer):
-        return _openframeworks.ofBaseMaterial_getShader(self, textureTarget, renderer)
-
-    def uploadMatrices(self, shader, renderer):
-        return _openframeworks.ofBaseMaterial_uploadMatrices(self, shader, renderer)
-
-    def updateMaterial(self, shader, renderer):
-        return _openframeworks.ofBaseMaterial_updateMaterial(self, shader, renderer)
-
-    def updateLights(self, shader, renderer):
-        return _openframeworks.ofBaseMaterial_updateLights(self, shader, renderer)
-ofBaseMaterial_swigregister = _openframeworks.ofBaseMaterial_swigregister
-ofBaseMaterial_swigregister(ofBaseMaterial)
-
-class ofSerialDeviceInfo(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofSerialDeviceInfo, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofSerialDeviceInfo, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofSerialDeviceInfo(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def getDevicePath(self):
-        return _openframeworks.ofSerialDeviceInfo_getDevicePath(self)
-
-    def getDeviceName(self):
-        return _openframeworks.ofSerialDeviceInfo_getDeviceName(self)
-
-    def getDeviceID(self):
-        return _openframeworks.ofSerialDeviceInfo_getDeviceID(self)
-    __swig_destroy__ = _openframeworks.delete_ofSerialDeviceInfo
-    __del__ = lambda self: None
-ofSerialDeviceInfo_swigregister = _openframeworks.ofSerialDeviceInfo_swigregister
-ofSerialDeviceInfo_swigregister(ofSerialDeviceInfo)
-
-class ofStyle(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofStyle, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofStyle, name)
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        this = _openframeworks.new_ofStyle()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_destroy__ = _openframeworks.delete_ofStyle
-    __del__ = lambda self: None
-    __swig_setmethods__["color"] = _openframeworks.ofStyle_color_set
-    __swig_getmethods__["color"] = _openframeworks.ofStyle_color_get
-    if _newclass:
-        color = _swig_property(_openframeworks.ofStyle_color_get, _openframeworks.ofStyle_color_set)
-    __swig_setmethods__["bgColor"] = _openframeworks.ofStyle_bgColor_set
-    __swig_getmethods__["bgColor"] = _openframeworks.ofStyle_bgColor_get
-    if _newclass:
-        bgColor = _swig_property(_openframeworks.ofStyle_bgColor_get, _openframeworks.ofStyle_bgColor_set)
-    __swig_setmethods__["polyMode"] = _openframeworks.ofStyle_polyMode_set
-    __swig_getmethods__["polyMode"] = _openframeworks.ofStyle_polyMode_get
-    if _newclass:
-        polyMode = _swig_property(_openframeworks.ofStyle_polyMode_get, _openframeworks.ofStyle_polyMode_set)
-    __swig_setmethods__["rectMode"] = _openframeworks.ofStyle_rectMode_set
-    __swig_getmethods__["rectMode"] = _openframeworks.ofStyle_rectMode_get
-    if _newclass:
-        rectMode = _swig_property(_openframeworks.ofStyle_rectMode_get, _openframeworks.ofStyle_rectMode_set)
-    __swig_setmethods__["bFill"] = _openframeworks.ofStyle_bFill_set
-    __swig_getmethods__["bFill"] = _openframeworks.ofStyle_bFill_get
-    if _newclass:
-        bFill = _swig_property(_openframeworks.ofStyle_bFill_get, _openframeworks.ofStyle_bFill_set)
-    __swig_setmethods__["drawBitmapMode"] = _openframeworks.ofStyle_drawBitmapMode_set
-    __swig_getmethods__["drawBitmapMode"] = _openframeworks.ofStyle_drawBitmapMode_get
-    if _newclass:
-        drawBitmapMode = _swig_property(_openframeworks.ofStyle_drawBitmapMode_get, _openframeworks.ofStyle_drawBitmapMode_set)
-    __swig_setmethods__["blendingMode"] = _openframeworks.ofStyle_blendingMode_set
-    __swig_getmethods__["blendingMode"] = _openframeworks.ofStyle_blendingMode_get
-    if _newclass:
-        blendingMode = _swig_property(_openframeworks.ofStyle_blendingMode_get, _openframeworks.ofStyle_blendingMode_set)
-    __swig_setmethods__["smoothing"] = _openframeworks.ofStyle_smoothing_set
-    __swig_getmethods__["smoothing"] = _openframeworks.ofStyle_smoothing_get
-    if _newclass:
-        smoothing = _swig_property(_openframeworks.ofStyle_smoothing_get, _openframeworks.ofStyle_smoothing_set)
-    __swig_setmethods__["circleResolution"] = _openframeworks.ofStyle_circleResolution_set
-    __swig_getmethods__["circleResolution"] = _openframeworks.ofStyle_circleResolution_get
-    if _newclass:
-        circleResolution = _swig_property(_openframeworks.ofStyle_circleResolution_get, _openframeworks.ofStyle_circleResolution_set)
-    __swig_setmethods__["sphereResolution"] = _openframeworks.ofStyle_sphereResolution_set
-    __swig_getmethods__["sphereResolution"] = _openframeworks.ofStyle_sphereResolution_get
-    if _newclass:
-        sphereResolution = _swig_property(_openframeworks.ofStyle_sphereResolution_get, _openframeworks.ofStyle_sphereResolution_set)
-    __swig_setmethods__["curveResolution"] = _openframeworks.ofStyle_curveResolution_set
-    __swig_getmethods__["curveResolution"] = _openframeworks.ofStyle_curveResolution_get
-    if _newclass:
-        curveResolution = _swig_property(_openframeworks.ofStyle_curveResolution_get, _openframeworks.ofStyle_curveResolution_set)
-    __swig_setmethods__["lineWidth"] = _openframeworks.ofStyle_lineWidth_set
-    __swig_getmethods__["lineWidth"] = _openframeworks.ofStyle_lineWidth_get
-    if _newclass:
-        lineWidth = _swig_property(_openframeworks.ofStyle_lineWidth_get, _openframeworks.ofStyle_lineWidth_set)
-ofStyle_swigregister = _openframeworks.ofStyle_swigregister
-ofStyle_swigregister(ofStyle)
-
-
-def ofResetElapsedTimeCounter():
-    return _openframeworks.ofResetElapsedTimeCounter()
-ofResetElapsedTimeCounter = _openframeworks.ofResetElapsedTimeCounter
-
-def ofGetElapsedTimef():
-    return _openframeworks.ofGetElapsedTimef()
-ofGetElapsedTimef = _openframeworks.ofGetElapsedTimef
-
-def ofGetElapsedTimeMillis():
-    return _openframeworks.ofGetElapsedTimeMillis()
-ofGetElapsedTimeMillis = _openframeworks.ofGetElapsedTimeMillis
-
-def ofGetElapsedTimeMicros():
-    return _openframeworks.ofGetElapsedTimeMicros()
-ofGetElapsedTimeMicros = _openframeworks.ofGetElapsedTimeMicros
-
-def ofGetFrameNum():
-    return _openframeworks.ofGetFrameNum()
-ofGetFrameNum = _openframeworks.ofGetFrameNum
-
-def ofGetSeconds():
-    return _openframeworks.ofGetSeconds()
-ofGetSeconds = _openframeworks.ofGetSeconds
-
-def ofGetMinutes():
-    return _openframeworks.ofGetMinutes()
-ofGetMinutes = _openframeworks.ofGetMinutes
-
-def ofGetHours():
-    return _openframeworks.ofGetHours()
-ofGetHours = _openframeworks.ofGetHours
-
-def ofGetUnixTime():
-    return _openframeworks.ofGetUnixTime()
-ofGetUnixTime = _openframeworks.ofGetUnixTime
-
-def ofGetSystemTime():
-    return _openframeworks.ofGetSystemTime()
-ofGetSystemTime = _openframeworks.ofGetSystemTime
-
-def ofGetSystemTimeMicros():
-    return _openframeworks.ofGetSystemTimeMicros()
-ofGetSystemTimeMicros = _openframeworks.ofGetSystemTimeMicros
-
-def ofSleepMillis(millis):
-    return _openframeworks.ofSleepMillis(millis)
-ofSleepMillis = _openframeworks.ofSleepMillis
-
-def ofGetTimestampString(*args):
-    return _openframeworks.ofGetTimestampString(*args)
-ofGetTimestampString = _openframeworks.ofGetTimestampString
-
-def ofGetYear():
-    return _openframeworks.ofGetYear()
-ofGetYear = _openframeworks.ofGetYear
-
-def ofGetMonth():
-    return _openframeworks.ofGetMonth()
-ofGetMonth = _openframeworks.ofGetMonth
-
-def ofGetDay():
-    return _openframeworks.ofGetDay()
-ofGetDay = _openframeworks.ofGetDay
-
-def ofGetWeekday():
-    return _openframeworks.ofGetWeekday()
-ofGetWeekday = _openframeworks.ofGetWeekday
-
-def ofEnableDataPath():
-    return _openframeworks.ofEnableDataPath()
-ofEnableDataPath = _openframeworks.ofEnableDataPath
-
-def ofDisableDataPath():
-    return _openframeworks.ofDisableDataPath()
-ofDisableDataPath = _openframeworks.ofDisableDataPath
-
-def ofToDataPath(path, absolute=False):
-    return _openframeworks.ofToDataPath(path, absolute)
-ofToDataPath = _openframeworks.ofToDataPath
-
-def ofRestoreWorkingDirectoryToDefault():
-    return _openframeworks.ofRestoreWorkingDirectoryToDefault()
-ofRestoreWorkingDirectoryToDefault = _openframeworks.ofRestoreWorkingDirectoryToDefault
-
-def ofSetDataPathRoot(root):
-    return _openframeworks.ofSetDataPathRoot(root)
-ofSetDataPathRoot = _openframeworks.ofSetDataPathRoot
-
-def ofSplitString(source, delimiter, ignoreEmpty=False, trim=False):
-    return _openframeworks.ofSplitString(source, delimiter, ignoreEmpty, trim)
-ofSplitString = _openframeworks.ofSplitString
-
-def ofJoinString(stringElements, delimiter):
-    return _openframeworks.ofJoinString(stringElements, delimiter)
-ofJoinString = _openframeworks.ofJoinString
-
-def ofStringReplace(input, searchStr, replaceStr):
-    return _openframeworks.ofStringReplace(input, searchStr, replaceStr)
-ofStringReplace = _openframeworks.ofStringReplace
-
-def ofIsStringInString(haystack, needle):
-    return _openframeworks.ofIsStringInString(haystack, needle)
-ofIsStringInString = _openframeworks.ofIsStringInString
-
-def ofStringTimesInString(haystack, needle):
-    return _openframeworks.ofStringTimesInString(haystack, needle)
-ofStringTimesInString = _openframeworks.ofStringTimesInString
-
-def ofToLower(*args):
-    return _openframeworks.ofToLower(*args)
-ofToLower = _openframeworks.ofToLower
-
-def ofToUpper(*args):
-    return _openframeworks.ofToUpper(*args)
-ofToUpper = _openframeworks.ofToUpper
-
-def ofTrimFront(*args):
-    return _openframeworks.ofTrimFront(*args)
-ofTrimFront = _openframeworks.ofTrimFront
-
-def ofTrimBack(*args):
-    return _openframeworks.ofTrimBack(*args)
-ofTrimBack = _openframeworks.ofTrimBack
-
-def ofTrim(*args):
-    return _openframeworks.ofTrim(*args)
-ofTrim = _openframeworks.ofTrim
-
-def ofAppendUTF8(str, utf8):
-    return _openframeworks.ofAppendUTF8(str, utf8)
-ofAppendUTF8 = _openframeworks.ofAppendUTF8
-
-def ofToInt(intString):
-    return _openframeworks.ofToInt(intString)
-ofToInt = _openframeworks.ofToInt
-
-def ofToInt64(intString):
-    return _openframeworks.ofToInt64(intString)
-ofToInt64 = _openframeworks.ofToInt64
-
-def ofToFloat(floatString):
-    return _openframeworks.ofToFloat(floatString)
-ofToFloat = _openframeworks.ofToFloat
-
-def ofToDouble(doubleString):
-    return _openframeworks.ofToDouble(doubleString)
-ofToDouble = _openframeworks.ofToDouble
-
-def ofToBool(boolString):
-    return _openframeworks.ofToBool(boolString)
-ofToBool = _openframeworks.ofToBool
-
-def ofToHex(value):
-    return _openframeworks.ofToHex(value)
-ofToHex = _openframeworks.ofToHex
-
-def ofHexToInt(intHexString):
-    return _openframeworks.ofHexToInt(intHexString)
-ofHexToInt = _openframeworks.ofHexToInt
-
-def ofHexToChar(charHexString):
-    return _openframeworks.ofHexToChar(charHexString)
-ofHexToChar = _openframeworks.ofHexToChar
-
-def ofHexToFloat(floatHexString):
-    return _openframeworks.ofHexToFloat(floatHexString)
-ofHexToFloat = _openframeworks.ofHexToFloat
-
-def ofHexToString(stringHexString):
-    return _openframeworks.ofHexToString(stringHexString)
-ofHexToString = _openframeworks.ofHexToString
-
-def ofToChar(charString):
-    return _openframeworks.ofToChar(charString)
-ofToChar = _openframeworks.ofToChar
-
-def ofToBinary(value):
-    return _openframeworks.ofToBinary(value)
-ofToBinary = _openframeworks.ofToBinary
-
-def ofBinaryToInt(value):
-    return _openframeworks.ofBinaryToInt(value)
-ofBinaryToInt = _openframeworks.ofBinaryToInt
-
-def ofBinaryToChar(value):
-    return _openframeworks.ofBinaryToChar(value)
-ofBinaryToChar = _openframeworks.ofBinaryToChar
-
-def ofBinaryToFloat(value):
-    return _openframeworks.ofBinaryToFloat(value)
-ofBinaryToFloat = _openframeworks.ofBinaryToFloat
-
-def ofBinaryToString(value):
-    return _openframeworks.ofBinaryToString(value)
-ofBinaryToString = _openframeworks.ofBinaryToString
-
-def ofGetVersionInfo():
-    return _openframeworks.ofGetVersionInfo()
-ofGetVersionInfo = _openframeworks.ofGetVersionInfo
-
-def ofGetVersionMajor():
-    return _openframeworks.ofGetVersionMajor()
-ofGetVersionMajor = _openframeworks.ofGetVersionMajor
-
-def ofGetVersionMinor():
-    return _openframeworks.ofGetVersionMinor()
-ofGetVersionMinor = _openframeworks.ofGetVersionMinor
-
-def ofGetVersionPatch():
-    return _openframeworks.ofGetVersionPatch()
-ofGetVersionPatch = _openframeworks.ofGetVersionPatch
-
-def ofGetVersionPreRelease():
-    return _openframeworks.ofGetVersionPreRelease()
-ofGetVersionPreRelease = _openframeworks.ofGetVersionPreRelease
-
-def ofSaveScreen(filename):
-    return _openframeworks.ofSaveScreen(filename)
-ofSaveScreen = _openframeworks.ofSaveScreen
-
-def ofSaveFrame(bUseViewport=False):
-    return _openframeworks.ofSaveFrame(bUseViewport)
-ofSaveFrame = _openframeworks.ofSaveFrame
-
-def ofSaveViewport(filename):
-    return _openframeworks.ofSaveViewport(filename)
-ofSaveViewport = _openframeworks.ofSaveViewport
-
-def ofLaunchBrowser(url, uriEncodeQuery=False):
-    return _openframeworks.ofLaunchBrowser(url, uriEncodeQuery)
-ofLaunchBrowser = _openframeworks.ofLaunchBrowser
-
-def ofSystem(command):
-    return _openframeworks.ofSystem(command)
-ofSystem = _openframeworks.ofSystem
-
-def ofGetTargetPlatform():
-    return _openframeworks.ofGetTargetPlatform()
-ofGetTargetPlatform = _openframeworks.ofGetTargetPlatform
-
-def ofGetEnv(var):
-    return _openframeworks.ofGetEnv(var)
-ofGetEnv = _openframeworks.ofGetEnv
-class ofUTF8Iterator(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofUTF8Iterator, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofUTF8Iterator, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, str):
-        this = _openframeworks.new_ofUTF8Iterator(str)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def begin(self):
-        return _openframeworks.ofUTF8Iterator_begin(self)
-
-    def end(self):
-        return _openframeworks.ofUTF8Iterator_end(self)
-
-    def rbegin(self):
-        return _openframeworks.ofUTF8Iterator_rbegin(self)
-
-    def rend(self):
-        return _openframeworks.ofUTF8Iterator_rend(self)
-    __swig_destroy__ = _openframeworks.delete_ofUTF8Iterator
-    __del__ = lambda self: None
-ofUTF8Iterator_swigregister = _openframeworks.ofUTF8Iterator_swigregister
-ofUTF8Iterator_swigregister(ofUTF8Iterator)
-
-
-def setWorkingDirectoryToDefault():
-    return _openframeworks.setWorkingDirectoryToDefault()
-setWorkingDirectoryToDefault = _openframeworks.setWorkingDirectoryToDefault
-
-def initutils():
-    return _openframeworks.initutils()
-initutils = _openframeworks.initutils
-
-def endutils():
-    return _openframeworks.endutils()
-endutils = _openframeworks.endutils
-class ofBuffer(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofBuffer, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofBuffer, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofBuffer(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def set(self, *args):
-        return _openframeworks.ofBuffer_set(self, *args)
-
-    def append(self, *args):
-        return _openframeworks.ofBuffer_append(self, *args)
-
-    def writeTo(self, stream):
-        return _openframeworks.ofBuffer_writeTo(self, stream)
-
-    def clear(self):
-        return _openframeworks.ofBuffer_clear(self)
-
-    def allocate(self, _size):
-        return _openframeworks.ofBuffer_allocate(self, _size)
-
-    def getData(self, *args):
-        return _openframeworks.ofBuffer_getData(self, *args)
-
-    def getBinaryBuffer(self, *args):
-        return _openframeworks.ofBuffer_getBinaryBuffer(self, *args)
-
-    def getText(self):
-        return _openframeworks.ofBuffer_getText(self)
-
-    def size(self):
-        return _openframeworks.ofBuffer_size(self)
-
-    def getNextLine(self):
-        return _openframeworks.ofBuffer_getNextLine(self)
-
-    def getFirstLine(self):
-        return _openframeworks.ofBuffer_getFirstLine(self)
-
-    def isLastLine(self):
-        return _openframeworks.ofBuffer_isLastLine(self)
-
-    def resetLineReader(self):
-        return _openframeworks.ofBuffer_resetLineReader(self)
-
-    def begin(self, *args):
-        return _openframeworks.ofBuffer_begin(self, *args)
-
-    def end(self, *args):
-        return _openframeworks.ofBuffer_end(self, *args)
-
-    def rbegin(self, *args):
-        return _openframeworks.ofBuffer_rbegin(self, *args)
-
-    def rend(self, *args):
-        return _openframeworks.ofBuffer_rend(self, *args)
-
-    def getLines(self):
-        return _openframeworks.ofBuffer_getLines(self)
-    __swig_destroy__ = _openframeworks.delete_ofBuffer
-    __del__ = lambda self: None
-ofBuffer_swigregister = _openframeworks.ofBuffer_swigregister
-ofBuffer_swigregister(ofBuffer)
-
-
-def ofBufferFromFile(path, binary=False):
-    return _openframeworks.ofBufferFromFile(path, binary)
-ofBufferFromFile = _openframeworks.ofBufferFromFile
-
-def ofBufferToFile(path, buffer, binary=False):
-    return _openframeworks.ofBufferToFile(path, buffer, binary)
-ofBufferToFile = _openframeworks.ofBufferToFile
-class ofFilePath(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFilePath, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofFilePath, name)
-    __repr__ = _swig_repr
-    __swig_getmethods__["getFileExt"] = lambda x: _openframeworks.ofFilePath_getFileExt
-    if _newclass:
-        getFileExt = staticmethod(_openframeworks.ofFilePath_getFileExt)
-    __swig_getmethods__["removeExt"] = lambda x: _openframeworks.ofFilePath_removeExt
-    if _newclass:
-        removeExt = staticmethod(_openframeworks.ofFilePath_removeExt)
-    __swig_getmethods__["addLeadingSlash"] = lambda x: _openframeworks.ofFilePath_addLeadingSlash
-    if _newclass:
-        addLeadingSlash = staticmethod(_openframeworks.ofFilePath_addLeadingSlash)
-    __swig_getmethods__["addTrailingSlash"] = lambda x: _openframeworks.ofFilePath_addTrailingSlash
-    if _newclass:
-        addTrailingSlash = staticmethod(_openframeworks.ofFilePath_addTrailingSlash)
-    __swig_getmethods__["removeTrailingSlash"] = lambda x: _openframeworks.ofFilePath_removeTrailingSlash
-    if _newclass:
-        removeTrailingSlash = staticmethod(_openframeworks.ofFilePath_removeTrailingSlash)
-    __swig_getmethods__["getPathForDirectory"] = lambda x: _openframeworks.ofFilePath_getPathForDirectory
-    if _newclass:
-        getPathForDirectory = staticmethod(_openframeworks.ofFilePath_getPathForDirectory)
-    __swig_getmethods__["getAbsolutePath"] = lambda x: _openframeworks.ofFilePath_getAbsolutePath
-    if _newclass:
-        getAbsolutePath = staticmethod(_openframeworks.ofFilePath_getAbsolutePath)
-    __swig_getmethods__["isAbsolute"] = lambda x: _openframeworks.ofFilePath_isAbsolute
-    if _newclass:
-        isAbsolute = staticmethod(_openframeworks.ofFilePath_isAbsolute)
-    __swig_getmethods__["getFileName"] = lambda x: _openframeworks.ofFilePath_getFileName
-    if _newclass:
-        getFileName = staticmethod(_openframeworks.ofFilePath_getFileName)
-    __swig_getmethods__["getBaseName"] = lambda x: _openframeworks.ofFilePath_getBaseName
-    if _newclass:
-        getBaseName = staticmethod(_openframeworks.ofFilePath_getBaseName)
-    __swig_getmethods__["getEnclosingDirectory"] = lambda x: _openframeworks.ofFilePath_getEnclosingDirectory
-    if _newclass:
-        getEnclosingDirectory = staticmethod(_openframeworks.ofFilePath_getEnclosingDirectory)
-    __swig_getmethods__["createEnclosingDirectory"] = lambda x: _openframeworks.ofFilePath_createEnclosingDirectory
-    if _newclass:
-        createEnclosingDirectory = staticmethod(_openframeworks.ofFilePath_createEnclosingDirectory)
-    __swig_getmethods__["getCurrentWorkingDirectory"] = lambda x: _openframeworks.ofFilePath_getCurrentWorkingDirectory
-    if _newclass:
-        getCurrentWorkingDirectory = staticmethod(_openframeworks.ofFilePath_getCurrentWorkingDirectory)
-    __swig_getmethods__["join"] = lambda x: _openframeworks.ofFilePath_join
-    if _newclass:
-        join = staticmethod(_openframeworks.ofFilePath_join)
-    __swig_getmethods__["getCurrentExePath"] = lambda x: _openframeworks.ofFilePath_getCurrentExePath
-    if _newclass:
-        getCurrentExePath = staticmethod(_openframeworks.ofFilePath_getCurrentExePath)
-    __swig_getmethods__["getCurrentExeDir"] = lambda x: _openframeworks.ofFilePath_getCurrentExeDir
-    if _newclass:
-        getCurrentExeDir = staticmethod(_openframeworks.ofFilePath_getCurrentExeDir)
-    __swig_getmethods__["getUserHomeDir"] = lambda x: _openframeworks.ofFilePath_getUserHomeDir
-    if _newclass:
-        getUserHomeDir = staticmethod(_openframeworks.ofFilePath_getUserHomeDir)
-    __swig_getmethods__["makeRelative"] = lambda x: _openframeworks.ofFilePath_makeRelative
-    if _newclass:
-        makeRelative = staticmethod(_openframeworks.ofFilePath_makeRelative)
-
-    def __init__(self):
-        this = _openframeworks.new_ofFilePath()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_destroy__ = _openframeworks.delete_ofFilePath
-    __del__ = lambda self: None
-ofFilePath_swigregister = _openframeworks.ofFilePath_swigregister
-ofFilePath_swigregister(ofFilePath)
-
-def ofFilePath_getFileExt(filename):
-    return _openframeworks.ofFilePath_getFileExt(filename)
-ofFilePath_getFileExt = _openframeworks.ofFilePath_getFileExt
-
-def ofFilePath_removeExt(filename):
-    return _openframeworks.ofFilePath_removeExt(filename)
-ofFilePath_removeExt = _openframeworks.ofFilePath_removeExt
-
-def ofFilePath_addLeadingSlash(path):
-    return _openframeworks.ofFilePath_addLeadingSlash(path)
-ofFilePath_addLeadingSlash = _openframeworks.ofFilePath_addLeadingSlash
-
-def ofFilePath_addTrailingSlash(path):
-    return _openframeworks.ofFilePath_addTrailingSlash(path)
-ofFilePath_addTrailingSlash = _openframeworks.ofFilePath_addTrailingSlash
-
-def ofFilePath_removeTrailingSlash(path):
-    return _openframeworks.ofFilePath_removeTrailingSlash(path)
-ofFilePath_removeTrailingSlash = _openframeworks.ofFilePath_removeTrailingSlash
-
-def ofFilePath_getPathForDirectory(path):
-    return _openframeworks.ofFilePath_getPathForDirectory(path)
-ofFilePath_getPathForDirectory = _openframeworks.ofFilePath_getPathForDirectory
-
-def ofFilePath_getAbsolutePath(path, bRelativeToData=True):
-    return _openframeworks.ofFilePath_getAbsolutePath(path, bRelativeToData)
-ofFilePath_getAbsolutePath = _openframeworks.ofFilePath_getAbsolutePath
-
-def ofFilePath_isAbsolute(path):
-    return _openframeworks.ofFilePath_isAbsolute(path)
-ofFilePath_isAbsolute = _openframeworks.ofFilePath_isAbsolute
-
-def ofFilePath_getFileName(filePath, bRelativeToData=True):
-    return _openframeworks.ofFilePath_getFileName(filePath, bRelativeToData)
-ofFilePath_getFileName = _openframeworks.ofFilePath_getFileName
-
-def ofFilePath_getBaseName(filePath):
-    return _openframeworks.ofFilePath_getBaseName(filePath)
-ofFilePath_getBaseName = _openframeworks.ofFilePath_getBaseName
-
-def ofFilePath_getEnclosingDirectory(filePath, bRelativeToData=True):
-    return _openframeworks.ofFilePath_getEnclosingDirectory(filePath, bRelativeToData)
-ofFilePath_getEnclosingDirectory = _openframeworks.ofFilePath_getEnclosingDirectory
-
-def ofFilePath_createEnclosingDirectory(filePath, bRelativeToData=True, bRecursive=True):
-    return _openframeworks.ofFilePath_createEnclosingDirectory(filePath, bRelativeToData, bRecursive)
-ofFilePath_createEnclosingDirectory = _openframeworks.ofFilePath_createEnclosingDirectory
-
-def ofFilePath_getCurrentWorkingDirectory():
-    return _openframeworks.ofFilePath_getCurrentWorkingDirectory()
-ofFilePath_getCurrentWorkingDirectory = _openframeworks.ofFilePath_getCurrentWorkingDirectory
-
-def ofFilePath_join(path1, path2):
-    return _openframeworks.ofFilePath_join(path1, path2)
-ofFilePath_join = _openframeworks.ofFilePath_join
-
-def ofFilePath_getCurrentExePath():
-    return _openframeworks.ofFilePath_getCurrentExePath()
-ofFilePath_getCurrentExePath = _openframeworks.ofFilePath_getCurrentExePath
-
-def ofFilePath_getCurrentExeDir():
-    return _openframeworks.ofFilePath_getCurrentExeDir()
-ofFilePath_getCurrentExeDir = _openframeworks.ofFilePath_getCurrentExeDir
-
-def ofFilePath_getUserHomeDir():
-    return _openframeworks.ofFilePath_getUserHomeDir()
-ofFilePath_getUserHomeDir = _openframeworks.ofFilePath_getUserHomeDir
-
-def ofFilePath_makeRelative(arg2, to):
-    return _openframeworks.ofFilePath_makeRelative(arg2, to)
-ofFilePath_makeRelative = _openframeworks.ofFilePath_makeRelative
-
-class ofFile(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFile, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofFile, name)
-    __repr__ = _swig_repr
-    Reference = _openframeworks.ofFile_Reference
-    ReadOnly = _openframeworks.ofFile_ReadOnly
-    WriteOnly = _openframeworks.ofFile_WriteOnly
-    ReadWrite = _openframeworks.ofFile_ReadWrite
-    Append = _openframeworks.ofFile_Append
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofFile(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_destroy__ = _openframeworks.delete_ofFile
-    __del__ = lambda self: None
-
-    def open(self, *args):
-        return _openframeworks.ofFile_open(self, *args)
-
-    def changeMode(self, mode, binary=False):
-        return _openframeworks.ofFile_changeMode(self, mode, binary)
-
-    def close(self):
-        return _openframeworks.ofFile_close(self)
-
-    def create(self):
-        return _openframeworks.ofFile_create(self)
-
-    def exists(self):
-        return _openframeworks.ofFile_exists(self)
-
-    def path(self):
-        return _openframeworks.ofFile_path(self)
-
-    def getExtension(self):
-        return _openframeworks.ofFile_getExtension(self)
-
-    def getFileName(self):
-        return _openframeworks.ofFile_getFileName(self)
-
-    def getBaseName(self):
-        return _openframeworks.ofFile_getBaseName(self)
-
-    def getEnclosingDirectory(self):
-        return _openframeworks.ofFile_getEnclosingDirectory(self)
-
-    def getAbsolutePath(self):
-        return _openframeworks.ofFile_getAbsolutePath(self)
-
-    def canRead(self):
-        return _openframeworks.ofFile_canRead(self)
-
-    def canWrite(self):
-        return _openframeworks.ofFile_canWrite(self)
-
-    def canExecute(self):
-        return _openframeworks.ofFile_canExecute(self)
-
-    def isFile(self):
-        return _openframeworks.ofFile_isFile(self)
-
-    def isLink(self):
-        return _openframeworks.ofFile_isLink(self)
-
-    def isDirectory(self):
-        return _openframeworks.ofFile_isDirectory(self)
-
-    def isDevice(self):
-        return _openframeworks.ofFile_isDevice(self)
-
-    def isHidden(self):
-        return _openframeworks.ofFile_isHidden(self)
-
-    def setWriteable(self, writeable=True):
-        return _openframeworks.ofFile_setWriteable(self, writeable)
-
-    def setReadOnly(self, readable=True):
-        return _openframeworks.ofFile_setReadOnly(self, readable)
-
-    def setExecutable(self, executable=True):
-        return _openframeworks.ofFile_setExecutable(self, executable)
-
-    def copyTo(self, path, bRelativeToData=True, overwrite=False):
-        return _openframeworks.ofFile_copyTo(self, path, bRelativeToData, overwrite)
-
-    def moveTo(self, path, bRelativeToData=True, overwrite=False):
-        return _openframeworks.ofFile_moveTo(self, path, bRelativeToData, overwrite)
-
-    def renameTo(self, path, bRelativeToData=True, overwrite=False):
-        return _openframeworks.ofFile_renameTo(self, path, bRelativeToData, overwrite)
-
-    def remove(self, recursive=False):
-        return _openframeworks.ofFile_remove(self, recursive)
-
-    def getSize(self):
-        return _openframeworks.ofFile_getSize(self)
-
-    def __eq__(self, file):
-        return _openframeworks.ofFile___eq__(self, file)
-
-    def __ne__(self, file):
-        return _openframeworks.ofFile___ne__(self, file)
-
-    def __lt__(self, file):
-        return _openframeworks.ofFile___lt__(self, file)
-
-    def __le__(self, file):
-        return _openframeworks.ofFile___le__(self, file)
-
-    def __gt__(self, file):
-        return _openframeworks.ofFile___gt__(self, file)
-
-    def __ge__(self, file):
-        return _openframeworks.ofFile___ge__(self, file)
-
-    def readToBuffer(self):
-        return _openframeworks.ofFile_readToBuffer(self)
-
-    def writeFromBuffer(self, buffer):
-        return _openframeworks.ofFile_writeFromBuffer(self, buffer)
-
-    def getFileBuffer(self):
-        return _openframeworks.ofFile_getFileBuffer(self)
-    __swig_getmethods__["copyFromTo"] = lambda x: _openframeworks.ofFile_copyFromTo
-    if _newclass:
-        copyFromTo = staticmethod(_openframeworks.ofFile_copyFromTo)
-    __swig_getmethods__["moveFromTo"] = lambda x: _openframeworks.ofFile_moveFromTo
-    if _newclass:
-        moveFromTo = staticmethod(_openframeworks.ofFile_moveFromTo)
-    __swig_getmethods__["doesFileExist"] = lambda x: _openframeworks.ofFile_doesFileExist
-    if _newclass:
-        doesFileExist = staticmethod(_openframeworks.ofFile_doesFileExist)
-    __swig_getmethods__["removeFile"] = lambda x: _openframeworks.ofFile_removeFile
-    if _newclass:
-        removeFile = staticmethod(_openframeworks.ofFile_removeFile)
-ofFile_swigregister = _openframeworks.ofFile_swigregister
-ofFile_swigregister(ofFile)
-
-def ofFile_copyFromTo(pathSrc, pathDst, bRelativeToData=True, overwrite=False):
-    return _openframeworks.ofFile_copyFromTo(pathSrc, pathDst, bRelativeToData, overwrite)
-ofFile_copyFromTo = _openframeworks.ofFile_copyFromTo
-
-def ofFile_moveFromTo(pathSrc, pathDst, bRelativeToData=True, overwrite=False):
-    return _openframeworks.ofFile_moveFromTo(pathSrc, pathDst, bRelativeToData, overwrite)
-ofFile_moveFromTo = _openframeworks.ofFile_moveFromTo
-
-def ofFile_doesFileExist(fPath, bRelativeToData=True):
-    return _openframeworks.ofFile_doesFileExist(fPath, bRelativeToData)
-ofFile_doesFileExist = _openframeworks.ofFile_doesFileExist
-
-def ofFile_removeFile(path, bRelativeToData=True):
-    return _openframeworks.ofFile_removeFile(path, bRelativeToData)
-ofFile_removeFile = _openframeworks.ofFile_removeFile
-
-class ofDirectory(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofDirectory, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofDirectory, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofDirectory(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def open(self, path):
-        return _openframeworks.ofDirectory_open(self, path)
-
-    def close(self):
-        return _openframeworks.ofDirectory_close(self)
-
-    def create(self, recursive=False):
-        return _openframeworks.ofDirectory_create(self, recursive)
-
-    def exists(self):
-        return _openframeworks.ofDirectory_exists(self)
-
-    def path(self):
-        return _openframeworks.ofDirectory_path(self)
-
-    def getAbsolutePath(self):
-        return _openframeworks.ofDirectory_getAbsolutePath(self)
-
-    def isDirectory(self):
-        return _openframeworks.ofDirectory_isDirectory(self)
-
-    def isHidden(self):
-        return _openframeworks.ofDirectory_isHidden(self)
-
-    def setWriteable(self, writeable=True):
-        return _openframeworks.ofDirectory_setWriteable(self, writeable)
-
-    def setReadOnly(self, readable=True):
-        return _openframeworks.ofDirectory_setReadOnly(self, readable)
-
-    def setExecutable(self, executable=True):
-        return _openframeworks.ofDirectory_setExecutable(self, executable)
-
-    def setShowHidden(self, showHidden):
-        return _openframeworks.ofDirectory_setShowHidden(self, showHidden)
-
-    def copyTo(self, path, bRelativeToData=True, overwrite=False):
-        return _openframeworks.ofDirectory_copyTo(self, path, bRelativeToData, overwrite)
-
-    def moveTo(self, path, bRelativeToData=True, overwrite=False):
-        return _openframeworks.ofDirectory_moveTo(self, path, bRelativeToData, overwrite)
-
-    def renameTo(self, path, bRelativeToData=True, overwrite=False):
-        return _openframeworks.ofDirectory_renameTo(self, path, bRelativeToData, overwrite)
-
-    def remove(self, recursive):
-        return _openframeworks.ofDirectory_remove(self, recursive)
-
-    def allowExt(self, extension):
-        return _openframeworks.ofDirectory_allowExt(self, extension)
-
-    def listDir(self, *args):
-        return _openframeworks.ofDirectory_listDir(self, *args)
-
-    def getOriginalDirectory(self):
-        return _openframeworks.ofDirectory_getOriginalDirectory(self)
-
-    def getName(self, position):
-        return _openframeworks.ofDirectory_getName(self, position)
-
-    def getPath(self, position):
-        return _openframeworks.ofDirectory_getPath(self, position)
-
-    def getFile(self, *args):
-        return _openframeworks.ofDirectory_getFile(self, *args)
-
-    def getFiles(self):
-        return _openframeworks.ofDirectory_getFiles(self)
-
-    def __getitem__(self, position):
-        return _openframeworks.ofDirectory___getitem__(self, position)
-
-    def getShowHidden(self):
-        return _openframeworks.ofDirectory_getShowHidden(self)
-
-    def reset(self):
-        return _openframeworks.ofDirectory_reset(self)
-
-    def sort(self):
-        return _openframeworks.ofDirectory_sort(self)
-
-    def getSorted(self):
-        return _openframeworks.ofDirectory_getSorted(self)
-
-    def size(self):
-        return _openframeworks.ofDirectory_size(self)
-
-    def numFiles(self):
-        return _openframeworks.ofDirectory_numFiles(self)
-
-    def __eq__(self, dir):
-        return _openframeworks.ofDirectory___eq__(self, dir)
-
-    def __ne__(self, dir):
-        return _openframeworks.ofDirectory___ne__(self, dir)
-
-    def __lt__(self, dir):
-        return _openframeworks.ofDirectory___lt__(self, dir)
-
-    def __le__(self, dir):
-        return _openframeworks.ofDirectory___le__(self, dir)
-
-    def __gt__(self, dir):
-        return _openframeworks.ofDirectory___gt__(self, dir)
-
-    def __ge__(self, dir):
-        return _openframeworks.ofDirectory___ge__(self, dir)
-    __swig_getmethods__["createDirectory"] = lambda x: _openframeworks.ofDirectory_createDirectory
-    if _newclass:
-        createDirectory = staticmethod(_openframeworks.ofDirectory_createDirectory)
-    __swig_getmethods__["isDirectoryEmpty"] = lambda x: _openframeworks.ofDirectory_isDirectoryEmpty
-    if _newclass:
-        isDirectoryEmpty = staticmethod(_openframeworks.ofDirectory_isDirectoryEmpty)
-    __swig_getmethods__["doesDirectoryExist"] = lambda x: _openframeworks.ofDirectory_doesDirectoryExist
-    if _newclass:
-        doesDirectoryExist = staticmethod(_openframeworks.ofDirectory_doesDirectoryExist)
-    __swig_getmethods__["removeDirectory"] = lambda x: _openframeworks.ofDirectory_removeDirectory
-    if _newclass:
-        removeDirectory = staticmethod(_openframeworks.ofDirectory_removeDirectory)
-
-    def begin(self):
-        return _openframeworks.ofDirectory_begin(self)
-
-    def end(self):
-        return _openframeworks.ofDirectory_end(self)
-
-    def rbegin(self):
-        return _openframeworks.ofDirectory_rbegin(self)
-
-    def rend(self):
-        return _openframeworks.ofDirectory_rend(self)
-    __swig_destroy__ = _openframeworks.delete_ofDirectory
-    __del__ = lambda self: None
-ofDirectory_swigregister = _openframeworks.ofDirectory_swigregister
-ofDirectory_swigregister(ofDirectory)
-
-def ofDirectory_createDirectory(dirPath, bRelativeToData=True, recursive=False):
-    return _openframeworks.ofDirectory_createDirectory(dirPath, bRelativeToData, recursive)
-ofDirectory_createDirectory = _openframeworks.ofDirectory_createDirectory
-
-def ofDirectory_isDirectoryEmpty(dirPath, bRelativeToData=True):
-    return _openframeworks.ofDirectory_isDirectoryEmpty(dirPath, bRelativeToData)
-ofDirectory_isDirectoryEmpty = _openframeworks.ofDirectory_isDirectoryEmpty
-
-def ofDirectory_doesDirectoryExist(dirPath, bRelativeToData=True):
-    return _openframeworks.ofDirectory_doesDirectoryExist(dirPath, bRelativeToData)
-ofDirectory_doesDirectoryExist = _openframeworks.ofDirectory_doesDirectoryExist
-
-def ofDirectory_removeDirectory(path, deleteIfNotEmpty, bRelativeToData=True):
-    return _openframeworks.ofDirectory_removeDirectory(path, deleteIfNotEmpty, bRelativeToData)
-ofDirectory_removeDirectory = _openframeworks.ofDirectory_removeDirectory
-
-
-def log(level, message):
-    return _openframeworks.log(level, message)
-log = _openframeworks.log
-
-_openframeworks.OF_LOG_VERBOSE_swigconstant(_openframeworks)
-OF_LOG_VERBOSE = _openframeworks.OF_LOG_VERBOSE
-
-_openframeworks.OF_LOG_NOTICE_swigconstant(_openframeworks)
-OF_LOG_NOTICE = _openframeworks.OF_LOG_NOTICE
-
-_openframeworks.OF_LOG_WARNING_swigconstant(_openframeworks)
-OF_LOG_WARNING = _openframeworks.OF_LOG_WARNING
-
-_openframeworks.OF_LOG_ERROR_swigconstant(_openframeworks)
-OF_LOG_ERROR = _openframeworks.OF_LOG_ERROR
-
-_openframeworks.OF_LOG_FATAL_ERROR_swigconstant(_openframeworks)
-OF_LOG_FATAL_ERROR = _openframeworks.OF_LOG_FATAL_ERROR
-
-_openframeworks.OF_LOG_SILENT_swigconstant(_openframeworks)
-OF_LOG_SILENT = _openframeworks.OF_LOG_SILENT
-
-def ofSetLogLevel(*args):
-    return _openframeworks.ofSetLogLevel(*args)
-ofSetLogLevel = _openframeworks.ofSetLogLevel
-
-def ofGetLogLevel():
-    return _openframeworks.ofGetLogLevel()
-ofGetLogLevel = _openframeworks.ofGetLogLevel
-
-def ofGetLogLevelName(level, pad=False):
-    return _openframeworks.ofGetLogLevelName(level, pad)
-ofGetLogLevelName = _openframeworks.ofGetLogLevelName
-
-def ofLogToFile(path, append=False):
-    return _openframeworks.ofLogToFile(path, append)
-ofLogToFile = _openframeworks.ofLogToFile
-
-def ofLogToConsole():
-    return _openframeworks.ofLogToConsole()
-ofLogToConsole = _openframeworks.ofLogToConsole
-class ofFileDialogResult(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFileDialogResult, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofFileDialogResult, name)
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        this = _openframeworks.new_ofFileDialogResult()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def getName(self):
-        return _openframeworks.ofFileDialogResult_getName(self)
-
-    def getPath(self):
-        return _openframeworks.ofFileDialogResult_getPath(self)
-    __swig_setmethods__["filePath"] = _openframeworks.ofFileDialogResult_filePath_set
-    __swig_getmethods__["filePath"] = _openframeworks.ofFileDialogResult_filePath_get
-    if _newclass:
-        filePath = _swig_property(_openframeworks.ofFileDialogResult_filePath_get, _openframeworks.ofFileDialogResult_filePath_set)
-    __swig_setmethods__["fileName"] = _openframeworks.ofFileDialogResult_fileName_set
-    __swig_getmethods__["fileName"] = _openframeworks.ofFileDialogResult_fileName_get
-    if _newclass:
-        fileName = _swig_property(_openframeworks.ofFileDialogResult_fileName_get, _openframeworks.ofFileDialogResult_fileName_set)
-    __swig_setmethods__["bSuccess"] = _openframeworks.ofFileDialogResult_bSuccess_set
-    __swig_getmethods__["bSuccess"] = _openframeworks.ofFileDialogResult_bSuccess_get
-    if _newclass:
-        bSuccess = _swig_property(_openframeworks.ofFileDialogResult_bSuccess_get, _openframeworks.ofFileDialogResult_bSuccess_set)
-    __swig_destroy__ = _openframeworks.delete_ofFileDialogResult
-    __del__ = lambda self: None
-ofFileDialogResult_swigregister = _openframeworks.ofFileDialogResult_swigregister
-ofFileDialogResult_swigregister(ofFileDialogResult)
-
-
-def ofSystemAlertDialog(errorMessage):
-    return _openframeworks.ofSystemAlertDialog(errorMessage)
-ofSystemAlertDialog = _openframeworks.ofSystemAlertDialog
-
-def ofSystemLoadDialog(*args):
-    return _openframeworks.ofSystemLoadDialog(*args)
-ofSystemLoadDialog = _openframeworks.ofSystemLoadDialog
-
-def ofSystemSaveDialog(defaultName, messageName):
-    return _openframeworks.ofSystemSaveDialog(defaultName, messageName)
-ofSystemSaveDialog = _openframeworks.ofSystemSaveDialog
-
-def ofSystemTextBoxDialog(*args):
-    return _openframeworks.ofSystemTextBoxDialog(*args)
-ofSystemTextBoxDialog = _openframeworks.ofSystemTextBoxDialog
-class ofHttpRequest(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofHttpRequest, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofHttpRequest, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofHttpRequest(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_setmethods__["url"] = _openframeworks.ofHttpRequest_url_set
-    __swig_getmethods__["url"] = _openframeworks.ofHttpRequest_url_get
-    if _newclass:
-        url = _swig_property(_openframeworks.ofHttpRequest_url_get, _openframeworks.ofHttpRequest_url_set)
-    __swig_setmethods__["name"] = _openframeworks.ofHttpRequest_name_set
-    __swig_getmethods__["name"] = _openframeworks.ofHttpRequest_name_get
-    if _newclass:
-        name = _swig_property(_openframeworks.ofHttpRequest_name_get, _openframeworks.ofHttpRequest_name_set)
-    __swig_setmethods__["saveTo"] = _openframeworks.ofHttpRequest_saveTo_set
-    __swig_getmethods__["saveTo"] = _openframeworks.ofHttpRequest_saveTo_get
-    if _newclass:
-        saveTo = _swig_property(_openframeworks.ofHttpRequest_saveTo_get, _openframeworks.ofHttpRequest_saveTo_set)
-    __swig_setmethods__["headers"] = _openframeworks.ofHttpRequest_headers_set
-    __swig_getmethods__["headers"] = _openframeworks.ofHttpRequest_headers_get
-    if _newclass:
-        headers = _swig_property(_openframeworks.ofHttpRequest_headers_get, _openframeworks.ofHttpRequest_headers_set)
-
-    def getId(self):
-        return _openframeworks.ofHttpRequest_getId(self)
-
-    def getID(self):
-        return _openframeworks.ofHttpRequest_getID(self)
-    __swig_destroy__ = _openframeworks.delete_ofHttpRequest
-    __del__ = lambda self: None
-ofHttpRequest_swigregister = _openframeworks.ofHttpRequest_swigregister
-ofHttpRequest_swigregister(ofHttpRequest)
-
-class ofHttpResponse(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofHttpResponse, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofHttpResponse, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofHttpResponse(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_setmethods__["request"] = _openframeworks.ofHttpResponse_request_set
-    __swig_getmethods__["request"] = _openframeworks.ofHttpResponse_request_get
-    if _newclass:
-        request = _swig_property(_openframeworks.ofHttpResponse_request_get, _openframeworks.ofHttpResponse_request_set)
-    __swig_setmethods__["data"] = _openframeworks.ofHttpResponse_data_set
-    __swig_getmethods__["data"] = _openframeworks.ofHttpResponse_data_get
-    if _newclass:
-        data = _swig_property(_openframeworks.ofHttpResponse_data_get, _openframeworks.ofHttpResponse_data_set)
-    __swig_setmethods__["status"] = _openframeworks.ofHttpResponse_status_set
-    __swig_getmethods__["status"] = _openframeworks.ofHttpResponse_status_get
-    if _newclass:
-        status = _swig_property(_openframeworks.ofHttpResponse_status_get, _openframeworks.ofHttpResponse_status_set)
-    __swig_setmethods__["error"] = _openframeworks.ofHttpResponse_error_set
-    __swig_getmethods__["error"] = _openframeworks.ofHttpResponse_error_get
-    if _newclass:
-        error = _swig_property(_openframeworks.ofHttpResponse_error_get, _openframeworks.ofHttpResponse_error_set)
-    __swig_destroy__ = _openframeworks.delete_ofHttpResponse
-    __del__ = lambda self: None
-ofHttpResponse_swigregister = _openframeworks.ofHttpResponse_swigregister
-ofHttpResponse_swigregister(ofHttpResponse)
-
-
-def ofLoadURL(url):
-    return _openframeworks.ofLoadURL(url)
-ofLoadURL = _openframeworks.ofLoadURL
-
-def ofLoadURLAsync(*args):
-    return _openframeworks.ofLoadURLAsync(*args)
-ofLoadURLAsync = _openframeworks.ofLoadURLAsync
-
-def ofSaveURLTo(url, path):
-    return _openframeworks.ofSaveURLTo(url, path)
-ofSaveURLTo = _openframeworks.ofSaveURLTo
-
-def ofSaveURLAsync(url, path):
-    return _openframeworks.ofSaveURLAsync(url, path)
-ofSaveURLAsync = _openframeworks.ofSaveURLAsync
-
-def ofRemoveURLRequest(id):
-    return _openframeworks.ofRemoveURLRequest(id)
-ofRemoveURLRequest = _openframeworks.ofRemoveURLRequest
-
-def ofRemoveAllURLRequests():
-    return _openframeworks.ofRemoveAllURLRequests()
-ofRemoveAllURLRequests = _openframeworks.ofRemoveAllURLRequests
-
-def ofStopURLLoader():
-    return _openframeworks.ofStopURLLoader()
-ofStopURLLoader = _openframeworks.ofStopURLLoader
-
-def ofURLResponseEvent():
-    return _openframeworks.ofURLResponseEvent()
-ofURLResponseEvent = _openframeworks.ofURLResponseEvent
-class ofURLFileLoader(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofURLFileLoader, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofURLFileLoader, name)
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        this = _openframeworks.new_ofURLFileLoader()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def get(self, url):
-        return _openframeworks.ofURLFileLoader_get(self, url)
-
-    def getAsync(self, *args):
-        return _openframeworks.ofURLFileLoader_getAsync(self, *args)
-
-    def saveTo(self, url, path):
-        return _openframeworks.ofURLFileLoader_saveTo(self, url, path)
-
-    def saveAsync(self, url, path):
-        return _openframeworks.ofURLFileLoader_saveAsync(self, url, path)
-
-    def remove(self, id):
-        return _openframeworks.ofURLFileLoader_remove(self, id)
-
-    def clear(self):
-        return _openframeworks.ofURLFileLoader_clear(self)
-
-    def stop(self):
-        return _openframeworks.ofURLFileLoader_stop(self)
-
-    def handleRequest(self, request):
-        return _openframeworks.ofURLFileLoader_handleRequest(self, request)
-    __swig_destroy__ = _openframeworks.delete_ofURLFileLoader
-    __del__ = lambda self: None
-ofURLFileLoader_swigregister = _openframeworks.ofURLFileLoader_swigregister
-ofURLFileLoader_swigregister(ofURLFileLoader)
-
-class ofRectangle(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofRectangle, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofRectangle, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofRectangle(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_destroy__ = _openframeworks.delete_ofRectangle
-    __del__ = lambda self: None
-
-    def set(self, *args):
-        return _openframeworks.ofRectangle_set(self, *args)
-
-    def setX(self, px):
-        return _openframeworks.ofRectangle_setX(self, px)
-
-    def setY(self, py):
-        return _openframeworks.ofRectangle_setY(self, py)
-
-    def setWidth(self, w):
-        return _openframeworks.ofRectangle_setWidth(self, w)
-
-    def setHeight(self, h):
-        return _openframeworks.ofRectangle_setHeight(self, h)
-
-    def setPosition(self, *args):
-        return _openframeworks.ofRectangle_setPosition(self, *args)
-
-    def setSize(self, w, h):
-        return _openframeworks.ofRectangle_setSize(self, w, h)
-
-    def setFromCenter(self, *args):
-        return _openframeworks.ofRectangle_setFromCenter(self, *args)
-
-    def translate(self, *args):
-        return _openframeworks.ofRectangle_translate(self, *args)
-
-    def translateX(self, dx):
-        return _openframeworks.ofRectangle_translateX(self, dx)
-
-    def translateY(self, dy):
-        return _openframeworks.ofRectangle_translateY(self, dy)
-
-    def scale(self, *args):
-        return _openframeworks.ofRectangle_scale(self, *args)
-
-    def scaleWidth(self, sX):
-        return _openframeworks.ofRectangle_scaleWidth(self, sX)
-
-    def scaleHeight(self, sY):
-        return _openframeworks.ofRectangle_scaleHeight(self, sY)
-
-    def scaleFromCenter(self, *args):
-        return _openframeworks.ofRectangle_scaleFromCenter(self, *args)
-
-    def scaleToScaleMode(self, targetRect, scaleMode=OF_SCALEMODE_FIT):
-        return _openframeworks.ofRectangle_scaleToScaleMode(self, targetRect, scaleMode)
-
-    def scaleToAspectRatio(self, *args):
-        return _openframeworks.ofRectangle_scaleToAspectRatio(self, *args)
-
-    def scaleTo(self, *args):
-        return _openframeworks.ofRectangle_scaleTo(self, *args)
-
-    def alignToHorz(self, *args):
-        return _openframeworks.ofRectangle_alignToHorz(self, *args)
-
-    def alignToVert(self, *args):
-        return _openframeworks.ofRectangle_alignToVert(self, *args)
-
-    def alignTo(self, *args):
-        return _openframeworks.ofRectangle_alignTo(self, *args)
-
-    def inside(self, *args):
-        return _openframeworks.ofRectangle_inside(self, *args)
-
-    def intersects(self, *args):
-        return _openframeworks.ofRectangle_intersects(self, *args)
-
-    def growToInclude(self, *args):
-        return _openframeworks.ofRectangle_growToInclude(self, *args)
-
-    def getIntersection(self, rect):
-        return _openframeworks.ofRectangle_getIntersection(self, rect)
-
-    def getUnion(self, rect):
-        return _openframeworks.ofRectangle_getUnion(self, rect)
-
-    def standardize(self):
-        return _openframeworks.ofRectangle_standardize(self)
-
-    def getStandardized(self):
-        return _openframeworks.ofRectangle_getStandardized(self)
-
-    def isStandardized(self):
-        return _openframeworks.ofRectangle_isStandardized(self)
-
-    def getArea(self):
-        return _openframeworks.ofRectangle_getArea(self)
-
-    def getPerimeter(self):
-        return _openframeworks.ofRectangle_getPerimeter(self)
-
-    def getAspectRatio(self):
-        return _openframeworks.ofRectangle_getAspectRatio(self)
-
-    def isEmpty(self):
-        return _openframeworks.ofRectangle_isEmpty(self)
-
-    def getMin(self):
-        return _openframeworks.ofRectangle_getMin(self)
-
-    def getMax(self):
-        return _openframeworks.ofRectangle_getMax(self)
-
-    def getMinX(self):
-        return _openframeworks.ofRectangle_getMinX(self)
-
-    def getMaxX(self):
-        return _openframeworks.ofRectangle_getMaxX(self)
-
-    def getMinY(self):
-        return _openframeworks.ofRectangle_getMinY(self)
-
-    def getMaxY(self):
-        return _openframeworks.ofRectangle_getMaxY(self)
-
-    def getLeft(self):
-        return _openframeworks.ofRectangle_getLeft(self)
-
-    def getRight(self):
-        return _openframeworks.ofRectangle_getRight(self)
-
-    def getTop(self):
-        return _openframeworks.ofRectangle_getTop(self)
-
-    def getBottom(self):
-        return _openframeworks.ofRectangle_getBottom(self)
-
-    def getTopLeft(self):
-        return _openframeworks.ofRectangle_getTopLeft(self)
-
-    def getTopRight(self):
-        return _openframeworks.ofRectangle_getTopRight(self)
-
-    def getBottomLeft(self):
-        return _openframeworks.ofRectangle_getBottomLeft(self)
-
-    def getBottomRight(self):
-        return _openframeworks.ofRectangle_getBottomRight(self)
-
-    def getHorzAnchor(self, anchor):
-        return _openframeworks.ofRectangle_getHorzAnchor(self, anchor)
-
-    def getVertAnchor(self, anchor):
-        return _openframeworks.ofRectangle_getVertAnchor(self, anchor)
-
-    def getPosition(self):
-        return _openframeworks.ofRectangle_getPosition(self)
-
-    def getPositionRef(self):
-        return _openframeworks.ofRectangle_getPositionRef(self)
-
-    def getCenter(self):
-        return _openframeworks.ofRectangle_getCenter(self)
-
-    def getX(self):
-        return _openframeworks.ofRectangle_getX(self)
-
-    def getY(self):
-        return _openframeworks.ofRectangle_getY(self)
-
-    def getWidth(self):
-        return _openframeworks.ofRectangle_getWidth(self)
-
-    def getHeight(self):
-        return _openframeworks.ofRectangle_getHeight(self)
-
-    def __add__(self, p):
-        return _openframeworks.ofRectangle___add__(self, p)
-
-    def __sub__(self, p):
-        return _openframeworks.ofRectangle___sub__(self, p)
-
-    def __eq__(self, rect):
-        return _openframeworks.ofRectangle___eq__(self, rect)
-
-    def __ne__(self, rect):
-        return _openframeworks.ofRectangle___ne__(self, rect)
-
-    def isZero(self):
-        return _openframeworks.ofRectangle_isZero(self)
-    __swig_setmethods__["position"] = _openframeworks.ofRectangle_position_set
-    __swig_getmethods__["position"] = _openframeworks.ofRectangle_position_get
-    if _newclass:
-        position = _swig_property(_openframeworks.ofRectangle_position_get, _openframeworks.ofRectangle_position_set)
-    __swig_setmethods__["width"] = _openframeworks.ofRectangle_width_set
-    __swig_getmethods__["width"] = _openframeworks.ofRectangle_width_get
-    if _newclass:
-        width = _swig_property(_openframeworks.ofRectangle_width_get, _openframeworks.ofRectangle_width_set)
-    __swig_setmethods__["height"] = _openframeworks.ofRectangle_height_set
-    __swig_getmethods__["height"] = _openframeworks.ofRectangle_height_get
-    if _newclass:
-        height = _swig_property(_openframeworks.ofRectangle_height_get, _openframeworks.ofRectangle_height_set)
-    __swig_setmethods__["x"] = _openframeworks.ofRectangle_x_set
-    __swig_getmethods__["x"] = _openframeworks.ofRectangle_x_get
-    if _newclass:
-        x = _swig_property(_openframeworks.ofRectangle_x_get, _openframeworks.ofRectangle_x_set)
-    __swig_setmethods__["y"] = _openframeworks.ofRectangle_y_set
-    __swig_getmethods__["y"] = _openframeworks.ofRectangle_y_get
-    if _newclass:
-        y = _swig_property(_openframeworks.ofRectangle_y_get, _openframeworks.ofRectangle_y_set)
-
-    def __str__(self):
-        return _openframeworks.ofRectangle___str__(self)
-ofRectangle_swigregister = _openframeworks.ofRectangle_swigregister
-ofRectangle_swigregister(ofRectangle)
-
 class ofNode(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ofNode, name, value)
@@ -5773,34 +3052,6 @@ ofBoxPrimitive_swigregister = _openframeworks.ofBoxPrimitive_swigregister
 ofBoxPrimitive_swigregister(ofBoxPrimitive)
 
 
-def ofInit():
-    return _openframeworks.ofInit()
-ofInit = _openframeworks.ofInit
-
-def ofCreateWindow(settings):
-    return _openframeworks.ofCreateWindow(settings)
-ofCreateWindow = _openframeworks.ofCreateWindow
-
-def ofGetMainLoop():
-    return _openframeworks.ofGetMainLoop()
-ofGetMainLoop = _openframeworks.ofGetMainLoop
-
-def ofSetMainLoop(mainLoop):
-    return _openframeworks.ofSetMainLoop(mainLoop)
-ofSetMainLoop = _openframeworks.ofSetMainLoop
-
-def ofSetupOpenGL(*args):
-    return _openframeworks.ofSetupOpenGL(*args)
-ofSetupOpenGL = _openframeworks.ofSetupOpenGL
-
-def ofRunApp(*args):
-    return _openframeworks.ofRunApp(*args)
-ofRunApp = _openframeworks.ofRunApp
-
-def ofRunMainLoop():
-    return _openframeworks.ofRunMainLoop()
-ofRunMainLoop = _openframeworks.ofRunMainLoop
-
 def ofGetAppPtr():
     return _openframeworks.ofGetAppPtr()
 ofGetAppPtr = _openframeworks.ofGetAppPtr
@@ -5816,6 +3067,10 @@ ofGetFrameRate = _openframeworks.ofGetFrameRate
 def ofGetTargetFrameRate():
     return _openframeworks.ofGetTargetFrameRate()
 ofGetTargetFrameRate = _openframeworks.ofGetTargetFrameRate
+
+def ofGetFrameNum():
+    return _openframeworks.ofGetFrameNum()
+ofGetFrameNum = _openframeworks.ofGetFrameNum
 
 def ofSetFrameRate(targetRate):
     return _openframeworks.ofSetFrameRate(targetRate)
@@ -5897,10 +3152,6 @@ def ofGetWindowRect():
     return _openframeworks.ofGetWindowRect()
 ofGetWindowRect = _openframeworks.ofGetWindowRect
 
-def ofGetWindowPtr():
-    return _openframeworks.ofGetWindowPtr()
-ofGetWindowPtr = _openframeworks.ofGetWindowPtr
-
 def ofSetWindowPosition(x, y):
     return _openframeworks.ofSetWindowPosition(x, y)
 ofSetWindowPosition = _openframeworks.ofSetWindowPosition
@@ -5936,14 +3187,6 @@ ofSetVerticalSync = _openframeworks.ofSetVerticalSync
 def ofEvents():
     return _openframeworks.ofEvents()
 ofEvents = _openframeworks.ofEvents
-
-def ofSetCurrentRenderer(renderer, setDefaults=False):
-    return _openframeworks.ofSetCurrentRenderer(renderer, setDefaults)
-ofSetCurrentRenderer = _openframeworks.ofSetCurrentRenderer
-
-def ofGetCurrentRenderer():
-    return _openframeworks.ofGetCurrentRenderer()
-ofGetCurrentRenderer = _openframeworks.ofGetCurrentRenderer
 
 def ofSetEscapeQuitsApp(bQuitOnEsc):
     return _openframeworks.ofSetEscapeQuitsApp(bQuitOnEsc)
@@ -6310,9 +3553,6 @@ class ofSerial(_object):
     def listDevices(self):
         return _openframeworks.ofSerial_listDevices(self)
 
-    def enumerateDevices(self):
-        return _openframeworks.ofSerial_enumerateDevices(self)
-
     def getDeviceList(self):
         return _openframeworks.ofSerial_getDeviceList(self)
 
@@ -6347,6 +3587,75 @@ class ofSerial(_object):
         return _openframeworks.ofSerial_drain(self)
 ofSerial_swigregister = _openframeworks.ofSerial_swigregister
 ofSerial_swigregister(ofSerial)
+
+class ofBufferObject(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofBufferObject, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofBufferObject, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofBufferObject()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def allocate(self, *args):
+        return _openframeworks.ofBufferObject_allocate(self, *args)
+
+    def isAllocated(self):
+        return _openframeworks.ofBufferObject_isAllocated(self)
+
+    def bind(self, target):
+        return _openframeworks.ofBufferObject_bind(self, target)
+
+    def unbind(self, target):
+        return _openframeworks.ofBufferObject_unbind(self, target)
+
+    def bindBase(self, target, index):
+        return _openframeworks.ofBufferObject_bindBase(self, target, index)
+
+    def unbindBase(self, target, index):
+        return _openframeworks.ofBufferObject_unbindBase(self, target, index)
+
+    def bindRange(self, target, index, offset, size):
+        return _openframeworks.ofBufferObject_bindRange(self, target, index, offset, size)
+
+    def unbindRange(self, target, index):
+        return _openframeworks.ofBufferObject_unbindRange(self, target, index)
+
+    def getId(self):
+        return _openframeworks.ofBufferObject_getId(self)
+
+    def setData(self, bytes, data, usage):
+        return _openframeworks.ofBufferObject_setData(self, bytes, data, usage)
+
+    def updateData(self, *args):
+        return _openframeworks.ofBufferObject_updateData(self, *args)
+
+    def map(self, access):
+        return _openframeworks.ofBufferObject_map(self, access)
+
+    def unmap(self):
+        return _openframeworks.ofBufferObject_unmap(self)
+
+    def mapRange(self, offset, length, access):
+        return _openframeworks.ofBufferObject_mapRange(self, offset, length, access)
+
+    def unmapRange(self):
+        return _openframeworks.ofBufferObject_unmapRange(self)
+
+    def copyTo(self, dstBuffer):
+        return _openframeworks.ofBufferObject_copyTo(self, dstBuffer)
+
+    def size(self):
+        return _openframeworks.ofBufferObject_size(self)
+    __swig_destroy__ = _openframeworks.delete_ofBufferObject
+    __del__ = lambda self: None
+ofBufferObject_swigregister = _openframeworks.ofBufferObject_swigregister
+ofBufferObject_swigregister(ofBufferObject)
 
 
 _openframeworks.OF_LIGHT_POINT_swigconstant(_openframeworks)
@@ -6502,14 +3811,10 @@ ofLight_swigregister(ofLight)
 def ofLightsData():
     return _openframeworks.ofLightsData()
 ofLightsData = _openframeworks.ofLightsData
-class ofMaterial(ofBaseMaterial):
+class ofMaterial(_object):
     __swig_setmethods__ = {}
-    for _s in [ofBaseMaterial]:
-        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, ofMaterial, name, value)
     __swig_getmethods__ = {}
-    for _s in [ofBaseMaterial]:
-        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, ofMaterial, name)
     __repr__ = _swig_repr
 
@@ -6540,11 +3845,32 @@ class ofMaterial(ofBaseMaterial):
     def setShininess(self, nShininess):
         return _openframeworks.ofMaterial_setShininess(self, nShininess)
 
+    def getDiffuseColor(self):
+        return _openframeworks.ofMaterial_getDiffuseColor(self)
+
+    def getAmbientColor(self):
+        return _openframeworks.ofMaterial_getAmbientColor(self)
+
+    def getSpecularColor(self):
+        return _openframeworks.ofMaterial_getSpecularColor(self)
+
+    def getEmissiveColor(self):
+        return _openframeworks.ofMaterial_getEmissiveColor(self)
+
+    def getShininess(self):
+        return _openframeworks.ofMaterial_getShininess(self)
+
     def getData(self):
         return _openframeworks.ofMaterial_getData(self)
 
     def setData(self, data):
         return _openframeworks.ofMaterial_setData(self, data)
+
+    def begin(self):
+        return _openframeworks.ofMaterial_begin(self)
+
+    def end(self):
+        return _openframeworks.ofMaterial_end(self)
 ofMaterial_swigregister = _openframeworks.ofMaterial_swigregister
 ofMaterial_swigregister(ofMaterial)
 
@@ -7017,8 +4343,14 @@ class ofPixels(_object):
         except Exception:
             self.this = this
 
-    def allocate(self, *args):
-        return _openframeworks.ofPixels_allocate(self, *args)
+    def allocate(self, w, h, channels):
+        return _openframeworks.ofPixels_allocate(self, w, h, channels)
+
+    def allocatePixelFormat(self, w, h, pixelFormat):
+        return _openframeworks.ofPixels_allocatePixelFormat(self, w, h, pixelFormat)
+
+    def allocateImageType(self, w, h, imageType):
+        return _openframeworks.ofPixels_allocateImageType(self, w, h, imageType)
 
     def isAllocated(self):
         return _openframeworks.ofPixels_isAllocated(self)
@@ -7029,14 +4361,17 @@ class ofPixels(_object):
     def set(self, *args):
         return _openframeworks.ofPixels_set(self, *args)
 
-    def setFromPixels(self, *args):
-        return _openframeworks.ofPixels_setFromPixels(self, *args)
+    def setFromPixels(self, newPixels, w, h, pixelFormat):
+        return _openframeworks.ofPixels_setFromPixels(self, newPixels, w, h, pixelFormat)
 
-    def setFromExternalPixels(self, *args):
-        return _openframeworks.ofPixels_setFromExternalPixels(self, *args)
+    def setFromPixelsImageType(self, newPixels, w, h, type):
+        return _openframeworks.ofPixels_setFromPixelsImageType(self, newPixels, w, h, type)
 
-    def setFromAlignedPixels(self, *args):
-        return _openframeworks.ofPixels_setFromAlignedPixels(self, *args)
+    def setFromExternalPixels(self, newPixels, w, h, pixelFormat):
+        return _openframeworks.ofPixels_setFromExternalPixels(self, newPixels, w, h, pixelFormat)
+
+    def setFromAlignedPixels(self, newPixels, width, height, pixelFormat, stride):
+        return _openframeworks.ofPixels_setFromAlignedPixels(self, newPixels, width, height, pixelFormat, stride)
 
     def swap(self, pix):
         return _openframeworks.ofPixels_swap(self, pix)
@@ -7076,9 +4411,6 @@ class ofPixels(_object):
 
     def getData(self, *args):
         return _openframeworks.ofPixels_getData(self, *args)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofPixels_getPixels(self, *args)
 
     def getPixelIndex(self, x, y):
         return _openframeworks.ofPixels_getPixelIndex(self, x, y)
@@ -7145,52 +4477,8 @@ class ofPixels(_object):
 
     def setNumChannels(self, numChannels):
         return _openframeworks.ofPixels_setNumChannels(self, numChannels)
-    __swig_getmethods__["pixelBitsFromPixelFormat"] = lambda x: _openframeworks.ofPixels_pixelBitsFromPixelFormat
-    if _newclass:
-        pixelBitsFromPixelFormat = staticmethod(_openframeworks.ofPixels_pixelBitsFromPixelFormat)
-    __swig_getmethods__["bytesFromPixelFormat"] = lambda x: _openframeworks.ofPixels_bytesFromPixelFormat
-    if _newclass:
-        bytesFromPixelFormat = staticmethod(_openframeworks.ofPixels_bytesFromPixelFormat)
-
-    def begin(self, *args):
-        return _openframeworks.ofPixels_begin(self, *args)
-
-    def end(self, *args):
-        return _openframeworks.ofPixels_end(self, *args)
-
-    def rbegin(self, *args):
-        return _openframeworks.ofPixels_rbegin(self, *args)
-
-    def rend(self, *args):
-        return _openframeworks.ofPixels_rend(self, *args)
-
-    def getLine(self, line):
-        return _openframeworks.ofPixels_getLine(self, line)
-
-    def getLines(self, *args):
-        return _openframeworks.ofPixels_getLines(self, *args)
-
-    def getPixelsIter(self):
-        return _openframeworks.ofPixels_getPixelsIter(self)
-
-    def getConstLine(self, line):
-        return _openframeworks.ofPixels_getConstLine(self, line)
-
-    def getConstLines(self, *args):
-        return _openframeworks.ofPixels_getConstLines(self, *args)
-
-    def getConstPixelsIter(self):
-        return _openframeworks.ofPixels_getConstPixelsIter(self)
 ofPixels_swigregister = _openframeworks.ofPixels_swigregister
 ofPixels_swigregister(ofPixels)
-
-def ofPixels_pixelBitsFromPixelFormat(format):
-    return _openframeworks.ofPixels_pixelBitsFromPixelFormat(format)
-ofPixels_pixelBitsFromPixelFormat = _openframeworks.ofPixels_pixelBitsFromPixelFormat
-
-def ofPixels_bytesFromPixelFormat(w, h, format):
-    return _openframeworks.ofPixels_bytesFromPixelFormat(w, h, format)
-ofPixels_bytesFromPixelFormat = _openframeworks.ofPixels_bytesFromPixelFormat
 
 class ofFloatPixels(_object):
     __swig_setmethods__ = {}
@@ -7208,8 +4496,14 @@ class ofFloatPixels(_object):
         except Exception:
             self.this = this
 
-    def allocate(self, *args):
-        return _openframeworks.ofFloatPixels_allocate(self, *args)
+    def allocate(self, w, h, channels):
+        return _openframeworks.ofFloatPixels_allocate(self, w, h, channels)
+
+    def allocatePixelFormat(self, w, h, pixelFormat):
+        return _openframeworks.ofFloatPixels_allocatePixelFormat(self, w, h, pixelFormat)
+
+    def allocateImageType(self, w, h, imageType):
+        return _openframeworks.ofFloatPixels_allocateImageType(self, w, h, imageType)
 
     def isAllocated(self):
         return _openframeworks.ofFloatPixels_isAllocated(self)
@@ -7220,14 +4514,17 @@ class ofFloatPixels(_object):
     def set(self, *args):
         return _openframeworks.ofFloatPixels_set(self, *args)
 
-    def setFromPixels(self, *args):
-        return _openframeworks.ofFloatPixels_setFromPixels(self, *args)
+    def setFromPixels(self, newPixels, w, h, pixelFormat):
+        return _openframeworks.ofFloatPixels_setFromPixels(self, newPixels, w, h, pixelFormat)
 
-    def setFromExternalPixels(self, *args):
-        return _openframeworks.ofFloatPixels_setFromExternalPixels(self, *args)
+    def setFromPixelsImageType(self, newPixels, w, h, type):
+        return _openframeworks.ofFloatPixels_setFromPixelsImageType(self, newPixels, w, h, type)
 
-    def setFromAlignedPixels(self, *args):
-        return _openframeworks.ofFloatPixels_setFromAlignedPixels(self, *args)
+    def setFromExternalPixels(self, newPixels, w, h, pixelFormat):
+        return _openframeworks.ofFloatPixels_setFromExternalPixels(self, newPixels, w, h, pixelFormat)
+
+    def setFromAlignedPixels(self, newPixels, width, height, pixelFormat, stride):
+        return _openframeworks.ofFloatPixels_setFromAlignedPixels(self, newPixels, width, height, pixelFormat, stride)
 
     def swap(self, pix):
         return _openframeworks.ofFloatPixels_swap(self, pix)
@@ -7267,9 +4564,6 @@ class ofFloatPixels(_object):
 
     def getData(self, *args):
         return _openframeworks.ofFloatPixels_getData(self, *args)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofFloatPixels_getPixels(self, *args)
 
     def getPixelIndex(self, x, y):
         return _openframeworks.ofFloatPixels_getPixelIndex(self, x, y)
@@ -7336,52 +4630,8 @@ class ofFloatPixels(_object):
 
     def setNumChannels(self, numChannels):
         return _openframeworks.ofFloatPixels_setNumChannels(self, numChannels)
-    __swig_getmethods__["pixelBitsFromPixelFormat"] = lambda x: _openframeworks.ofFloatPixels_pixelBitsFromPixelFormat
-    if _newclass:
-        pixelBitsFromPixelFormat = staticmethod(_openframeworks.ofFloatPixels_pixelBitsFromPixelFormat)
-    __swig_getmethods__["bytesFromPixelFormat"] = lambda x: _openframeworks.ofFloatPixels_bytesFromPixelFormat
-    if _newclass:
-        bytesFromPixelFormat = staticmethod(_openframeworks.ofFloatPixels_bytesFromPixelFormat)
-
-    def begin(self, *args):
-        return _openframeworks.ofFloatPixels_begin(self, *args)
-
-    def end(self, *args):
-        return _openframeworks.ofFloatPixels_end(self, *args)
-
-    def rbegin(self, *args):
-        return _openframeworks.ofFloatPixels_rbegin(self, *args)
-
-    def rend(self, *args):
-        return _openframeworks.ofFloatPixels_rend(self, *args)
-
-    def getLine(self, line):
-        return _openframeworks.ofFloatPixels_getLine(self, line)
-
-    def getLines(self, *args):
-        return _openframeworks.ofFloatPixels_getLines(self, *args)
-
-    def getPixelsIter(self):
-        return _openframeworks.ofFloatPixels_getPixelsIter(self)
-
-    def getConstLine(self, line):
-        return _openframeworks.ofFloatPixels_getConstLine(self, line)
-
-    def getConstLines(self, *args):
-        return _openframeworks.ofFloatPixels_getConstLines(self, *args)
-
-    def getConstPixelsIter(self):
-        return _openframeworks.ofFloatPixels_getConstPixelsIter(self)
 ofFloatPixels_swigregister = _openframeworks.ofFloatPixels_swigregister
 ofFloatPixels_swigregister(ofFloatPixels)
-
-def ofFloatPixels_pixelBitsFromPixelFormat(format):
-    return _openframeworks.ofFloatPixels_pixelBitsFromPixelFormat(format)
-ofFloatPixels_pixelBitsFromPixelFormat = _openframeworks.ofFloatPixels_pixelBitsFromPixelFormat
-
-def ofFloatPixels_bytesFromPixelFormat(w, h, format):
-    return _openframeworks.ofFloatPixels_bytesFromPixelFormat(w, h, format)
-ofFloatPixels_bytesFromPixelFormat = _openframeworks.ofFloatPixels_bytesFromPixelFormat
 
 class ofShortPixels(_object):
     __swig_setmethods__ = {}
@@ -7399,8 +4649,14 @@ class ofShortPixels(_object):
         except Exception:
             self.this = this
 
-    def allocate(self, *args):
-        return _openframeworks.ofShortPixels_allocate(self, *args)
+    def allocate(self, w, h, channels):
+        return _openframeworks.ofShortPixels_allocate(self, w, h, channels)
+
+    def allocatePixelFormat(self, w, h, pixelFormat):
+        return _openframeworks.ofShortPixels_allocatePixelFormat(self, w, h, pixelFormat)
+
+    def allocateImageType(self, w, h, imageType):
+        return _openframeworks.ofShortPixels_allocateImageType(self, w, h, imageType)
 
     def isAllocated(self):
         return _openframeworks.ofShortPixels_isAllocated(self)
@@ -7411,14 +4667,17 @@ class ofShortPixels(_object):
     def set(self, *args):
         return _openframeworks.ofShortPixels_set(self, *args)
 
-    def setFromPixels(self, *args):
-        return _openframeworks.ofShortPixels_setFromPixels(self, *args)
+    def setFromPixels(self, newPixels, w, h, pixelFormat):
+        return _openframeworks.ofShortPixels_setFromPixels(self, newPixels, w, h, pixelFormat)
 
-    def setFromExternalPixels(self, *args):
-        return _openframeworks.ofShortPixels_setFromExternalPixels(self, *args)
+    def setFromPixelsImageType(self, newPixels, w, h, type):
+        return _openframeworks.ofShortPixels_setFromPixelsImageType(self, newPixels, w, h, type)
 
-    def setFromAlignedPixels(self, *args):
-        return _openframeworks.ofShortPixels_setFromAlignedPixels(self, *args)
+    def setFromExternalPixels(self, newPixels, w, h, pixelFormat):
+        return _openframeworks.ofShortPixels_setFromExternalPixels(self, newPixels, w, h, pixelFormat)
+
+    def setFromAlignedPixels(self, newPixels, width, height, pixelFormat, stride):
+        return _openframeworks.ofShortPixels_setFromAlignedPixels(self, newPixels, width, height, pixelFormat, stride)
 
     def swap(self, pix):
         return _openframeworks.ofShortPixels_swap(self, pix)
@@ -7458,9 +4717,6 @@ class ofShortPixels(_object):
 
     def getData(self, *args):
         return _openframeworks.ofShortPixels_getData(self, *args)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofShortPixels_getPixels(self, *args)
 
     def getPixelIndex(self, x, y):
         return _openframeworks.ofShortPixels_getPixelIndex(self, x, y)
@@ -7527,52 +4783,8 @@ class ofShortPixels(_object):
 
     def setNumChannels(self, numChannels):
         return _openframeworks.ofShortPixels_setNumChannels(self, numChannels)
-    __swig_getmethods__["pixelBitsFromPixelFormat"] = lambda x: _openframeworks.ofShortPixels_pixelBitsFromPixelFormat
-    if _newclass:
-        pixelBitsFromPixelFormat = staticmethod(_openframeworks.ofShortPixels_pixelBitsFromPixelFormat)
-    __swig_getmethods__["bytesFromPixelFormat"] = lambda x: _openframeworks.ofShortPixels_bytesFromPixelFormat
-    if _newclass:
-        bytesFromPixelFormat = staticmethod(_openframeworks.ofShortPixels_bytesFromPixelFormat)
-
-    def begin(self, *args):
-        return _openframeworks.ofShortPixels_begin(self, *args)
-
-    def end(self, *args):
-        return _openframeworks.ofShortPixels_end(self, *args)
-
-    def rbegin(self, *args):
-        return _openframeworks.ofShortPixels_rbegin(self, *args)
-
-    def rend(self, *args):
-        return _openframeworks.ofShortPixels_rend(self, *args)
-
-    def getLine(self, line):
-        return _openframeworks.ofShortPixels_getLine(self, line)
-
-    def getLines(self, *args):
-        return _openframeworks.ofShortPixels_getLines(self, *args)
-
-    def getPixelsIter(self):
-        return _openframeworks.ofShortPixels_getPixelsIter(self)
-
-    def getConstLine(self, line):
-        return _openframeworks.ofShortPixels_getConstLine(self, line)
-
-    def getConstLines(self, *args):
-        return _openframeworks.ofShortPixels_getConstLines(self, *args)
-
-    def getConstPixelsIter(self):
-        return _openframeworks.ofShortPixels_getConstPixelsIter(self)
 ofShortPixels_swigregister = _openframeworks.ofShortPixels_swigregister
 ofShortPixels_swigregister(ofShortPixels)
-
-def ofShortPixels_pixelBitsFromPixelFormat(format):
-    return _openframeworks.ofShortPixels_pixelBitsFromPixelFormat(format)
-ofShortPixels_pixelBitsFromPixelFormat = _openframeworks.ofShortPixels_pixelBitsFromPixelFormat
-
-def ofShortPixels_bytesFromPixelFormat(w, h, format):
-    return _openframeworks.ofShortPixels_bytesFromPixelFormat(w, h, format)
-ofShortPixels_bytesFromPixelFormat = _openframeworks.ofShortPixels_bytesFromPixelFormat
 
 class ofPath(_object):
     __swig_setmethods__ = {}
@@ -7681,6 +4893,9 @@ class ofPath(_object):
     def setCurveResolution(self, curveResolution):
         return _openframeworks.ofPath_setCurveResolution(self, curveResolution)
 
+    def getCurveResolution(self):
+        return _openframeworks.ofPath_getCurveResolution(self)
+
     def setCircleResolution(self, circleResolution):
         return _openframeworks.ofPath_setCircleResolution(self, circleResolution)
 
@@ -7775,18 +4990,6 @@ class ofPolyline(_object):
 
     def getVertices(self, *args):
         return _openframeworks.ofPolyline_getVertices(self, *args)
-
-    def begin(self, *args):
-        return _openframeworks.ofPolyline_begin(self, *args)
-
-    def rbegin(self, *args):
-        return _openframeworks.ofPolyline_rbegin(self, *args)
-
-    def end(self, *args):
-        return _openframeworks.ofPolyline_end(self, *args)
-
-    def rend(self, *args):
-        return _openframeworks.ofPolyline_rend(self, *args)
 
     def lineTo(self, *args):
         return _openframeworks.ofPolyline_lineTo(self, *args)
@@ -7917,6 +5120,10 @@ def ofPolyline_fromRectangle(rect):
 ofPolyline_fromRectangle = _openframeworks.ofPolyline_fromRectangle
 
 
+def ofDrawBitmapString(*args):
+    return _openframeworks.ofDrawBitmapString(*args)
+ofDrawBitmapString = _openframeworks.ofDrawBitmapString
+
 _openframeworks.CIRC_RESOLUTION_swigconstant(_openframeworks)
 CIRC_RESOLUTION = _openframeworks.CIRC_RESOLUTION
 
@@ -7943,10 +5150,6 @@ ofGetFill = _openframeworks.ofGetFill
 def ofGetBackgroundColor():
     return _openframeworks.ofGetBackgroundColor()
 ofGetBackgroundColor = _openframeworks.ofGetBackgroundColor
-
-def ofGetBackground():
-    return _openframeworks.ofGetBackground()
-ofGetBackground = _openframeworks.ofGetBackground
 
 def ofBackground(*args):
     return _openframeworks.ofBackground(*args)
@@ -8015,38 +5218,6 @@ ofDrawCurve = _openframeworks.ofDrawCurve
 def ofDrawBezier(*args):
     return _openframeworks.ofDrawBezier(*args)
 ofDrawBezier = _openframeworks.ofDrawBezier
-
-def ofTriangle(*args):
-    return _openframeworks.ofTriangle(*args)
-ofTriangle = _openframeworks.ofTriangle
-
-def ofCircle(*args):
-    return _openframeworks.ofCircle(*args)
-ofCircle = _openframeworks.ofCircle
-
-def ofEllipse(*args):
-    return _openframeworks.ofEllipse(*args)
-ofEllipse = _openframeworks.ofEllipse
-
-def ofLine(*args):
-    return _openframeworks.ofLine(*args)
-ofLine = _openframeworks.ofLine
-
-def ofRect(*args):
-    return _openframeworks.ofRect(*args)
-ofRect = _openframeworks.ofRect
-
-def ofRectRounded(*args):
-    return _openframeworks.ofRectRounded(*args)
-ofRectRounded = _openframeworks.ofRectRounded
-
-def ofCurve(*args):
-    return _openframeworks.ofCurve(*args)
-ofCurve = _openframeworks.ofCurve
-
-def ofBezier(*args):
-    return _openframeworks.ofBezier(*args)
-ofBezier = _openframeworks.ofBezier
 
 def ofBeginShape():
     return _openframeworks.ofBeginShape()
@@ -8482,36 +5653,42 @@ class of3dGraphics(_object):
 of3dGraphics_swigregister = _openframeworks.of3dGraphics_swigregister
 of3dGraphics_swigregister(of3dGraphics)
 
+
+_openframeworks.NUM_CHARACTER_TO_START_swigconstant(_openframeworks)
+NUM_CHARACTER_TO_START = _openframeworks.NUM_CHARACTER_TO_START
 class ofTrueTypeFont(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ofTrueTypeFont, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, ofTrueTypeFont, name)
     __repr__ = _swig_repr
+    __swig_destroy__ = _openframeworks.delete_ofTrueTypeFont
+    __del__ = lambda self: None
 
-    def __init__(self):
-        this = _openframeworks.new_ofTrueTypeFont()
+    def __init__(self, *args):
+        this = _openframeworks.new_ofTrueTypeFont(*args)
         try:
             self.this.append(this)
         except Exception:
             self.this = this
-    __swig_destroy__ = _openframeworks.delete_ofTrueTypeFont
-    __del__ = lambda self: None
-    __swig_getmethods__["setGlobalDpi"] = lambda x: _openframeworks.ofTrueTypeFont_setGlobalDpi
-    if _newclass:
-        setGlobalDpi = staticmethod(_openframeworks.ofTrueTypeFont_setGlobalDpi)
 
-    def loadFont(self, filename, fontsize, _bAntiAliased=True, _bFullCharacterSet=False, makeContours=False, simplifyAmt=0.3, dpi=0):
-        return _openframeworks.ofTrueTypeFont_loadFont(self, filename, fontsize, _bAntiAliased, _bFullCharacterSet, makeContours, simplifyAmt, dpi)
+    def load(self, filename, fontsize, _bAntiAliased=True, _bFullCharacterSet=True, makeContours=False, simplifyAmt=0.3, dpi=0):
+        return _openframeworks.ofTrueTypeFont_load(self, filename, fontsize, _bAntiAliased, _bFullCharacterSet, makeContours, simplifyAmt, dpi)
 
     def isLoaded(self):
         return _openframeworks.ofTrueTypeFont_isLoaded(self)
+    __swig_getmethods__["setGlobalDpi"] = lambda x: _openframeworks.ofTrueTypeFont_setGlobalDpi
+    if _newclass:
+        setGlobalDpi = staticmethod(_openframeworks.ofTrueTypeFont_setGlobalDpi)
 
     def isAntiAliased(self):
         return _openframeworks.ofTrueTypeFont_isAntiAliased(self)
 
     def hasFullCharacterSet(self):
         return _openframeworks.ofTrueTypeFont_hasFullCharacterSet(self)
+
+    def getNumCharacters(self):
+        return _openframeworks.ofTrueTypeFont_getNumCharacters(self)
 
     def getSize(self):
         return _openframeworks.ofTrueTypeFont_getSize(self)
@@ -8521,6 +5698,15 @@ class ofTrueTypeFont(_object):
 
     def setLineHeight(self, height):
         return _openframeworks.ofTrueTypeFont_setLineHeight(self, height)
+
+    def getAscenderHeight(self):
+        return _openframeworks.ofTrueTypeFont_getAscenderHeight(self)
+
+    def getDescenderHeight(self):
+        return _openframeworks.ofTrueTypeFont_getDescenderHeight(self)
+
+    def getGlyphBBox(self):
+        return _openframeworks.ofTrueTypeFont_getGlyphBBox(self)
 
     def getLetterSpacing(self):
         return _openframeworks.ofTrueTypeFont_getLetterSpacing(self)
@@ -8540,8 +5726,8 @@ class ofTrueTypeFont(_object):
     def stringHeight(self, s):
         return _openframeworks.ofTrueTypeFont_stringHeight(self, s)
 
-    def getStringBoundingBox(self, s, x, y):
-        return _openframeworks.ofTrueTypeFont_getStringBoundingBox(self, s, x, y)
+    def getStringBoundingBox(self, s, x, y, vflip=True):
+        return _openframeworks.ofTrueTypeFont_getStringBoundingBox(self, s, x, y, vflip)
 
     def drawString(self, s, x, y):
         return _openframeworks.ofTrueTypeFont_drawString(self, s, x, y)
@@ -8549,50 +5735,200 @@ class ofTrueTypeFont(_object):
     def drawStringAsShapes(self, s, x, y):
         return _openframeworks.ofTrueTypeFont_drawStringAsShapes(self, s, x, y)
 
-    def getNumCharacters(self):
-        return _openframeworks.ofTrueTypeFont_getNumCharacters(self)
+    def getCharacterAsPoints(self, character, vflip=True, filled=True):
+        return _openframeworks.ofTrueTypeFont_getCharacterAsPoints(self, character, vflip, filled)
 
-    def getCharacterAsPoints(self, *args):
-        return _openframeworks.ofTrueTypeFont_getCharacterAsPoints(self, *args)
+    def getStringAsPoints(self, str, vflip=True, filled=True):
+        return _openframeworks.ofTrueTypeFont_getStringAsPoints(self, str, vflip, filled)
 
-    def getStringAsPoints(self, *args):
-        return _openframeworks.ofTrueTypeFont_getStringAsPoints(self, *args)
-
-    def getStringMesh(self, s, x, y):
-        return _openframeworks.ofTrueTypeFont_getStringMesh(self, s, x, y)
+    def getStringMesh(self, s, x, y, vflip=True):
+        return _openframeworks.ofTrueTypeFont_getStringMesh(self, s, x, y, vflip)
 
     def getFontTexture(self):
         return _openframeworks.ofTrueTypeFont_getFontTexture(self)
-
-    def bind(self):
-        return _openframeworks.ofTrueTypeFont_bind(self)
-
-    def unbind(self):
-        return _openframeworks.ofTrueTypeFont_unbind(self)
-
-    def getEncoding(self):
-        return _openframeworks.ofTrueTypeFont_getEncoding(self)
-
-    def setEncoding(self, encoding):
-        return _openframeworks.ofTrueTypeFont_setEncoding(self, encoding)
-    __swig_setmethods__["lineHeight"] = _openframeworks.ofTrueTypeFont_lineHeight_set
-    __swig_getmethods__["lineHeight"] = _openframeworks.ofTrueTypeFont_lineHeight_get
-    if _newclass:
-        lineHeight = _swig_property(_openframeworks.ofTrueTypeFont_lineHeight_get, _openframeworks.ofTrueTypeFont_lineHeight_set)
-    __swig_setmethods__["letterSpacing"] = _openframeworks.ofTrueTypeFont_letterSpacing_set
-    __swig_getmethods__["letterSpacing"] = _openframeworks.ofTrueTypeFont_letterSpacing_get
-    if _newclass:
-        letterSpacing = _swig_property(_openframeworks.ofTrueTypeFont_letterSpacing_get, _openframeworks.ofTrueTypeFont_letterSpacing_set)
-    __swig_setmethods__["spaceSize"] = _openframeworks.ofTrueTypeFont_spaceSize_set
-    __swig_getmethods__["spaceSize"] = _openframeworks.ofTrueTypeFont_spaceSize_get
-    if _newclass:
-        spaceSize = _swig_property(_openframeworks.ofTrueTypeFont_spaceSize_get, _openframeworks.ofTrueTypeFont_spaceSize_set)
 ofTrueTypeFont_swigregister = _openframeworks.ofTrueTypeFont_swigregister
 ofTrueTypeFont_swigregister(ofTrueTypeFont)
+cvar = _openframeworks.cvar
+OF_TTF_SANS = cvar.OF_TTF_SANS
+OF_TTF_SERIF = cvar.OF_TTF_SERIF
+OF_TTF_MONO = cvar.OF_TTF_MONO
 
 def ofTrueTypeFont_setGlobalDpi(newDpi):
     return _openframeworks.ofTrueTypeFont_setGlobalDpi(newDpi)
 ofTrueTypeFont_setGlobalDpi = _openframeworks.ofTrueTypeFont_setGlobalDpi
+
+
+def ofSoundStreamSetup(*args):
+    return _openframeworks.ofSoundStreamSetup(*args)
+ofSoundStreamSetup = _openframeworks.ofSoundStreamSetup
+
+def ofSoundStreamStop():
+    return _openframeworks.ofSoundStreamStop()
+ofSoundStreamStop = _openframeworks.ofSoundStreamStop
+
+def ofSoundStreamStart():
+    return _openframeworks.ofSoundStreamStart()
+ofSoundStreamStart = _openframeworks.ofSoundStreamStart
+
+def ofSoundStreamClose():
+    return _openframeworks.ofSoundStreamClose()
+ofSoundStreamClose = _openframeworks.ofSoundStreamClose
+
+def ofSoundStreamListDevices():
+    return _openframeworks.ofSoundStreamListDevices()
+ofSoundStreamListDevices = _openframeworks.ofSoundStreamListDevices
+class ofSoundStream(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofSoundStream, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofSoundStream, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofSoundStream()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def setSoundStream(self, soundStreamPtr):
+        return _openframeworks.ofSoundStream_setSoundStream(self, soundStreamPtr)
+
+    def getSoundStream(self):
+        return _openframeworks.ofSoundStream_getSoundStream(self)
+
+    def printDeviceList(self):
+        return _openframeworks.ofSoundStream_printDeviceList(self)
+
+    def getDeviceList(self):
+        return _openframeworks.ofSoundStream_getDeviceList(self)
+
+    def getMatchingDevices(self, *args):
+        return _openframeworks.ofSoundStream_getMatchingDevices(self, *args)
+
+    def setDeviceID(self, deviceID):
+        return _openframeworks.ofSoundStream_setDeviceID(self, deviceID)
+
+    def setDevice(self, device):
+        return _openframeworks.ofSoundStream_setDevice(self, device)
+
+    def setup(self, *args):
+        return _openframeworks.ofSoundStream_setup(self, *args)
+
+    def setInput(self, soundInput):
+        return _openframeworks.ofSoundStream_setInput(self, soundInput)
+
+    def setOutput(self, soundOutput):
+        return _openframeworks.ofSoundStream_setOutput(self, soundOutput)
+
+    def start(self):
+        return _openframeworks.ofSoundStream_start(self)
+
+    def stop(self):
+        return _openframeworks.ofSoundStream_stop(self)
+
+    def close(self):
+        return _openframeworks.ofSoundStream_close(self)
+
+    def getTickCount(self):
+        return _openframeworks.ofSoundStream_getTickCount(self)
+
+    def getNumInputChannels(self):
+        return _openframeworks.ofSoundStream_getNumInputChannels(self)
+
+    def getNumOutputChannels(self):
+        return _openframeworks.ofSoundStream_getNumOutputChannels(self)
+
+    def getSampleRate(self):
+        return _openframeworks.ofSoundStream_getSampleRate(self)
+
+    def getBufferSize(self):
+        return _openframeworks.ofSoundStream_getBufferSize(self)
+    __swig_destroy__ = _openframeworks.delete_ofSoundStream
+    __del__ = lambda self: None
+ofSoundStream_swigregister = _openframeworks.ofSoundStream_swigregister
+ofSoundStream_swigregister(ofSoundStream)
+
+class ofSoundPlayer(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofSoundPlayer, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofSoundPlayer, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofSoundPlayer()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def setPlayer(self, newPlayer):
+        return _openframeworks.ofSoundPlayer_setPlayer(self, newPlayer)
+
+    def getPlayer(self):
+        return _openframeworks.ofSoundPlayer_getPlayer(self)
+
+    def load(self, fileName, stream=False):
+        return _openframeworks.ofSoundPlayer_load(self, fileName, stream)
+
+    def unload(self):
+        return _openframeworks.ofSoundPlayer_unload(self)
+
+    def play(self):
+        return _openframeworks.ofSoundPlayer_play(self)
+
+    def stop(self):
+        return _openframeworks.ofSoundPlayer_stop(self)
+
+    def setVolume(self, vol):
+        return _openframeworks.ofSoundPlayer_setVolume(self, vol)
+
+    def setPan(self, pan):
+        return _openframeworks.ofSoundPlayer_setPan(self, pan)
+
+    def setSpeed(self, speed):
+        return _openframeworks.ofSoundPlayer_setSpeed(self, speed)
+
+    def setPaused(self, paused):
+        return _openframeworks.ofSoundPlayer_setPaused(self, paused)
+
+    def setLoop(self, loop):
+        return _openframeworks.ofSoundPlayer_setLoop(self, loop)
+
+    def setMultiPlay(self, multiplay):
+        return _openframeworks.ofSoundPlayer_setMultiPlay(self, multiplay)
+
+    def setPosition(self, percent):
+        return _openframeworks.ofSoundPlayer_setPosition(self, percent)
+
+    def setPositionMS(self, ms):
+        return _openframeworks.ofSoundPlayer_setPositionMS(self, ms)
+
+    def getPositionMS(self):
+        return _openframeworks.ofSoundPlayer_getPositionMS(self)
+
+    def getPosition(self):
+        return _openframeworks.ofSoundPlayer_getPosition(self)
+
+    def isPlaying(self):
+        return _openframeworks.ofSoundPlayer_isPlaying(self)
+
+    def getSpeed(self):
+        return _openframeworks.ofSoundPlayer_getSpeed(self)
+
+    def getPan(self):
+        return _openframeworks.ofSoundPlayer_getPan(self)
+
+    def getVolume(self):
+        return _openframeworks.ofSoundPlayer_getVolume(self)
+
+    def isLoaded(self):
+        return _openframeworks.ofSoundPlayer_isLoaded(self)
+    __swig_destroy__ = _openframeworks.delete_ofSoundPlayer
+    __del__ = lambda self: None
+ofSoundPlayer_swigregister = _openframeworks.ofSoundPlayer_swigregister
+ofSoundPlayer_swigregister(ofSoundPlayer)
 
 class ofMatrix3x3(_object):
     __swig_setmethods__ = {}
@@ -8782,8 +6118,8 @@ class ofMatrix4x4(_object):
     if _newclass:
         newLookAtMatrix = staticmethod(_openframeworks.ofMatrix4x4_newLookAtMatrix)
 
-    def __call__(self, *args):
-        return _openframeworks.ofMatrix4x4___call__(self, *args)
+    def __call__(self, row, col):
+        return _openframeworks.ofMatrix4x4___call__(self, row, col)
 
     def getRowAsVec3f(self, i):
         return _openframeworks.ofMatrix4x4_getRowAsVec3f(self, i)
@@ -9237,36 +6573,6 @@ class ofVec2f(_object):
 
     def dot(self, vec):
         return _openframeworks.ofVec2f_dot(self, vec)
-
-    def rescaled(self, length):
-        return _openframeworks.ofVec2f_rescaled(self, length)
-
-    def rescale(self, length):
-        return _openframeworks.ofVec2f_rescale(self, length)
-
-    def normalized(self):
-        return _openframeworks.ofVec2f_normalized(self)
-
-    def limited(self, max):
-        return _openframeworks.ofVec2f_limited(self, max)
-
-    def perpendiculared(self):
-        return _openframeworks.ofVec2f_perpendiculared(self)
-
-    def interpolated(self, pnt, p):
-        return _openframeworks.ofVec2f_interpolated(self, pnt, p)
-
-    def middled(self, pnt):
-        return _openframeworks.ofVec2f_middled(self, pnt)
-
-    def mapped(self, origin, vx, vy):
-        return _openframeworks.ofVec2f_mapped(self, origin, vx, vy)
-
-    def distanceSquared(self, pnt):
-        return _openframeworks.ofVec2f_distanceSquared(self, pnt)
-
-    def rotated(self, *args):
-        return _openframeworks.ofVec2f_rotated(self, *args)
     __swig_getmethods__["zero"] = lambda x: _openframeworks.ofVec2f_zero
     if _newclass:
         zero = staticmethod(_openframeworks.ofVec2f_zero)
@@ -9456,39 +6762,6 @@ class ofVec3f(_object):
 
     def dot(self, vec):
         return _openframeworks.ofVec3f_dot(self, vec)
-
-    def rescaled(self, length):
-        return _openframeworks.ofVec3f_rescaled(self, length)
-
-    def rescale(self, length):
-        return _openframeworks.ofVec3f_rescale(self, length)
-
-    def normalized(self):
-        return _openframeworks.ofVec3f_normalized(self)
-
-    def limited(self, max):
-        return _openframeworks.ofVec3f_limited(self, max)
-
-    def crossed(self, vec):
-        return _openframeworks.ofVec3f_crossed(self, vec)
-
-    def perpendiculared(self, vec):
-        return _openframeworks.ofVec3f_perpendiculared(self, vec)
-
-    def mapped(self, origin, vx, vy, vz):
-        return _openframeworks.ofVec3f_mapped(self, origin, vx, vy, vz)
-
-    def distanceSquared(self, pnt):
-        return _openframeworks.ofVec3f_distanceSquared(self, pnt)
-
-    def interpolated(self, pnt, p):
-        return _openframeworks.ofVec3f_interpolated(self, pnt, p)
-
-    def middled(self, pnt):
-        return _openframeworks.ofVec3f_middled(self, pnt)
-
-    def rotated(self, *args):
-        return _openframeworks.ofVec3f_rotated(self, *args)
     __swig_getmethods__["zero"] = lambda x: _openframeworks.ofVec3f_zero
     if _newclass:
         zero = staticmethod(_openframeworks.ofVec3f_zero)
@@ -9634,27 +6907,6 @@ class ofVec4f(_object):
 
     def dot(self, vec):
         return _openframeworks.ofVec4f_dot(self, vec)
-
-    def rescaled(self, length):
-        return _openframeworks.ofVec4f_rescaled(self, length)
-
-    def rescale(self, length):
-        return _openframeworks.ofVec4f_rescale(self, length)
-
-    def normalized(self):
-        return _openframeworks.ofVec4f_normalized(self)
-
-    def limited(self, max):
-        return _openframeworks.ofVec4f_limited(self, max)
-
-    def distanceSquared(self, pnt):
-        return _openframeworks.ofVec4f_distanceSquared(self, pnt)
-
-    def interpolated(self, pnt, p):
-        return _openframeworks.ofVec4f_interpolated(self, pnt, p)
-
-    def middled(self, pnt):
-        return _openframeworks.ofVec4f_middled(self, pnt)
     __swig_getmethods__["zero"] = lambda x: _openframeworks.ofVec4f_zero
     if _newclass:
         zero = staticmethod(_openframeworks.ofVec4f_zero)
@@ -9797,529 +7049,6 @@ ofNextPow2 = _openframeworks.ofNextPow2
 def ofSign(n):
     return _openframeworks.ofSign(n)
 ofSign = _openframeworks.ofSign
-class ofXml(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofXml, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofXml, name)
-    __repr__ = _swig_repr
-    __swig_destroy__ = _openframeworks.delete_ofXml
-    __del__ = lambda self: None
-
-    def __init__(self, *args):
-        this = _openframeworks.new_ofXml(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def load(self, path):
-        return _openframeworks.ofXml_load(self, path)
-
-    def save(self, path):
-        return _openframeworks.ofXml_save(self, path)
-
-    def addChild(self, path):
-        return _openframeworks.ofXml_addChild(self, path)
-
-    def addXml(self, xml, copyAll=False):
-        return _openframeworks.ofXml_addXml(self, xml, copyAll)
-
-    def getValue(self, *args):
-        return _openframeworks.ofXml_getValue(self, *args)
-
-    def getIntValue(self, *args):
-        return _openframeworks.ofXml_getIntValue(self, *args)
-
-    def getInt64Value(self, *args):
-        return _openframeworks.ofXml_getInt64Value(self, *args)
-
-    def getFloatValue(self, *args):
-        return _openframeworks.ofXml_getFloatValue(self, *args)
-
-    def getBoolValue(self, *args):
-        return _openframeworks.ofXml_getBoolValue(self, *args)
-
-    def setValue(self, path, value):
-        return _openframeworks.ofXml_setValue(self, path, value)
-
-    def getAttribute(self, path):
-        return _openframeworks.ofXml_getAttribute(self, path)
-
-    def setAttribute(self, path, value):
-        return _openframeworks.ofXml_setAttribute(self, path, value)
-
-    def getAttributes(self):
-        return _openframeworks.ofXml_getAttributes(self)
-
-    def getNumChildren(self, *args):
-        return _openframeworks.ofXml_getNumChildren(self, *args)
-
-    def removeAttribute(self, path):
-        return _openframeworks.ofXml_removeAttribute(self, path)
-
-    def removeAttributes(self, *args):
-        return _openframeworks.ofXml_removeAttributes(self, *args)
-
-    def removeContents(self, *args):
-        return _openframeworks.ofXml_removeContents(self, *args)
-
-    def remove(self, *args):
-        return _openframeworks.ofXml_remove(self, *args)
-
-    def exists(self, path):
-        return _openframeworks.ofXml_exists(self, path)
-
-    def clear(self):
-        return _openframeworks.ofXml_clear(self)
-
-    def getName(self):
-        return _openframeworks.ofXml_getName(self)
-
-    def reset(self):
-        return _openframeworks.ofXml_reset(self)
-
-    def setToChild(self, index):
-        return _openframeworks.ofXml_setToChild(self, index)
-
-    def setTo(self, path):
-        return _openframeworks.ofXml_setTo(self, path)
-
-    def setToParent(self, *args):
-        return _openframeworks.ofXml_setToParent(self, *args)
-
-    def setToSibling(self):
-        return _openframeworks.ofXml_setToSibling(self)
-
-    def setToPrevSibling(self):
-        return _openframeworks.ofXml_setToPrevSibling(self)
-
-    def loadFromBuffer(self, buffer):
-        return _openframeworks.ofXml_loadFromBuffer(self, buffer)
-
-    def toString(self):
-        return _openframeworks.ofXml_toString(self)
-
-    def serialize(self, parameter):
-        return _openframeworks.ofXml_serialize(self, parameter)
-
-    def deserialize(self, parameter):
-        return _openframeworks.ofXml_deserialize(self, parameter)
-    __swig_getmethods__["tokenize"] = lambda x: _openframeworks.ofXml_tokenize
-    if _newclass:
-        tokenize = staticmethod(_openframeworks.ofXml_tokenize)
-
-    def getPocoElement(self, *args):
-        return _openframeworks.ofXml_getPocoElement(self, *args)
-
-    def getPocoDocument(self, *args):
-        return _openframeworks.ofXml_getPocoDocument(self, *args)
-ofXml_swigregister = _openframeworks.ofXml_swigregister
-ofXml_swigregister(ofXml)
-
-def ofXml_tokenize(str, delim):
-    return _openframeworks.ofXml_tokenize(str, delim)
-ofXml_tokenize = _openframeworks.ofXml_tokenize
-
-class ofMatrixStack(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofMatrixStack, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofMatrixStack, name)
-    __repr__ = _swig_repr
-
-    def __init__(self, window):
-        this = _openframeworks.new_ofMatrixStack(window)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def setRenderSurface(self, *args):
-        return _openframeworks.ofMatrixStack_setRenderSurface(self, *args)
-
-    def setOrientation(self, orientation, vFlip):
-        return _openframeworks.ofMatrixStack_setOrientation(self, orientation, vFlip)
-
-    def getOrientation(self):
-        return _openframeworks.ofMatrixStack_getOrientation(self)
-
-    def viewport(self, x, y, width, height, vflip):
-        return _openframeworks.ofMatrixStack_viewport(self, x, y, width, height, vflip)
-
-    def nativeViewport(self, viewport):
-        return _openframeworks.ofMatrixStack_nativeViewport(self, viewport)
-
-    def getCurrentViewport(self):
-        return _openframeworks.ofMatrixStack_getCurrentViewport(self)
-
-    def getNativeViewport(self):
-        return _openframeworks.ofMatrixStack_getNativeViewport(self)
-
-    def getFullSurfaceViewport(self):
-        return _openframeworks.ofMatrixStack_getFullSurfaceViewport(self)
-
-    def getProjectionMatrix(self):
-        return _openframeworks.ofMatrixStack_getProjectionMatrix(self)
-
-    def getViewMatrix(self):
-        return _openframeworks.ofMatrixStack_getViewMatrix(self)
-
-    def getModelViewMatrix(self):
-        return _openframeworks.ofMatrixStack_getModelViewMatrix(self)
-
-    def getModelViewProjectionMatrix(self):
-        return _openframeworks.ofMatrixStack_getModelViewProjectionMatrix(self)
-
-    def getTextureMatrix(self):
-        return _openframeworks.ofMatrixStack_getTextureMatrix(self)
-
-    def getCurrentMatrix(self):
-        return _openframeworks.ofMatrixStack_getCurrentMatrix(self)
-
-    def getProjectionMatrixNoOrientation(self):
-        return _openframeworks.ofMatrixStack_getProjectionMatrixNoOrientation(self)
-
-    def getOrientationMatrix(self):
-        return _openframeworks.ofMatrixStack_getOrientationMatrix(self)
-
-    def getOrientationMatrixInverse(self):
-        return _openframeworks.ofMatrixStack_getOrientationMatrixInverse(self)
-
-    def getCurrentMatrixMode(self):
-        return _openframeworks.ofMatrixStack_getCurrentMatrixMode(self)
-
-    def getHandedness(self):
-        return _openframeworks.ofMatrixStack_getHandedness(self)
-
-    def isVFlipped(self):
-        return _openframeworks.ofMatrixStack_isVFlipped(self)
-
-    def customMatrixNeedsFlip(self):
-        return _openframeworks.ofMatrixStack_customMatrixNeedsFlip(self)
-
-    def pushView(self):
-        return _openframeworks.ofMatrixStack_pushView(self)
-
-    def popView(self):
-        return _openframeworks.ofMatrixStack_popView(self)
-
-    def pushMatrix(self):
-        return _openframeworks.ofMatrixStack_pushMatrix(self)
-
-    def popMatrix(self):
-        return _openframeworks.ofMatrixStack_popMatrix(self)
-
-    def translate(self, x, y, z=0):
-        return _openframeworks.ofMatrixStack_translate(self, x, y, z)
-
-    def scale(self, xAmnt, yAmnt, zAmnt=1):
-        return _openframeworks.ofMatrixStack_scale(self, xAmnt, yAmnt, zAmnt)
-
-    def rotate(self, degrees, vecX, vecY, vecZ):
-        return _openframeworks.ofMatrixStack_rotate(self, degrees, vecX, vecY, vecZ)
-
-    def matrixMode(self, mode):
-        return _openframeworks.ofMatrixStack_matrixMode(self, mode)
-
-    def loadIdentityMatrix(self):
-        return _openframeworks.ofMatrixStack_loadIdentityMatrix(self)
-
-    def loadMatrix(self, m):
-        return _openframeworks.ofMatrixStack_loadMatrix(self, m)
-
-    def multMatrix(self, m):
-        return _openframeworks.ofMatrixStack_multMatrix(self, m)
-
-    def loadViewMatrix(self, matrix):
-        return _openframeworks.ofMatrixStack_loadViewMatrix(self, matrix)
-
-    def multViewMatrix(self, matrix):
-        return _openframeworks.ofMatrixStack_multViewMatrix(self, matrix)
-
-    def clearStacks(self):
-        return _openframeworks.ofMatrixStack_clearStacks(self)
-
-    def doesHardwareOrientation(self):
-        return _openframeworks.ofMatrixStack_doesHardwareOrientation(self)
-    __swig_destroy__ = _openframeworks.delete_ofMatrixStack
-    __del__ = lambda self: None
-ofMatrixStack_swigregister = _openframeworks.ofMatrixStack_swigregister
-ofMatrixStack_swigregister(ofMatrixStack)
-
-class ofVideoGrabber(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofVideoGrabber, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofVideoGrabber, name)
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        this = _openframeworks.new_ofVideoGrabber()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_destroy__ = _openframeworks.delete_ofVideoGrabber
-    __del__ = lambda self: None
-
-    def listDevices(self):
-        return _openframeworks.ofVideoGrabber_listDevices(self)
-
-    def isFrameNew(self):
-        return _openframeworks.ofVideoGrabber_isFrameNew(self)
-
-    def update(self):
-        return _openframeworks.ofVideoGrabber_update(self)
-
-    def close(self):
-        return _openframeworks.ofVideoGrabber_close(self)
-
-    def setup(self, *args):
-        return _openframeworks.ofVideoGrabber_setup(self, *args)
-
-    def initGrabber(self, *args):
-        return _openframeworks.ofVideoGrabber_initGrabber(self, *args)
-
-    def setPixelFormat(self, pixelFormat):
-        return _openframeworks.ofVideoGrabber_setPixelFormat(self, pixelFormat)
-
-    def getPixelFormat(self):
-        return _openframeworks.ofVideoGrabber_getPixelFormat(self)
-
-    def videoSettings(self):
-        return _openframeworks.ofVideoGrabber_videoSettings(self)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofVideoGrabber_getPixels(self, *args)
-
-    def getPixelsRef(self, *args):
-        return _openframeworks.ofVideoGrabber_getPixelsRef(self, *args)
-
-    def getTexture(self, *args):
-        return _openframeworks.ofVideoGrabber_getTexture(self, *args)
-
-    def getTextureReference(self, *args):
-        return _openframeworks.ofVideoGrabber_getTextureReference(self, *args)
-
-    def getTexturePlanes(self, *args):
-        return _openframeworks.ofVideoGrabber_getTexturePlanes(self, *args)
-
-    def setVerbose(self, bTalkToMe):
-        return _openframeworks.ofVideoGrabber_setVerbose(self, bTalkToMe)
-
-    def setDeviceID(self, _deviceID):
-        return _openframeworks.ofVideoGrabber_setDeviceID(self, _deviceID)
-
-    def setDesiredFrameRate(self, framerate):
-        return _openframeworks.ofVideoGrabber_setDesiredFrameRate(self, framerate)
-
-    def setUseTexture(self, bUse):
-        return _openframeworks.ofVideoGrabber_setUseTexture(self, bUse)
-
-    def isUsingTexture(self):
-        return _openframeworks.ofVideoGrabber_isUsingTexture(self)
-
-    def draw(self, *args):
-        return _openframeworks.ofVideoGrabber_draw(self, *args)
-
-    def bind(self):
-        return _openframeworks.ofVideoGrabber_bind(self)
-
-    def unbind(self):
-        return _openframeworks.ofVideoGrabber_unbind(self)
-
-    def setAnchorPercent(self, xPct, yPct):
-        return _openframeworks.ofVideoGrabber_setAnchorPercent(self, xPct, yPct)
-
-    def setAnchorPoint(self, x, y):
-        return _openframeworks.ofVideoGrabber_setAnchorPoint(self, x, y)
-
-    def resetAnchor(self):
-        return _openframeworks.ofVideoGrabber_resetAnchor(self)
-
-    def getHeight(self):
-        return _openframeworks.ofVideoGrabber_getHeight(self)
-
-    def getWidth(self):
-        return _openframeworks.ofVideoGrabber_getWidth(self)
-
-    def isInitialized(self):
-        return _openframeworks.ofVideoGrabber_isInitialized(self)
-
-    def setGrabber(self, newGrabber):
-        return _openframeworks.ofVideoGrabber_setGrabber(self, newGrabber)
-
-    def getGrabber(self, *args):
-        return _openframeworks.ofVideoGrabber_getGrabber(self, *args)
-ofVideoGrabber_swigregister = _openframeworks.ofVideoGrabber_swigregister
-ofVideoGrabber_swigregister(ofVideoGrabber)
-
-class ofVideoPlayer(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ofVideoPlayer, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ofVideoPlayer, name)
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        this = _openframeworks.new_ofVideoPlayer()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
-    def load(self, name):
-        return _openframeworks.ofVideoPlayer_load(self, name)
-
-    def loadAsync(self, name):
-        return _openframeworks.ofVideoPlayer_loadAsync(self, name)
-
-    def loadMovie(self, name):
-        return _openframeworks.ofVideoPlayer_loadMovie(self, name)
-
-    def getMoviePath(self):
-        return _openframeworks.ofVideoPlayer_getMoviePath(self)
-
-    def setPixelFormat(self, pixelFormat):
-        return _openframeworks.ofVideoPlayer_setPixelFormat(self, pixelFormat)
-
-    def getPixelFormat(self):
-        return _openframeworks.ofVideoPlayer_getPixelFormat(self)
-
-    def closeMovie(self):
-        return _openframeworks.ofVideoPlayer_closeMovie(self)
-
-    def close(self):
-        return _openframeworks.ofVideoPlayer_close(self)
-
-    def update(self):
-        return _openframeworks.ofVideoPlayer_update(self)
-
-    def play(self):
-        return _openframeworks.ofVideoPlayer_play(self)
-
-    def stop(self):
-        return _openframeworks.ofVideoPlayer_stop(self)
-
-    def isFrameNew(self):
-        return _openframeworks.ofVideoPlayer_isFrameNew(self)
-
-    def getPixels(self, *args):
-        return _openframeworks.ofVideoPlayer_getPixels(self, *args)
-
-    def getPixelsRef(self, *args):
-        return _openframeworks.ofVideoPlayer_getPixelsRef(self, *args)
-
-    def getPosition(self):
-        return _openframeworks.ofVideoPlayer_getPosition(self)
-
-    def getSpeed(self):
-        return _openframeworks.ofVideoPlayer_getSpeed(self)
-
-    def getDuration(self):
-        return _openframeworks.ofVideoPlayer_getDuration(self)
-
-    def getIsMovieDone(self):
-        return _openframeworks.ofVideoPlayer_getIsMovieDone(self)
-
-    def setPosition(self, pct):
-        return _openframeworks.ofVideoPlayer_setPosition(self, pct)
-
-    def setVolume(self, volume):
-        return _openframeworks.ofVideoPlayer_setVolume(self, volume)
-
-    def setLoopState(self, state):
-        return _openframeworks.ofVideoPlayer_setLoopState(self, state)
-
-    def getLoopState(self):
-        return _openframeworks.ofVideoPlayer_getLoopState(self)
-
-    def setSpeed(self, speed):
-        return _openframeworks.ofVideoPlayer_setSpeed(self, speed)
-
-    def setFrame(self, frame):
-        return _openframeworks.ofVideoPlayer_setFrame(self, frame)
-
-    def setUseTexture(self, bUse):
-        return _openframeworks.ofVideoPlayer_setUseTexture(self, bUse)
-
-    def isUsingTexture(self):
-        return _openframeworks.ofVideoPlayer_isUsingTexture(self)
-
-    def getTexture(self, *args):
-        return _openframeworks.ofVideoPlayer_getTexture(self, *args)
-
-    def getTextureReference(self, *args):
-        return _openframeworks.ofVideoPlayer_getTextureReference(self, *args)
-
-    def getTexturePlanes(self, *args):
-        return _openframeworks.ofVideoPlayer_getTexturePlanes(self, *args)
-
-    def draw(self, *args):
-        return _openframeworks.ofVideoPlayer_draw(self, *args)
-
-    def bind(self):
-        return _openframeworks.ofVideoPlayer_bind(self)
-
-    def unbind(self):
-        return _openframeworks.ofVideoPlayer_unbind(self)
-
-    def setAnchorPercent(self, xPct, yPct):
-        return _openframeworks.ofVideoPlayer_setAnchorPercent(self, xPct, yPct)
-
-    def setAnchorPoint(self, x, y):
-        return _openframeworks.ofVideoPlayer_setAnchorPoint(self, x, y)
-
-    def resetAnchor(self):
-        return _openframeworks.ofVideoPlayer_resetAnchor(self)
-
-    def setPaused(self, bPause):
-        return _openframeworks.ofVideoPlayer_setPaused(self, bPause)
-
-    def getCurrentFrame(self):
-        return _openframeworks.ofVideoPlayer_getCurrentFrame(self)
-
-    def getTotalNumFrames(self):
-        return _openframeworks.ofVideoPlayer_getTotalNumFrames(self)
-
-    def firstFrame(self):
-        return _openframeworks.ofVideoPlayer_firstFrame(self)
-
-    def nextFrame(self):
-        return _openframeworks.ofVideoPlayer_nextFrame(self)
-
-    def previousFrame(self):
-        return _openframeworks.ofVideoPlayer_previousFrame(self)
-
-    def getHeight(self):
-        return _openframeworks.ofVideoPlayer_getHeight(self)
-
-    def getWidth(self):
-        return _openframeworks.ofVideoPlayer_getWidth(self)
-
-    def isPaused(self):
-        return _openframeworks.ofVideoPlayer_isPaused(self)
-
-    def isLoaded(self):
-        return _openframeworks.ofVideoPlayer_isLoaded(self)
-
-    def isPlaying(self):
-        return _openframeworks.ofVideoPlayer_isPlaying(self)
-
-    def isInitialized(self):
-        return _openframeworks.ofVideoPlayer_isInitialized(self)
-
-    def setPlayer(self, newPlayer):
-        return _openframeworks.ofVideoPlayer_setPlayer(self, newPlayer)
-
-    def getPlayer(self, *args):
-        return _openframeworks.ofVideoPlayer_getPlayer(self, *args)
-    __swig_destroy__ = _openframeworks.delete_ofVideoPlayer
-    __del__ = lambda self: None
-ofVideoPlayer_swigregister = _openframeworks.ofVideoPlayer_swigregister
-ofVideoPlayer_swigregister(ofVideoPlayer)
-
 
 def ofGetMousePressed(button=-1):
     return _openframeworks.ofGetMousePressed(button)
@@ -10457,9 +7186,2327 @@ ofTouchEventArgs_swigregister(ofTouchEventArgs)
 def ofSendMessage(*args):
     return _openframeworks.ofSendMessage(*args)
 ofSendMessage = _openframeworks.ofSendMessage
+class ofColor(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofColor, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofColor, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofColor(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_getmethods__["fromHsb"] = lambda x: _openframeworks.ofColor_fromHsb
+    if _newclass:
+        fromHsb = staticmethod(_openframeworks.ofColor_fromHsb)
+    __swig_getmethods__["fromHex"] = lambda x: _openframeworks.ofColor_fromHex
+    if _newclass:
+        fromHex = staticmethod(_openframeworks.ofColor_fromHex)
+
+    def set(self, *args):
+        return _openframeworks.ofColor_set(self, *args)
+
+    def setHex(self, *args):
+        return _openframeworks.ofColor_setHex(self, *args)
+
+    def setHue(self, hue):
+        return _openframeworks.ofColor_setHue(self, hue)
+
+    def setHueAngle(self, angle):
+        return _openframeworks.ofColor_setHueAngle(self, angle)
+
+    def setSaturation(self, saturation):
+        return _openframeworks.ofColor_setSaturation(self, saturation)
+
+    def setBrightness(self, brightness):
+        return _openframeworks.ofColor_setBrightness(self, brightness)
+
+    def setHsb(self, *args):
+        return _openframeworks.ofColor_setHsb(self, *args)
+
+    def clamp(self):
+        return _openframeworks.ofColor_clamp(self)
+
+    def invert(self):
+        return _openframeworks.ofColor_invert(self)
+
+    def normalize(self):
+        return _openframeworks.ofColor_normalize(self)
+
+    def lerp(self, target, amount):
+        return _openframeworks.ofColor_lerp(self, target, amount)
+
+    def getClamped(self):
+        return _openframeworks.ofColor_getClamped(self)
+
+    def getInverted(self):
+        return _openframeworks.ofColor_getInverted(self)
+
+    def getNormalized(self):
+        return _openframeworks.ofColor_getNormalized(self)
+
+    def getLerped(self, target, amount):
+        return _openframeworks.ofColor_getLerped(self, target, amount)
+
+    def getHex(self):
+        return _openframeworks.ofColor_getHex(self)
+
+    def getHue(self):
+        return _openframeworks.ofColor_getHue(self)
+
+    def getHueAngle(self):
+        return _openframeworks.ofColor_getHueAngle(self)
+
+    def getSaturation(self):
+        return _openframeworks.ofColor_getSaturation(self)
+
+    def getBrightness(self):
+        return _openframeworks.ofColor_getBrightness(self)
+
+    def getLightness(self):
+        return _openframeworks.ofColor_getLightness(self)
+
+    def getHsb(self, hue, saturation, brightness):
+        return _openframeworks.ofColor_getHsb(self, hue, saturation, brightness)
+    __swig_getmethods__["limit"] = lambda x: _openframeworks.ofColor_limit
+    if _newclass:
+        limit = staticmethod(_openframeworks.ofColor_limit)
+
+    def __eq__(self, color):
+        return _openframeworks.ofColor___eq__(self, color)
+
+    def __ne__(self, color):
+        return _openframeworks.ofColor___ne__(self, color)
+
+    def __add__(self, *args):
+        return _openframeworks.ofColor___add__(self, *args)
+
+    def __iadd__(self, *args):
+        return _openframeworks.ofColor___iadd__(self, *args)
+
+    def __sub__(self, *args):
+        return _openframeworks.ofColor___sub__(self, *args)
+
+    def __isub__(self, *args):
+        return _openframeworks.ofColor___isub__(self, *args)
+
+    def __mul__(self, *args):
+        return _openframeworks.ofColor___mul__(self, *args)
+
+    def __imul__(self, *args):
+        return _openframeworks.ofColor___imul__(self, *args)
+
+    def __div__(self, *args):
+        return _openframeworks.ofColor___div__(self, *args)
+
+    def __idiv__(self, *args):
+        return _openframeworks.ofColor___idiv__(self, *args)
+
+    def __getitem__(self, *args):
+        return _openframeworks.ofColor___getitem__(self, *args)
+
+    def getR(self):
+        return _openframeworks.ofColor_getR(self)
+
+    def getG(self):
+        return _openframeworks.ofColor_getG(self)
+
+    def getB(self):
+        return _openframeworks.ofColor_getB(self)
+
+    def getA(self):
+        return _openframeworks.ofColor_getA(self)
+
+    def setR(self, r):
+        return _openframeworks.ofColor_setR(self, r)
+
+    def setG(self, g):
+        return _openframeworks.ofColor_setG(self, g)
+
+    def setB(self, b):
+        return _openframeworks.ofColor_setB(self, b)
+
+    def setA(self, a):
+        return _openframeworks.ofColor_setA(self, a)
+
+    def __str__(self):
+        return _openframeworks.ofColor___str__(self)
+    __swig_setmethods__["r"] = _openframeworks.ofColor_r_set
+    __swig_getmethods__["r"] = _openframeworks.ofColor_r_get
+    if _newclass:
+        r = _swig_property(_openframeworks.ofColor_r_get, _openframeworks.ofColor_r_set)
+    __swig_setmethods__["g"] = _openframeworks.ofColor_g_set
+    __swig_getmethods__["g"] = _openframeworks.ofColor_g_get
+    if _newclass:
+        g = _swig_property(_openframeworks.ofColor_g_get, _openframeworks.ofColor_g_set)
+    __swig_setmethods__["b"] = _openframeworks.ofColor_b_set
+    __swig_getmethods__["b"] = _openframeworks.ofColor_b_get
+    if _newclass:
+        b = _swig_property(_openframeworks.ofColor_b_get, _openframeworks.ofColor_b_set)
+    __swig_setmethods__["a"] = _openframeworks.ofColor_a_set
+    __swig_getmethods__["a"] = _openframeworks.ofColor_a_get
+    if _newclass:
+        a = _swig_property(_openframeworks.ofColor_a_get, _openframeworks.ofColor_a_set)
+    __swig_destroy__ = _openframeworks.delete_ofColor
+    __del__ = lambda self: None
+ofColor_swigregister = _openframeworks.ofColor_swigregister
+ofColor_swigregister(ofColor)
+
+def ofColor_fromHsb(*args):
+    return _openframeworks.ofColor_fromHsb(*args)
+ofColor_fromHsb = _openframeworks.ofColor_fromHsb
+
+def ofColor_fromHex(*args):
+    return _openframeworks.ofColor_fromHex(*args)
+ofColor_fromHex = _openframeworks.ofColor_fromHex
+
+def ofColor_limit():
+    return _openframeworks.ofColor_limit()
+ofColor_limit = _openframeworks.ofColor_limit
+ofColor.white = _openframeworks.cvar.ofColor_white
+ofColor.gray = _openframeworks.cvar.ofColor_gray
+ofColor.black = _openframeworks.cvar.ofColor_black
+ofColor.red = _openframeworks.cvar.ofColor_red
+ofColor.green = _openframeworks.cvar.ofColor_green
+ofColor.blue = _openframeworks.cvar.ofColor_blue
+ofColor.cyan = _openframeworks.cvar.ofColor_cyan
+ofColor.magenta = _openframeworks.cvar.ofColor_magenta
+ofColor.yellow = _openframeworks.cvar.ofColor_yellow
+ofColor.aliceBlue = _openframeworks.cvar.ofColor_aliceBlue
+ofColor.antiqueWhite = _openframeworks.cvar.ofColor_antiqueWhite
+ofColor.aqua = _openframeworks.cvar.ofColor_aqua
+ofColor.aquamarine = _openframeworks.cvar.ofColor_aquamarine
+ofColor.azure = _openframeworks.cvar.ofColor_azure
+ofColor.beige = _openframeworks.cvar.ofColor_beige
+ofColor.bisque = _openframeworks.cvar.ofColor_bisque
+ofColor.blanchedAlmond = _openframeworks.cvar.ofColor_blanchedAlmond
+ofColor.blueViolet = _openframeworks.cvar.ofColor_blueViolet
+ofColor.brown = _openframeworks.cvar.ofColor_brown
+ofColor.burlyWood = _openframeworks.cvar.ofColor_burlyWood
+ofColor.cadetBlue = _openframeworks.cvar.ofColor_cadetBlue
+ofColor.chartreuse = _openframeworks.cvar.ofColor_chartreuse
+ofColor.chocolate = _openframeworks.cvar.ofColor_chocolate
+ofColor.coral = _openframeworks.cvar.ofColor_coral
+ofColor.cornflowerBlue = _openframeworks.cvar.ofColor_cornflowerBlue
+ofColor.cornsilk = _openframeworks.cvar.ofColor_cornsilk
+ofColor.crimson = _openframeworks.cvar.ofColor_crimson
+ofColor.darkBlue = _openframeworks.cvar.ofColor_darkBlue
+ofColor.darkCyan = _openframeworks.cvar.ofColor_darkCyan
+ofColor.darkGoldenRod = _openframeworks.cvar.ofColor_darkGoldenRod
+ofColor.darkGray = _openframeworks.cvar.ofColor_darkGray
+ofColor.darkGrey = _openframeworks.cvar.ofColor_darkGrey
+ofColor.darkGreen = _openframeworks.cvar.ofColor_darkGreen
+ofColor.darkKhaki = _openframeworks.cvar.ofColor_darkKhaki
+ofColor.darkMagenta = _openframeworks.cvar.ofColor_darkMagenta
+ofColor.darkOliveGreen = _openframeworks.cvar.ofColor_darkOliveGreen
+ofColor.darkorange = _openframeworks.cvar.ofColor_darkorange
+ofColor.darkOrchid = _openframeworks.cvar.ofColor_darkOrchid
+ofColor.darkRed = _openframeworks.cvar.ofColor_darkRed
+ofColor.darkSalmon = _openframeworks.cvar.ofColor_darkSalmon
+ofColor.darkSeaGreen = _openframeworks.cvar.ofColor_darkSeaGreen
+ofColor.darkSlateBlue = _openframeworks.cvar.ofColor_darkSlateBlue
+ofColor.darkSlateGray = _openframeworks.cvar.ofColor_darkSlateGray
+ofColor.darkSlateGrey = _openframeworks.cvar.ofColor_darkSlateGrey
+ofColor.darkTurquoise = _openframeworks.cvar.ofColor_darkTurquoise
+ofColor.darkViolet = _openframeworks.cvar.ofColor_darkViolet
+ofColor.deepPink = _openframeworks.cvar.ofColor_deepPink
+ofColor.deepSkyBlue = _openframeworks.cvar.ofColor_deepSkyBlue
+ofColor.dimGray = _openframeworks.cvar.ofColor_dimGray
+ofColor.dimGrey = _openframeworks.cvar.ofColor_dimGrey
+ofColor.dodgerBlue = _openframeworks.cvar.ofColor_dodgerBlue
+ofColor.fireBrick = _openframeworks.cvar.ofColor_fireBrick
+ofColor.floralWhite = _openframeworks.cvar.ofColor_floralWhite
+ofColor.forestGreen = _openframeworks.cvar.ofColor_forestGreen
+ofColor.fuchsia = _openframeworks.cvar.ofColor_fuchsia
+ofColor.gainsboro = _openframeworks.cvar.ofColor_gainsboro
+ofColor.ghostWhite = _openframeworks.cvar.ofColor_ghostWhite
+ofColor.gold = _openframeworks.cvar.ofColor_gold
+ofColor.goldenRod = _openframeworks.cvar.ofColor_goldenRod
+ofColor.grey = _openframeworks.cvar.ofColor_grey
+ofColor.greenYellow = _openframeworks.cvar.ofColor_greenYellow
+ofColor.honeyDew = _openframeworks.cvar.ofColor_honeyDew
+ofColor.hotPink = _openframeworks.cvar.ofColor_hotPink
+ofColor.indianRed = _openframeworks.cvar.ofColor_indianRed
+ofColor.indigo = _openframeworks.cvar.ofColor_indigo
+ofColor.ivory = _openframeworks.cvar.ofColor_ivory
+ofColor.khaki = _openframeworks.cvar.ofColor_khaki
+ofColor.lavender = _openframeworks.cvar.ofColor_lavender
+ofColor.lavenderBlush = _openframeworks.cvar.ofColor_lavenderBlush
+ofColor.lawnGreen = _openframeworks.cvar.ofColor_lawnGreen
+ofColor.lemonChiffon = _openframeworks.cvar.ofColor_lemonChiffon
+ofColor.lightBlue = _openframeworks.cvar.ofColor_lightBlue
+ofColor.lightCoral = _openframeworks.cvar.ofColor_lightCoral
+ofColor.lightCyan = _openframeworks.cvar.ofColor_lightCyan
+ofColor.lightGoldenRodYellow = _openframeworks.cvar.ofColor_lightGoldenRodYellow
+ofColor.lightGray = _openframeworks.cvar.ofColor_lightGray
+ofColor.lightGrey = _openframeworks.cvar.ofColor_lightGrey
+ofColor.lightGreen = _openframeworks.cvar.ofColor_lightGreen
+ofColor.lightPink = _openframeworks.cvar.ofColor_lightPink
+ofColor.lightSalmon = _openframeworks.cvar.ofColor_lightSalmon
+ofColor.lightSeaGreen = _openframeworks.cvar.ofColor_lightSeaGreen
+ofColor.lightSkyBlue = _openframeworks.cvar.ofColor_lightSkyBlue
+ofColor.lightSlateGray = _openframeworks.cvar.ofColor_lightSlateGray
+ofColor.lightSlateGrey = _openframeworks.cvar.ofColor_lightSlateGrey
+ofColor.lightSteelBlue = _openframeworks.cvar.ofColor_lightSteelBlue
+ofColor.lightYellow = _openframeworks.cvar.ofColor_lightYellow
+ofColor.lime = _openframeworks.cvar.ofColor_lime
+ofColor.limeGreen = _openframeworks.cvar.ofColor_limeGreen
+ofColor.linen = _openframeworks.cvar.ofColor_linen
+ofColor.maroon = _openframeworks.cvar.ofColor_maroon
+ofColor.mediumAquaMarine = _openframeworks.cvar.ofColor_mediumAquaMarine
+ofColor.mediumBlue = _openframeworks.cvar.ofColor_mediumBlue
+ofColor.mediumOrchid = _openframeworks.cvar.ofColor_mediumOrchid
+ofColor.mediumPurple = _openframeworks.cvar.ofColor_mediumPurple
+ofColor.mediumSeaGreen = _openframeworks.cvar.ofColor_mediumSeaGreen
+ofColor.mediumSlateBlue = _openframeworks.cvar.ofColor_mediumSlateBlue
+ofColor.mediumSpringGreen = _openframeworks.cvar.ofColor_mediumSpringGreen
+ofColor.mediumTurquoise = _openframeworks.cvar.ofColor_mediumTurquoise
+ofColor.mediumVioletRed = _openframeworks.cvar.ofColor_mediumVioletRed
+ofColor.midnightBlue = _openframeworks.cvar.ofColor_midnightBlue
+ofColor.mintCream = _openframeworks.cvar.ofColor_mintCream
+ofColor.mistyRose = _openframeworks.cvar.ofColor_mistyRose
+ofColor.moccasin = _openframeworks.cvar.ofColor_moccasin
+ofColor.navajoWhite = _openframeworks.cvar.ofColor_navajoWhite
+ofColor.navy = _openframeworks.cvar.ofColor_navy
+ofColor.oldLace = _openframeworks.cvar.ofColor_oldLace
+ofColor.olive = _openframeworks.cvar.ofColor_olive
+ofColor.oliveDrab = _openframeworks.cvar.ofColor_oliveDrab
+ofColor.orange = _openframeworks.cvar.ofColor_orange
+ofColor.orangeRed = _openframeworks.cvar.ofColor_orangeRed
+ofColor.orchid = _openframeworks.cvar.ofColor_orchid
+ofColor.paleGoldenRod = _openframeworks.cvar.ofColor_paleGoldenRod
+ofColor.paleGreen = _openframeworks.cvar.ofColor_paleGreen
+ofColor.paleTurquoise = _openframeworks.cvar.ofColor_paleTurquoise
+ofColor.paleVioletRed = _openframeworks.cvar.ofColor_paleVioletRed
+ofColor.papayaWhip = _openframeworks.cvar.ofColor_papayaWhip
+ofColor.peachPuff = _openframeworks.cvar.ofColor_peachPuff
+ofColor.peru = _openframeworks.cvar.ofColor_peru
+ofColor.pink = _openframeworks.cvar.ofColor_pink
+ofColor.plum = _openframeworks.cvar.ofColor_plum
+ofColor.powderBlue = _openframeworks.cvar.ofColor_powderBlue
+ofColor.purple = _openframeworks.cvar.ofColor_purple
+ofColor.rosyBrown = _openframeworks.cvar.ofColor_rosyBrown
+ofColor.royalBlue = _openframeworks.cvar.ofColor_royalBlue
+ofColor.saddleBrown = _openframeworks.cvar.ofColor_saddleBrown
+ofColor.salmon = _openframeworks.cvar.ofColor_salmon
+ofColor.sandyBrown = _openframeworks.cvar.ofColor_sandyBrown
+ofColor.seaGreen = _openframeworks.cvar.ofColor_seaGreen
+ofColor.seaShell = _openframeworks.cvar.ofColor_seaShell
+ofColor.sienna = _openframeworks.cvar.ofColor_sienna
+ofColor.silver = _openframeworks.cvar.ofColor_silver
+ofColor.skyBlue = _openframeworks.cvar.ofColor_skyBlue
+ofColor.slateBlue = _openframeworks.cvar.ofColor_slateBlue
+ofColor.slateGray = _openframeworks.cvar.ofColor_slateGray
+ofColor.slateGrey = _openframeworks.cvar.ofColor_slateGrey
+ofColor.snow = _openframeworks.cvar.ofColor_snow
+ofColor.springGreen = _openframeworks.cvar.ofColor_springGreen
+ofColor.steelBlue = _openframeworks.cvar.ofColor_steelBlue
+ofColor.blueSteel = _openframeworks.cvar.ofColor_blueSteel
+ofColor.tan = _openframeworks.cvar.ofColor_tan
+ofColor.teal = _openframeworks.cvar.ofColor_teal
+ofColor.thistle = _openframeworks.cvar.ofColor_thistle
+ofColor.tomato = _openframeworks.cvar.ofColor_tomato
+ofColor.turquoise = _openframeworks.cvar.ofColor_turquoise
+ofColor.violet = _openframeworks.cvar.ofColor_violet
+ofColor.wheat = _openframeworks.cvar.ofColor_wheat
+ofColor.whiteSmoke = _openframeworks.cvar.ofColor_whiteSmoke
+ofColor.yellowGreen = _openframeworks.cvar.ofColor_yellowGreen
+
+class ofFloatColor(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFloatColor, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofFloatColor, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofFloatColor(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_getmethods__["fromHsb"] = lambda x: _openframeworks.ofFloatColor_fromHsb
+    if _newclass:
+        fromHsb = staticmethod(_openframeworks.ofFloatColor_fromHsb)
+    __swig_getmethods__["fromHex"] = lambda x: _openframeworks.ofFloatColor_fromHex
+    if _newclass:
+        fromHex = staticmethod(_openframeworks.ofFloatColor_fromHex)
+
+    def set(self, *args):
+        return _openframeworks.ofFloatColor_set(self, *args)
+
+    def setHex(self, *args):
+        return _openframeworks.ofFloatColor_setHex(self, *args)
+
+    def setHue(self, hue):
+        return _openframeworks.ofFloatColor_setHue(self, hue)
+
+    def setHueAngle(self, angle):
+        return _openframeworks.ofFloatColor_setHueAngle(self, angle)
+
+    def setSaturation(self, saturation):
+        return _openframeworks.ofFloatColor_setSaturation(self, saturation)
+
+    def setBrightness(self, brightness):
+        return _openframeworks.ofFloatColor_setBrightness(self, brightness)
+
+    def setHsb(self, *args):
+        return _openframeworks.ofFloatColor_setHsb(self, *args)
+
+    def clamp(self):
+        return _openframeworks.ofFloatColor_clamp(self)
+
+    def invert(self):
+        return _openframeworks.ofFloatColor_invert(self)
+
+    def normalize(self):
+        return _openframeworks.ofFloatColor_normalize(self)
+
+    def lerp(self, target, amount):
+        return _openframeworks.ofFloatColor_lerp(self, target, amount)
+
+    def getClamped(self):
+        return _openframeworks.ofFloatColor_getClamped(self)
+
+    def getInverted(self):
+        return _openframeworks.ofFloatColor_getInverted(self)
+
+    def getNormalized(self):
+        return _openframeworks.ofFloatColor_getNormalized(self)
+
+    def getLerped(self, target, amount):
+        return _openframeworks.ofFloatColor_getLerped(self, target, amount)
+
+    def getHex(self):
+        return _openframeworks.ofFloatColor_getHex(self)
+
+    def getHue(self):
+        return _openframeworks.ofFloatColor_getHue(self)
+
+    def getHueAngle(self):
+        return _openframeworks.ofFloatColor_getHueAngle(self)
+
+    def getSaturation(self):
+        return _openframeworks.ofFloatColor_getSaturation(self)
+
+    def getBrightness(self):
+        return _openframeworks.ofFloatColor_getBrightness(self)
+
+    def getLightness(self):
+        return _openframeworks.ofFloatColor_getLightness(self)
+
+    def getHsb(self, hue, saturation, brightness):
+        return _openframeworks.ofFloatColor_getHsb(self, hue, saturation, brightness)
+    __swig_getmethods__["limit"] = lambda x: _openframeworks.ofFloatColor_limit
+    if _newclass:
+        limit = staticmethod(_openframeworks.ofFloatColor_limit)
+
+    def __eq__(self, color):
+        return _openframeworks.ofFloatColor___eq__(self, color)
+
+    def __ne__(self, color):
+        return _openframeworks.ofFloatColor___ne__(self, color)
+
+    def __add__(self, *args):
+        return _openframeworks.ofFloatColor___add__(self, *args)
+
+    def __iadd__(self, *args):
+        return _openframeworks.ofFloatColor___iadd__(self, *args)
+
+    def __sub__(self, *args):
+        return _openframeworks.ofFloatColor___sub__(self, *args)
+
+    def __isub__(self, *args):
+        return _openframeworks.ofFloatColor___isub__(self, *args)
+
+    def __mul__(self, *args):
+        return _openframeworks.ofFloatColor___mul__(self, *args)
+
+    def __imul__(self, *args):
+        return _openframeworks.ofFloatColor___imul__(self, *args)
+
+    def __div__(self, *args):
+        return _openframeworks.ofFloatColor___div__(self, *args)
+
+    def __idiv__(self, *args):
+        return _openframeworks.ofFloatColor___idiv__(self, *args)
+
+    def __getitem__(self, *args):
+        return _openframeworks.ofFloatColor___getitem__(self, *args)
+
+    def getR(self):
+        return _openframeworks.ofFloatColor_getR(self)
+
+    def getG(self):
+        return _openframeworks.ofFloatColor_getG(self)
+
+    def getB(self):
+        return _openframeworks.ofFloatColor_getB(self)
+
+    def getA(self):
+        return _openframeworks.ofFloatColor_getA(self)
+
+    def setR(self, r):
+        return _openframeworks.ofFloatColor_setR(self, r)
+
+    def setG(self, g):
+        return _openframeworks.ofFloatColor_setG(self, g)
+
+    def setB(self, b):
+        return _openframeworks.ofFloatColor_setB(self, b)
+
+    def setA(self, a):
+        return _openframeworks.ofFloatColor_setA(self, a)
+
+    def __str__(self):
+        return _openframeworks.ofFloatColor___str__(self)
+    __swig_setmethods__["r"] = _openframeworks.ofFloatColor_r_set
+    __swig_getmethods__["r"] = _openframeworks.ofFloatColor_r_get
+    if _newclass:
+        r = _swig_property(_openframeworks.ofFloatColor_r_get, _openframeworks.ofFloatColor_r_set)
+    __swig_setmethods__["g"] = _openframeworks.ofFloatColor_g_set
+    __swig_getmethods__["g"] = _openframeworks.ofFloatColor_g_get
+    if _newclass:
+        g = _swig_property(_openframeworks.ofFloatColor_g_get, _openframeworks.ofFloatColor_g_set)
+    __swig_setmethods__["b"] = _openframeworks.ofFloatColor_b_set
+    __swig_getmethods__["b"] = _openframeworks.ofFloatColor_b_get
+    if _newclass:
+        b = _swig_property(_openframeworks.ofFloatColor_b_get, _openframeworks.ofFloatColor_b_set)
+    __swig_setmethods__["a"] = _openframeworks.ofFloatColor_a_set
+    __swig_getmethods__["a"] = _openframeworks.ofFloatColor_a_get
+    if _newclass:
+        a = _swig_property(_openframeworks.ofFloatColor_a_get, _openframeworks.ofFloatColor_a_set)
+    __swig_destroy__ = _openframeworks.delete_ofFloatColor
+    __del__ = lambda self: None
+ofFloatColor_swigregister = _openframeworks.ofFloatColor_swigregister
+ofFloatColor_swigregister(ofFloatColor)
+
+def ofFloatColor_fromHsb(*args):
+    return _openframeworks.ofFloatColor_fromHsb(*args)
+ofFloatColor_fromHsb = _openframeworks.ofFloatColor_fromHsb
+
+def ofFloatColor_fromHex(*args):
+    return _openframeworks.ofFloatColor_fromHex(*args)
+ofFloatColor_fromHex = _openframeworks.ofFloatColor_fromHex
+
+def ofFloatColor_limit():
+    return _openframeworks.ofFloatColor_limit()
+ofFloatColor_limit = _openframeworks.ofFloatColor_limit
+ofFloatColor.white = _openframeworks.cvar.ofFloatColor_white
+ofFloatColor.gray = _openframeworks.cvar.ofFloatColor_gray
+ofFloatColor.black = _openframeworks.cvar.ofFloatColor_black
+ofFloatColor.red = _openframeworks.cvar.ofFloatColor_red
+ofFloatColor.green = _openframeworks.cvar.ofFloatColor_green
+ofFloatColor.blue = _openframeworks.cvar.ofFloatColor_blue
+ofFloatColor.cyan = _openframeworks.cvar.ofFloatColor_cyan
+ofFloatColor.magenta = _openframeworks.cvar.ofFloatColor_magenta
+ofFloatColor.yellow = _openframeworks.cvar.ofFloatColor_yellow
+ofFloatColor.aliceBlue = _openframeworks.cvar.ofFloatColor_aliceBlue
+ofFloatColor.antiqueWhite = _openframeworks.cvar.ofFloatColor_antiqueWhite
+ofFloatColor.aqua = _openframeworks.cvar.ofFloatColor_aqua
+ofFloatColor.aquamarine = _openframeworks.cvar.ofFloatColor_aquamarine
+ofFloatColor.azure = _openframeworks.cvar.ofFloatColor_azure
+ofFloatColor.beige = _openframeworks.cvar.ofFloatColor_beige
+ofFloatColor.bisque = _openframeworks.cvar.ofFloatColor_bisque
+ofFloatColor.blanchedAlmond = _openframeworks.cvar.ofFloatColor_blanchedAlmond
+ofFloatColor.blueViolet = _openframeworks.cvar.ofFloatColor_blueViolet
+ofFloatColor.brown = _openframeworks.cvar.ofFloatColor_brown
+ofFloatColor.burlyWood = _openframeworks.cvar.ofFloatColor_burlyWood
+ofFloatColor.cadetBlue = _openframeworks.cvar.ofFloatColor_cadetBlue
+ofFloatColor.chartreuse = _openframeworks.cvar.ofFloatColor_chartreuse
+ofFloatColor.chocolate = _openframeworks.cvar.ofFloatColor_chocolate
+ofFloatColor.coral = _openframeworks.cvar.ofFloatColor_coral
+ofFloatColor.cornflowerBlue = _openframeworks.cvar.ofFloatColor_cornflowerBlue
+ofFloatColor.cornsilk = _openframeworks.cvar.ofFloatColor_cornsilk
+ofFloatColor.crimson = _openframeworks.cvar.ofFloatColor_crimson
+ofFloatColor.darkBlue = _openframeworks.cvar.ofFloatColor_darkBlue
+ofFloatColor.darkCyan = _openframeworks.cvar.ofFloatColor_darkCyan
+ofFloatColor.darkGoldenRod = _openframeworks.cvar.ofFloatColor_darkGoldenRod
+ofFloatColor.darkGray = _openframeworks.cvar.ofFloatColor_darkGray
+ofFloatColor.darkGrey = _openframeworks.cvar.ofFloatColor_darkGrey
+ofFloatColor.darkGreen = _openframeworks.cvar.ofFloatColor_darkGreen
+ofFloatColor.darkKhaki = _openframeworks.cvar.ofFloatColor_darkKhaki
+ofFloatColor.darkMagenta = _openframeworks.cvar.ofFloatColor_darkMagenta
+ofFloatColor.darkOliveGreen = _openframeworks.cvar.ofFloatColor_darkOliveGreen
+ofFloatColor.darkorange = _openframeworks.cvar.ofFloatColor_darkorange
+ofFloatColor.darkOrchid = _openframeworks.cvar.ofFloatColor_darkOrchid
+ofFloatColor.darkRed = _openframeworks.cvar.ofFloatColor_darkRed
+ofFloatColor.darkSalmon = _openframeworks.cvar.ofFloatColor_darkSalmon
+ofFloatColor.darkSeaGreen = _openframeworks.cvar.ofFloatColor_darkSeaGreen
+ofFloatColor.darkSlateBlue = _openframeworks.cvar.ofFloatColor_darkSlateBlue
+ofFloatColor.darkSlateGray = _openframeworks.cvar.ofFloatColor_darkSlateGray
+ofFloatColor.darkSlateGrey = _openframeworks.cvar.ofFloatColor_darkSlateGrey
+ofFloatColor.darkTurquoise = _openframeworks.cvar.ofFloatColor_darkTurquoise
+ofFloatColor.darkViolet = _openframeworks.cvar.ofFloatColor_darkViolet
+ofFloatColor.deepPink = _openframeworks.cvar.ofFloatColor_deepPink
+ofFloatColor.deepSkyBlue = _openframeworks.cvar.ofFloatColor_deepSkyBlue
+ofFloatColor.dimGray = _openframeworks.cvar.ofFloatColor_dimGray
+ofFloatColor.dimGrey = _openframeworks.cvar.ofFloatColor_dimGrey
+ofFloatColor.dodgerBlue = _openframeworks.cvar.ofFloatColor_dodgerBlue
+ofFloatColor.fireBrick = _openframeworks.cvar.ofFloatColor_fireBrick
+ofFloatColor.floralWhite = _openframeworks.cvar.ofFloatColor_floralWhite
+ofFloatColor.forestGreen = _openframeworks.cvar.ofFloatColor_forestGreen
+ofFloatColor.fuchsia = _openframeworks.cvar.ofFloatColor_fuchsia
+ofFloatColor.gainsboro = _openframeworks.cvar.ofFloatColor_gainsboro
+ofFloatColor.ghostWhite = _openframeworks.cvar.ofFloatColor_ghostWhite
+ofFloatColor.gold = _openframeworks.cvar.ofFloatColor_gold
+ofFloatColor.goldenRod = _openframeworks.cvar.ofFloatColor_goldenRod
+ofFloatColor.grey = _openframeworks.cvar.ofFloatColor_grey
+ofFloatColor.greenYellow = _openframeworks.cvar.ofFloatColor_greenYellow
+ofFloatColor.honeyDew = _openframeworks.cvar.ofFloatColor_honeyDew
+ofFloatColor.hotPink = _openframeworks.cvar.ofFloatColor_hotPink
+ofFloatColor.indianRed = _openframeworks.cvar.ofFloatColor_indianRed
+ofFloatColor.indigo = _openframeworks.cvar.ofFloatColor_indigo
+ofFloatColor.ivory = _openframeworks.cvar.ofFloatColor_ivory
+ofFloatColor.khaki = _openframeworks.cvar.ofFloatColor_khaki
+ofFloatColor.lavender = _openframeworks.cvar.ofFloatColor_lavender
+ofFloatColor.lavenderBlush = _openframeworks.cvar.ofFloatColor_lavenderBlush
+ofFloatColor.lawnGreen = _openframeworks.cvar.ofFloatColor_lawnGreen
+ofFloatColor.lemonChiffon = _openframeworks.cvar.ofFloatColor_lemonChiffon
+ofFloatColor.lightBlue = _openframeworks.cvar.ofFloatColor_lightBlue
+ofFloatColor.lightCoral = _openframeworks.cvar.ofFloatColor_lightCoral
+ofFloatColor.lightCyan = _openframeworks.cvar.ofFloatColor_lightCyan
+ofFloatColor.lightGoldenRodYellow = _openframeworks.cvar.ofFloatColor_lightGoldenRodYellow
+ofFloatColor.lightGray = _openframeworks.cvar.ofFloatColor_lightGray
+ofFloatColor.lightGrey = _openframeworks.cvar.ofFloatColor_lightGrey
+ofFloatColor.lightGreen = _openframeworks.cvar.ofFloatColor_lightGreen
+ofFloatColor.lightPink = _openframeworks.cvar.ofFloatColor_lightPink
+ofFloatColor.lightSalmon = _openframeworks.cvar.ofFloatColor_lightSalmon
+ofFloatColor.lightSeaGreen = _openframeworks.cvar.ofFloatColor_lightSeaGreen
+ofFloatColor.lightSkyBlue = _openframeworks.cvar.ofFloatColor_lightSkyBlue
+ofFloatColor.lightSlateGray = _openframeworks.cvar.ofFloatColor_lightSlateGray
+ofFloatColor.lightSlateGrey = _openframeworks.cvar.ofFloatColor_lightSlateGrey
+ofFloatColor.lightSteelBlue = _openframeworks.cvar.ofFloatColor_lightSteelBlue
+ofFloatColor.lightYellow = _openframeworks.cvar.ofFloatColor_lightYellow
+ofFloatColor.lime = _openframeworks.cvar.ofFloatColor_lime
+ofFloatColor.limeGreen = _openframeworks.cvar.ofFloatColor_limeGreen
+ofFloatColor.linen = _openframeworks.cvar.ofFloatColor_linen
+ofFloatColor.maroon = _openframeworks.cvar.ofFloatColor_maroon
+ofFloatColor.mediumAquaMarine = _openframeworks.cvar.ofFloatColor_mediumAquaMarine
+ofFloatColor.mediumBlue = _openframeworks.cvar.ofFloatColor_mediumBlue
+ofFloatColor.mediumOrchid = _openframeworks.cvar.ofFloatColor_mediumOrchid
+ofFloatColor.mediumPurple = _openframeworks.cvar.ofFloatColor_mediumPurple
+ofFloatColor.mediumSeaGreen = _openframeworks.cvar.ofFloatColor_mediumSeaGreen
+ofFloatColor.mediumSlateBlue = _openframeworks.cvar.ofFloatColor_mediumSlateBlue
+ofFloatColor.mediumSpringGreen = _openframeworks.cvar.ofFloatColor_mediumSpringGreen
+ofFloatColor.mediumTurquoise = _openframeworks.cvar.ofFloatColor_mediumTurquoise
+ofFloatColor.mediumVioletRed = _openframeworks.cvar.ofFloatColor_mediumVioletRed
+ofFloatColor.midnightBlue = _openframeworks.cvar.ofFloatColor_midnightBlue
+ofFloatColor.mintCream = _openframeworks.cvar.ofFloatColor_mintCream
+ofFloatColor.mistyRose = _openframeworks.cvar.ofFloatColor_mistyRose
+ofFloatColor.moccasin = _openframeworks.cvar.ofFloatColor_moccasin
+ofFloatColor.navajoWhite = _openframeworks.cvar.ofFloatColor_navajoWhite
+ofFloatColor.navy = _openframeworks.cvar.ofFloatColor_navy
+ofFloatColor.oldLace = _openframeworks.cvar.ofFloatColor_oldLace
+ofFloatColor.olive = _openframeworks.cvar.ofFloatColor_olive
+ofFloatColor.oliveDrab = _openframeworks.cvar.ofFloatColor_oliveDrab
+ofFloatColor.orange = _openframeworks.cvar.ofFloatColor_orange
+ofFloatColor.orangeRed = _openframeworks.cvar.ofFloatColor_orangeRed
+ofFloatColor.orchid = _openframeworks.cvar.ofFloatColor_orchid
+ofFloatColor.paleGoldenRod = _openframeworks.cvar.ofFloatColor_paleGoldenRod
+ofFloatColor.paleGreen = _openframeworks.cvar.ofFloatColor_paleGreen
+ofFloatColor.paleTurquoise = _openframeworks.cvar.ofFloatColor_paleTurquoise
+ofFloatColor.paleVioletRed = _openframeworks.cvar.ofFloatColor_paleVioletRed
+ofFloatColor.papayaWhip = _openframeworks.cvar.ofFloatColor_papayaWhip
+ofFloatColor.peachPuff = _openframeworks.cvar.ofFloatColor_peachPuff
+ofFloatColor.peru = _openframeworks.cvar.ofFloatColor_peru
+ofFloatColor.pink = _openframeworks.cvar.ofFloatColor_pink
+ofFloatColor.plum = _openframeworks.cvar.ofFloatColor_plum
+ofFloatColor.powderBlue = _openframeworks.cvar.ofFloatColor_powderBlue
+ofFloatColor.purple = _openframeworks.cvar.ofFloatColor_purple
+ofFloatColor.rosyBrown = _openframeworks.cvar.ofFloatColor_rosyBrown
+ofFloatColor.royalBlue = _openframeworks.cvar.ofFloatColor_royalBlue
+ofFloatColor.saddleBrown = _openframeworks.cvar.ofFloatColor_saddleBrown
+ofFloatColor.salmon = _openframeworks.cvar.ofFloatColor_salmon
+ofFloatColor.sandyBrown = _openframeworks.cvar.ofFloatColor_sandyBrown
+ofFloatColor.seaGreen = _openframeworks.cvar.ofFloatColor_seaGreen
+ofFloatColor.seaShell = _openframeworks.cvar.ofFloatColor_seaShell
+ofFloatColor.sienna = _openframeworks.cvar.ofFloatColor_sienna
+ofFloatColor.silver = _openframeworks.cvar.ofFloatColor_silver
+ofFloatColor.skyBlue = _openframeworks.cvar.ofFloatColor_skyBlue
+ofFloatColor.slateBlue = _openframeworks.cvar.ofFloatColor_slateBlue
+ofFloatColor.slateGray = _openframeworks.cvar.ofFloatColor_slateGray
+ofFloatColor.slateGrey = _openframeworks.cvar.ofFloatColor_slateGrey
+ofFloatColor.snow = _openframeworks.cvar.ofFloatColor_snow
+ofFloatColor.springGreen = _openframeworks.cvar.ofFloatColor_springGreen
+ofFloatColor.steelBlue = _openframeworks.cvar.ofFloatColor_steelBlue
+ofFloatColor.blueSteel = _openframeworks.cvar.ofFloatColor_blueSteel
+ofFloatColor.tan = _openframeworks.cvar.ofFloatColor_tan
+ofFloatColor.teal = _openframeworks.cvar.ofFloatColor_teal
+ofFloatColor.thistle = _openframeworks.cvar.ofFloatColor_thistle
+ofFloatColor.tomato = _openframeworks.cvar.ofFloatColor_tomato
+ofFloatColor.turquoise = _openframeworks.cvar.ofFloatColor_turquoise
+ofFloatColor.violet = _openframeworks.cvar.ofFloatColor_violet
+ofFloatColor.wheat = _openframeworks.cvar.ofFloatColor_wheat
+ofFloatColor.whiteSmoke = _openframeworks.cvar.ofFloatColor_whiteSmoke
+ofFloatColor.yellowGreen = _openframeworks.cvar.ofFloatColor_yellowGreen
+
+class ofShortColor(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofShortColor, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofShortColor, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofShortColor(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_getmethods__["fromHsb"] = lambda x: _openframeworks.ofShortColor_fromHsb
+    if _newclass:
+        fromHsb = staticmethod(_openframeworks.ofShortColor_fromHsb)
+    __swig_getmethods__["fromHex"] = lambda x: _openframeworks.ofShortColor_fromHex
+    if _newclass:
+        fromHex = staticmethod(_openframeworks.ofShortColor_fromHex)
+
+    def set(self, *args):
+        return _openframeworks.ofShortColor_set(self, *args)
+
+    def setHex(self, *args):
+        return _openframeworks.ofShortColor_setHex(self, *args)
+
+    def setHue(self, hue):
+        return _openframeworks.ofShortColor_setHue(self, hue)
+
+    def setHueAngle(self, angle):
+        return _openframeworks.ofShortColor_setHueAngle(self, angle)
+
+    def setSaturation(self, saturation):
+        return _openframeworks.ofShortColor_setSaturation(self, saturation)
+
+    def setBrightness(self, brightness):
+        return _openframeworks.ofShortColor_setBrightness(self, brightness)
+
+    def setHsb(self, *args):
+        return _openframeworks.ofShortColor_setHsb(self, *args)
+
+    def clamp(self):
+        return _openframeworks.ofShortColor_clamp(self)
+
+    def invert(self):
+        return _openframeworks.ofShortColor_invert(self)
+
+    def normalize(self):
+        return _openframeworks.ofShortColor_normalize(self)
+
+    def lerp(self, target, amount):
+        return _openframeworks.ofShortColor_lerp(self, target, amount)
+
+    def getClamped(self):
+        return _openframeworks.ofShortColor_getClamped(self)
+
+    def getInverted(self):
+        return _openframeworks.ofShortColor_getInverted(self)
+
+    def getNormalized(self):
+        return _openframeworks.ofShortColor_getNormalized(self)
+
+    def getLerped(self, target, amount):
+        return _openframeworks.ofShortColor_getLerped(self, target, amount)
+
+    def getHex(self):
+        return _openframeworks.ofShortColor_getHex(self)
+
+    def getHue(self):
+        return _openframeworks.ofShortColor_getHue(self)
+
+    def getHueAngle(self):
+        return _openframeworks.ofShortColor_getHueAngle(self)
+
+    def getSaturation(self):
+        return _openframeworks.ofShortColor_getSaturation(self)
+
+    def getBrightness(self):
+        return _openframeworks.ofShortColor_getBrightness(self)
+
+    def getLightness(self):
+        return _openframeworks.ofShortColor_getLightness(self)
+
+    def getHsb(self, hue, saturation, brightness):
+        return _openframeworks.ofShortColor_getHsb(self, hue, saturation, brightness)
+    __swig_getmethods__["limit"] = lambda x: _openframeworks.ofShortColor_limit
+    if _newclass:
+        limit = staticmethod(_openframeworks.ofShortColor_limit)
+
+    def __eq__(self, color):
+        return _openframeworks.ofShortColor___eq__(self, color)
+
+    def __ne__(self, color):
+        return _openframeworks.ofShortColor___ne__(self, color)
+
+    def __add__(self, *args):
+        return _openframeworks.ofShortColor___add__(self, *args)
+
+    def __iadd__(self, *args):
+        return _openframeworks.ofShortColor___iadd__(self, *args)
+
+    def __sub__(self, *args):
+        return _openframeworks.ofShortColor___sub__(self, *args)
+
+    def __isub__(self, *args):
+        return _openframeworks.ofShortColor___isub__(self, *args)
+
+    def __mul__(self, *args):
+        return _openframeworks.ofShortColor___mul__(self, *args)
+
+    def __imul__(self, *args):
+        return _openframeworks.ofShortColor___imul__(self, *args)
+
+    def __div__(self, *args):
+        return _openframeworks.ofShortColor___div__(self, *args)
+
+    def __idiv__(self, *args):
+        return _openframeworks.ofShortColor___idiv__(self, *args)
+
+    def __getitem__(self, *args):
+        return _openframeworks.ofShortColor___getitem__(self, *args)
+
+    def getR(self):
+        return _openframeworks.ofShortColor_getR(self)
+
+    def getG(self):
+        return _openframeworks.ofShortColor_getG(self)
+
+    def getB(self):
+        return _openframeworks.ofShortColor_getB(self)
+
+    def getA(self):
+        return _openframeworks.ofShortColor_getA(self)
+
+    def setR(self, r):
+        return _openframeworks.ofShortColor_setR(self, r)
+
+    def setG(self, g):
+        return _openframeworks.ofShortColor_setG(self, g)
+
+    def setB(self, b):
+        return _openframeworks.ofShortColor_setB(self, b)
+
+    def setA(self, a):
+        return _openframeworks.ofShortColor_setA(self, a)
+
+    def __str__(self):
+        return _openframeworks.ofShortColor___str__(self)
+    __swig_setmethods__["r"] = _openframeworks.ofShortColor_r_set
+    __swig_getmethods__["r"] = _openframeworks.ofShortColor_r_get
+    if _newclass:
+        r = _swig_property(_openframeworks.ofShortColor_r_get, _openframeworks.ofShortColor_r_set)
+    __swig_setmethods__["g"] = _openframeworks.ofShortColor_g_set
+    __swig_getmethods__["g"] = _openframeworks.ofShortColor_g_get
+    if _newclass:
+        g = _swig_property(_openframeworks.ofShortColor_g_get, _openframeworks.ofShortColor_g_set)
+    __swig_setmethods__["b"] = _openframeworks.ofShortColor_b_set
+    __swig_getmethods__["b"] = _openframeworks.ofShortColor_b_get
+    if _newclass:
+        b = _swig_property(_openframeworks.ofShortColor_b_get, _openframeworks.ofShortColor_b_set)
+    __swig_setmethods__["a"] = _openframeworks.ofShortColor_a_set
+    __swig_getmethods__["a"] = _openframeworks.ofShortColor_a_get
+    if _newclass:
+        a = _swig_property(_openframeworks.ofShortColor_a_get, _openframeworks.ofShortColor_a_set)
+    __swig_destroy__ = _openframeworks.delete_ofShortColor
+    __del__ = lambda self: None
+ofShortColor_swigregister = _openframeworks.ofShortColor_swigregister
+ofShortColor_swigregister(ofShortColor)
+
+def ofShortColor_fromHsb(*args):
+    return _openframeworks.ofShortColor_fromHsb(*args)
+ofShortColor_fromHsb = _openframeworks.ofShortColor_fromHsb
+
+def ofShortColor_fromHex(*args):
+    return _openframeworks.ofShortColor_fromHex(*args)
+ofShortColor_fromHex = _openframeworks.ofShortColor_fromHex
+
+def ofShortColor_limit():
+    return _openframeworks.ofShortColor_limit()
+ofShortColor_limit = _openframeworks.ofShortColor_limit
+ofShortColor.white = _openframeworks.cvar.ofShortColor_white
+ofShortColor.gray = _openframeworks.cvar.ofShortColor_gray
+ofShortColor.black = _openframeworks.cvar.ofShortColor_black
+ofShortColor.red = _openframeworks.cvar.ofShortColor_red
+ofShortColor.green = _openframeworks.cvar.ofShortColor_green
+ofShortColor.blue = _openframeworks.cvar.ofShortColor_blue
+ofShortColor.cyan = _openframeworks.cvar.ofShortColor_cyan
+ofShortColor.magenta = _openframeworks.cvar.ofShortColor_magenta
+ofShortColor.yellow = _openframeworks.cvar.ofShortColor_yellow
+ofShortColor.aliceBlue = _openframeworks.cvar.ofShortColor_aliceBlue
+ofShortColor.antiqueWhite = _openframeworks.cvar.ofShortColor_antiqueWhite
+ofShortColor.aqua = _openframeworks.cvar.ofShortColor_aqua
+ofShortColor.aquamarine = _openframeworks.cvar.ofShortColor_aquamarine
+ofShortColor.azure = _openframeworks.cvar.ofShortColor_azure
+ofShortColor.beige = _openframeworks.cvar.ofShortColor_beige
+ofShortColor.bisque = _openframeworks.cvar.ofShortColor_bisque
+ofShortColor.blanchedAlmond = _openframeworks.cvar.ofShortColor_blanchedAlmond
+ofShortColor.blueViolet = _openframeworks.cvar.ofShortColor_blueViolet
+ofShortColor.brown = _openframeworks.cvar.ofShortColor_brown
+ofShortColor.burlyWood = _openframeworks.cvar.ofShortColor_burlyWood
+ofShortColor.cadetBlue = _openframeworks.cvar.ofShortColor_cadetBlue
+ofShortColor.chartreuse = _openframeworks.cvar.ofShortColor_chartreuse
+ofShortColor.chocolate = _openframeworks.cvar.ofShortColor_chocolate
+ofShortColor.coral = _openframeworks.cvar.ofShortColor_coral
+ofShortColor.cornflowerBlue = _openframeworks.cvar.ofShortColor_cornflowerBlue
+ofShortColor.cornsilk = _openframeworks.cvar.ofShortColor_cornsilk
+ofShortColor.crimson = _openframeworks.cvar.ofShortColor_crimson
+ofShortColor.darkBlue = _openframeworks.cvar.ofShortColor_darkBlue
+ofShortColor.darkCyan = _openframeworks.cvar.ofShortColor_darkCyan
+ofShortColor.darkGoldenRod = _openframeworks.cvar.ofShortColor_darkGoldenRod
+ofShortColor.darkGray = _openframeworks.cvar.ofShortColor_darkGray
+ofShortColor.darkGrey = _openframeworks.cvar.ofShortColor_darkGrey
+ofShortColor.darkGreen = _openframeworks.cvar.ofShortColor_darkGreen
+ofShortColor.darkKhaki = _openframeworks.cvar.ofShortColor_darkKhaki
+ofShortColor.darkMagenta = _openframeworks.cvar.ofShortColor_darkMagenta
+ofShortColor.darkOliveGreen = _openframeworks.cvar.ofShortColor_darkOliveGreen
+ofShortColor.darkorange = _openframeworks.cvar.ofShortColor_darkorange
+ofShortColor.darkOrchid = _openframeworks.cvar.ofShortColor_darkOrchid
+ofShortColor.darkRed = _openframeworks.cvar.ofShortColor_darkRed
+ofShortColor.darkSalmon = _openframeworks.cvar.ofShortColor_darkSalmon
+ofShortColor.darkSeaGreen = _openframeworks.cvar.ofShortColor_darkSeaGreen
+ofShortColor.darkSlateBlue = _openframeworks.cvar.ofShortColor_darkSlateBlue
+ofShortColor.darkSlateGray = _openframeworks.cvar.ofShortColor_darkSlateGray
+ofShortColor.darkSlateGrey = _openframeworks.cvar.ofShortColor_darkSlateGrey
+ofShortColor.darkTurquoise = _openframeworks.cvar.ofShortColor_darkTurquoise
+ofShortColor.darkViolet = _openframeworks.cvar.ofShortColor_darkViolet
+ofShortColor.deepPink = _openframeworks.cvar.ofShortColor_deepPink
+ofShortColor.deepSkyBlue = _openframeworks.cvar.ofShortColor_deepSkyBlue
+ofShortColor.dimGray = _openframeworks.cvar.ofShortColor_dimGray
+ofShortColor.dimGrey = _openframeworks.cvar.ofShortColor_dimGrey
+ofShortColor.dodgerBlue = _openframeworks.cvar.ofShortColor_dodgerBlue
+ofShortColor.fireBrick = _openframeworks.cvar.ofShortColor_fireBrick
+ofShortColor.floralWhite = _openframeworks.cvar.ofShortColor_floralWhite
+ofShortColor.forestGreen = _openframeworks.cvar.ofShortColor_forestGreen
+ofShortColor.fuchsia = _openframeworks.cvar.ofShortColor_fuchsia
+ofShortColor.gainsboro = _openframeworks.cvar.ofShortColor_gainsboro
+ofShortColor.ghostWhite = _openframeworks.cvar.ofShortColor_ghostWhite
+ofShortColor.gold = _openframeworks.cvar.ofShortColor_gold
+ofShortColor.goldenRod = _openframeworks.cvar.ofShortColor_goldenRod
+ofShortColor.grey = _openframeworks.cvar.ofShortColor_grey
+ofShortColor.greenYellow = _openframeworks.cvar.ofShortColor_greenYellow
+ofShortColor.honeyDew = _openframeworks.cvar.ofShortColor_honeyDew
+ofShortColor.hotPink = _openframeworks.cvar.ofShortColor_hotPink
+ofShortColor.indianRed = _openframeworks.cvar.ofShortColor_indianRed
+ofShortColor.indigo = _openframeworks.cvar.ofShortColor_indigo
+ofShortColor.ivory = _openframeworks.cvar.ofShortColor_ivory
+ofShortColor.khaki = _openframeworks.cvar.ofShortColor_khaki
+ofShortColor.lavender = _openframeworks.cvar.ofShortColor_lavender
+ofShortColor.lavenderBlush = _openframeworks.cvar.ofShortColor_lavenderBlush
+ofShortColor.lawnGreen = _openframeworks.cvar.ofShortColor_lawnGreen
+ofShortColor.lemonChiffon = _openframeworks.cvar.ofShortColor_lemonChiffon
+ofShortColor.lightBlue = _openframeworks.cvar.ofShortColor_lightBlue
+ofShortColor.lightCoral = _openframeworks.cvar.ofShortColor_lightCoral
+ofShortColor.lightCyan = _openframeworks.cvar.ofShortColor_lightCyan
+ofShortColor.lightGoldenRodYellow = _openframeworks.cvar.ofShortColor_lightGoldenRodYellow
+ofShortColor.lightGray = _openframeworks.cvar.ofShortColor_lightGray
+ofShortColor.lightGrey = _openframeworks.cvar.ofShortColor_lightGrey
+ofShortColor.lightGreen = _openframeworks.cvar.ofShortColor_lightGreen
+ofShortColor.lightPink = _openframeworks.cvar.ofShortColor_lightPink
+ofShortColor.lightSalmon = _openframeworks.cvar.ofShortColor_lightSalmon
+ofShortColor.lightSeaGreen = _openframeworks.cvar.ofShortColor_lightSeaGreen
+ofShortColor.lightSkyBlue = _openframeworks.cvar.ofShortColor_lightSkyBlue
+ofShortColor.lightSlateGray = _openframeworks.cvar.ofShortColor_lightSlateGray
+ofShortColor.lightSlateGrey = _openframeworks.cvar.ofShortColor_lightSlateGrey
+ofShortColor.lightSteelBlue = _openframeworks.cvar.ofShortColor_lightSteelBlue
+ofShortColor.lightYellow = _openframeworks.cvar.ofShortColor_lightYellow
+ofShortColor.lime = _openframeworks.cvar.ofShortColor_lime
+ofShortColor.limeGreen = _openframeworks.cvar.ofShortColor_limeGreen
+ofShortColor.linen = _openframeworks.cvar.ofShortColor_linen
+ofShortColor.maroon = _openframeworks.cvar.ofShortColor_maroon
+ofShortColor.mediumAquaMarine = _openframeworks.cvar.ofShortColor_mediumAquaMarine
+ofShortColor.mediumBlue = _openframeworks.cvar.ofShortColor_mediumBlue
+ofShortColor.mediumOrchid = _openframeworks.cvar.ofShortColor_mediumOrchid
+ofShortColor.mediumPurple = _openframeworks.cvar.ofShortColor_mediumPurple
+ofShortColor.mediumSeaGreen = _openframeworks.cvar.ofShortColor_mediumSeaGreen
+ofShortColor.mediumSlateBlue = _openframeworks.cvar.ofShortColor_mediumSlateBlue
+ofShortColor.mediumSpringGreen = _openframeworks.cvar.ofShortColor_mediumSpringGreen
+ofShortColor.mediumTurquoise = _openframeworks.cvar.ofShortColor_mediumTurquoise
+ofShortColor.mediumVioletRed = _openframeworks.cvar.ofShortColor_mediumVioletRed
+ofShortColor.midnightBlue = _openframeworks.cvar.ofShortColor_midnightBlue
+ofShortColor.mintCream = _openframeworks.cvar.ofShortColor_mintCream
+ofShortColor.mistyRose = _openframeworks.cvar.ofShortColor_mistyRose
+ofShortColor.moccasin = _openframeworks.cvar.ofShortColor_moccasin
+ofShortColor.navajoWhite = _openframeworks.cvar.ofShortColor_navajoWhite
+ofShortColor.navy = _openframeworks.cvar.ofShortColor_navy
+ofShortColor.oldLace = _openframeworks.cvar.ofShortColor_oldLace
+ofShortColor.olive = _openframeworks.cvar.ofShortColor_olive
+ofShortColor.oliveDrab = _openframeworks.cvar.ofShortColor_oliveDrab
+ofShortColor.orange = _openframeworks.cvar.ofShortColor_orange
+ofShortColor.orangeRed = _openframeworks.cvar.ofShortColor_orangeRed
+ofShortColor.orchid = _openframeworks.cvar.ofShortColor_orchid
+ofShortColor.paleGoldenRod = _openframeworks.cvar.ofShortColor_paleGoldenRod
+ofShortColor.paleGreen = _openframeworks.cvar.ofShortColor_paleGreen
+ofShortColor.paleTurquoise = _openframeworks.cvar.ofShortColor_paleTurquoise
+ofShortColor.paleVioletRed = _openframeworks.cvar.ofShortColor_paleVioletRed
+ofShortColor.papayaWhip = _openframeworks.cvar.ofShortColor_papayaWhip
+ofShortColor.peachPuff = _openframeworks.cvar.ofShortColor_peachPuff
+ofShortColor.peru = _openframeworks.cvar.ofShortColor_peru
+ofShortColor.pink = _openframeworks.cvar.ofShortColor_pink
+ofShortColor.plum = _openframeworks.cvar.ofShortColor_plum
+ofShortColor.powderBlue = _openframeworks.cvar.ofShortColor_powderBlue
+ofShortColor.purple = _openframeworks.cvar.ofShortColor_purple
+ofShortColor.rosyBrown = _openframeworks.cvar.ofShortColor_rosyBrown
+ofShortColor.royalBlue = _openframeworks.cvar.ofShortColor_royalBlue
+ofShortColor.saddleBrown = _openframeworks.cvar.ofShortColor_saddleBrown
+ofShortColor.salmon = _openframeworks.cvar.ofShortColor_salmon
+ofShortColor.sandyBrown = _openframeworks.cvar.ofShortColor_sandyBrown
+ofShortColor.seaGreen = _openframeworks.cvar.ofShortColor_seaGreen
+ofShortColor.seaShell = _openframeworks.cvar.ofShortColor_seaShell
+ofShortColor.sienna = _openframeworks.cvar.ofShortColor_sienna
+ofShortColor.silver = _openframeworks.cvar.ofShortColor_silver
+ofShortColor.skyBlue = _openframeworks.cvar.ofShortColor_skyBlue
+ofShortColor.slateBlue = _openframeworks.cvar.ofShortColor_slateBlue
+ofShortColor.slateGray = _openframeworks.cvar.ofShortColor_slateGray
+ofShortColor.slateGrey = _openframeworks.cvar.ofShortColor_slateGrey
+ofShortColor.snow = _openframeworks.cvar.ofShortColor_snow
+ofShortColor.springGreen = _openframeworks.cvar.ofShortColor_springGreen
+ofShortColor.steelBlue = _openframeworks.cvar.ofShortColor_steelBlue
+ofShortColor.blueSteel = _openframeworks.cvar.ofShortColor_blueSteel
+ofShortColor.tan = _openframeworks.cvar.ofShortColor_tan
+ofShortColor.teal = _openframeworks.cvar.ofShortColor_teal
+ofShortColor.thistle = _openframeworks.cvar.ofShortColor_thistle
+ofShortColor.tomato = _openframeworks.cvar.ofShortColor_tomato
+ofShortColor.turquoise = _openframeworks.cvar.ofShortColor_turquoise
+ofShortColor.violet = _openframeworks.cvar.ofShortColor_violet
+ofShortColor.wheat = _openframeworks.cvar.ofShortColor_wheat
+ofShortColor.whiteSmoke = _openframeworks.cvar.ofShortColor_whiteSmoke
+ofShortColor.yellowGreen = _openframeworks.cvar.ofShortColor_yellowGreen
+
+class ofSerialDeviceInfo(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofSerialDeviceInfo, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofSerialDeviceInfo, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofSerialDeviceInfo(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def getDevicePath(self):
+        return _openframeworks.ofSerialDeviceInfo_getDevicePath(self)
+
+    def getDeviceName(self):
+        return _openframeworks.ofSerialDeviceInfo_getDeviceName(self)
+
+    def getDeviceID(self):
+        return _openframeworks.ofSerialDeviceInfo_getDeviceID(self)
+    __swig_destroy__ = _openframeworks.delete_ofSerialDeviceInfo
+    __del__ = lambda self: None
+ofSerialDeviceInfo_swigregister = _openframeworks.ofSerialDeviceInfo_swigregister
+ofSerialDeviceInfo_swigregister(ofSerialDeviceInfo)
+
+class ofStyle(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofStyle, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofStyle, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofStyle()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _openframeworks.delete_ofStyle
+    __del__ = lambda self: None
+    __swig_setmethods__["color"] = _openframeworks.ofStyle_color_set
+    __swig_getmethods__["color"] = _openframeworks.ofStyle_color_get
+    if _newclass:
+        color = _swig_property(_openframeworks.ofStyle_color_get, _openframeworks.ofStyle_color_set)
+    __swig_setmethods__["bgColor"] = _openframeworks.ofStyle_bgColor_set
+    __swig_getmethods__["bgColor"] = _openframeworks.ofStyle_bgColor_get
+    if _newclass:
+        bgColor = _swig_property(_openframeworks.ofStyle_bgColor_get, _openframeworks.ofStyle_bgColor_set)
+    __swig_setmethods__["polyMode"] = _openframeworks.ofStyle_polyMode_set
+    __swig_getmethods__["polyMode"] = _openframeworks.ofStyle_polyMode_get
+    if _newclass:
+        polyMode = _swig_property(_openframeworks.ofStyle_polyMode_get, _openframeworks.ofStyle_polyMode_set)
+    __swig_setmethods__["rectMode"] = _openframeworks.ofStyle_rectMode_set
+    __swig_getmethods__["rectMode"] = _openframeworks.ofStyle_rectMode_get
+    if _newclass:
+        rectMode = _swig_property(_openframeworks.ofStyle_rectMode_get, _openframeworks.ofStyle_rectMode_set)
+    __swig_setmethods__["bFill"] = _openframeworks.ofStyle_bFill_set
+    __swig_getmethods__["bFill"] = _openframeworks.ofStyle_bFill_get
+    if _newclass:
+        bFill = _swig_property(_openframeworks.ofStyle_bFill_get, _openframeworks.ofStyle_bFill_set)
+    __swig_setmethods__["drawBitmapMode"] = _openframeworks.ofStyle_drawBitmapMode_set
+    __swig_getmethods__["drawBitmapMode"] = _openframeworks.ofStyle_drawBitmapMode_get
+    if _newclass:
+        drawBitmapMode = _swig_property(_openframeworks.ofStyle_drawBitmapMode_get, _openframeworks.ofStyle_drawBitmapMode_set)
+    __swig_setmethods__["blendingMode"] = _openframeworks.ofStyle_blendingMode_set
+    __swig_getmethods__["blendingMode"] = _openframeworks.ofStyle_blendingMode_get
+    if _newclass:
+        blendingMode = _swig_property(_openframeworks.ofStyle_blendingMode_get, _openframeworks.ofStyle_blendingMode_set)
+    __swig_setmethods__["smoothing"] = _openframeworks.ofStyle_smoothing_set
+    __swig_getmethods__["smoothing"] = _openframeworks.ofStyle_smoothing_get
+    if _newclass:
+        smoothing = _swig_property(_openframeworks.ofStyle_smoothing_get, _openframeworks.ofStyle_smoothing_set)
+    __swig_setmethods__["circleResolution"] = _openframeworks.ofStyle_circleResolution_set
+    __swig_getmethods__["circleResolution"] = _openframeworks.ofStyle_circleResolution_get
+    if _newclass:
+        circleResolution = _swig_property(_openframeworks.ofStyle_circleResolution_get, _openframeworks.ofStyle_circleResolution_set)
+    __swig_setmethods__["sphereResolution"] = _openframeworks.ofStyle_sphereResolution_set
+    __swig_getmethods__["sphereResolution"] = _openframeworks.ofStyle_sphereResolution_get
+    if _newclass:
+        sphereResolution = _swig_property(_openframeworks.ofStyle_sphereResolution_get, _openframeworks.ofStyle_sphereResolution_set)
+    __swig_setmethods__["curveResolution"] = _openframeworks.ofStyle_curveResolution_set
+    __swig_getmethods__["curveResolution"] = _openframeworks.ofStyle_curveResolution_get
+    if _newclass:
+        curveResolution = _swig_property(_openframeworks.ofStyle_curveResolution_get, _openframeworks.ofStyle_curveResolution_set)
+    __swig_setmethods__["lineWidth"] = _openframeworks.ofStyle_lineWidth_set
+    __swig_getmethods__["lineWidth"] = _openframeworks.ofStyle_lineWidth_get
+    if _newclass:
+        lineWidth = _swig_property(_openframeworks.ofStyle_lineWidth_get, _openframeworks.ofStyle_lineWidth_set)
+ofStyle_swigregister = _openframeworks.ofStyle_swigregister
+ofStyle_swigregister(ofStyle)
+
+class ofRectangle(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofRectangle, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofRectangle, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofRectangle(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _openframeworks.delete_ofRectangle
+    __del__ = lambda self: None
+
+    def set(self, *args):
+        return _openframeworks.ofRectangle_set(self, *args)
+
+    def setX(self, px):
+        return _openframeworks.ofRectangle_setX(self, px)
+
+    def setY(self, py):
+        return _openframeworks.ofRectangle_setY(self, py)
+
+    def setWidth(self, w):
+        return _openframeworks.ofRectangle_setWidth(self, w)
+
+    def setHeight(self, h):
+        return _openframeworks.ofRectangle_setHeight(self, h)
+
+    def setPosition(self, *args):
+        return _openframeworks.ofRectangle_setPosition(self, *args)
+
+    def setSize(self, w, h):
+        return _openframeworks.ofRectangle_setSize(self, w, h)
+
+    def setFromCenter(self, *args):
+        return _openframeworks.ofRectangle_setFromCenter(self, *args)
+
+    def translate(self, *args):
+        return _openframeworks.ofRectangle_translate(self, *args)
+
+    def translateX(self, dx):
+        return _openframeworks.ofRectangle_translateX(self, dx)
+
+    def translateY(self, dy):
+        return _openframeworks.ofRectangle_translateY(self, dy)
+
+    def scale(self, *args):
+        return _openframeworks.ofRectangle_scale(self, *args)
+
+    def scaleWidth(self, sX):
+        return _openframeworks.ofRectangle_scaleWidth(self, sX)
+
+    def scaleHeight(self, sY):
+        return _openframeworks.ofRectangle_scaleHeight(self, sY)
+
+    def scaleFromCenter(self, *args):
+        return _openframeworks.ofRectangle_scaleFromCenter(self, *args)
+
+    def scaleToScaleMode(self, targetRect, scaleMode=OF_SCALEMODE_FIT):
+        return _openframeworks.ofRectangle_scaleToScaleMode(self, targetRect, scaleMode)
+
+    def scaleToAspectRatio(self, *args):
+        return _openframeworks.ofRectangle_scaleToAspectRatio(self, *args)
+
+    def scaleTo(self, *args):
+        return _openframeworks.ofRectangle_scaleTo(self, *args)
+
+    def alignToHorz(self, *args):
+        return _openframeworks.ofRectangle_alignToHorz(self, *args)
+
+    def alignToVert(self, *args):
+        return _openframeworks.ofRectangle_alignToVert(self, *args)
+
+    def alignTo(self, *args):
+        return _openframeworks.ofRectangle_alignTo(self, *args)
+
+    def inside(self, *args):
+        return _openframeworks.ofRectangle_inside(self, *args)
+
+    def intersects(self, *args):
+        return _openframeworks.ofRectangle_intersects(self, *args)
+
+    def growToInclude(self, *args):
+        return _openframeworks.ofRectangle_growToInclude(self, *args)
+
+    def getIntersection(self, rect):
+        return _openframeworks.ofRectangle_getIntersection(self, rect)
+
+    def getUnion(self, rect):
+        return _openframeworks.ofRectangle_getUnion(self, rect)
+
+    def standardize(self):
+        return _openframeworks.ofRectangle_standardize(self)
+
+    def getStandardized(self):
+        return _openframeworks.ofRectangle_getStandardized(self)
+
+    def isStandardized(self):
+        return _openframeworks.ofRectangle_isStandardized(self)
+
+    def getArea(self):
+        return _openframeworks.ofRectangle_getArea(self)
+
+    def getPerimeter(self):
+        return _openframeworks.ofRectangle_getPerimeter(self)
+
+    def getAspectRatio(self):
+        return _openframeworks.ofRectangle_getAspectRatio(self)
+
+    def isEmpty(self):
+        return _openframeworks.ofRectangle_isEmpty(self)
+
+    def getMin(self):
+        return _openframeworks.ofRectangle_getMin(self)
+
+    def getMax(self):
+        return _openframeworks.ofRectangle_getMax(self)
+
+    def getMinX(self):
+        return _openframeworks.ofRectangle_getMinX(self)
+
+    def getMaxX(self):
+        return _openframeworks.ofRectangle_getMaxX(self)
+
+    def getMinY(self):
+        return _openframeworks.ofRectangle_getMinY(self)
+
+    def getMaxY(self):
+        return _openframeworks.ofRectangle_getMaxY(self)
+
+    def getLeft(self):
+        return _openframeworks.ofRectangle_getLeft(self)
+
+    def getRight(self):
+        return _openframeworks.ofRectangle_getRight(self)
+
+    def getTop(self):
+        return _openframeworks.ofRectangle_getTop(self)
+
+    def getBottom(self):
+        return _openframeworks.ofRectangle_getBottom(self)
+
+    def getTopLeft(self):
+        return _openframeworks.ofRectangle_getTopLeft(self)
+
+    def getTopRight(self):
+        return _openframeworks.ofRectangle_getTopRight(self)
+
+    def getBottomLeft(self):
+        return _openframeworks.ofRectangle_getBottomLeft(self)
+
+    def getBottomRight(self):
+        return _openframeworks.ofRectangle_getBottomRight(self)
+
+    def getHorzAnchor(self, anchor):
+        return _openframeworks.ofRectangle_getHorzAnchor(self, anchor)
+
+    def getVertAnchor(self, anchor):
+        return _openframeworks.ofRectangle_getVertAnchor(self, anchor)
+
+    def getPosition(self):
+        return _openframeworks.ofRectangle_getPosition(self)
+
+    def getPositionRef(self):
+        return _openframeworks.ofRectangle_getPositionRef(self)
+
+    def getCenter(self):
+        return _openframeworks.ofRectangle_getCenter(self)
+
+    def getX(self):
+        return _openframeworks.ofRectangle_getX(self)
+
+    def getY(self):
+        return _openframeworks.ofRectangle_getY(self)
+
+    def getWidth(self):
+        return _openframeworks.ofRectangle_getWidth(self)
+
+    def getHeight(self):
+        return _openframeworks.ofRectangle_getHeight(self)
+
+    def __add__(self, p):
+        return _openframeworks.ofRectangle___add__(self, p)
+
+    def __sub__(self, p):
+        return _openframeworks.ofRectangle___sub__(self, p)
+
+    def __eq__(self, rect):
+        return _openframeworks.ofRectangle___eq__(self, rect)
+
+    def __ne__(self, rect):
+        return _openframeworks.ofRectangle___ne__(self, rect)
+
+    def isZero(self):
+        return _openframeworks.ofRectangle_isZero(self)
+    __swig_setmethods__["position"] = _openframeworks.ofRectangle_position_set
+    __swig_getmethods__["position"] = _openframeworks.ofRectangle_position_get
+    if _newclass:
+        position = _swig_property(_openframeworks.ofRectangle_position_get, _openframeworks.ofRectangle_position_set)
+    __swig_setmethods__["width"] = _openframeworks.ofRectangle_width_set
+    __swig_getmethods__["width"] = _openframeworks.ofRectangle_width_get
+    if _newclass:
+        width = _swig_property(_openframeworks.ofRectangle_width_get, _openframeworks.ofRectangle_width_set)
+    __swig_setmethods__["height"] = _openframeworks.ofRectangle_height_set
+    __swig_getmethods__["height"] = _openframeworks.ofRectangle_height_get
+    if _newclass:
+        height = _swig_property(_openframeworks.ofRectangle_height_get, _openframeworks.ofRectangle_height_set)
+    __swig_setmethods__["x"] = _openframeworks.ofRectangle_x_set
+    __swig_getmethods__["x"] = _openframeworks.ofRectangle_x_get
+    if _newclass:
+        x = _swig_property(_openframeworks.ofRectangle_x_get, _openframeworks.ofRectangle_x_set)
+    __swig_setmethods__["y"] = _openframeworks.ofRectangle_y_set
+    __swig_getmethods__["y"] = _openframeworks.ofRectangle_y_get
+    if _newclass:
+        y = _swig_property(_openframeworks.ofRectangle_y_get, _openframeworks.ofRectangle_y_set)
+
+    def __str__(self):
+        return _openframeworks.ofRectangle___str__(self)
+ofRectangle_swigregister = _openframeworks.ofRectangle_swigregister
+ofRectangle_swigregister(ofRectangle)
+
+class ofFpsCounter(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFpsCounter, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofFpsCounter, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofFpsCounter(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def newFrame(self):
+        return _openframeworks.ofFpsCounter_newFrame(self)
+
+    def update(self):
+        return _openframeworks.ofFpsCounter_update(self)
+
+    def getFps(self):
+        return _openframeworks.ofFpsCounter_getFps(self)
+
+    def getNumFrames(self):
+        return _openframeworks.ofFpsCounter_getNumFrames(self)
+
+    def getLastFrameNanos(self):
+        return _openframeworks.ofFpsCounter_getLastFrameNanos(self)
+
+    def getLastFrameSecs(self):
+        return _openframeworks.ofFpsCounter_getLastFrameSecs(self)
+    __swig_destroy__ = _openframeworks.delete_ofFpsCounter
+    __del__ = lambda self: None
+ofFpsCounter_swigregister = _openframeworks.ofFpsCounter_swigregister
+ofFpsCounter_swigregister(ofFpsCounter)
+
+class ofMatrixStack(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofMatrixStack, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofMatrixStack, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, window):
+        this = _openframeworks.new_ofMatrixStack(window)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def setRenderSurface(self, *args):
+        return _openframeworks.ofMatrixStack_setRenderSurface(self, *args)
+
+    def setOrientation(self, orientation, vFlip):
+        return _openframeworks.ofMatrixStack_setOrientation(self, orientation, vFlip)
+
+    def getOrientation(self):
+        return _openframeworks.ofMatrixStack_getOrientation(self)
+
+    def viewport(self, x, y, width, height, vflip):
+        return _openframeworks.ofMatrixStack_viewport(self, x, y, width, height, vflip)
+
+    def nativeViewport(self, viewport):
+        return _openframeworks.ofMatrixStack_nativeViewport(self, viewport)
+
+    def getCurrentViewport(self):
+        return _openframeworks.ofMatrixStack_getCurrentViewport(self)
+
+    def getNativeViewport(self):
+        return _openframeworks.ofMatrixStack_getNativeViewport(self)
+
+    def getFullSurfaceViewport(self):
+        return _openframeworks.ofMatrixStack_getFullSurfaceViewport(self)
+
+    def getProjectionMatrix(self):
+        return _openframeworks.ofMatrixStack_getProjectionMatrix(self)
+
+    def getViewMatrix(self):
+        return _openframeworks.ofMatrixStack_getViewMatrix(self)
+
+    def getModelViewMatrix(self):
+        return _openframeworks.ofMatrixStack_getModelViewMatrix(self)
+
+    def getModelViewProjectionMatrix(self):
+        return _openframeworks.ofMatrixStack_getModelViewProjectionMatrix(self)
+
+    def getTextureMatrix(self):
+        return _openframeworks.ofMatrixStack_getTextureMatrix(self)
+
+    def getCurrentMatrix(self):
+        return _openframeworks.ofMatrixStack_getCurrentMatrix(self)
+
+    def getProjectionMatrixNoOrientation(self):
+        return _openframeworks.ofMatrixStack_getProjectionMatrixNoOrientation(self)
+
+    def getOrientationMatrix(self):
+        return _openframeworks.ofMatrixStack_getOrientationMatrix(self)
+
+    def getOrientationMatrixInverse(self):
+        return _openframeworks.ofMatrixStack_getOrientationMatrixInverse(self)
+
+    def getCurrentMatrixMode(self):
+        return _openframeworks.ofMatrixStack_getCurrentMatrixMode(self)
+
+    def getHandedness(self):
+        return _openframeworks.ofMatrixStack_getHandedness(self)
+
+    def isVFlipped(self):
+        return _openframeworks.ofMatrixStack_isVFlipped(self)
+
+    def customMatrixNeedsFlip(self):
+        return _openframeworks.ofMatrixStack_customMatrixNeedsFlip(self)
+
+    def pushView(self):
+        return _openframeworks.ofMatrixStack_pushView(self)
+
+    def popView(self):
+        return _openframeworks.ofMatrixStack_popView(self)
+
+    def pushMatrix(self):
+        return _openframeworks.ofMatrixStack_pushMatrix(self)
+
+    def popMatrix(self):
+        return _openframeworks.ofMatrixStack_popMatrix(self)
+
+    def translate(self, x, y, z=0):
+        return _openframeworks.ofMatrixStack_translate(self, x, y, z)
+
+    def scale(self, xAmnt, yAmnt, zAmnt=1):
+        return _openframeworks.ofMatrixStack_scale(self, xAmnt, yAmnt, zAmnt)
+
+    def rotate(self, degrees, vecX, vecY, vecZ):
+        return _openframeworks.ofMatrixStack_rotate(self, degrees, vecX, vecY, vecZ)
+
+    def matrixMode(self, mode):
+        return _openframeworks.ofMatrixStack_matrixMode(self, mode)
+
+    def loadIdentityMatrix(self):
+        return _openframeworks.ofMatrixStack_loadIdentityMatrix(self)
+
+    def loadMatrix(self, m):
+        return _openframeworks.ofMatrixStack_loadMatrix(self, m)
+
+    def multMatrix(self, m):
+        return _openframeworks.ofMatrixStack_multMatrix(self, m)
+
+    def loadViewMatrix(self, matrix):
+        return _openframeworks.ofMatrixStack_loadViewMatrix(self, matrix)
+
+    def multViewMatrix(self, matrix):
+        return _openframeworks.ofMatrixStack_multViewMatrix(self, matrix)
+
+    def clearStacks(self):
+        return _openframeworks.ofMatrixStack_clearStacks(self)
+
+    def doesHardwareOrientation(self):
+        return _openframeworks.ofMatrixStack_doesHardwareOrientation(self)
+    __swig_destroy__ = _openframeworks.delete_ofMatrixStack
+    __del__ = lambda self: None
+ofMatrixStack_swigregister = _openframeworks.ofMatrixStack_swigregister
+ofMatrixStack_swigregister(ofMatrixStack)
+
+class ofXml(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofXml, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofXml, name)
+    __repr__ = _swig_repr
+    __swig_destroy__ = _openframeworks.delete_ofXml
+    __del__ = lambda self: None
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofXml(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def load(self, path):
+        return _openframeworks.ofXml_load(self, path)
+
+    def save(self, path):
+        return _openframeworks.ofXml_save(self, path)
+
+    def addChild(self, path):
+        return _openframeworks.ofXml_addChild(self, path)
+
+    def addXml(self, xml, copyAll=False):
+        return _openframeworks.ofXml_addXml(self, xml, copyAll)
+
+    def getValue(self, *args):
+        return _openframeworks.ofXml_getValue(self, *args)
+
+    def getIntValue(self, *args):
+        return _openframeworks.ofXml_getIntValue(self, *args)
+
+    def getInt64Value(self, *args):
+        return _openframeworks.ofXml_getInt64Value(self, *args)
+
+    def getFloatValue(self, *args):
+        return _openframeworks.ofXml_getFloatValue(self, *args)
+
+    def getBoolValue(self, *args):
+        return _openframeworks.ofXml_getBoolValue(self, *args)
+
+    def setValue(self, path, value):
+        return _openframeworks.ofXml_setValue(self, path, value)
+
+    def getAttribute(self, path):
+        return _openframeworks.ofXml_getAttribute(self, path)
+
+    def setAttribute(self, path, value):
+        return _openframeworks.ofXml_setAttribute(self, path, value)
+
+    def getAttributes(self):
+        return _openframeworks.ofXml_getAttributes(self)
+
+    def getNumChildren(self, *args):
+        return _openframeworks.ofXml_getNumChildren(self, *args)
+
+    def removeAttribute(self, path):
+        return _openframeworks.ofXml_removeAttribute(self, path)
+
+    def removeAttributes(self, *args):
+        return _openframeworks.ofXml_removeAttributes(self, *args)
+
+    def removeContents(self, *args):
+        return _openframeworks.ofXml_removeContents(self, *args)
+
+    def remove(self, *args):
+        return _openframeworks.ofXml_remove(self, *args)
+
+    def exists(self, path):
+        return _openframeworks.ofXml_exists(self, path)
+
+    def clear(self):
+        return _openframeworks.ofXml_clear(self)
+
+    def getName(self):
+        return _openframeworks.ofXml_getName(self)
+
+    def reset(self):
+        return _openframeworks.ofXml_reset(self)
+
+    def setToChild(self, index):
+        return _openframeworks.ofXml_setToChild(self, index)
+
+    def setTo(self, path):
+        return _openframeworks.ofXml_setTo(self, path)
+
+    def setToParent(self, *args):
+        return _openframeworks.ofXml_setToParent(self, *args)
+
+    def setToSibling(self):
+        return _openframeworks.ofXml_setToSibling(self)
+
+    def setToPrevSibling(self):
+        return _openframeworks.ofXml_setToPrevSibling(self)
+
+    def loadFromBuffer(self, buffer):
+        return _openframeworks.ofXml_loadFromBuffer(self, buffer)
+
+    def toString(self):
+        return _openframeworks.ofXml_toString(self)
+
+    def serialize(self, parameter):
+        return _openframeworks.ofXml_serialize(self, parameter)
+
+    def deserialize(self, parameter):
+        return _openframeworks.ofXml_deserialize(self, parameter)
+    __swig_getmethods__["tokenize"] = lambda x: _openframeworks.ofXml_tokenize
+    if _newclass:
+        tokenize = staticmethod(_openframeworks.ofXml_tokenize)
+ofXml_swigregister = _openframeworks.ofXml_swigregister
+ofXml_swigregister(ofXml)
+
+def ofXml_tokenize(str, delim):
+    return _openframeworks.ofXml_tokenize(str, delim)
+ofXml_tokenize = _openframeworks.ofXml_tokenize
 
 
-# handle typedefs which swig doesnt wrap
+def log(level, message):
+    return _openframeworks.log(level, message)
+log = _openframeworks.log
+
+_openframeworks.OF_LOG_VERBOSE_swigconstant(_openframeworks)
+OF_LOG_VERBOSE = _openframeworks.OF_LOG_VERBOSE
+
+_openframeworks.OF_LOG_NOTICE_swigconstant(_openframeworks)
+OF_LOG_NOTICE = _openframeworks.OF_LOG_NOTICE
+
+_openframeworks.OF_LOG_WARNING_swigconstant(_openframeworks)
+OF_LOG_WARNING = _openframeworks.OF_LOG_WARNING
+
+_openframeworks.OF_LOG_ERROR_swigconstant(_openframeworks)
+OF_LOG_ERROR = _openframeworks.OF_LOG_ERROR
+
+_openframeworks.OF_LOG_FATAL_ERROR_swigconstant(_openframeworks)
+OF_LOG_FATAL_ERROR = _openframeworks.OF_LOG_FATAL_ERROR
+
+_openframeworks.OF_LOG_SILENT_swigconstant(_openframeworks)
+OF_LOG_SILENT = _openframeworks.OF_LOG_SILENT
+
+def ofSetLogLevel(*args):
+    return _openframeworks.ofSetLogLevel(*args)
+ofSetLogLevel = _openframeworks.ofSetLogLevel
+
+def ofGetLogLevel():
+    return _openframeworks.ofGetLogLevel()
+ofGetLogLevel = _openframeworks.ofGetLogLevel
+
+def ofGetLogLevelName(level, pad=False):
+    return _openframeworks.ofGetLogLevelName(level, pad)
+ofGetLogLevelName = _openframeworks.ofGetLogLevelName
+
+def ofLogToFile(path, append=False):
+    return _openframeworks.ofLogToFile(path, append)
+ofLogToFile = _openframeworks.ofLogToFile
+
+def ofLogToConsole():
+    return _openframeworks.ofLogToConsole()
+ofLogToConsole = _openframeworks.ofLogToConsole
+class ofFileDialogResult(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofFileDialogResult, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofFileDialogResult, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofFileDialogResult()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def getName(self):
+        return _openframeworks.ofFileDialogResult_getName(self)
+
+    def getPath(self):
+        return _openframeworks.ofFileDialogResult_getPath(self)
+    __swig_setmethods__["filePath"] = _openframeworks.ofFileDialogResult_filePath_set
+    __swig_getmethods__["filePath"] = _openframeworks.ofFileDialogResult_filePath_get
+    if _newclass:
+        filePath = _swig_property(_openframeworks.ofFileDialogResult_filePath_get, _openframeworks.ofFileDialogResult_filePath_set)
+    __swig_setmethods__["fileName"] = _openframeworks.ofFileDialogResult_fileName_set
+    __swig_getmethods__["fileName"] = _openframeworks.ofFileDialogResult_fileName_get
+    if _newclass:
+        fileName = _swig_property(_openframeworks.ofFileDialogResult_fileName_get, _openframeworks.ofFileDialogResult_fileName_set)
+    __swig_setmethods__["bSuccess"] = _openframeworks.ofFileDialogResult_bSuccess_set
+    __swig_getmethods__["bSuccess"] = _openframeworks.ofFileDialogResult_bSuccess_get
+    if _newclass:
+        bSuccess = _swig_property(_openframeworks.ofFileDialogResult_bSuccess_get, _openframeworks.ofFileDialogResult_bSuccess_set)
+    __swig_destroy__ = _openframeworks.delete_ofFileDialogResult
+    __del__ = lambda self: None
+ofFileDialogResult_swigregister = _openframeworks.ofFileDialogResult_swigregister
+ofFileDialogResult_swigregister(ofFileDialogResult)
+
+
+def ofSystemAlertDialog(errorMessage):
+    return _openframeworks.ofSystemAlertDialog(errorMessage)
+ofSystemAlertDialog = _openframeworks.ofSystemAlertDialog
+
+def ofSystemLoadDialog(*args):
+    return _openframeworks.ofSystemLoadDialog(*args)
+ofSystemLoadDialog = _openframeworks.ofSystemLoadDialog
+
+def ofSystemSaveDialog(defaultName, messageName):
+    return _openframeworks.ofSystemSaveDialog(defaultName, messageName)
+ofSystemSaveDialog = _openframeworks.ofSystemSaveDialog
+
+def ofSystemTextBoxDialog(*args):
+    return _openframeworks.ofSystemTextBoxDialog(*args)
+ofSystemTextBoxDialog = _openframeworks.ofSystemTextBoxDialog
+class ofHttpRequest(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofHttpRequest, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofHttpRequest, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofHttpRequest(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_setmethods__["url"] = _openframeworks.ofHttpRequest_url_set
+    __swig_getmethods__["url"] = _openframeworks.ofHttpRequest_url_get
+    if _newclass:
+        url = _swig_property(_openframeworks.ofHttpRequest_url_get, _openframeworks.ofHttpRequest_url_set)
+    __swig_setmethods__["name"] = _openframeworks.ofHttpRequest_name_set
+    __swig_getmethods__["name"] = _openframeworks.ofHttpRequest_name_get
+    if _newclass:
+        name = _swig_property(_openframeworks.ofHttpRequest_name_get, _openframeworks.ofHttpRequest_name_set)
+    __swig_setmethods__["saveTo"] = _openframeworks.ofHttpRequest_saveTo_set
+    __swig_getmethods__["saveTo"] = _openframeworks.ofHttpRequest_saveTo_get
+    if _newclass:
+        saveTo = _swig_property(_openframeworks.ofHttpRequest_saveTo_get, _openframeworks.ofHttpRequest_saveTo_set)
+    __swig_setmethods__["headers"] = _openframeworks.ofHttpRequest_headers_set
+    __swig_getmethods__["headers"] = _openframeworks.ofHttpRequest_headers_get
+    if _newclass:
+        headers = _swig_property(_openframeworks.ofHttpRequest_headers_get, _openframeworks.ofHttpRequest_headers_set)
+
+    def getId(self):
+        return _openframeworks.ofHttpRequest_getId(self)
+    __swig_destroy__ = _openframeworks.delete_ofHttpRequest
+    __del__ = lambda self: None
+ofHttpRequest_swigregister = _openframeworks.ofHttpRequest_swigregister
+ofHttpRequest_swigregister(ofHttpRequest)
+
+class ofHttpResponse(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofHttpResponse, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofHttpResponse, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _openframeworks.new_ofHttpResponse(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_setmethods__["request"] = _openframeworks.ofHttpResponse_request_set
+    __swig_getmethods__["request"] = _openframeworks.ofHttpResponse_request_get
+    if _newclass:
+        request = _swig_property(_openframeworks.ofHttpResponse_request_get, _openframeworks.ofHttpResponse_request_set)
+    __swig_setmethods__["data"] = _openframeworks.ofHttpResponse_data_set
+    __swig_getmethods__["data"] = _openframeworks.ofHttpResponse_data_get
+    if _newclass:
+        data = _swig_property(_openframeworks.ofHttpResponse_data_get, _openframeworks.ofHttpResponse_data_set)
+    __swig_setmethods__["status"] = _openframeworks.ofHttpResponse_status_set
+    __swig_getmethods__["status"] = _openframeworks.ofHttpResponse_status_get
+    if _newclass:
+        status = _swig_property(_openframeworks.ofHttpResponse_status_get, _openframeworks.ofHttpResponse_status_set)
+    __swig_setmethods__["error"] = _openframeworks.ofHttpResponse_error_set
+    __swig_getmethods__["error"] = _openframeworks.ofHttpResponse_error_get
+    if _newclass:
+        error = _swig_property(_openframeworks.ofHttpResponse_error_get, _openframeworks.ofHttpResponse_error_set)
+    __swig_destroy__ = _openframeworks.delete_ofHttpResponse
+    __del__ = lambda self: None
+ofHttpResponse_swigregister = _openframeworks.ofHttpResponse_swigregister
+ofHttpResponse_swigregister(ofHttpResponse)
+
+
+def ofLoadURL(url):
+    return _openframeworks.ofLoadURL(url)
+ofLoadURL = _openframeworks.ofLoadURL
+
+def ofLoadURLAsync(*args):
+    return _openframeworks.ofLoadURLAsync(*args)
+ofLoadURLAsync = _openframeworks.ofLoadURLAsync
+
+def ofSaveURLTo(url, path):
+    return _openframeworks.ofSaveURLTo(url, path)
+ofSaveURLTo = _openframeworks.ofSaveURLTo
+
+def ofSaveURLAsync(url, path):
+    return _openframeworks.ofSaveURLAsync(url, path)
+ofSaveURLAsync = _openframeworks.ofSaveURLAsync
+
+def ofRemoveURLRequest(id):
+    return _openframeworks.ofRemoveURLRequest(id)
+ofRemoveURLRequest = _openframeworks.ofRemoveURLRequest
+
+def ofRemoveAllURLRequests():
+    return _openframeworks.ofRemoveAllURLRequests()
+ofRemoveAllURLRequests = _openframeworks.ofRemoveAllURLRequests
+
+def ofStopURLLoader():
+    return _openframeworks.ofStopURLLoader()
+ofStopURLLoader = _openframeworks.ofStopURLLoader
+
+def ofURLResponseEvent():
+    return _openframeworks.ofURLResponseEvent()
+ofURLResponseEvent = _openframeworks.ofURLResponseEvent
+class ofURLFileLoader(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofURLFileLoader, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofURLFileLoader, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofURLFileLoader()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def get(self, url):
+        return _openframeworks.ofURLFileLoader_get(self, url)
+
+    def getAsync(self, *args):
+        return _openframeworks.ofURLFileLoader_getAsync(self, *args)
+
+    def saveTo(self, url, path):
+        return _openframeworks.ofURLFileLoader_saveTo(self, url, path)
+
+    def saveAsync(self, url, path):
+        return _openframeworks.ofURLFileLoader_saveAsync(self, url, path)
+
+    def remove(self, id):
+        return _openframeworks.ofURLFileLoader_remove(self, id)
+
+    def clear(self):
+        return _openframeworks.ofURLFileLoader_clear(self)
+
+    def stop(self):
+        return _openframeworks.ofURLFileLoader_stop(self)
+
+    def handleRequest(self, request):
+        return _openframeworks.ofURLFileLoader_handleRequest(self, request)
+    __swig_destroy__ = _openframeworks.delete_ofURLFileLoader
+    __del__ = lambda self: None
+ofURLFileLoader_swigregister = _openframeworks.ofURLFileLoader_swigregister
+ofURLFileLoader_swigregister(ofURLFileLoader)
+
+
+def ofResetElapsedTimeCounter():
+    return _openframeworks.ofResetElapsedTimeCounter()
+ofResetElapsedTimeCounter = _openframeworks.ofResetElapsedTimeCounter
+
+def ofGetElapsedTimef():
+    return _openframeworks.ofGetElapsedTimef()
+ofGetElapsedTimef = _openframeworks.ofGetElapsedTimef
+
+def ofGetElapsedTimeMillis():
+    return _openframeworks.ofGetElapsedTimeMillis()
+ofGetElapsedTimeMillis = _openframeworks.ofGetElapsedTimeMillis
+
+def ofGetElapsedTimeMicros():
+    return _openframeworks.ofGetElapsedTimeMicros()
+ofGetElapsedTimeMicros = _openframeworks.ofGetElapsedTimeMicros
+
+def ofGetSeconds():
+    return _openframeworks.ofGetSeconds()
+ofGetSeconds = _openframeworks.ofGetSeconds
+
+def ofGetMinutes():
+    return _openframeworks.ofGetMinutes()
+ofGetMinutes = _openframeworks.ofGetMinutes
+
+def ofGetHours():
+    return _openframeworks.ofGetHours()
+ofGetHours = _openframeworks.ofGetHours
+
+def ofGetUnixTime():
+    return _openframeworks.ofGetUnixTime()
+ofGetUnixTime = _openframeworks.ofGetUnixTime
+
+def ofGetSystemTime():
+    return _openframeworks.ofGetSystemTime()
+ofGetSystemTime = _openframeworks.ofGetSystemTime
+
+def ofGetSystemTimeMicros():
+    return _openframeworks.ofGetSystemTimeMicros()
+ofGetSystemTimeMicros = _openframeworks.ofGetSystemTimeMicros
+
+def ofSleepMillis(millis):
+    return _openframeworks.ofSleepMillis(millis)
+ofSleepMillis = _openframeworks.ofSleepMillis
+
+def ofGetTimestampString(*args):
+    return _openframeworks.ofGetTimestampString(*args)
+ofGetTimestampString = _openframeworks.ofGetTimestampString
+
+def ofGetYear():
+    return _openframeworks.ofGetYear()
+ofGetYear = _openframeworks.ofGetYear
+
+def ofGetMonth():
+    return _openframeworks.ofGetMonth()
+ofGetMonth = _openframeworks.ofGetMonth
+
+def ofGetDay():
+    return _openframeworks.ofGetDay()
+ofGetDay = _openframeworks.ofGetDay
+
+def ofGetWeekday():
+    return _openframeworks.ofGetWeekday()
+ofGetWeekday = _openframeworks.ofGetWeekday
+
+def ofEnableDataPath():
+    return _openframeworks.ofEnableDataPath()
+ofEnableDataPath = _openframeworks.ofEnableDataPath
+
+def ofDisableDataPath():
+    return _openframeworks.ofDisableDataPath()
+ofDisableDataPath = _openframeworks.ofDisableDataPath
+
+def ofToDataPath(path, absolute=False):
+    return _openframeworks.ofToDataPath(path, absolute)
+ofToDataPath = _openframeworks.ofToDataPath
+
+def ofRestoreWorkingDirectoryToDefault():
+    return _openframeworks.ofRestoreWorkingDirectoryToDefault()
+ofRestoreWorkingDirectoryToDefault = _openframeworks.ofRestoreWorkingDirectoryToDefault
+
+def ofSetDataPathRoot(root):
+    return _openframeworks.ofSetDataPathRoot(root)
+ofSetDataPathRoot = _openframeworks.ofSetDataPathRoot
+
+def ofSplitString(source, delimiter, ignoreEmpty=False, trim=False):
+    return _openframeworks.ofSplitString(source, delimiter, ignoreEmpty, trim)
+ofSplitString = _openframeworks.ofSplitString
+
+def ofJoinString(stringElements, delimiter):
+    return _openframeworks.ofJoinString(stringElements, delimiter)
+ofJoinString = _openframeworks.ofJoinString
+
+def ofStringReplace(input, searchStr, replaceStr):
+    return _openframeworks.ofStringReplace(input, searchStr, replaceStr)
+ofStringReplace = _openframeworks.ofStringReplace
+
+def ofIsStringInString(haystack, needle):
+    return _openframeworks.ofIsStringInString(haystack, needle)
+ofIsStringInString = _openframeworks.ofIsStringInString
+
+def ofStringTimesInString(haystack, needle):
+    return _openframeworks.ofStringTimesInString(haystack, needle)
+ofStringTimesInString = _openframeworks.ofStringTimesInString
+
+def ofToLower(*args):
+    return _openframeworks.ofToLower(*args)
+ofToLower = _openframeworks.ofToLower
+
+def ofToUpper(*args):
+    return _openframeworks.ofToUpper(*args)
+ofToUpper = _openframeworks.ofToUpper
+
+def ofTrimFront(*args):
+    return _openframeworks.ofTrimFront(*args)
+ofTrimFront = _openframeworks.ofTrimFront
+
+def ofTrimBack(*args):
+    return _openframeworks.ofTrimBack(*args)
+ofTrimBack = _openframeworks.ofTrimBack
+
+def ofTrim(*args):
+    return _openframeworks.ofTrim(*args)
+ofTrim = _openframeworks.ofTrim
+
+def ofAppendUTF8(str, utf8):
+    return _openframeworks.ofAppendUTF8(str, utf8)
+ofAppendUTF8 = _openframeworks.ofAppendUTF8
+
+def ofToInt(intString):
+    return _openframeworks.ofToInt(intString)
+ofToInt = _openframeworks.ofToInt
+
+def ofToInt64(intString):
+    return _openframeworks.ofToInt64(intString)
+ofToInt64 = _openframeworks.ofToInt64
+
+def ofToFloat(floatString):
+    return _openframeworks.ofToFloat(floatString)
+ofToFloat = _openframeworks.ofToFloat
+
+def ofToDouble(doubleString):
+    return _openframeworks.ofToDouble(doubleString)
+ofToDouble = _openframeworks.ofToDouble
+
+def ofToBool(boolString):
+    return _openframeworks.ofToBool(boolString)
+ofToBool = _openframeworks.ofToBool
+
+def ofToHex(value):
+    return _openframeworks.ofToHex(value)
+ofToHex = _openframeworks.ofToHex
+
+def ofHexToInt(intHexString):
+    return _openframeworks.ofHexToInt(intHexString)
+ofHexToInt = _openframeworks.ofHexToInt
+
+def ofHexToChar(charHexString):
+    return _openframeworks.ofHexToChar(charHexString)
+ofHexToChar = _openframeworks.ofHexToChar
+
+def ofHexToFloat(floatHexString):
+    return _openframeworks.ofHexToFloat(floatHexString)
+ofHexToFloat = _openframeworks.ofHexToFloat
+
+def ofHexToString(stringHexString):
+    return _openframeworks.ofHexToString(stringHexString)
+ofHexToString = _openframeworks.ofHexToString
+
+def ofToChar(charString):
+    return _openframeworks.ofToChar(charString)
+ofToChar = _openframeworks.ofToChar
+
+def ofToBinary(value):
+    return _openframeworks.ofToBinary(value)
+ofToBinary = _openframeworks.ofToBinary
+
+def ofBinaryToInt(value):
+    return _openframeworks.ofBinaryToInt(value)
+ofBinaryToInt = _openframeworks.ofBinaryToInt
+
+def ofBinaryToChar(value):
+    return _openframeworks.ofBinaryToChar(value)
+ofBinaryToChar = _openframeworks.ofBinaryToChar
+
+def ofBinaryToFloat(value):
+    return _openframeworks.ofBinaryToFloat(value)
+ofBinaryToFloat = _openframeworks.ofBinaryToFloat
+
+def ofBinaryToString(value):
+    return _openframeworks.ofBinaryToString(value)
+ofBinaryToString = _openframeworks.ofBinaryToString
+
+def ofGetVersionInfo():
+    return _openframeworks.ofGetVersionInfo()
+ofGetVersionInfo = _openframeworks.ofGetVersionInfo
+
+def ofGetVersionMajor():
+    return _openframeworks.ofGetVersionMajor()
+ofGetVersionMajor = _openframeworks.ofGetVersionMajor
+
+def ofGetVersionMinor():
+    return _openframeworks.ofGetVersionMinor()
+ofGetVersionMinor = _openframeworks.ofGetVersionMinor
+
+def ofGetVersionPatch():
+    return _openframeworks.ofGetVersionPatch()
+ofGetVersionPatch = _openframeworks.ofGetVersionPatch
+
+def ofGetVersionPreRelease():
+    return _openframeworks.ofGetVersionPreRelease()
+ofGetVersionPreRelease = _openframeworks.ofGetVersionPreRelease
+
+def ofSaveScreen(filename):
+    return _openframeworks.ofSaveScreen(filename)
+ofSaveScreen = _openframeworks.ofSaveScreen
+
+def ofSaveFrame(bUseViewport=False):
+    return _openframeworks.ofSaveFrame(bUseViewport)
+ofSaveFrame = _openframeworks.ofSaveFrame
+
+def ofSaveViewport(filename):
+    return _openframeworks.ofSaveViewport(filename)
+ofSaveViewport = _openframeworks.ofSaveViewport
+
+def ofLaunchBrowser(url, uriEncodeQuery=False):
+    return _openframeworks.ofLaunchBrowser(url, uriEncodeQuery)
+ofLaunchBrowser = _openframeworks.ofLaunchBrowser
+
+def ofSystem(command):
+    return _openframeworks.ofSystem(command)
+ofSystem = _openframeworks.ofSystem
+
+def ofGetTargetPlatform():
+    return _openframeworks.ofGetTargetPlatform()
+ofGetTargetPlatform = _openframeworks.ofGetTargetPlatform
+
+def ofGetEnv(var):
+    return _openframeworks.ofGetEnv(var)
+ofGetEnv = _openframeworks.ofGetEnv
+class ofVideoGrabber(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofVideoGrabber, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofVideoGrabber, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofVideoGrabber()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _openframeworks.delete_ofVideoGrabber
+    __del__ = lambda self: None
+
+    def listDevices(self):
+        return _openframeworks.ofVideoGrabber_listDevices(self)
+
+    def isFrameNew(self):
+        return _openframeworks.ofVideoGrabber_isFrameNew(self)
+
+    def update(self):
+        return _openframeworks.ofVideoGrabber_update(self)
+
+    def close(self):
+        return _openframeworks.ofVideoGrabber_close(self)
+
+    def setup(self, *args):
+        return _openframeworks.ofVideoGrabber_setup(self, *args)
+
+    def setPixelFormat(self, pixelFormat):
+        return _openframeworks.ofVideoGrabber_setPixelFormat(self, pixelFormat)
+
+    def getPixelFormat(self):
+        return _openframeworks.ofVideoGrabber_getPixelFormat(self)
+
+    def videoSettings(self):
+        return _openframeworks.ofVideoGrabber_videoSettings(self)
+
+    def getPixels(self, *args):
+        return _openframeworks.ofVideoGrabber_getPixels(self, *args)
+
+    def getTexture(self, *args):
+        return _openframeworks.ofVideoGrabber_getTexture(self, *args)
+
+    def getTexturePlanes(self, *args):
+        return _openframeworks.ofVideoGrabber_getTexturePlanes(self, *args)
+
+    def setVerbose(self, bTalkToMe):
+        return _openframeworks.ofVideoGrabber_setVerbose(self, bTalkToMe)
+
+    def setDeviceID(self, _deviceID):
+        return _openframeworks.ofVideoGrabber_setDeviceID(self, _deviceID)
+
+    def setDesiredFrameRate(self, framerate):
+        return _openframeworks.ofVideoGrabber_setDesiredFrameRate(self, framerate)
+
+    def setUseTexture(self, bUse):
+        return _openframeworks.ofVideoGrabber_setUseTexture(self, bUse)
+
+    def isUsingTexture(self):
+        return _openframeworks.ofVideoGrabber_isUsingTexture(self)
+
+    def draw(self, *args):
+        return _openframeworks.ofVideoGrabber_draw(self, *args)
+
+    def bind(self):
+        return _openframeworks.ofVideoGrabber_bind(self)
+
+    def unbind(self):
+        return _openframeworks.ofVideoGrabber_unbind(self)
+
+    def setAnchorPercent(self, xPct, yPct):
+        return _openframeworks.ofVideoGrabber_setAnchorPercent(self, xPct, yPct)
+
+    def setAnchorPoint(self, x, y):
+        return _openframeworks.ofVideoGrabber_setAnchorPoint(self, x, y)
+
+    def resetAnchor(self):
+        return _openframeworks.ofVideoGrabber_resetAnchor(self)
+
+    def getHeight(self):
+        return _openframeworks.ofVideoGrabber_getHeight(self)
+
+    def getWidth(self):
+        return _openframeworks.ofVideoGrabber_getWidth(self)
+
+    def isInitialized(self):
+        return _openframeworks.ofVideoGrabber_isInitialized(self)
+
+    def setGrabber(self, newGrabber):
+        return _openframeworks.ofVideoGrabber_setGrabber(self, newGrabber)
+
+    def getGrabber(self, *args):
+        return _openframeworks.ofVideoGrabber_getGrabber(self, *args)
+ofVideoGrabber_swigregister = _openframeworks.ofVideoGrabber_swigregister
+ofVideoGrabber_swigregister(ofVideoGrabber)
+
+class ofVideoPlayer(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ofVideoPlayer, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ofVideoPlayer, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _openframeworks.new_ofVideoPlayer()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def load(self, name):
+        return _openframeworks.ofVideoPlayer_load(self, name)
+
+    def loadAsync(self, name):
+        return _openframeworks.ofVideoPlayer_loadAsync(self, name)
+
+    def getMoviePath(self):
+        return _openframeworks.ofVideoPlayer_getMoviePath(self)
+
+    def setPixelFormat(self, pixelFormat):
+        return _openframeworks.ofVideoPlayer_setPixelFormat(self, pixelFormat)
+
+    def getPixelFormat(self):
+        return _openframeworks.ofVideoPlayer_getPixelFormat(self)
+
+    def closeMovie(self):
+        return _openframeworks.ofVideoPlayer_closeMovie(self)
+
+    def close(self):
+        return _openframeworks.ofVideoPlayer_close(self)
+
+    def update(self):
+        return _openframeworks.ofVideoPlayer_update(self)
+
+    def play(self):
+        return _openframeworks.ofVideoPlayer_play(self)
+
+    def stop(self):
+        return _openframeworks.ofVideoPlayer_stop(self)
+
+    def isFrameNew(self):
+        return _openframeworks.ofVideoPlayer_isFrameNew(self)
+
+    def getPixels(self, *args):
+        return _openframeworks.ofVideoPlayer_getPixels(self, *args)
+
+    def getPosition(self):
+        return _openframeworks.ofVideoPlayer_getPosition(self)
+
+    def getSpeed(self):
+        return _openframeworks.ofVideoPlayer_getSpeed(self)
+
+    def getDuration(self):
+        return _openframeworks.ofVideoPlayer_getDuration(self)
+
+    def getIsMovieDone(self):
+        return _openframeworks.ofVideoPlayer_getIsMovieDone(self)
+
+    def setPosition(self, pct):
+        return _openframeworks.ofVideoPlayer_setPosition(self, pct)
+
+    def setVolume(self, volume):
+        return _openframeworks.ofVideoPlayer_setVolume(self, volume)
+
+    def setLoopState(self, state):
+        return _openframeworks.ofVideoPlayer_setLoopState(self, state)
+
+    def getLoopState(self):
+        return _openframeworks.ofVideoPlayer_getLoopState(self)
+
+    def setSpeed(self, speed):
+        return _openframeworks.ofVideoPlayer_setSpeed(self, speed)
+
+    def setFrame(self, frame):
+        return _openframeworks.ofVideoPlayer_setFrame(self, frame)
+
+    def setUseTexture(self, bUse):
+        return _openframeworks.ofVideoPlayer_setUseTexture(self, bUse)
+
+    def isUsingTexture(self):
+        return _openframeworks.ofVideoPlayer_isUsingTexture(self)
+
+    def getTexture(self, *args):
+        return _openframeworks.ofVideoPlayer_getTexture(self, *args)
+
+    def getTexturePlanes(self, *args):
+        return _openframeworks.ofVideoPlayer_getTexturePlanes(self, *args)
+
+    def draw(self, *args):
+        return _openframeworks.ofVideoPlayer_draw(self, *args)
+
+    def bind(self):
+        return _openframeworks.ofVideoPlayer_bind(self)
+
+    def unbind(self):
+        return _openframeworks.ofVideoPlayer_unbind(self)
+
+    def setAnchorPercent(self, xPct, yPct):
+        return _openframeworks.ofVideoPlayer_setAnchorPercent(self, xPct, yPct)
+
+    def setAnchorPoint(self, x, y):
+        return _openframeworks.ofVideoPlayer_setAnchorPoint(self, x, y)
+
+    def resetAnchor(self):
+        return _openframeworks.ofVideoPlayer_resetAnchor(self)
+
+    def setPaused(self, bPause):
+        return _openframeworks.ofVideoPlayer_setPaused(self, bPause)
+
+    def getCurrentFrame(self):
+        return _openframeworks.ofVideoPlayer_getCurrentFrame(self)
+
+    def getTotalNumFrames(self):
+        return _openframeworks.ofVideoPlayer_getTotalNumFrames(self)
+
+    def firstFrame(self):
+        return _openframeworks.ofVideoPlayer_firstFrame(self)
+
+    def nextFrame(self):
+        return _openframeworks.ofVideoPlayer_nextFrame(self)
+
+    def previousFrame(self):
+        return _openframeworks.ofVideoPlayer_previousFrame(self)
+
+    def getHeight(self):
+        return _openframeworks.ofVideoPlayer_getHeight(self)
+
+    def getWidth(self):
+        return _openframeworks.ofVideoPlayer_getWidth(self)
+
+    def isPaused(self):
+        return _openframeworks.ofVideoPlayer_isPaused(self)
+
+    def isLoaded(self):
+        return _openframeworks.ofVideoPlayer_isLoaded(self)
+
+    def isPlaying(self):
+        return _openframeworks.ofVideoPlayer_isPlaying(self)
+
+    def isInitialized(self):
+        return _openframeworks.ofVideoPlayer_isInitialized(self)
+
+    def setPlayer(self, newPlayer):
+        return _openframeworks.ofVideoPlayer_setPlayer(self, newPlayer)
+
+    def getPlayer(self, *args):
+        return _openframeworks.ofVideoPlayer_getPlayer(self, *args)
+    __swig_destroy__ = _openframeworks.delete_ofVideoPlayer
+    __del__ = lambda self: None
+ofVideoPlayer_swigregister = _openframeworks.ofVideoPlayer_swigregister
+ofVideoPlayer_swigregister(ofVideoPlayer)
+
+
+
+# handle typedefs which swig doesn't wrap
 ofPoint = ofVec3f
 
 # renaming log -> ofLog
