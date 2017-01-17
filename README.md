@@ -23,7 +23,7 @@ You will need Python (2.7 tested) installed in order to compile your program.
 
 Compatibility
 ------------
-It is now compiling both in Linux64, Windows (Code::Blocks and Visual Studio) and OSX. Generated for OF 0.8.4
+It is now compiling both in Linux64, Windows (Code::Blocks and Visual Studio) and OSX. Generated for OF 0.8.9
 
 ###Linux:###
 Make sure the python-dev package is installed:
@@ -37,11 +37,7 @@ The Visual Studio projects assume Python 2.7 is installed in `C:\Python27`. If y
 
 Re-generating the bindings
 --------------------------
-Install [SWIG](http://www.swig.org/) and run:
-
-```
-$ ./generatebindings.sh
-```
+See [README_SWIG.md](README_SWIG.md).
 
 Known issues
 ------------
