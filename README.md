@@ -1,6 +1,8 @@
 ofxPython
 =========
 
+**This Addon is not maintained, and it is abandoned**
+
 (c) 2015 Carles F. Julià <carles@protopixel.net>
 
 Introduction
