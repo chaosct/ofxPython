@@ -1,3 +1,3 @@
 [submodule "swig"]
 	path = swig-of
-	url = https://github.com/chaosct/swig-openframeworks.git
+url=https://github.com/danomatika/swig-openframeworks.git

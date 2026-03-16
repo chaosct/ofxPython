@@ -7,13 +7,12 @@ extern "C"{
 
 #include <map>
 
-class ofxPythonObjectManaged;
 class ofxPythonMappingValue;
 class ofxPythonAttrValue;
 class ofxPythonTupleMaker;
 class ofxPythonListMaker;
 
-class ofxPythonObject: public ofPtr<ofxPythonObjectManaged>
+class ofxPythonObject
 {
 public:
 	ofxPythonObject method(const string &method_name); //call method without arguments
@@ -54,9 +53,21 @@ public:
 protected:
 	void insert_borrowed(PyObject *);
 	void insert_owned(PyObject *);
-	friend ofxPythonObject make_object_owned(PyObject * obj, bool);
-	friend ofxPythonObject make_object_borrowed(PyObject * obj, bool);
-	friend class ofxPython;
+    class ofxPythonObjectManaged
+    {
+    public:
+        ofxPythonObjectManaged(PyObject*);
+        ~ofxPythonObjectManaged();
+        PyObject * obj;
+    };
+    ofPtr<ofxPythonObjectManaged> data;
+    friend class ofxPython;
+    friend class ofxPythonMappingValue;
+    friend class ofxPythonAttrValue;
+    friend class ofxPythonListMaker;
+    friend class ofxPythonTupleMaker;
+    friend ofxPythonObject make_object_owned(PyObject * obj, bool);
+    friend ofxPythonObject make_object_borrowed(PyObject * obj, bool);
 };
 
 class ofxPython
@@ -83,7 +94,7 @@ protected:
 	// ofxPythonObject globals;
 	static unsigned int instances;
 	bool initialized;
-	friend class ofxPythonObjectManaged;
+    friend class ofxPythonObject::ofxPythonObjectManaged;
 };
 
 class ofxPythonOperation
@@ -95,13 +106,6 @@ public:
     ~ofxPythonOperation();
 };
 
-class ofxPythonObjectManaged
-{
-public:
-	ofxPythonObjectManaged(PyObject*);
-	~ofxPythonObjectManaged();
-	PyObject * obj;
-};
 
 class ofxPythonObjectLike
 {

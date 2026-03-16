@@ -18,4 +18,4 @@ class myApp(object):
 	def draw(self):
 		color = ofColor(*self.color)
 		ofSetColor(color)
-		ofCircle(self.x,self.y,self.d)
+		ofDrawCircle(self.x,self.y,self.d)
